@@ -12,27 +12,17 @@ public class Cursor : MonoBehaviour
     {
         TrackMouse();
         DetectClick();
-        UpdateColour();
     }
+    // Locates the mouse and teleports object to its location.
     void TrackMouse()
     {
         Vector2 mousePos = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         transform.position = mousePos;
     }
+    // Alters the colour between white and black based on mouse click.
     void DetectClick()
     {
         if (Input.GetMouseButton(0))
-        {
-            Click = true;
-        }
-        else
-        {
-            Click = false;
-        }
-    }
-    void UpdateColour()
-    {
-        if (Click)
         {
             Colour -= Time.deltaTime;
         }
