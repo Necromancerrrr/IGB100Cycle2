@@ -31,6 +31,7 @@ public class Cursor : MonoBehaviour
             Colour += Time.deltaTime;
         }
         Colour = Mathf.Clamp(Colour, 0, 1);
-        CursorParticles.startColor = new Color(Colour, Colour, Colour);
+        var main = CursorParticles.main;
+        main.startColor = new Color(Colour, Colour, Colour);
     }
 }

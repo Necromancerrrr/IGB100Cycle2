@@ -1,12 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     // Movement
     [SerializeField] private float moveSpeed = 8.0f;
     private Vector2 movement;
 
+    // Experience and Levelling Up
+    private int level = 0;
+    private float experience = 0;
+    [SerializeField] private List<float> experienceList;
 
     // Components
     private Rigidbody2D rb;
@@ -30,5 +34,15 @@ public class Player : MonoBehaviour
         movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
         rb.linearVelocity = movement * moveSpeed;
+    }
+    public void ExperienceGain(float EXP)
+    {
+        experience += EXP;
+        // some sort of visual feedback???
+        if (experience >= experienceList[level])
+        {
+            experience -= experienceList[level]; level++;
+            // equipment stat selection here
+        }
     }
 }
