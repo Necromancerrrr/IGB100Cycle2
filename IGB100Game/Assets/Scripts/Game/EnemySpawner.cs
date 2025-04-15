@@ -4,44 +4,68 @@ using UnityEngine;
 public class Wave
 {
     public string waveName;
-    public int enemyCount;
+    public int enemyDensity;
+    // Types of enemies spawned in wave
+    // wave frequency
 }
 // Starting on wave system
 
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] float enemySpawnRate;
+    [SerializeField] float spawnFrequency;
     private float spawnTimer;
 
     [SerializeField] Wave[] waves;
-    
+    [SerializeField] GameObject tempEnemy;
+    // Max Enemy Spawn
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         spawnTimer += Time.deltaTime;
         
-        if (spawnTimer >= enemySpawnRate)
+        if (spawnTimer >= spawnFrequency)
         {
             spawnTimer = 0.0f;
-            SpawnEnemy();
+            EnemySpawnPoint();
+
         }
-        
-
     }
 
-
-    private void SpawnEnemy()
+    private void EnemySpawnPoint()
     {
+        Vector2 randomPosition;
+
         
-        
-        
+        if (Random.Range(0.0f, 1.0f) > 0.5f) // Spawn on the sides of the screen
+        {
+            randomPosition.y = Random.Range(-1.0f, 2.0f);
+
+            if (Random.Range(0.0f, 1.0f) > 0.5f) // Spawn right
+            {
+                randomPosition.x = 2.0f;
+            }
+            else // Spawn left
+            {
+                randomPosition.x = -1.0f;
+            }
+        }
+        else // Spawn on top/bottom of the screen
+        {
+            randomPosition.x = Random.Range(-1.0f, 2.0f);
+
+            if (Random.Range(0.0f, 1.0f) > 0.5f) // Spawn top
+            {
+                randomPosition.y = 2.0f;
+            }
+            else // Spawn bottom
+            {
+                randomPosition.y = -1.0f;
+            }
+        }
+
+        Vector2 spawnPos = Camera.main.ViewportToWorldPoint(randomPosition);
+        Instantiate(tempEnemy, spawnPos, Quaternion.identity);
     }
+
 }
