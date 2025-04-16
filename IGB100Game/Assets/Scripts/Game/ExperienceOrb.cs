@@ -25,7 +25,7 @@ public class ExperienceOrb : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 angleCalc = player.GetComponent<Rigidbody2D>().position - RB2D.position;
-        angleCalc.Normalize();
+        
         Vector2.ClampMagnitude(RB2D.linearVelocity += angleCalc.normalized * trackSpeed, speedLimit);
     }
     // Grants player experience upon collision and terminates itself

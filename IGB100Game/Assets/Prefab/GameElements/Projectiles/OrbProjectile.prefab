@@ -104,6 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OrbAura: {fileID: 7719694714052869065}
+  TickFrequency: 1
+  TickDuration: 0.2
+  ParticleBurst: 50
 --- !u!50 &3127702748184773806
 Rigidbody2D:
   serializedVersion: 5
@@ -129,7 +132,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &4473539320844681794
 CircleCollider2D:
@@ -161,7 +164,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

@@ -43,9 +43,8 @@ public class Orb : EquipmentAbstract
             {
                 GameObject orbInstance = Instantiate(orb);
                 Vector2 angleCalc = player.GetComponent<Rigidbody2D>().position - target;
-                angleCalc.Normalize();
-                angleCalc.x += (Mathf.PerlinNoise(angleCalc.x, angleCalc.y) - 0.5f)* projectileVariance;
-                angleCalc.y += (Mathf.PerlinNoise(angleCalc.y, angleCalc.x) - 0.5f) * projectileVariance;
+                //angleCalc.x += (Mathf.PerlinNoise(angleCalc.x, angleCalc.y) - 0.5f) * projectileVariance;
+                //angleCalc.y += (Mathf.PerlinNoise(angleCalc.y, angleCalc.x) - 0.5f) * projectileVariance;
                 orb.GetComponent<Rigidbody2D>().linearVelocity = angleCalc.normalized * projectileSpeed;
                 orbInstance.GetComponent<OrbProjectile>().OnInstantiate(baseDamage + levelDamage * DamageLevel, baseAOESize + levelAOESize * AOESizeLevel, baseDuration + levelDuration * DurationLevel);
             }
