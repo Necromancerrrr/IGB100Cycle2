@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -12,8 +13,19 @@ public class Player : MonoBehaviour
     private float experience = 0;
     [SerializeField] private List<float> experienceList;
 
+    // Stat levels
+    private int DamageLevel = 0;
+    private int FireRateLevel = 0;
+    private int AOESizeLevel = 0;
+    private int ProjectileCountLevel = 0;
+    private int DurationLevel = 0;
+
     // Components
     private Rigidbody2D rb;
+
+    // EquipmentList
+    [SerializeField] private List<EquipmentAbstract> EquipmentList = new List<EquipmentAbstract>();
+    [SerializeField] private List<float> EquipmentTimer = new List<float>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +37,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         TopDownMovement();
+        EquipmentCheck();
     }
 
 
@@ -34,6 +47,18 @@ public class Player : MonoBehaviour
         movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
         rb.linearVelocity = movement * moveSpeed;
+    }
+    // Checks if equipment is ready and if so, activates
+    private void EquipmentCheck()
+    {
+        for (int i = 0; i < EquipmentList.Count; i++)
+        {
+            EquipmentTimer[i] -= Time.deltaTime;
+            if (EquipmentTimer[i] <= 0)
+            {
+                EquipmentTimer[i] = EquipmentList[i].WeaponCall(DamageLevel, FireRateLevel, AOESizeLevel, ProjectileCountLevel, DurationLevel);
+            }
+        }
     }
     public void ExperienceGain(float EXP)
     {

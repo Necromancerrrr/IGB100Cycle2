@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27fae8a55d9f1c3449389b6ff5ff63f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnRate: 0.1
+  spawnFrequency: 0
   waves: []
   tempEnemy: {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
 --- !u!4 &956150512
@@ -635,8 +635,24 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6994052094464913707, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: EquipmentList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994052094464913707, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: EquipmentTimer.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994052094464913707, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: experienceList.Array.size
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994052094464913707, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: 'EquipmentList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5503815858221218710}
+    - target: {fileID: 6994052094464913707, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: 'EquipmentTimer.Array.data[0]'
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6994052094464913707, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: 'experienceList.Array.data[0]'
@@ -721,8 +737,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9035113680227125748, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5503815858221218710}
   m_SourcePrefab: {fileID: 100100000, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+--- !u!1 &5503815858221218709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9035113680227125748, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+  m_PrefabInstance: {fileID: 5503815858221218708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5503815858221218710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5503815858221218709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca8c7059fee42b47ae739779aba6384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orb: {fileID: 7069803482664772146, guid: 07a957fe1c44edc49bccc8848c1fda7b, type: 3}
+  projectileSpeed: 2
+  projectileVariance: 0.05
+  baseDamage: 5
+  levelDamage: 2
+  baseFireRate: 4
+  levelFireRate: -0.3
+  baseAOESize: 2
+  levelAOESize: 0.3
+  baseProjectileCount: 1
+  levelProjectileCount: 0.4
+  baseDuration: 2
+  levelDuration: 0.3
 --- !u!1001 &5687565104983083169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -803,6 +852,10 @@ PrefabInstance:
     - target: {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
       propertyPath: m_Name
       value: tempenemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7346567420959452717, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
       propertyPath: m_LocalPosition.x
