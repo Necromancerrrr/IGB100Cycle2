@@ -481,9 +481,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27fae8a55d9f1c3449389b6ff5ff63f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnFrequency: 0
-  waves: []
-  tempEnemy: {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
+  spawnDistance: 1
+  waveFrequency: 10
+  maxEnemyCapacity: 300
+  waves:
+  - waveName: Test1
+    enemyDensity: 10
+    spawnFrequency: 1
+    enemyType:
+    - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
+  - waveName: Test2
+    enemyDensity: 5
+    spawnFrequency: 2
+    enemyType:
+    - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
+  - waveName: Test3
+    enemyDensity: 10
+    spawnFrequency: 1
+    enemyType:
+    - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
 --- !u!4 &956150512
 Transform:
   m_ObjectHideFlags: 0
