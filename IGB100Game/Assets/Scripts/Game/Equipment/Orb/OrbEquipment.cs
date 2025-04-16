@@ -9,16 +9,7 @@ public class Orb : EquipmentAbstract
     [SerializeField] private float projectileVariance;
 
     // Scaleables
-    [SerializeField] private float baseDamage;
-    [SerializeField] private float levelDamage;
-    [SerializeField] private float baseFireRate;
-    [SerializeField] private float levelFireRate;
-    [SerializeField] private float baseAOESize;
-    [SerializeField] private float levelAOESize;
-    [SerializeField] private float baseProjectileCount;
-    [SerializeField] private float levelProjectileCount;
-    [SerializeField] private float baseDuration;
-    [SerializeField] private float levelDuration;
+    [SerializeField] private float baseDamage, levelDamage, baseFireRate, levelFireRate, baseAOESize, levelAOESize, baseProjectileCount, levelProjectileCount, baseDuration, levelDuration;
 
     private float distance;
     // 1. Finds every enemy, then stores the position of the closest one.

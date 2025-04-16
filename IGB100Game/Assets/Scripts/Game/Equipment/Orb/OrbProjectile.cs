@@ -8,7 +8,7 @@ public class OrbProjectile : MonoBehaviour
     [SerializeField] private float TickFrequency;
     [SerializeField] private float TickDuration;
     [SerializeField] private float ParticleBurst;
-    private CircleCollider2D Col;  
+    private CircleCollider2D Col;
     private float Damage;
     private float AOESize;
     private float Duration;
@@ -22,6 +22,7 @@ public class OrbProjectile : MonoBehaviour
         Col = GetComponent<CircleCollider2D>();
         Col.enabled = false;
     }
+
     public void OnInstantiate(float Dam, float AOE, float Dur)
     {
         Damage = Dam; AOESize = AOE; Duration = Dur;
@@ -35,6 +36,7 @@ public class OrbProjectile : MonoBehaviour
         DurationCheck();
         if (ObjectActive == true) { DamageCheck(); }
     }
+
     // Disables object once duration ends (but allows enough time for particles to fade)
     void DurationCheck() 
     {
@@ -52,6 +54,7 @@ public class OrbProjectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     // Enables trigger for damage, then disables it after a delay
     void DamageCheck()
     {
@@ -71,6 +74,7 @@ public class OrbProjectile : MonoBehaviour
             Col.enabled = false;
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")

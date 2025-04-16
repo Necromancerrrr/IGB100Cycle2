@@ -22,10 +22,11 @@ public class Player : MonoBehaviour
 
     // Components
     private Rigidbody2D rb;
-
+    /*
     // EquipmentList
     [SerializeField] private List<EquipmentAbstract> EquipmentList = new List<EquipmentAbstract>();
     [SerializeField] private List<float> EquipmentTimer = new List<float>();
+    */
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,7 +38,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         TopDownMovement();
-        EquipmentCheck();
+        // EquipmentCheck();
     }
 
 
@@ -48,6 +49,8 @@ public class Player : MonoBehaviour
 
         rb.linearVelocity = movement * moveSpeed;
     }
+
+    /*
     // Checks if equipment is ready and if so, activates
     private void EquipmentCheck()
     {
@@ -60,6 +63,8 @@ public class Player : MonoBehaviour
             }
         }
     }
+    */
+    
     public void ExperienceGain(float EXP)
     {
         experience += EXP;
@@ -70,4 +75,5 @@ public class Player : MonoBehaviour
             // equipment stat selection here
         }
     }
+    
 }

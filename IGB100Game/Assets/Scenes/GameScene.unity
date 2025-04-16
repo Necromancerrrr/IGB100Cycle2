@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000dffb67add1bf6226abac1157
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -665,7 +665,7 @@ PrefabInstance:
     - target: {fileID: 6994052094464913707, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: 'EquipmentList.Array.data[0]'
       value: 
-      objectReference: {fileID: 5503815858221218710}
+      objectReference: {fileID: 0}
     - target: {fileID: 6994052094464913707, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: 'EquipmentTimer.Array.data[0]'
       value: 1
@@ -742,6 +742,14 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8743969402392185258, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743969402392185258, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 644005841
+      objectReference: {fileID: 0}
     - target: {fileID: 9035113680227125748, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: m_Name
       value: Player
@@ -753,41 +761,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9035113680227125748, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5503815858221218710}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
---- !u!1 &5503815858221218709 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9035113680227125748, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
-  m_PrefabInstance: {fileID: 5503815858221218708}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5503815858221218710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5503815858221218709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca8c7059fee42b47ae739779aba6384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orb: {fileID: 7069803482664772146, guid: 07a957fe1c44edc49bccc8848c1fda7b, type: 3}
-  projectileSpeed: 2
-  projectileVariance: 0.05
-  baseDamage: 5
-  levelDamage: 2
-  baseFireRate: 4
-  levelFireRate: -0.3
-  baseAOESize: 2
-  levelAOESize: 0.3
-  baseProjectileCount: 1
-  levelProjectileCount: 0.4
-  baseDuration: 2
-  levelDuration: 0.3
 --- !u!1001 &5687565104983083169
 PrefabInstance:
   m_ObjectHideFlags: 0
