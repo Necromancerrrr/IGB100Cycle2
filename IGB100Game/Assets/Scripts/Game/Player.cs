@@ -20,6 +20,12 @@ public class Player : MonoBehaviour
     private int AOESizeLevel = 0;
     private int ProjectileCountLevel = 0;
     private int DurationLevel = 0;
+    public float modProjectileSpeed = 10.0f;
+
+
+    //Player Weapons
+
+    public EquippedWeapon[] equippedWeapons;
 
     // Components
     private Rigidbody2D rb;
@@ -33,6 +39,10 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  // Get the Rigidbody attached to the player
+
+        // Find base weapon on the player
+        equippedWeapons = transform.GetComponentsInChildren<EquippedWeapon>();
+
     }
 
     // Update is called once per frame

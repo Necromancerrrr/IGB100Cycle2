@@ -1,62 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3743483729602710725
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1193136990399869643}
-  - component: {fileID: 7295043975421662438}
-  m_Layer: 0
-  m_Name: Orb
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1193136990399869643
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3743483729602710725}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6314638461722324688}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7295043975421662438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3743483729602710725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81f0489976dc08e47b13e432d39455ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statistics:
-  - damage: 5
-    fireRate: 4
-    areaSize: 2
-    projectileCount: 1
-    duration: 2
-  upgradeIncrement:
-  - damage: 0
-    fireRate: 0
-    areaSize: 0
-    projectileCount: 0
-    duration: 0
-  weaponLevel: 0
 --- !u!1 &5848403144304457624
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +171,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2308394695545148025}
-  - {fileID: 6314638461722324688}
+  - {fileID: 3607955353955714901}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8743969402392185258
@@ -373,35 +316,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 300
   experienceList: []
---- !u!1 &9172930523217822835
-GameObject:
+  equippedWeapons: []
+--- !u!1001 &2154937733666489830
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6314638461722324688}
-  m_Layer: 0
-  m_Name: Weapons
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6314638461722324688
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9172930523217822835}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1193136990399869643}
-  m_Father: {fileID: 6974384590535723267}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6974384590535723267}
+    m_Modifications:
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05205647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.08378586
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0035829502
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128287687016380164, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: m_Name
+      value: EquippedWeapon(Orb)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+--- !u!4 &3607955353955714901 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+  m_PrefabInstance: {fileID: 2154937733666489830}
+  m_PrefabAsset: {fileID: 0}

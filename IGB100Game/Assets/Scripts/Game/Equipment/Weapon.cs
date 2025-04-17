@@ -1,12 +1,40 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    // Weapon movement variable
+    public Vector2 weaponDirection = new Vector2(0, 1);
+    public Vector2 weaponVelocity;
+    
+    // Get reference of the player
+    protected Player player;
+
+    // Weapon Stats
+    public int weaponDamage = 1;
     public List<WeaponStats> statistics;
     public List<WeaponUpgradeIncrement> upgradeIncrement;
     public int weaponLevel;
+
+    // Projectile Weapon Stats
+    public bool isProjectile = false;
+    public int weaponProjectiles = 1;
+    public float weaponProjectileSpeed = 2.0f;
+
+    // Melee Weapon Stats
+    public bool isMelee = false;
+    public float weaponLifeTime = 2.0f;
+
+    private void Awake()
+    {
+        // Save reference of the player
+        player = FindFirstObjectByType<Player>(); 
+    }
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        Destroy(gameObject, weaponLifeTime);
+    }
 }
 
 // base statistics of weapon
