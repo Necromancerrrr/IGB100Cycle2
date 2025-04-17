@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class OrbWeapon : Weapon
 {
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,5 +39,16 @@ public class OrbWeapon : Weapon
     {
         weaponDirection.x = 1; // Just shoots to the right, but this can be altered to any cardinal direction
         weaponProjectileSpeed *= player.modProjectileSpeed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        EnemyAbstract enemy = collision.GetComponent<EnemyAbstract>();
+
+        if (enemy != null)
+        { 
+            IDamageable obj = (IDamageable)enemy;
+            obj.TakeDamage(weaponDamage);
+        }
     }
 }

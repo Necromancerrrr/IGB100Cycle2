@@ -1,12 +1,12 @@
 using System.Security.Cryptography;
 using UnityEngine;
 
-public abstract class EnemyAbstract : MonoBehaviour
+public abstract class EnemyAbstract : MonoBehaviour, IDamageable
 {
     // Stats
     [SerializeField] protected float health;
     [SerializeField] protected float speed;
-    [SerializeField] protected float damage;
+    [SerializeField] protected int damage;
     [SerializeField] protected float totalEXP;
 
     // EXP
@@ -33,7 +33,7 @@ public abstract class EnemyAbstract : MonoBehaviour
     // Enemies can take damage and die
     // When dying, they drop experience orbs (with experience split among them evenly) and play a VFX
     // Additionally, taking damage modifies DamageTint which affects enemy colour
-    public void TakeDamage(float incomingDamage)
+    public void TakeDamage(int incomingDamage)
     {
         health -= incomingDamage;
         Mathf.Clamp(DamageTint -= 0.5f, 0, 1);
@@ -55,4 +55,16 @@ public abstract class EnemyAbstract : MonoBehaviour
         Mathf.Clamp(DamageTint += 0.5f * Time.deltaTime, 0, 1);
         GetComponent<SpriteRenderer>().color = new Color(1, DamageTint, DamageTint, 1);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Player player = collision.GetComponent<Player>();
+
+        if (player != null)
+        {
+            IDamageable obj = (IDamageable)player;
+            obj.TakeDamage(damage);
+        }
+    }
+
 }

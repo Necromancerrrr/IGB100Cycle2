@@ -11,11 +11,11 @@ public class SwordWeapon : Weapon
         // Check player facing direction
         if (player.isFacingLeft)
         {
-            weaponDirection.x = -1;
+            weaponDirection.x = -0.8f;
         }
         else
         {
-            weaponDirection.x = 1;
+            weaponDirection.x = 0.8f;
         }
 
         //Spawn in front of the player
@@ -29,5 +29,16 @@ public class SwordWeapon : Weapon
     public void SetStats()
     {
         weaponProjectileSpeed *= player.modProjectileSpeed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        EnemyAbstract enemy = collision.GetComponent<EnemyAbstract>();
+
+        if (enemy != null)
+        {
+            IDamageable obj = (IDamageable)enemy;
+            obj.TakeDamage(weaponDamage);
+        }
     }
 }

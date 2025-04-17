@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     public List<WeaponStats> statistics;
     public List<WeaponUpgradeIncrement> upgradeIncrement;
     public int weaponLevel;
+    protected int weaponDamage = 1;
 
     // Projectile Weapon Stats
     public bool isProjectile = false;

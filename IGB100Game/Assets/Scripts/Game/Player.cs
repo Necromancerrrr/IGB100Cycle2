@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     // Movement
     [SerializeField] private float moveSpeed = 8.0f;
@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     [SerializeField] private List<float> experienceList;
     private float EXPTint = 1;
 
+    // Player base stats
+    public int playerHealth;
+
     // Stat levels
     private int DamageLevel = 0;
     private int FireRateLevel = 0;
@@ -30,7 +33,6 @@ public class Player : MonoBehaviour
 
 
     //Player Weapons
-
     public EquippedWeapon[] equippedWeapons;
 
     // Components
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour
         TopDownMovement();
         // EquipmentCheck();
         EXPGainColour();
+
     }
 
 
@@ -115,5 +118,9 @@ public class Player : MonoBehaviour
         Mathf.Clamp(EXPTint += 0.5f * Time.deltaTime, 0, 1);
         GetComponent<SpriteRenderer>().color = new Color(EXPTint, EXPTint, 1, 1);
     }
-    
+
+    public void TakeDamage(int damageAmount)
+    {
+        playerHealth -= damageAmount;
+    }
 }

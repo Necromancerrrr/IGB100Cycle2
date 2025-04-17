@@ -14,6 +14,7 @@ public class EquippedWeapon : MonoBehaviour
 
     // Weapon Shoot Timer
     public bool autoShoot = true;
+    [SerializeField]private bool permanent = false;
 
     public float shootIntervalSeconds = 1.0f; // Change in inspector depending on the weapon
     public float shootDelaySeconds = 0.0f;
@@ -25,6 +26,15 @@ public class EquippedWeapon : MonoBehaviour
         player = GetComponentInParent<Player>();
 
         UpdateWeaponCooldown();
+        
+    }
+
+    private void Start()
+    {
+        if (permanent)
+        {
+            Shoot();
+        }
     }
 
     private void Update()

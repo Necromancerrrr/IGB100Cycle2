@@ -102,9 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cd9769d2b52e2478e9e556e720cba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   speed: 2
-  damage: 10
+  damage: 1
   totalEXP: 5
   EXPOrbCount: 1
   EXPOrb: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}

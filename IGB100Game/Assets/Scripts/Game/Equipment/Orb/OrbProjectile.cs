@@ -79,7 +79,7 @@ public class OrbProjectile : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            collision.GetComponent<EnemyAbstract>().TakeDamage(Damage);
+            //collision.GetComponent<EnemyAbstract>().TakeDamage(Damage);
         }
     }
 }
