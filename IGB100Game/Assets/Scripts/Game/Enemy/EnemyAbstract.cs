@@ -1,14 +1,23 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public abstract class EnemyAbstract : MonoBehaviour
 {
+    // Stats
     [SerializeField] protected float health;
     [SerializeField] protected float speed;
     [SerializeField] protected float damage;
     [SerializeField] protected float totalEXP;
+
+    // EXP
     [SerializeField] protected float EXPOrbCount;
     [SerializeField] protected GameObject EXPOrb;
+
+    // Visuals
     [SerializeField] protected GameObject deathFX;
+    private float DamageTint = 1;
+
+    // Components
     protected Rigidbody2D RB2D;
     protected GameObject player;
     // Finds player object & rigidbody
@@ -17,10 +26,17 @@ public abstract class EnemyAbstract : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         RB2D = GetComponent<Rigidbody2D>();
     }
-    // Enemies can take damage and drop experience
+    void Update()
+    {
+        DamageTakenColour();
+    }
+    // Enemies can take damage and die
+    // When dying, they drop experience orbs (with experience split among them evenly) and play a VFX
+    // Additionally, taking damage modifies DamageTint which affects enemy colour
     public void TakeDamage(float incomingDamage)
     {
         health -= incomingDamage;
+        Mathf.Clamp(DamageTint -= 0.5f, 0, 1);
         if (health <= 0) 
         {
             for (int i = 0; i < EXPOrbCount; i++)
@@ -32,5 +48,11 @@ public abstract class EnemyAbstract : MonoBehaviour
             Destroy(deathFXSpawn, 1);
             Destroy(gameObject);
         }
+    }
+    // Sets colour tint based on DamageTint (seen in the method above). Also reduces DamageTint over time.
+    void DamageTakenColour()
+    {
+        Mathf.Clamp(DamageTint += 0.5f * Time.deltaTime, 0, 1);
+        GetComponent<SpriteRenderer>().color = new Color(1, DamageTint, DamageTint, 1);
     }
 }

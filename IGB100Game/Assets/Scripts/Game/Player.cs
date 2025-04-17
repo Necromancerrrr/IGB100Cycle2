@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private int level = 0;
     private float experience = 0;
     [SerializeField] private List<float> experienceList;
+    private float EXPTint = 1;
 
     // Stat levels
     private int DamageLevel = 0;
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
     {
         TopDownMovement();
         // EquipmentCheck();
+        EXPGainColour();
     }
 
 
@@ -65,15 +67,24 @@ public class Player : MonoBehaviour
     }
     */
     
+    // Method which grants experience when coming into contact with Experience Orbs.
+    // Also handles levelling up and calls for Equipment and Stat selection
+    // Additionally, gaining EXP modifies EXPTint which affects player colour
     public void ExperienceGain(float EXP)
     {
         experience += EXP;
-        // some sort of visual feedback???
+        Mathf.Clamp(EXPTint -= 0.1f, 0, 1);
         if (experience >= experienceList[level])
         {
             experience -= experienceList[level]; level++;
-            // equipment stat selection here
+            // equipment & stat selection here
         }
+    }
+    // Sets colour tint based on EXPTint (seen in the method above). Also reduces EXPTint over time.
+    private void EXPGainColour()
+    {
+        Mathf.Clamp(EXPTint += 0.5f * Time.deltaTime, 0, 1);
+        GetComponent<SpriteRenderer>().color = new Color(EXPTint, EXPTint, 1, 1);
     }
     
 }
