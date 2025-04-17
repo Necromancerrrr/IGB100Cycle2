@@ -4,14 +4,13 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     // Weapon movement variable
-    public Vector2 weaponDirection = new Vector2(0, 1);
+    public Vector2 weaponDirection = new Vector2(0, 0);
     public Vector2 weaponVelocity;
     
     // Get reference of the player
     protected Player player;
 
     // Weapon Stats
-    public int weaponDamage = 1;
     public List<WeaponStats> statistics;
     public List<WeaponUpgradeIncrement> upgradeIncrement;
     public int weaponLevel;
@@ -33,6 +32,15 @@ public class Weapon : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Check player facing direction
+        if (player.isFacingLeft)
+        {
+            weaponDirection.x = -1;
+        }
+        else
+        {
+            weaponDirection.x = 1;
+        }
         Destroy(gameObject, weaponLifeTime);
     }
 }

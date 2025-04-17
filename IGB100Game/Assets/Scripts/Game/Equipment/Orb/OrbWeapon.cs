@@ -6,10 +6,22 @@ public class OrbWeapon : Weapon
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
         SetStats();
+
+        // Check player facing direction and shoot from that direction
+        if (player.isFacingLeft)
+        {
+            weaponDirection.x = -1;
+        }
+        else
+        {
+            weaponDirection.x = 1;
+        }
+
+        Destroy(gameObject, weaponLifeTime); // Destorys object after 'x' seconds
     }
 
+    // Projectile code
     void Update()
     {
         weaponVelocity = weaponDirection * weaponProjectileSpeed;
@@ -26,7 +38,7 @@ public class OrbWeapon : Weapon
 
     public void SetStats()
     {
-        weaponDirection.x = 1;
+        weaponDirection.x = 1; // Just shoots to the right, but this can be altered to any cardinal direction
         weaponProjectileSpeed *= player.modProjectileSpeed;
     }
 }

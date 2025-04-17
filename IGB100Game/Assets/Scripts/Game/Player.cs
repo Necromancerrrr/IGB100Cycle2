@@ -1,12 +1,17 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     // Movement
     [SerializeField] private float moveSpeed = 8.0f;
+    [HideInInspector] public bool isFacingLeft;
     private Vector2 movement;
+   
+    
 
     // Experience and Levelling Up
     private int level = 0;
@@ -21,6 +26,7 @@ public class Player : MonoBehaviour
     private int ProjectileCountLevel = 0;
     private int DurationLevel = 0;
     public float modProjectileSpeed = 10.0f;
+    public float modCooldown = 2.0f;
 
 
     //Player Weapons
@@ -60,6 +66,19 @@ public class Player : MonoBehaviour
         movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
         rb.linearVelocity = movement * moveSpeed;
+
+        // Save what direction the player was last facing
+        if(movement.magnitude > 0.01f)
+        {
+            if (movement.x < 0)
+            {
+                isFacingLeft = true;
+            }
+            if (movement.x > 0)
+            {
+                isFacingLeft = false;
+            }
+        }
     }
 
     /*

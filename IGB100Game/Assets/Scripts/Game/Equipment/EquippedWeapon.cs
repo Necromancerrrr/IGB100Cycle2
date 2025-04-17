@@ -7,16 +7,25 @@ public class EquippedWeapon : MonoBehaviour
     // Weapon "Bullet" Type
     public Weapon weaponType;
 
+    private Player player;
+
     // Direction in which the weapoon will "shoot" from
     Vector2 direction;
 
     // Weapon Shoot Timer
-    public bool autoShoot = false;
+    public bool autoShoot = true;
 
-    public float shootIntervalSeconds = 0.5f; // Change in inspector depending on the weapon
+    public float shootIntervalSeconds = 1.0f; // Change in inspector depending on the weapon
     public float shootDelaySeconds = 0.0f;
     public float shootTimer = 0.0f;
     float delayTimer = 0.0f;
+
+    private void Awake()
+    {
+        player = GetComponentInParent<Player>();
+
+        UpdateWeaponCooldown();
+    }
 
     private void Update()
     {
@@ -48,6 +57,11 @@ public class EquippedWeapon : MonoBehaviour
         GameObject go = Instantiate(weaponType.gameObject, transform.position, Quaternion.identity);
         Weapon goWeapon = go.GetComponent<Weapon>();
         goWeapon.weaponDirection = direction;
+    }
+
+    private void UpdateWeaponCooldown()
+    {
+        shootIntervalSeconds = shootIntervalSeconds / player.modCooldown;
     }
 }
 
