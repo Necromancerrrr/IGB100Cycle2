@@ -20,16 +20,19 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
     // Components
     protected Rigidbody2D RB2D;
     protected GameObject player;
+
     // Finds player object & rigidbody
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         RB2D = GetComponent<Rigidbody2D>();
     }
+
     void Update()
     {
         DamageTakenColour();
     }
+
     // Enemies can take damage and die
     // When dying, they drop experience orbs (with experience split among them evenly) and play a VFX
     // Additionally, taking damage modifies DamageTint which affects enemy colour
@@ -49,6 +52,7 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
             Destroy(gameObject);
         }
     }
+
     // Sets colour tint based on DamageTint (seen in the method above). Also reduces DamageTint over time.
     void DamageTakenColour()
     {

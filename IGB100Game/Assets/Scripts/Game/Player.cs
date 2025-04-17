@@ -11,6 +11,8 @@ public class Player : MonoBehaviour, IDamageable
     [HideInInspector] public bool isFacingLeft;
     private Vector2 movement;
    
+    // Find nearest enemy
+    public GameObject nearestEnemy = null;
     
 
     // Experience and Levelling Up
@@ -59,7 +61,7 @@ public class Player : MonoBehaviour, IDamageable
         TopDownMovement();
         // EquipmentCheck();
         EXPGainColour();
-
+        FindNearestEnemy();
     }
 
 
@@ -112,6 +114,7 @@ public class Player : MonoBehaviour, IDamageable
             // equipment & stat selection here
         }
     }
+
     // Sets colour tint based on EXPTint (seen in the method above). Also reduces EXPTint over time.
     private void EXPGainColour()
     {
@@ -123,4 +126,25 @@ public class Player : MonoBehaviour, IDamageable
     {
         playerHealth -= damageAmount;
     }
+
+    
+    // Checks for nearest enemy to player, weapons will call for var nearestEnemy
+    private void FindNearestEnemy()
+    {
+        float distToNearestEnemy = Mathf.Infinity;
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        
+        foreach (GameObject currentEnemy in allEnemies)
+        {
+            
+            float distToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+            
+            if (distToEnemy < distToNearestEnemy)
+            {
+                distToNearestEnemy = distToEnemy;
+                nearestEnemy = currentEnemy;
+            }
+        }
+    }
+    
 }

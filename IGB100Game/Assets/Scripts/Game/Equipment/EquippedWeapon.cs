@@ -19,7 +19,8 @@ public class EquippedWeapon : MonoBehaviour
 
     // Weapon Shoot Timer
     public bool autoShoot = true;
-    [SerializeField]private bool permanent = false;
+    [SerializeField] private bool permanent = false;
+    [SerializeField] private bool targetNearestEnemy = false;
 
     public float shootIntervalSeconds = 1.0f; // Change in inspector depending on the weapon
     public float shootDelaySeconds = 0.0f;
@@ -32,7 +33,6 @@ public class EquippedWeapon : MonoBehaviour
         player = GetComponentInParent<Player>();
 
         UpdateWeaponCooldown();
-        
     }
 
     private void Start()
@@ -45,6 +45,8 @@ public class EquippedWeapon : MonoBehaviour
 
     private void Update()
     {
+        ShootAtNearestEnemy();
+
         // Automatically "shoot" the weapon every x seconds
         if (autoShoot) // Check to see if enabled
         {
@@ -67,10 +69,20 @@ public class EquippedWeapon : MonoBehaviour
         }
     }
 
+    private void ShootAtNearestEnemy()
+    {
+        if (targetNearestEnemy && player.nearestEnemy != null)
+        {
+            float angle = Mathf.Atan2(player.nearestEnemy.transform.position.x, player.nearestEnemy.transform.position.y) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+            //transform.z.LookAt(player.nearestEnemy.transform.z);
+        }
+    }
+
     // "Fire" weapon; spawn the weapon projectile/hitbox
     private void Shoot()
     {
-        GameObject go = Instantiate(weaponType.gameObject, transform.position, Quaternion.identity);
+        GameObject go = Instantiate(weaponType.gameObject, transform.position, transform.rotation);
         Weapon goWeapon = go.GetComponent<Weapon>();
         goWeapon.weaponDirection = direction;
     }
@@ -80,6 +92,3 @@ public class EquippedWeapon : MonoBehaviour
         shootIntervalSeconds = shootIntervalSeconds / player.modCooldown;
     }
 }
-
-
-

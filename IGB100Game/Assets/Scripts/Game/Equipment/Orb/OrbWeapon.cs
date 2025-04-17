@@ -6,7 +6,7 @@ public class OrbWeapon : Weapon
     void Start()
     {
         SetStats();
-
+        
         // Check player facing direction and shoot from that direction
         if (player.isFacingLeft)
         {
@@ -16,7 +16,7 @@ public class OrbWeapon : Weapon
         {
             weaponDirection.x = 1;
         }
-
+        
         Destroy(gameObject, weaponLifeTime); // Destorys object after 'x' seconds
     }
 

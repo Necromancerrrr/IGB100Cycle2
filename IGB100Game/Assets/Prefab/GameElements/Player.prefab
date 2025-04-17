@@ -316,7 +316,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
+  isFacingLeft: 0
+  nearestEnemy: {fileID: 0}
   experienceList: []
+  playerHealth: 0
   modProjectileSpeed: 10
   modCooldown: 2
   equippedWeapons: []
@@ -366,6 +369,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3455923602429903539, guid: ee72210a42f4e904c987f470683e4030, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337406799690796965, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: autoShoot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337406799690796965, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: permanent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337406799690796965, guid: ee72210a42f4e904c987f470683e4030, type: 3}
+      propertyPath: targetNearestEnemy
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9128287687016380164, guid: ee72210a42f4e904c987f470683e4030, type: 3}
