@@ -3156,6 +3156,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337406799690796965, guid: eb4bd9c9ec62c9e42bac33ec5f959028, type: 3}
+      propertyPath: autoShoot
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9128287687016380164, guid: eb4bd9c9ec62c9e42bac33ec5f959028, type: 3}
       propertyPath: m_Name
       value: EquippedWeapon(Bladestorm)

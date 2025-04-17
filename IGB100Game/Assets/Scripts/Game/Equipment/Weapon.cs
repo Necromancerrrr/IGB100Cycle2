@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Weapon holds all the base stats of the weapon type
+// All weapons are children of Weapon, so can reference parts of this script
+// Weapon behaviour is not called here. Those are in each weapon's respective Weapon script
 public class Weapon : MonoBehaviour
 {
     // Weapon movement variable
-    public Vector2 weaponDirection = new Vector2(0, 0);
+    public Vector2 weaponDirection = new Vector2(0, 0); // Direction of object spawning
     public Vector2 weaponVelocity;
     
     // Get reference of the player
@@ -17,32 +20,18 @@ public class Weapon : MonoBehaviour
     protected int weaponDamage = 1;
 
     // Projectile Weapon Stats
-    public bool isProjectile = false;
+    public bool isProjectile = false; // not used as of now
     public int weaponProjectiles = 1;
     public float weaponProjectileSpeed = 2.0f;
 
     // Melee Weapon Stats
-    public bool isMelee = false;
+    public bool isMelee = false; // not used as of now
     public float weaponLifeTime = 2.0f;
 
     private void Awake()
     {
         // Save reference of the player
         player = FindFirstObjectByType<Player>(); 
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        // Check player facing direction
-        if (player.isFacingLeft)
-        {
-            weaponDirection.x = -1;
-        }
-        else
-        {
-            weaponDirection.x = 1;
-        }
-        Destroy(gameObject, weaponLifeTime);
     }
 }
 

@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// EquiuppedWeapon acts as the vessel for "shooting" or spawning objects.
+// Attach this script to an empty object. Attach the object to the player.
+// Can change the weapon type by dragging a Weapon object into the field in the inspector
 public class EquippedWeapon : MonoBehaviour
 {
     // Weapon "Bullet" Type
     public Weapon weaponType;
 
+    // Save a reference of the player
     private Player player;
 
     // Direction in which the weapoon will "shoot" from
@@ -23,6 +28,7 @@ public class EquippedWeapon : MonoBehaviour
 
     private void Awake()
     {
+        // Get a reference of the player
         player = GetComponentInParent<Player>();
 
         UpdateWeaponCooldown();
