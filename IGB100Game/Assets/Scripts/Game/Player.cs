@@ -107,7 +107,7 @@ public class Player : MonoBehaviour, IDamageable
     public void ExperienceGain(float EXP)
     {
         experience += EXP;
-        Mathf.Clamp(EXPTint -= 0.1f, 0, 1);
+        EXPTint = Mathf.Clamp(EXPTint -= 0.1f, 0, 1);
         if (experience >= experienceList[level])
         {
             experience -= experienceList[level]; level++;
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour, IDamageable
     // Sets colour tint based on EXPTint (seen in the method above). Also reduces EXPTint over time.
     private void EXPGainColour()
     {
-        Mathf.Clamp(EXPTint += 0.5f * Time.deltaTime, 0, 1);
+        EXPTint = Mathf.Clamp(EXPTint += 0.5f * Time.deltaTime, 0, 1);
         GetComponent<SpriteRenderer>().color = new Color(EXPTint, EXPTint, 1, 1);
     }
 
