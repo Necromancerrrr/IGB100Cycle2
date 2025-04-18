@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 949a2e0194c1d034a96d52a1f5054fa8
+guid: 799f7ce93d15862458680e1745a35eb0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5845154474270742554
-    second: Orbital Laser - Active_0
+      213: -8985924484199272655
+    second: Weapon Orb_0
+  - first:
+      213: 8619495644789764853
+    second: Weapon Orb_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,11 +103,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orbital Laser - Active_0
+      name: Weapon Orb_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
+        x: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e7aecf79f6d1eea0800000000000000
-      internalID: -5845154474270742554
+      spriteID: 13f21d48a459b4380800000000000000
+      internalID: -8985924484199272655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon Orb_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f278b2fe999e9770800000000000000
+      internalID: 8619495644789764853
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Orbital Laser - Active_0: -5845154474270742554
+      Weapon Orb_0: -8985924484199272655
+      Weapon Orb_1: 8619495644789764853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
