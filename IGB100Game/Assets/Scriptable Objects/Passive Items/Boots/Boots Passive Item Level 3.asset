@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
-  m_Name: Boots Passive Item
+  m_Name: Boots Passive Item Level 3
   m_EditorClassIdentifier: 
-  multiplier: 50
+  multiplier: 100
+  level: 3
+  nextLevelPrefab: {fileID: 5069994856143371818, guid: b481b83c05fafc74b91ad7f64a6a9f7e, type: 3}
+  icon: {fileID: -6960903314270103029, guid: a327ec3ef71ea5e439eeafa83dfd9087, type: 3}
