@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rotary Cannon Shoot Animation side_0: -1438640473944929051
+      Rotary Cannon Shoot Animation side_1: -8022110812764751472
+      Rotary Cannon Shoot Animation side_2: -4168731774327590046
+      Rotary Cannon Shoot Animation side_3: -681816669585702114
+      Rotary Cannon Shoot Animation side_4: 7689335272861092158
+      Rotary Cannon Shoot Animation side_5: -4006971234995013895
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
