@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bladestorm_0: -1046654900349753576
+      Bladestorm_1: 2212320181290219442
+      Bladestorm_2: 5491542066247390241
+      Bladestorm_3: -8728304212474032857
+      Bladestorm_4: -2845792759476369909
+      Bladestorm_5: 7424604189348842997
+      Bladestorm_6: 7264430297081534095
+      Bladestorm_7: -8831383041632711917
+      Bladestorm_8: 1447979290140765575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
