@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2874335855202463984}
   - component: {fileID: -1462918151475452734}
   m_Layer: 0
-  m_Name: Orb
+  m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,6 +13,8 @@ public class ButtonAnim : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private List<int> FontSize;
     bool hovered = false;
     float timer = 0f; float animateCD = 0.15f; float cooldownVariance;
+
+
     //Pulls list of fonts and font size from MainMenu object
     void Start()
     {

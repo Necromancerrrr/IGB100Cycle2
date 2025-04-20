@@ -9,10 +9,21 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] public List<TMP_FontAsset> FontList;
     [SerializeField] public List<int> FontSize;
+
     // Logic for buttons
+    public void CharacterSelect()
+    {
+        SceneManager.LoadScene("CharacterSelectScreen");
+    }
+
     public void Play()
     {
         SceneManager.LoadScene("GameScene");
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     public void Quit()
     {
