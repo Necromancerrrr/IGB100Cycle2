@@ -90,6 +90,21 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void HealDamage(float amount)
+    {
+        // Only heal the player if their current health is less than their maximum
+        if(currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += amount;
+
+            if (currentHealth > characterData.MaxHealth) 
+            { 
+                currentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
+            }
+        }
+        
+    }
+
     public void TakeDamage(float dmg)
     {
         if (!isInvincible)
