@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
   m_Name: Recovery Passive Item
   m_EditorClassIdentifier: 
-  multiplier: 0
+  multiplier: 100

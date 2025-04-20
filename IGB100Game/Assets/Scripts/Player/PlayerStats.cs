@@ -10,18 +10,40 @@ public class PlayerStats : MonoBehaviour
     // Current stats
     [HideInInspector]
     public float currentHealth;
+
     [HideInInspector]
     public float currentRecovery;
+
     [HideInInspector]
     public float currentMoveSpeed;
+<<<<<<< Updated upstream
     [HideInInspector]
+=======
+
+>>>>>>> Stashed changes
     public float currentMight;
+
     [HideInInspector]
     public float currentProjectileSpeed;
+
+    [HideInInspector]
+    public float currentprojectileCount;
+
     [HideInInspector]
     public float currentMagnet;
 
+<<<<<<< Updated upstream
 
+=======
+    [HideInInspector]
+    public float currentCooldown;
+
+    [HideInInspector]
+    public float currentPlayerSize;
+
+    // Spawned Weapon
+    public List<GameObject> spawnedWeapons;
+>>>>>>> Stashed changes
 
     //Experience and Level of the Player
     [Header("Experience/Level")]
@@ -73,7 +95,10 @@ public class PlayerStats : MonoBehaviour
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentprojectileCount = characterData.ProjectileCount;
         currentMagnet = characterData.Magnet;
+        currentCooldown = characterData.Cooldown;
+        currentPlayerSize = characterData.PlayerSize;
 
         //Spawn the starting weapon
         SpawnWeapon(characterData.StartingWeapon);
