@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour, IDamageable
+public class Player : MonoBehaviour
 {
     // Find nearest enemy
     public GameObject nearestEnemy = null;
@@ -16,19 +16,6 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private List<float> experienceList;
     private float EXPTint = 1;
 
-    // Player base stats
-    public int playerHealth;
-
-    // Stat levels
-    /*
-    private int DamageLevel = 0;
-    private int FireRateLevel = 0;
-    private int AOESizeLevel = 0;
-    private int ProjectileCountLevel = 0;
-    private int DurationLevel = 0;
-    public float modProjectileSpeed = 10.0f;
-    public float modCooldown = 2.0f;
-    */
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -65,12 +52,6 @@ public class Player : MonoBehaviour, IDamageable
         EXPTint = Mathf.Clamp(EXPTint += 0.5f * Time.deltaTime, 0, 1);
         GetComponent<SpriteRenderer>().color = new Color(EXPTint, EXPTint, 1, 1);
     }
-
-    public void TakeDamage(int damageAmount)
-    {
-        playerHealth -= damageAmount;
-    }
-
     
     // Checks for nearest enemy to player, weapons will call for var nearestEnemy
     private void FindNearestEnemy()

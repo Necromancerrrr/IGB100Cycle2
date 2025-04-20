@@ -147,6 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6974384590535723267}
   - component: {fileID: 3983730634291276535}
+  - component: {fileID: 8394955625019812218}
   - component: {fileID: 6994052094464913707}
   - component: {fileID: 8743969402392185258}
   - component: {fileID: 2697778380665397953}
@@ -187,7 +188,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c440936d25c2140be2427edf325419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  lastHorizontalVector: 0
+  lastVerticalVector: 0
+  moveDir: {x: 0, y: 0}
+  lastMovedVector: {x: 0, y: 0}
+  characterData: {fileID: 11400000, guid: 74919512c34bfa149bc84f7e722736b5, type: 2}
+--- !u!114 &8394955625019812218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035113680227125748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11cd1384b29b58498ff2173ed3c23fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 74919512c34bfa149bc84f7e722736b5, type: 2}
 --- !u!114 &6994052094464913707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,9 +222,6 @@ MonoBehaviour:
   isFacingLeft: 0
   experienceList: []
   playerHealth: 0
-  modProjectileSpeed: 10
-  modCooldown: 2
-  equippedWeapons: []
 --- !u!212 &8743969402392185258
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -249,7 +264,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 644005841
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2311659948842064771, guid: df13ab6b25aa3a7429831d2812bd6f85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

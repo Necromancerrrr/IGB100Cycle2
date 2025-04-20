@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1507337799349336710}
   - component: {fileID: 8569067270225231858}
   m_Layer: 0
-  m_Name: KittyCat
+  m_Name: BaseEnemyTemplate
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1878bbe2214bef4b93dba91797f0f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 0594417d573d4a946b85ac6cef4e81c8, type: 2}
+  enemyData: {fileID: 0}
 --- !u!114 &24397003183470962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81af2d17b49ab84439f4fc187919a031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 0594417d573d4a946b85ac6cef4e81c8, type: 2}
+  enemyData: {fileID: 0}
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_SortingLayerID: -1385694241
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5619205000280057574, guid: cf10b7374682c8b469cc02198cf11316, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +131,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &-1507337799349336710
