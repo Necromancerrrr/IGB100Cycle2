@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vampiric Blade Sprite_0: 7588280050347366653
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

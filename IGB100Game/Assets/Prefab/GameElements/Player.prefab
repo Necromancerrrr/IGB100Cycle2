@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 3983730634291276535}
   - component: {fileID: 8394955625019812218}
   - component: {fileID: 6994052094464913707}
+  - component: {fileID: -2574605251284949724}
   - component: {fileID: 8743969402392185258}
   - component: {fileID: 2697778380665397953}
   - component: {fileID: 7220013373509904407}
@@ -206,6 +207,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: 74919512c34bfa149bc84f7e722736b5, type: 2}
+  experience: 0
+  level: 1
+  experienceCap: 0
+  levelRanges: []
 --- !u!114 &6994052094464913707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +226,18 @@ MonoBehaviour:
   nearestEnemy: {fileID: 0}
   isFacingLeft: 0
   experienceList: []
-  playerHealth: 0
+--- !u!114 &-2574605251284949724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035113680227125748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ac6daa8da94ef4c992716e508c6dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &8743969402392185258
 SpriteRenderer:
   m_ObjectHideFlags: 0
