@@ -7,11 +7,18 @@ public class PlayerStats : MonoBehaviour
     public CharacterScriptableObject characterData;
 
     // Current stats
-    float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
-    float currentMight;
-    float currentProjectileSpeed;
+    [HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentRecovery;
+    [HideInInspector]
+    public float currentMoveSpeed;
+    [HideInInspector]
+    public float currentMight;
+    [HideInInspector]
+    public float currentProjectileSpeed;
+    [HideInInspector]
+    public float currentMagnet;
 
     //Experience and Level of the Player
     [Header("Experience/Level")]
@@ -43,6 +50,7 @@ public class PlayerStats : MonoBehaviour
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentMagnet = characterData.Magnet;
     }
 
     void Start()
@@ -62,6 +70,8 @@ public class PlayerStats : MonoBehaviour
         {
             isInvincible = false;
         }
+
+        PassiveHeal();
     }
     public void IncreaseExperience(int amount)
     {
@@ -89,8 +99,19 @@ public class PlayerStats : MonoBehaviour
             experienceCap += experienceCapIncrease;
         }
     }
-
-    public void HealDamage(float amount)
+    void PassiveHeal()
+    {
+        if (currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime; // Heal per second
+            
+            if (currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
+            }
+        }
+    }
+    public void RestoreHealth(float amount)
     {
         // Only heal the player if their current health is less than their maximum
         if(currentHealth < characterData.MaxHealth)
@@ -126,6 +147,4 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log("PLAYER IS DEAD");
     }
-
-
 }

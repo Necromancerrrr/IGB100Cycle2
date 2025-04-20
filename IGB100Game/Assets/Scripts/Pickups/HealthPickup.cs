@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class HealthPickup : MonoBehaviour, ICollectable
+public class HealthPickup : Pickup, ICollectable
 {
     public int healAmount;
     public void Collect()
     {
         PlayerStats player = FindFirstObjectByType<PlayerStats>();
-        player.HealDamage(healAmount);
-        Destroy(gameObject);
+        player.RestoreHealth(healAmount);
     }
 }
