@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 
 public class PlayerStats : MonoBehaviour
 {
-    CharacterScriptableObject characterData;
+    public CharacterScriptableObject characterData; // REMOVE PUBLIC BEFORE FINISHING
 
     // Current stats
     [HideInInspector]
@@ -14,7 +14,6 @@ public class PlayerStats : MonoBehaviour
     public float currentRecovery;
     [HideInInspector]
     public float currentMoveSpeed;
-    [HideInInspector]
     public float currentMight;
     [HideInInspector]
     public float currentProjectileSpeed;
@@ -48,8 +47,12 @@ public class PlayerStats : MonoBehaviour
     public List<LevelRange> levelRanges;
     void Awake()
     {
+        /* <UNCOMMENT THIS OUT BEFORE BUILDING>
+         
         characterData = CharacterSelector.GetData();
         CharacterSelector.instance.DestorySingleton();
+       
+        <UNCOMMENT THIS OUT BEFORE BUILDING>    */
 
         // Assign the variables
         currentHealth = characterData.MaxHealth;
