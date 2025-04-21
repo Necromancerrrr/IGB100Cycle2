@@ -230,6 +230,8 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentMoveSpeedDisplay.text = "Movespeed: " + currentMoveSpeed.ToString();
         GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed.ToString();
         GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet.ToString();
+
+        GameManager.instance.AssignChosenCharacterUI(characterData);
     }
     void Update()
     {
@@ -323,10 +325,14 @@ public class PlayerStats : MonoBehaviour
 
     public void Kill()
     {
-        playerAnimator.PlayPlayerDeadAnim();
-        playerAudio.PlayPlayerDeathSound();
-        GameManager.instance.GameOver();
-        Debug.Log("PLAYER IS DEAD");
+        if (!GameManager.instance.isGameOver)
+        {
+            playerAnimator.PlayPlayerDeadAnim();
+            playerAudio.PlayPlayerDeathSound();
+
+            GameManager.instance.AssignLevelReachedUI(level);
+            GameManager.instance.GameOver();
+        }
     }
 
     public void SpawnWeapon(GameObject weapon)

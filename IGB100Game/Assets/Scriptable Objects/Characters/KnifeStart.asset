@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a561a8bfce0626341b967a83c8c1e72a, type: 3}
   m_Name: KnifeStart
   m_EditorClassIdentifier: 
+  icon: {fileID: 8619495644789764853, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}
+  name: Knife Start
   startingWeapon: {fileID: 4142939955346733007, guid: 3c9b9b2b37172be4da430462a5eae82a, type: 3}
   maxHealth: 100
   recovery: 1
   moveSpeed: 8
   might: 1
   projectileSpeed: 0
+  projectileCount: 0
   magnet: 2
+  cooldown: 0
+  playerSize: 0

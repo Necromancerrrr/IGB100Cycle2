@@ -24,19 +24,26 @@ public class GameManager : MonoBehaviour
     // Store the previous state of the game
     public GameState previousState;
 
-    [Header("UI")]
+    [Header("Screens")]
     public GameObject pauseScreen;
     public GameObject resultsScreen;
 
 
     // Current stat displays
-    [Header("Stat Displays")]
+    [Header("Current Stat Displays")]
     public TMP_Text currentHealthDisplay;
     public TMP_Text currentRecoveryDisplay;
     public TMP_Text currentMoveSpeedDisplay;
     public TMP_Text currentAttackDisplay;
     public TMP_Text currentProjectileSpeedDisplay;
     public TMP_Text currentMagnetDisplay;
+
+    
+    [Header("Results Screen Displays")]
+    public Image chosenCharacterImage;
+    public TMP_Text chosenCharacterName;
+
+    public TMP_Text levelReachedDisplay;
 
     void Awake()
     {
@@ -144,5 +151,16 @@ public class GameManager : MonoBehaviour
     void DisplayResults()
     {
         resultsScreen.SetActive(true);
+    }
+
+    public void AssignChosenCharacterUI(CharacterScriptableObject chosenCharacterData)
+    {
+        chosenCharacterImage.sprite = chosenCharacterData.Icon;
+        chosenCharacterName.text = chosenCharacterData.Name;
+    }
+
+    public void AssignLevelReachedUI(int levelReachedData)
+    {
+        levelReachedDisplay.text = levelReachedData.ToString();
     }
 }
