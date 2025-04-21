@@ -19,4 +19,6 @@ MonoBehaviour:
   pierce: 0
   level: 5
   nextLevelPrefab: {fileID: 0}
+  name: Garlic MAX
+  description: Upgrade MAX
   icon: {fileID: 1084177357206560785, guid: 703fd17fb5557174b8c76e356dec12c5, type: 3}

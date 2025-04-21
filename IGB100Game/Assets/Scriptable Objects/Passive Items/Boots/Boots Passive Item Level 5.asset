@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
   m_Name: Boots Passive Item Level 5
   m_EditorClassIdentifier: 
-  multiplier: 150
+  multiplier: 45
   level: 5
   nextLevelPrefab: {fileID: 0}
+  name: Boots MAX
+  description: Movespeed + 45%
   icon: {fileID: -6960903314270103029, guid: a327ec3ef71ea5e439eeafa83dfd9087, type: 3}

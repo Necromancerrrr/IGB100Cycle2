@@ -15,4 +15,6 @@ MonoBehaviour:
   multiplier: 300
   level: 5
   nextLevelPrefab: {fileID: 0}
+  name: Attack MAX
+  description: Attack + 300%
   icon: {fileID: 4249962831038516359, guid: ec9de6724f4427a4a8450ab2c7a48a3c, type: 3}

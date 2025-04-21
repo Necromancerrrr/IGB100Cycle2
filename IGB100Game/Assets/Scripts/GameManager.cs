@@ -11,12 +11,19 @@ public class GameManager : MonoBehaviour
     // Flag to check if the game is over
     public bool isGameOver = false;
 
+    // Flag to check if the player is levelling up
+    public bool isChoosingLvlUp = false;
+
+    // Reference to the player
+    public GameObject playerObject;
+
     //Define the different states of the game
     public enum GameState
     {
         Gameplay,
         Pause,
-        GameOver
+        GameOver,
+        LevelUp
     }
 
     // Store the current state of the game
@@ -24,9 +31,15 @@ public class GameManager : MonoBehaviour
     // Store the previous state of the game
     public GameState previousState;
 
+    [Header("Stopwatch")]
+    public float timeLimit; // Measured in seconds
+    float stopwatchTime;
+    public TMP_Text stopwatchDisplay;
+
     [Header("Screens")]
     public GameObject pauseScreen;
     public GameObject resultsScreen;
+    public GameObject levelUpScreen;
 
 
     // Current stat displays
@@ -44,6 +57,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text chosenCharacterName;
 
     public TMP_Text levelReachedDisplay;
+
+    public TMP_Text timeSurvivedDisplay;
 
     public List<Image> chosenWeaponsUI = new List<Image>(6);
     public List<Image> chosenPassiveItemsUI = new List<Image>(6);
@@ -72,6 +87,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Gameplay:
                 CheckForPauseAndResume();
+                UpdateStopwatch();
                 break;
 
             case GameState.Pause:
@@ -85,6 +101,15 @@ public class GameManager : MonoBehaviour
                     Time.timeScale = 0f; // Stop the game
                     Debug.Log("GAME IS OVER");
                     DisplayResults();
+                }
+                break;
+            case GameState.LevelUp:
+                if (!isChoosingLvlUp)
+                {
+                    isChoosingLvlUp = true;
+                    Time.timeScale = 0f; // Stops the game\
+                    Debug.Log("Player is levelling up and choosing weapon");
+                    levelUpScreen.SetActive(true);
                 }
                 break;
             default:
@@ -140,10 +165,33 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void UpdateStopwatch()
+    {
+        stopwatchTime += Time.deltaTime;
+
+        UpdateStopwatchDisplay();
+
+        if (stopwatchTime >= timeLimit)
+        {
+            GameOver();
+        }
+    }
+
+    void UpdateStopwatchDisplay()
+    {
+        // Calculate the number of minutes and seconds that have elapsed
+        int minutes = Mathf.FloorToInt(stopwatchTime / 60); // Divison = Minutes
+        int seconds = Mathf.FloorToInt(stopwatchTime % 60); // Modulus = Seconds
+
+        // Update the stopwatch text to display the timer
+        stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
     void DisableScreens()
     {
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
+        levelUpScreen.SetActive(false);
     }
 
     public void GameOver()
@@ -153,6 +201,7 @@ public class GameManager : MonoBehaviour
 
     void DisplayResults()
     {
+        timeSurvivedDisplay.text = stopwatchDisplay.text;
         resultsScreen.SetActive(true);
     }
 
@@ -208,5 +257,19 @@ public class GameManager : MonoBehaviour
                 chosenPassiveItemsUI[i].enabled = false;
             }
         }
+    }
+
+    public void StartLevelUp()
+    {
+        ChangeGameState(GameState.LevelUp);
+        playerObject.SendMessage("RemoveAndApplyUpgrades");
+    }
+
+    public void EndLevelUp()
+    {
+        isChoosingLvlUp = false;
+        Time.timeScale = 1.0f; // Resumes game
+        levelUpScreen.SetActive(false);
+        ChangeGameState(GameState.Gameplay);
     }
 }

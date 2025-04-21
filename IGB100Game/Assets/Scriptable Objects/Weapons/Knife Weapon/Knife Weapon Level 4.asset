@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Knife Weapon Level 4
   m_EditorClassIdentifier: 
   prefab: {fileID: 9090303139471724996, guid: f7381174d14792e419fb6d623f299873, type: 3}
-  damage: 5
+  damage: 15
   speed: 8
   cooldownDuration: 0.5
   pierce: 1
   level: 4
   nextLevelPrefab: {fileID: 4142939955346733007, guid: fd1263943378b3e4c8382c1068e69438, type: 3}
+  name: Knife 4
+  description: Damage +5
   icon: {fileID: -4360754683449048810, guid: 8b102acf98bfef24b8140a23b036bb6d, type: 3}

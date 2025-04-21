@@ -212,9 +212,8 @@ public class PlayerStats : MonoBehaviour
 
         //Spawn the starting weapon
         SpawnWeapon(characterData.StartingWeapon);
-        SpawnWeapon(secondWeaponTest);
-
-        SpawnPassiveItem(firstPassiveItemTest);
+        //SpawnWeapon(secondWeaponTest);
+        //SpawnPassiveItem(firstPassiveItemTest);
         SpawnPassiveItem(secondPassiveItemTest);
     }
 
@@ -232,6 +231,7 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet.ToString();
 
         GameManager.instance.AssignChosenCharacterUI(characterData);
+        GameManager.instance.AssignLevelReachedUI(level);
     }
     void Update()
     {
@@ -273,6 +273,8 @@ public class PlayerStats : MonoBehaviour
             }
 
             experienceCap += experienceCapIncrease;
+
+            GameManager.instance.StartLevelUp();
         }
     }
     void PassiveHeal()

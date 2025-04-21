@@ -19,4 +19,6 @@ MonoBehaviour:
   pierce: 0
   level: 4
   nextLevelPrefab: {fileID: 6883820235095941995, guid: 606239f71e90d7944ae5722db7e3c09f, type: 3}
+  name: Garlic 4
+  description: Upgrade 4
   icon: {fileID: 1084177357206560785, guid: 703fd17fb5557174b8c76e356dec12c5, type: 3}
