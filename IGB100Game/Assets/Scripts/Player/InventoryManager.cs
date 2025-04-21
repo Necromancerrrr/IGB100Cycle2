@@ -16,6 +16,7 @@ public class InventoryManager : MonoBehaviour
     [System.Serializable]
     public class WeaponUpgrade
     {
+        public int weaponUpgradeIndex;
         public GameObject initialWeapon;
         public WeaponScriptableObject weaponData;
     }
@@ -23,6 +24,7 @@ public class InventoryManager : MonoBehaviour
     [System.Serializable]
     public class PassiveItemUpgrade
     {
+        public int passiveItemUpgradeIndex;
         public GameObject initialPassiveItem;
         public PassiveItemScriptableObject passiveItemData;
     }
@@ -74,7 +76,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void LevelUpWeapon(int slotIndex)
+    public void LevelUpWeapon(int slotIndex, int upgradeIndex)
     {
         if(weaponSlots.Count > slotIndex)
         {
@@ -91,6 +93,7 @@ public class InventoryManager : MonoBehaviour
             Destroy(weapon.gameObject);
             weaponLevels[slotIndex] = upgradedWeapon.GetComponent<WeaponController>().weaponData.Level;
 
+            weaponUpgradeOptions[upgradeIndex].weaponData = upgradedWeapon.GetComponent<WeaponController>().weaponData;
 
             if (GameManager.instance != null)
             {
@@ -99,7 +102,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void LevelUpPassiveItem(int slotIndex)
+    public void LevelUpPassiveItem(int slotIndex, int upgradeIndex)
     {
         if (passiveItemSlots.Count > slotIndex)
         {
@@ -116,6 +119,7 @@ public class InventoryManager : MonoBehaviour
             Destroy(passiveItem.gameObject);
             weaponLevels[slotIndex] = upgradedPassiveItem.GetComponent<PassiveItem>().passiveItemData.Level;
 
+            passiveItemUpgradeOptions[upgradeIndex].passiveItemData = upgradedPassiveItem.GetComponent <PassiveItem>().passiveItemData;
 
             if (GameManager.instance != null)
             {
@@ -126,16 +130,42 @@ public class InventoryManager : MonoBehaviour
 
     void ApplyUpgradeOptions()
     {
+        List<WeaponUpgrade> availableWeaponUpgrades = new List<WeaponUpgrade>(weaponUpgradeOptions);
+        List<PassiveItemUpgrade> availablePassiveItemUpgrades = new List<PassiveItemUpgrade>(passiveItemUpgradeOptions);
+
         foreach (var upgradeOption in upgradeUIOptions)
         {
-            int upgradeType = Random.Range(1, 3); // Choose between weapon and passive items
+          
+            if(availableWeaponUpgrades.Count == 0 && availablePassiveItemUpgrades.Count == 0)
+            {
+                return;
+            }
+
+            int upgradeType;
+
+            if(availableWeaponUpgrades.Count == 0)
+            {
+                upgradeType = 2;
+            }
+            else if(availablePassiveItemUpgrades.Count == 0)
+            {
+                upgradeType = 1;
+            }
+            else
+            {
+                upgradeType = Random.Range(1, 3);
+            }
 
             if (upgradeType == 1) // upgradeType = 1 = Weapons
             {
-                WeaponUpgrade chosenWeaponUpgrade = weaponUpgradeOptions[Random.Range(0, weaponUpgradeOptions.Count)]; // Checks what a player can upgrade
+                WeaponUpgrade chosenWeaponUpgrade = availableWeaponUpgrades[Random.Range(0, availableWeaponUpgrades.Count)]; // Checks what a player can upgrade
+
+                availableWeaponUpgrades.Remove(chosenWeaponUpgrade);
 
                 if (chosenWeaponUpgrade != null) // Safety
                 {
+                    EnableUpgradedUI(upgradeOption);
+
                     bool newWeapon = false; // Set a flag, assuming the weapon is not new
 
                     for (int i = 0; i < weaponSlots.Count; i++) // Check the inventory, slot by slot
@@ -148,7 +178,15 @@ public class InventoryManager : MonoBehaviour
 
                             if (!newWeapon)
                             {
-                                upgradeOption.upgradeButton.onClick.AddListener(() => LevelUpWeapon(i)); // Apply button functionality
+                                // Stops the code if at item is at max level
+                                if (!chosenWeaponUpgrade.weaponData.NextLevelPrefab)
+                                {
+                                    DisableUpgradeUI(upgradeOption);
+
+                                    break;
+                                }
+
+                                upgradeOption.upgradeButton.onClick.AddListener(() => LevelUpWeapon(i, chosenWeaponUpgrade.weaponUpgradeIndex)); // Apply button functionality
 
                                 // Set the name and description of the weapon
                                 upgradeOption.upgradeDescriptionDisplay.text = chosenWeaponUpgrade.weaponData.NextLevelPrefab.GetComponent<WeaponController>().weaponData.Description;
@@ -178,10 +216,15 @@ public class InventoryManager : MonoBehaviour
 
             else if (upgradeType == 2) // UpgradeType = 2 = Passive Items
             { 
-            PassiveItemUpgrade chosenPassiveItemUpgrade = passiveItemUpgradeOptions[Random.Range(0, passiveItemUpgradeOptions.Count)]; // Checks what a player can upgrade
+                PassiveItemUpgrade chosenPassiveItemUpgrade = availablePassiveItemUpgrades[Random.Range(0, availablePassiveItemUpgrades.Count)]; // Checks what a player can upgrade
+
+                availablePassiveItemUpgrades.Remove(chosenPassiveItemUpgrade);
 
                 if (chosenPassiveItemUpgrade != null) // Safety
                 {
+
+                    EnableUpgradedUI(upgradeOption);
+
                     bool newPassiveItem = false; // Set a flag, assuming the passive item is not new
 
                     for (int i = 0; i < passiveItemSlots.Count; i++) // Check the inventory, slot by slot
@@ -194,7 +237,14 @@ public class InventoryManager : MonoBehaviour
 
                             if (!newPassiveItem)
                             {
-                                upgradeOption.upgradeButton.onClick.AddListener(() => LevelUpPassiveItem(i)); // Apply button functionality
+                                // Stops the code if item is at max level
+                                if (!chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab)
+                                {
+                                    DisableUpgradeUI(upgradeOption);
+                                    break;
+                                }
+
+                                upgradeOption.upgradeButton.onClick.AddListener(() => LevelUpPassiveItem(i, chosenPassiveItemUpgrade.passiveItemUpgradeIndex)); // Apply button functionality
 
                                 upgradeOption.upgradeDescriptionDisplay.text = chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab.GetComponent<PassiveItem>().passiveItemData.Description;
                                 upgradeOption.upgradeNameDisplay.text = chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab.GetComponent<PassiveItem>().passiveItemData.Name;
@@ -226,6 +276,7 @@ public class InventoryManager : MonoBehaviour
         foreach(var upgradeOption in upgradeUIOptions)
         {
             upgradeOption.upgradeButton.onClick.RemoveAllListeners();
+            DisableUpgradeUI(upgradeOption);
         }
     }
 
@@ -233,5 +284,15 @@ public class InventoryManager : MonoBehaviour
     {
         RemoveUpgradeOptions();
         ApplyUpgradeOptions();
+    }
+
+    void DisableUpgradeUI(UpgradeUI upgradeUI)
+    {
+        upgradeUI.upgradeNameDisplay.transform.parent.gameObject.SetActive(false);
+    }
+
+    void EnableUpgradedUI(UpgradeUI upgradeUI)
+    {
+        upgradeUI.upgradeNameDisplay.transform.parent.gameObject.SetActive(true);
     }
 }

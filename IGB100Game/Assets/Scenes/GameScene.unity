@@ -605,7 +605,7 @@ MonoBehaviour:
   playerObject: {fileID: 1467325833}
   currentState: 0
   previousState: 0
-  timeLimit: 30
+  timeLimit: 300
   stopwatchDisplay: {fileID: 2093112540}
   pauseScreen: {fileID: 2044708894}
   resultsScreen: {fileID: 266787577}
@@ -8053,6 +8053,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 301907171}
     - target: {fileID: 28801787229457722, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: weaponUpgradeOptions.Array.data[1].weaponUpgradeIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 28801787229457722, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: upgradeUIOptions.Array.data[0].upgradeDescriptionDisplay
       value: 
       objectReference: {fileID: 1477861068}
@@ -8068,6 +8072,10 @@ PrefabInstance:
       propertyPath: upgradeUIOptions.Array.data[3].upgradeDescriptionDisplay
       value: 
       objectReference: {fileID: 352698987}
+    - target: {fileID: 28801787229457722, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: passiveItemUpgradeOptions.Array.data[1].passiveItemUpgradeIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6974384590535723267, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
