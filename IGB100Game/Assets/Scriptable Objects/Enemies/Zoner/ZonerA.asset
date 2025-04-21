@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe50450095e8c44b9eb3a6b362962dc, type: 3}
   m_Name: ZonerA
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  moveSpeed: 2
-  damage: 1
   zoneFrequency: 15
   zoneCount: 1
-  zoneSize: 2
+  zoneSize: 4
   zoneDelay: 5

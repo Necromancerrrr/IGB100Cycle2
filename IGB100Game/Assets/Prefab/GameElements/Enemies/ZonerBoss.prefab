@@ -58,6 +58,7 @@ MonoBehaviour:
   zoneCount: 0
   zoneSize: 0
   zoneDelay: 0
+  AOE: {fileID: 4668993140170096566, guid: 11b17b2f952cefd46b03496d37ede30b, type: 3}
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,13 @@ public class EnemyZonerStats : EnemyStats
     public float zoneSize;
     [HideInInspector]
     public float zoneDelay;
+
+    // Zoner logic
+    float zoneTimer = 5;
+
+    // Components
     Transform player;
+    [SerializeField] GameObject AOE;
 
     new void Awake()
     {
@@ -29,12 +35,30 @@ public class EnemyZonerStats : EnemyStats
     void Update()
     {
         Movement();
+        AOEUpdate();
     }
     private void Movement()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
     }
-
+    private void AOEUpdate()
+    {
+        zoneTimer -= Time.deltaTime;
+        if (zoneTimer <= 0)
+        {
+            for (int i = 0; i < zoneCount; i++)
+            {
+                SpawnAOE();
+            }
+            zoneTimer = zoneFrequency;
+        }
+    }
+    private void SpawnAOE()
+    {
+        GameObject instance = Instantiate(AOE);
+        instance.transform.position = transform.position; // Assign the position to be the same as this object which is parented to the player
+        instance.GetComponent<EnemyAOE>().SetStats(currentDamage, zoneSize, zoneDelay);
+    }
     private void OnCollisionStay2D(Collision2D col)
     {
         // Reference the script from the collided collider and deal damage using TakeDamage()

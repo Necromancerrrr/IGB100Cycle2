@@ -58,6 +58,7 @@ MonoBehaviour:
   projectileCount: 0
   projectileInterval: 0
   projectileSpeed: 0
+  MovementTimer: 0
   projectile: {fileID: 5298524310280798772, guid: c366672ffbe2a4d41850d6cc77b282df, type: 3}
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
@@ -150,7 +151,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

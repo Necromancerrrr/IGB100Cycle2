@@ -5872,7 +5872,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 20
+        scalar: 30
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -8766,7 +8766,7 @@ ParticleSystem:
     - serializedVersion: 3
       emitter: {fileID: 8261164559457792795}
       type: 2
-      properties: 1
+      properties: 3
       emitProbability: 1
   LightsModule:
     enabled: 0

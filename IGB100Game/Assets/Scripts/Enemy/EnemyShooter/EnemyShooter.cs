@@ -16,9 +16,11 @@ public class EnemyShooterStats : EnemyStats
     // Shooting Logic
     float Ammo;
     float ShootTimer = 5;
+    public float MovementTimer = 0;
 
     // Components
     Transform player;
+    Rigidbody2D rb;
     [SerializeField] GameObject projectile;
 
     new void Awake()
@@ -31,8 +33,9 @@ public class EnemyShooterStats : EnemyStats
         projectileSpeed = shooterData.ProjectileSpeed;
 
         Ammo = projectileCount;
-        // Locates player
+        // Locates components
         player = GameObject.FindWithTag("Player").transform;
+        rb = player.GetComponent<Rigidbody2D>();
     }
     void Update()
     {
@@ -41,7 +44,22 @@ public class EnemyShooterStats : EnemyStats
     }
     private void Movement()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+        MovementTimer -= Time.deltaTime;
+        if (new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude >= 10f) // If the shooter is a significant distance away
+        {
+            rb.linearVelocity = Vector2.zero;
+            MovementTimer = 0;
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+        }
+        else
+        {
+            if (MovementTimer <= 0)
+            {
+                Vector2 angle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+                rb.linearVelocity = angle * Random.Range(currentMoveSpeed * 0.8f, currentMoveSpeed * 1.2f);
+                MovementTimer = 3;
+            }
+        }
     }
     private void ShootUpdate()
     {
