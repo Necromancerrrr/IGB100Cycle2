@@ -222,6 +222,14 @@ public class PlayerStats : MonoBehaviour
     {
         //Intialise the experience cap as the first experience cap increase
         experienceCap = levelRanges[0].experienceCapIncrease;
+
+        // Initialise Stat Tracking on Pause Menu
+        GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth.ToString();
+        GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery.ToString();
+        GameManager.instance.currentAttackDisplay.text = "Attack: " + currentMight.ToString();
+        GameManager.instance.currentMoveSpeedDisplay.text = "Movespeed: " + currentMoveSpeed.ToString();
+        GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed.ToString();
+        GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet.ToString();
     }
     void Update()
     {
