@@ -8,4 +8,8 @@ public class ExperiencePickup : Pickup, ICollectable
         PlayerStats player = FindFirstObjectByType<PlayerStats>();
         player.IncreaseExperience(experienceAmount);
     }
+    public void SetValue(int value)
+    {
+        experienceAmount = value;
+    }
 }

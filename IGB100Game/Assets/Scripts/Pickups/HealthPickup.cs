@@ -8,4 +8,8 @@ public class HealthPickup : Pickup, ICollectable
         PlayerStats player = FindFirstObjectByType<PlayerStats>();
         player.RestoreHealth(healAmount);
     }
+    public void SetValue(int value)
+    {
+        healAmount = value;
+    }
 }

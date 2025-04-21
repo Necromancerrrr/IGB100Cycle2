@@ -231,6 +231,8 @@ GameObject:
   - component: {fileID: 3983730634291276535}
   - component: {fileID: 8394955625019812218}
   - component: {fileID: 28801787229457722}
+  - component: {fileID: 5678959672110681339}
+  - component: {fileID: 3629855590357941984}
   - component: {fileID: 8743969402392185258}
   - component: {fileID: 2697778380665397953}
   - component: {fileID: 7220013373509904407}
@@ -252,7 +254,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2308394695545148025}
@@ -301,16 +303,19 @@ MonoBehaviour:
   invincibilityDuration: 1
   levelRanges:
   - startLevel: 1
+    endLevel: 1
+    experienceCapIncrease: 20
+  - startLevel: 2
     endLevel: 3
-    experienceCapIncrease: 100
+    experienceCapIncrease: 40
   - startLevel: 4
-    endLevel: 5
-    experienceCapIncrease: 200
-  - startLevel: 5
     endLevel: 99999
-    experienceCapIncrease: 500
+    experienceCapIncrease: 100
   weaponIndex: 0
   passiveItemIndex: 0
+  secondWeaponTest: {fileID: 0}
+  firstPassiveItemTest: {fileID: 0}
+  secondPassiveItemTest: {fileID: 0}
 --- !u!114 &28801787229457722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,10 +328,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0051075bf4dd6034d99c5de491841cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSlots: []
+  weaponSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   weaponLevels: 000000000000000000000000000000000000000000000000
-  passiveItemSlots: []
+  weaponUISlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  passiveItemSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   passiveItemLevels: 000000000000000000000000000000000000000000000000
+  passiveItemUISlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &5678959672110681339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035113680227125748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ac6daa8da94ef4c992716e508c6dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3629855590357941984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035113680227125748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865479adf15207746b0132c7074f0168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHurt: {fileID: 8300000, guid: f998fb8132577db4e906dcdd7d9ed4be, type: 3}
+  PlayerDeath: {fileID: 8300000, guid: cc5c9515fae73f048bb6a13c125f3c8a, type: 3}
+  EXPGain: {fileID: 8300000, guid: b84611b6c23d6a1429ba050170b29098, type: 3}
+  HealthGain: {fileID: 8300000, guid: c28cf09541eb8d14bb4be288667e61b1, type: 3}
 --- !u!212 &8743969402392185258
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -371,12 +430,12 @@ SpriteRenderer:
   m_SortingLayerID: -668847993
   m_SortingLayer: 2
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: df13ab6b25aa3a7429831d2812bd6f85, type: 3}
+  m_Sprite: {fileID: 1005093928898239069, guid: 28269278be278324c9d1ed3081bbc970, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.6666667, y: 0.6666667}
+  m_DrawMode: 1
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -421,12 +480,12 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 0.6666667, y: 0.6666667}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &7220013373509904407
 Rigidbody2D:

@@ -105,7 +105,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -173,10 +173,10 @@ TextureImporter:
       name: catt_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 5
-        width: 40
-        height: 30
+        x: 0
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: catt_1
       rect:
         serializedVersion: 2
-        x: 55
-        y: 5
-        width: 40
-        height: 30
+        x: 50
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: catt_2
       rect:
         serializedVersion: 2
-        x: 105
-        y: 5
-        width: 40
-        height: 30
+        x: 100
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: catt_3
       rect:
         serializedVersion: 2
-        x: 155
-        y: 5
-        width: 39
-        height: 30
+        x: 150
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +261,10 @@ TextureImporter:
       name: catt_4
       rect:
         serializedVersion: 2
-        x: 205
-        y: 5
-        width: 41
-        height: 30
+        x: 200
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +283,10 @@ TextureImporter:
       name: catt_5
       rect:
         serializedVersion: 2
-        x: 255
-        y: 5
-        width: 41
-        height: 30
+        x: 250
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,10 +305,10 @@ TextureImporter:
       name: catt_6
       rect:
         serializedVersion: 2
-        x: 305
-        y: 5
-        width: 41
-        height: 29
+        x: 300
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,10 +327,10 @@ TextureImporter:
       name: catt_7
       rect:
         serializedVersion: 2
-        x: 355
-        y: 5
-        width: 41
-        height: 30
+        x: 350
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,10 +349,10 @@ TextureImporter:
       name: catt_8
       rect:
         serializedVersion: 2
-        x: 405
-        y: 5
-        width: 41
-        height: 30
+        x: 400
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,10 +371,10 @@ TextureImporter:
       name: catt_9
       rect:
         serializedVersion: 2
-        x: 455
-        y: 5
-        width: 40
-        height: 30
+        x: 450
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,10 +393,10 @@ TextureImporter:
       name: catt_10
       rect:
         serializedVersion: 2
-        x: 505
-        y: 5
-        width: 41
-        height: 30
+        x: 500
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,10 +415,10 @@ TextureImporter:
       name: catt_11
       rect:
         serializedVersion: 2
-        x: 555
-        y: 5
-        width: 42
-        height: 30
+        x: 550
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,10 +437,10 @@ TextureImporter:
       name: catt_12
       rect:
         serializedVersion: 2
-        x: 605
-        y: 5
-        width: 42
-        height: 30
+        x: 600
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -459,10 +459,10 @@ TextureImporter:
       name: catt_13
       rect:
         serializedVersion: 2
-        x: 655
-        y: 5
-        width: 42
-        height: 30
+        x: 650
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,10 +481,10 @@ TextureImporter:
       name: catt_14
       rect:
         serializedVersion: 2
-        x: 705
-        y: 5
-        width: 42
-        height: 30
+        x: 700
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,19 +503,19 @@ TextureImporter:
       name: catt_15
       rect:
         serializedVersion: 2
-        x: 755
-        y: 5
-        width: 42
-        height: 29
+        x: 750
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8c1ac3fcc2afd3b90800000000000000
+      spriteID: 5a091a56cfc10a34da04ebedddcf1b8e
       internalID: -7260371953889009208
       vertices: []
       indices: 
@@ -525,19 +525,19 @@ TextureImporter:
       name: catt_16
       rect:
         serializedVersion: 2
-        x: 805
-        y: 5
-        width: 42
-        height: 30
+        x: 800
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c7756e6594a2df630800000000000000
+      spriteID: 2d2e678204e035745a0814242a5e0d13
       internalID: 3962369741634819964
       vertices: []
       indices: 
@@ -547,19 +547,19 @@ TextureImporter:
       name: catt_17
       rect:
         serializedVersion: 2
-        x: 855
-        y: 5
-        width: 40
-        height: 30
+        x: 850
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d17619ced1dc593d0800000000000000
+      spriteID: 7287ee8ab07d0b148940dc43959074cb
       internalID: -3200426431770171619
       vertices: []
       indices: 
@@ -569,19 +569,19 @@ TextureImporter:
       name: catt_18
       rect:
         serializedVersion: 2
-        x: 905
-        y: 5
-        width: 39
-        height: 30
+        x: 900
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e50299d4900d35000800000000000000
+      spriteID: 50b494347cf1d374da04692cf4caee2c
       internalID: 23591161442148446
       vertices: []
       indices: 
@@ -591,19 +591,19 @@ TextureImporter:
       name: catt_19
       rect:
         serializedVersion: 2
-        x: 955
-        y: 5
-        width: 39
-        height: 30
+        x: 950
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7f141a76e459162f0800000000000000
+      spriteID: 8b53382f594974d4d9f286b43a229208
       internalID: -981339079811448329
       vertices: []
       indices: 
@@ -613,7 +613,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c96b3057a667d05448c1aee00f6d53c9
     internalID: 0
     vertices: []
     indices: 

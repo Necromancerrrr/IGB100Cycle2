@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104091b96b0cb8047803f0d394653f6c, type: 3}
-  m_Name: Cat Enemy
+  m_Script: {fileID: 11500000, guid: ff85873859c963745849c55c79a2c8c0, type: 3}
+  m_Name: ShooterC
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  maxHealth: 10
-  damage: 30
+  maxHealth: 150
+  moveSpeed: 5
+  damage: 1
+  firingFrequency: 8
+  projectileCount: 2
+  projectileInterval: 0.5
+  projectileSpeed: 10

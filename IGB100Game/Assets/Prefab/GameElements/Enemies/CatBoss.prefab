@@ -9,15 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7346567420959452717}
-  - component: {fileID: -4012484939695012532}
   - component: {fileID: 24397003183470962}
   - component: {fileID: -4001461327363300624}
   - component: {fileID: 4301642214087049820}
-  - component: {fileID: -3496637171563405784}
+  - component: {fileID: 4144501403651834557}
   - component: {fileID: -1507337799349336710}
   - component: {fileID: 8569067270225231858}
   m_Layer: 0
-  m_Name: KittyCat
+  m_Name: CatBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,24 +32,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4012484939695012532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4564404143333738025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1878bbe2214bef4b93dba91797f0f6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 0594417d573d4a946b85ac6cef4e81c8, type: 2}
 --- !u!114 &24397003183470962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81af2d17b49ab84439f4fc187919a031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 0594417d573d4a946b85ac6cef4e81c8, type: 2}
+  enemyData: {fileID: 11400000, guid: 681703f6fd534494783e65af38536e52, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +68,44 @@ MonoBehaviour:
   drops:
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
-    dropRate: 70
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
 --- !u!212 &4301642214087049820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -124,18 +150,18 @@ SpriteRenderer:
   m_SortingLayerID: -1385694241
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5619205000280057574, guid: cf10b7374682c8b469cc02198cf11316, type: 3}
+  m_Sprite: {fileID: -981339079811448329, guid: cf10b7374682c8b469cc02198cf11316, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.21875, y: 0.9375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &-3496637171563405784
+--- !u!50 &4144501403651834557
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -200,8 +226,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28125, y: 0.9375}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.5625, y: 1.25}
+    newSize: {x: 1.21875, y: 0.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

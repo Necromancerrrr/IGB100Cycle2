@@ -10,6 +10,7 @@ public class DropRateManager : MonoBehaviour
         public string name;
         public GameObject itemPrefab;
         public float dropRate;
+        public int dropValue;
     }
 
     public List<Drops> drops;
@@ -36,7 +37,8 @@ public class DropRateManager : MonoBehaviour
         if (possibleDrops.Count > 0)
         { 
             Drops drops = possibleDrops[UnityEngine.Random.Range(0, possibleDrops.Count)];
-            Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);
+            GameObject spawn = Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);
+            spawn.GetComponent<ICollectable>().SetValue(drops.dropValue);
         }
     }
 }

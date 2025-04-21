@@ -1,25 +1,23 @@
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour
+public abstract class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
 
     // Current stats
-    [HideInInspector]
+    //[HideInInspector]
     public float currentMoveSpeed;
-    [HideInInspector]
+    //[HideInInspector]
     public float currentHealth;
-    [HideInInspector]
+    //[HideInInspector]
     public float currentDamage;
-
-
-    void Awake()
+    protected void Awake()
     {
+        // Enemy base stats
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
     }
-
     public void TakeDamage(float dmg)
     {
         currentHealth -= dmg;
@@ -29,20 +27,8 @@ public class EnemyStats : MonoBehaviour
             Kill();
         }
     }
-
-    public void Kill() 
-    { 
-        Destroy(gameObject);
-    }
-
-    private void OnCollisionStay2D(Collision2D col)
+    public void Kill()
     {
-        // Reference the script from the collided collider and deal damage using TakeDamage()
-        if (col.gameObject.CompareTag("Player"))
-        {
-            PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
-            player.TakeDamage(currentDamage); // Make sure to use currentDamage instead of enemyData.Damage in case of any damage multipliers in the future
-
-        }
+        Destroy(gameObject);
     }
 }

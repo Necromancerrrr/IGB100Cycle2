@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using JetBrains.Annotations;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -56,6 +57,13 @@ public class PlayerStats : MonoBehaviour
     public GameObject secondWeaponTest;
     public GameObject firstPassiveItemTest, secondPassiveItemTest;
 
+    // Animation Script
+    PlayerAnimator playerAnimator;
+
+    // Audio Feedback Script
+    PlayerAudio playerAudio;
+ 
+
     void Awake()
     {
         /* <UNCOMMENT THIS OUT BEFORE BUILDING>
@@ -66,6 +74,8 @@ public class PlayerStats : MonoBehaviour
         <UNCOMMENT THIS OUT BEFORE BUILDING>    */
 
         inventory = GetComponent<InventoryManager>();
+        playerAnimator = GetComponent<PlayerAnimator>();
+        playerAudio = GetComponent<PlayerAudio>();
 
         // Assign the variables
         currentHealth = characterData.MaxHealth;
@@ -106,6 +116,7 @@ public class PlayerStats : MonoBehaviour
     public void IncreaseExperience(int amount)
     {
         experience += amount;
+        playerAudio.PlayEXPGainSound();
         LevelUpChecker();
     }
 
@@ -147,7 +158,7 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth < characterData.MaxHealth)
         {
             currentHealth += amount;
-
+            playerAudio.PlayHealthGainSound();
             if (currentHealth > characterData.MaxHealth) 
             { 
                 currentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
@@ -169,12 +180,18 @@ public class PlayerStats : MonoBehaviour
             {
                 Kill();
             }
+            else
+            {
+                playerAnimator.PlayPlayerHurtAnim();
+                playerAudio.PlayPlayerHurtSound();
+            }
         }
-
     }
 
     public void Kill()
     {
+        playerAnimator.PlayPlayerDeadAnim();
+        playerAudio.PlayPlayerDeathSound();
         Debug.Log("PLAYER IS DEAD");
     }
 

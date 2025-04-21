@@ -4,14 +4,14 @@ using UnityEngine;
 public class EnemyScriptableObject : ScriptableObject
 {
     // Base stats for enemies
-    [Header("Enenmy Base Stats")]
-    [SerializeField]
-    float moveSpeed;
-    public float MoveSpeed { get => moveSpeed; private set => moveSpeed = value; }
-
+    [Header("Enemy Base Stats")]
     [SerializeField]
     float maxHealth;
     public float MaxHealth { get => maxHealth; private set => maxHealth = value; }
+
+    [SerializeField]
+    float moveSpeed;
+    public float MoveSpeed { get => moveSpeed; private set => moveSpeed = value; }
 
     [SerializeField]
     float damage;

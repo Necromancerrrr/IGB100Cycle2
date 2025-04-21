@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7346567420959452717}
-  - component: {fileID: -4012484939695012532}
   - component: {fileID: 24397003183470962}
   - component: {fileID: -4001461327363300624}
   - component: {fileID: 4301642214087049820}
@@ -38,19 +37,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4012484939695012532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4564404143333738025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1878bbe2214bef4b93dba91797f0f6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
 --- !u!114 &24397003183470962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 0}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +69,7 @@ MonoBehaviour:
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 70
+    dropValue: 1
 --- !u!212 &4301642214087049820
 SpriteRenderer:
   m_ObjectHideFlags: 0

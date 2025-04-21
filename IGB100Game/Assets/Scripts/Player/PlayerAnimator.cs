@@ -9,11 +9,11 @@ public class PlayerAnimator : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
+    // Switches between idle and walking animations based on rigidbody movement
     void Update()
     {
         CheckForMovement();
+        AnimationTestFunction();
     }
     void CheckForMovement()
     {
@@ -26,8 +26,34 @@ public class PlayerAnimator : MonoBehaviour
             animator.SetBool("Moving", false);
         }
     }
-    public void SetCorruptSprite()
+    // Call after the player takes a non-purity pact to change sprite permanantly
+    public void SetPlayerCorruptSprite()
     {
         animator.SetBool("Corrupt", true);
+    }
+    // Call after taking damage to play hurt animation
+    public void PlayPlayerHurtAnim()
+    {
+        animator.SetTrigger("Hurt");
+    }
+    // Call after taking lethal damage to play death animation
+    public void PlayPlayerDeadAnim()
+    {
+        animator.SetTrigger("Dead");
+    }
+    void AnimationTestFunction()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SetPlayerCorruptSprite();
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            PlayPlayerHurtAnim();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayPlayerDeadAnim();
+        }
     }
 }
