@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
   m_Name: AttackUp Passive Item Level 3
   m_EditorClassIdentifier: 
-  multiplier: 200
+  multiplier: 60
   level: 3
   nextLevelPrefab: {fileID: 2215225900889134074, guid: 816e5c98103bf9640931a527f5705cda, type: 3}
+  name: Attack 3
+  description: Attack + 60%
   icon: {fileID: 4249962831038516359, guid: ec9de6724f4427a4a8450ab2c7a48a3c, type: 3}

@@ -151,7 +151,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -351,6 +351,33 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  weaponUpgradeOptions:
+  - initialWeapon: {fileID: 4142939955346733007, guid: 3c9b9b2b37172be4da430462a5eae82a, type: 3}
+    weaponData: {fileID: 11400000, guid: c8470517aa0d91d4c9fe25ae97e0babb, type: 2}
+  - initialWeapon: {fileID: 6883820235095941995, guid: f3163566e17677b4a88ee4f1bdcd21fb, type: 3}
+    weaponData: {fileID: 11400000, guid: f822da3987a27a543972906839aec2e4, type: 2}
+  passiveItemUpgradeOptions:
+  - initialPassiveItem: {fileID: 5069994856143371818, guid: adc76bb1388a5ca48adf11be98e09c59, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 2c87f49b756255447afc3caea6050025, type: 2}
+  - initialPassiveItem: {fileID: 2215225900889134074, guid: d542297b54da851459cc06a759b906fe, type: 3}
+    passiveItemData: {fileID: 11400000, guid: c7204f5a801dc9142b16bf60d6645a49, type: 2}
+  upgradeUIOptions:
+  - upgradeNameDisplay: {fileID: 0}
+    upgradeDescriptionDisplay: {fileID: 0}
+    upgradeIcon: {fileID: 0}
+    upgradeButton: {fileID: 0}
+  - upgradeNameDisplay: {fileID: 0}
+    upgradeDescriptionDisplay: {fileID: 0}
+    upgradeIcon: {fileID: 0}
+    upgradeButton: {fileID: 0}
+  - upgradeNameDisplay: {fileID: 0}
+    upgradeDescriptionDisplay: {fileID: 0}
+    upgradeIcon: {fileID: 0}
+    upgradeButton: {fileID: 0}
+  - upgradeNameDisplay: {fileID: 0}
+    upgradeDescriptionDisplay: {fileID: 0}
+    upgradeIcon: {fileID: 0}
+    upgradeButton: {fileID: 0}
 --- !u!114 &5678959672110681339
 MonoBehaviour:
   m_ObjectHideFlags: 0

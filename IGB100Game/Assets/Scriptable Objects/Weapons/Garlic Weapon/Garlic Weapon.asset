@@ -19,4 +19,6 @@ MonoBehaviour:
   pierce: 0
   level: 1
   nextLevelPrefab: {fileID: 6883820235095941995, guid: 6850822e069edf449b4dcde3df7abec7, type: 3}
+  name: Garlic
+  description: Damages in an Area around the player
   icon: {fileID: 1084177357206560785, guid: 703fd17fb5557174b8c76e356dec12c5, type: 3}
