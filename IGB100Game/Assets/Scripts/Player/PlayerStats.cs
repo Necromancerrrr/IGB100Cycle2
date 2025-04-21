@@ -11,16 +11,30 @@ public class PlayerStats : MonoBehaviour
     // Current stats
     [HideInInspector]
     public float currentHealth;
+
     [HideInInspector]
     public float currentRecovery;
+
     [HideInInspector]
     public float currentMoveSpeed;
+
     [HideInInspector]
     public float currentMight;
+
     [HideInInspector]
     public float currentProjectileSpeed;
+
+    [HideInInspector]
+    public float currentProjectileCount;
+
     [HideInInspector]
     public float currentMagnet;
+
+    [HideInInspector]
+    public float currentCooldown;
+
+    [HideInInspector]
+    public float currentPlayerSize;
 
 
 
@@ -83,7 +97,10 @@ public class PlayerStats : MonoBehaviour
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentProjectileCount = characterData.ProjectileCount;
         currentMagnet = characterData.Magnet;
+        currentCooldown = characterData.Cooldown;
+        currentPlayerSize = characterData.PlayerSize;
 
         //Spawn the starting weapon
         SpawnWeapon(characterData.StartingWeapon);
