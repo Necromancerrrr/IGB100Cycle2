@@ -26,9 +26,21 @@ public class CharacterScriptableObject : ScriptableObject
     [SerializeField]
     float projectileSpeed;
     public float ProjectileSpeed { get => projectileSpeed; set => projectileSpeed = value; }
+
+    [SerializeField]
+    float projectileCount;
+    public float ProjectileCount { get => projectileSpeed; set => projectileCount = value; }
     
     [SerializeField]
     float magnet;
     public float Magnet { get => magnet; set => magnet = value; }
+
+    [SerializeField]
+    float cooldown;
+    public float Cooldown { get => cooldown; set => cooldown = value; }
+
+    [SerializeField]
+    float playerSize;
+    public float PlayerSize { get => playerSize; set => playerSize = value; }
 
 }
