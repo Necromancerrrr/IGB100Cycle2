@@ -15,4 +15,9 @@ public class EnemyChargerScriptableObject : ScriptableObject
     [SerializeField]
     float chargeDuration;
     public float ChargeDuration { get => chargeDuration; private set => chargeDuration = value; }
+
+
+    [SerializeField]
+    float chargeFreeze;
+    public float ChargeFreeze { get => chargeFreeze; private set => chargeFreeze = value; }
 }

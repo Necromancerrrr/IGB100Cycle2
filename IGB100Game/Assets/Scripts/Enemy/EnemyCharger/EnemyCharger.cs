@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyChargerStats : EnemyStats
@@ -11,7 +12,17 @@ public class EnemyChargerStats : EnemyStats
     public float chargeSpeed;
     [HideInInspector]
     public float chargeDuration;
+    [HideInInspector]
+    public float chargeFreeze;
+
+    // Charge logic
+    public int ChargingPhase = 0;
+    public float ChargeTimer = 5f;
+
+    // Components
     Transform player;
+    Vector2 target;
+    Rigidbody2D rb;
 
     new void Awake()
     {
@@ -20,17 +31,46 @@ public class EnemyChargerStats : EnemyStats
         chargeFrequency = chargerData.ChargeFrequency;
         chargeSpeed = chargerData.ChargeSpeed;
         chargeDuration = chargerData.ChargeDuration;
+        chargeFreeze = chargerData.ChargeFreeze;
 
         // Locates player
         player = GameObject.FindWithTag("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
+        ChargeUpdate();
         Movement();
     }
     private void Movement()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+        if (ChargingPhase == 0) // For all movement outside of the charge
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+        }
+    }
+    private void ChargeUpdate()
+    {
+        ChargeTimer -= Time.deltaTime;
+        if (ChargeTimer < 0 && ChargingPhase == 0) // Locks in the targetted position and freezes in place
+        {
+            ChargingPhase = 1;
+            ChargeTimer = chargeDuration;
+            target = new Vector2(player.transform.position.x, player.transform.position.y);
+        }
+        else if (ChargeTimer < 0 && ChargingPhase == 1) // Calculates the angle at which to move and starts charge towards the targetted position
+        {
+            ChargingPhase = 2;
+            ChargeTimer = chargeFreeze;
+            Vector2 angle = new Vector2(rb.transform.position.x - target.x, rb.transform.position.y - target.y).normalized;
+            rb.linearVelocity = -angle * chargeSpeed;
+        }
+        else if (ChargeTimer < 0 && ChargingPhase == 2) // Charge ends, reset cooldown
+        {
+            ChargingPhase = 0;
+            ChargeTimer = Random.Range(chargeFrequency * 0.9f, chargeFrequency * 1.1f);
+            rb.linearVelocity = Vector2.zero;
+        }
     }
     private void OnCollisionStay2D(Collision2D col)
     {

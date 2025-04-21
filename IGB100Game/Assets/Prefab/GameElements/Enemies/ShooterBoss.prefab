@@ -58,6 +58,9 @@ MonoBehaviour:
   projectileCount: 0
   projectileInterval: 0
   projectileSpeed: 0
+  Ammo: 0
+  ShootTimer: 5
+  projectile: {fileID: 5298524310280798772, guid: c366672ffbe2a4d41850d6cc77b282df, type: 3}
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +252,7 @@ Animator:
   m_GameObject: {fileID: 4564404143333738025}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4ad755e3d4567f7478a751685415e2a0, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

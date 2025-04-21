@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dbefcbd1d159a4093eed3927ec1022, type: 3}
   m_Name: ChargerC
   m_EditorClassIdentifier: 
-  maxHealth: 300
-  moveSpeed: 5
-  damage: 1
   chargeFrequency: 10
   chargeSpeed: 15
   chargeDuration: 1
+  chargeFreeze: 0.5
