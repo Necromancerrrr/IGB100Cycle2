@@ -35,12 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
     void InputManagement()
     {
-
-        if (GameManager.instance.isGameOver) // Stops player from inputting actions once the game is over
-        {
-            return;
-        }
-
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
@@ -66,11 +60,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        if (GameManager.instance.isGameOver) // Stops player from inputting actions once the game is over
-        {
-            return;
-        }
-
-        rb.linearVelocity = new Vector2(moveDir.x * player.CurrentMoveSpeed, moveDir.y * player.CurrentMoveSpeed);
+        rb.linearVelocity = new Vector2(moveDir.x * player.currentMoveSpeed, moveDir.y * player.currentMoveSpeed);
     }
 }
