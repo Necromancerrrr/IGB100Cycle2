@@ -47,7 +47,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void LevelUpPassiveItemn(int slotIndex)
+    public void LevelUpPassiveItem(int slotIndex)
     {
         if (passiveItemSlots.Count > slotIndex)
         {

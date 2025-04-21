@@ -325,6 +325,7 @@ public class PlayerStats : MonoBehaviour
     {
         playerAnimator.PlayPlayerDeadAnim();
         playerAudio.PlayPlayerDeathSound();
+        GameManager.instance.GameOver();
         Debug.Log("PLAYER IS DEAD");
     }
 
