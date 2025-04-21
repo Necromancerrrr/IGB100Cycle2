@@ -331,6 +331,7 @@ public class PlayerStats : MonoBehaviour
             playerAudio.PlayPlayerDeathSound();
 
             GameManager.instance.AssignLevelReachedUI(level);
+            GameManager.instance.AssignChosenWeaponsAndPassiveItemsUI(inventory.weaponUISlots, inventory.passiveItemUISlots);
             GameManager.instance.GameOver();
         }
     }
