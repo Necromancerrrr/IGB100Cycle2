@@ -4,6 +4,6 @@ public class ProjectileSpeedPassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        player.currentProjectileSpeed *= 1 + passiveItemData.Multiplier / 100f; // Works to make a percentage increase
+        player.CurrentProjectileSpeed *= 1 + passiveItemData.Multiplier / 100f; // Works to make a percentage increase
     }
 }

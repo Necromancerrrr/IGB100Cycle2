@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.UI;
+using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
 
@@ -8,21 +10,142 @@ public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData; // REMOVE PUBLIC BEFORE FINISHING
 
-    // Current stats
-    [HideInInspector]
-    public float currentHealth;
-    [HideInInspector]
-    public float currentRecovery;
-    [HideInInspector]
-    public float currentMoveSpeed;
-    [HideInInspector]
-    public float currentMight;
-    [HideInInspector]
-    public float currentProjectileSpeed;
-    [HideInInspector]
-    public float currentMagnet;
 
+    /// <summary>
+    /// Player Stats ( DO NOT USE TO CHECK PLAYER STATS IN CODE )
+    /// </summary>
+    float currentHealth;
+    float currentRecovery;
+    float currentMoveSpeed;
+    float currentMight;
+    float currentProjectileSpeed;
+    float currentMagnet;
 
+    /// <summary>
+    ///  Real Time Stat Tracking ( USE THESE FOR CHECKING PLAYER STATS IN CODE )
+    /// </summary>
+    #region Current Stats Properties
+    public float CurrentHealth
+    {
+        get { return currentHealth; }
+        set
+        {
+            // Check if the value has changed
+            if (currentHealth != value)
+            {
+                //Update the real time value of the stat
+                currentHealth = value;
+                Debug.Log("HEALTH IS UPDATED");
+
+                // Update player UI
+                if (GameManager.instance != null) 
+                { 
+                    GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth.ToString(); 
+                }
+                
+            }
+        }
+    }
+    public float CurrentRecovery
+    {
+        get { return currentRecovery; }
+        set
+        {
+            // Check if the value has changed
+            if (currentRecovery != value)
+            {
+                //Update the real time value of the stat
+                currentRecovery = value;
+
+                // Update player UI
+                if (GameManager.instance != null) 
+                { 
+                    GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery.ToString(); 
+                }
+            }
+        }
+    }
+
+    public float CurrentMight
+    {
+        get { return currentMight; }
+        set
+        {
+            // Check if the value has changed
+            if (currentMight != value)
+            { 
+                //Update the real time value of the stat
+                currentMight = value;
+
+                // Update player UI
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentAttackDisplay.text = "Attack: " + currentMight.ToString();
+                }
+            }
+        }
+    }
+    public float CurrentMoveSpeed
+    {
+        get { return currentMoveSpeed; }
+        set
+        {
+            // Check if the value has changed
+            if (currentMoveSpeed != value)
+            {
+                //Update the real time value of the stat
+                currentMoveSpeed = value;
+
+                // Update player UI
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentMoveSpeedDisplay.text = "Movespeed: " + currentMoveSpeed.ToString();
+                }
+            }
+        }
+    }
+
+    public float CurrentProjectileSpeed
+    {
+        get { return currentProjectileSpeed; }
+        set
+        {
+            // Check if the value has changed
+            if (currentProjectileSpeed != value)
+            {
+                //Update the real time value of the stat
+                currentProjectileSpeed = value;
+
+                // Update player UI
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed.ToString();
+                }
+            }
+        }
+    }
+
+    public float CurrentMagnet
+    {
+        get { return currentMagnet; }
+        set
+        {
+            // Check if the value has changed
+            if (currentMagnet != value)
+            {
+                //Update the real time value of the stat
+                currentMagnet = value;
+
+                // Update player UI
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet.ToString();
+                }
+            }
+        }
+    }
+
+    #endregion
 
     //Experience and Level of the Player
     [Header("Experience/Level")]
@@ -78,12 +201,12 @@ public class PlayerStats : MonoBehaviour
         playerAudio = GetComponent<PlayerAudio>();
 
         // Assign the variables
-        currentHealth = characterData.MaxHealth;
-        currentRecovery = characterData.Recovery;
-        currentMoveSpeed = characterData.MoveSpeed;
-        currentMight = characterData.Might;
-        currentProjectileSpeed = characterData.ProjectileSpeed;
-        currentMagnet = characterData.Magnet;
+        CurrentHealth = characterData.MaxHealth;
+        CurrentRecovery = characterData.Recovery;
+        CurrentMoveSpeed = characterData.MoveSpeed;
+        CurrentMight = characterData.Might;
+        CurrentProjectileSpeed = characterData.ProjectileSpeed;
+        CurrentMagnet = characterData.Magnet;
 
         //Spawn the starting weapon
         SpawnWeapon(characterData.StartingWeapon);
@@ -97,6 +220,14 @@ public class PlayerStats : MonoBehaviour
     {
         //Intialise the experience cap as the first experience cap increase
         experienceCap = levelRanges[0].experienceCapIncrease;
+
+        // Set current stats display before game begins
+        GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth.ToString();
+        GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery.ToString();
+        GameManager.instance.currentAttackDisplay.text = "Attack: " + currentMight.ToString();
+        GameManager.instance.currentMoveSpeedDisplay.text = "Movespeed: " + currentMoveSpeed.ToString();
+        GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed.ToString();
+        GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet.ToString();
     }
     void Update()
     {
@@ -142,26 +273,34 @@ public class PlayerStats : MonoBehaviour
     }
     void PassiveHeal()
     {
-        if (currentHealth < characterData.MaxHealth)
+        if (CurrentHealth < characterData.MaxHealth)
         {
-            currentHealth += currentRecovery * Time.deltaTime; // Heal per second
+            CurrentHealth += CurrentRecovery * Time.deltaTime; // Heal per second
             
-            if (currentHealth > characterData.MaxHealth)
+            if (CurrentHealth > characterData.MaxHealth)
             {
-                currentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
+                CurrentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
             }
         }
     }
     public void RestoreHealth(float amount)
     {
         // Only heal the player if their current health is less than their maximum
-        if(currentHealth < characterData.MaxHealth)
+        if(CurrentHealth < characterData.MaxHealth)
         {
+<<<<<<< Updated upstream
             currentHealth += amount;
             playerAudio.PlayHealthGainSound();
             if (currentHealth > characterData.MaxHealth) 
             { 
                 currentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
+=======
+            CurrentHealth += amount;
+
+            if (CurrentHealth > characterData.MaxHealth) 
+            {
+                CurrentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
+>>>>>>> Stashed changes
             }
         }
         
@@ -171,12 +310,12 @@ public class PlayerStats : MonoBehaviour
     {
         if (!isInvincible)
         {
-            currentHealth -= dmg;
+            CurrentHealth -= dmg;
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
 
-            if (currentHealth <= 0)
+            if (CurrentHealth <= 0)
             {
                 Kill();
             }
@@ -190,9 +329,16 @@ public class PlayerStats : MonoBehaviour
 
     public void Kill()
     {
+<<<<<<< Updated upstream
         playerAnimator.PlayPlayerDeadAnim();
         playerAudio.PlayPlayerDeathSound();
         Debug.Log("PLAYER IS DEAD");
+=======
+        if (!GameManager.instance.isGameOver)
+        {
+            GameManager.instance.GameOver();
+        }
+>>>>>>> Stashed changes
     }
 
     public void SpawnWeapon(GameObject weapon)
