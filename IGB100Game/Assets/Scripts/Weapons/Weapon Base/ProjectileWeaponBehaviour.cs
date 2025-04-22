@@ -16,6 +16,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentSpeed;
     protected float currentCooldownDuration;
     protected int currentPierce;
+    protected float currentProjectileDuration;
 
     void Awake()
     {
@@ -23,6 +24,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
+        currentProjectileDuration = weaponData.ProjectileDuration;
     }
 
     public float GetCurrentDamage()
@@ -31,7 +33,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     }
     protected virtual void Start()
     {
-        Destroy(gameObject, destroyAfterSeconds);
+        Destroy(gameObject, currentProjectileDuration);
     }
 
 
