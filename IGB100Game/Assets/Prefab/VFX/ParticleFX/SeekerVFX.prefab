@@ -12,11 +12,8 @@ GameObject:
   - component: {fileID: 8296218424085860984}
   - component: {fileID: 4134731646088810186}
   m_Layer: 0
-<<<<<<<< Updated upstream:IGB100Game/Assets/Prefab/VFX/ParticleFX/OldSeeker.prefab
   m_Name: OldSeeker
-========
   m_Name: SeekerVFX
->>>>>>>> Stashed changes:IGB100Game/Assets/Prefab/VFX/ParticleFX/SeekerVFX.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,6 +14,7 @@ public class MeleeWeaponBehaviour : MonoBehaviour
     protected float currentSpeed;
     protected float currentCooldownDuration;
     protected int currentPierce;
+    protected float currentAOEDuration;
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class MeleeWeaponBehaviour : MonoBehaviour
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
+        currentAOEDuration = weaponData.ProjectileDuration;
     }
 
     public float GetCurrentDamage()
@@ -49,5 +51,4 @@ public class MeleeWeaponBehaviour : MonoBehaviour
             }
         }
     }
-
 }
