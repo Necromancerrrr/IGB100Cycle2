@@ -14,7 +14,8 @@ public class InventoryManager : MonoBehaviour
     public int[] passiveItemLevels = new int[6];
     public List<Image> passiveItemUISlots = new List<Image>(6);
 
-
+    public List<PactItem> pactItemSlots = new List<PactItem>(2);
+    public List<Image> pactItemUISlots = new List<Image>(2);
 
     [System.Serializable]
     public class WeaponUpgrade
@@ -33,6 +34,14 @@ public class InventoryManager : MonoBehaviour
     }
 
     [System.Serializable]
+    public class PactItemUpgrade
+    {
+        public int pactItemUpgradeIndex;
+        public GameObject initialPactItem;
+        public PactItemScriptableObject pactItemData;
+    }
+
+    [System.Serializable]
     public class UpgradeUI
     {
         public TMP_Text upgradeNameDisplay;
@@ -43,7 +52,11 @@ public class InventoryManager : MonoBehaviour
 
     public List<WeaponUpgrade> weaponUpgradeOptions = new List<WeaponUpgrade>();                // List of upgrade options for weapons
     public List<PassiveItemUpgrade> passiveItemUpgradeOptions = new List<PassiveItemUpgrade>(); // List of upgrade options for passive items
+    public List<PactItemUpgrade> pactItemOptions = new List<PactItemUpgrade>();
+
     public List<UpgradeUI> upgradeUIOptions = new List<UpgradeUI>();                            // List of UI for upgrade options present in the scene
+    public List<UpgradeUI> pactChoiceUIOptions = new List<UpgradeUI>();
+
 
     PlayerStats player;
 
@@ -60,7 +73,7 @@ public class InventoryManager : MonoBehaviour
         weaponUISlots[slotIndex].sprite = weapon.weaponData.Icon;
 
         if (GameManager.instance != null)
-        { 
+        {
             GameManager.instance.EndLevelUp();
         }
     }
@@ -79,9 +92,21 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void AddPactItem(int slotIndex, PactItem pactItem)
+    {
+        pactItemSlots[slotIndex] = pactItem;
+        pactItemUISlots[slotIndex].enabled = true;
+        pactItemUISlots[slotIndex].sprite = pactItem.pactItemData.Icon;
+
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.EndPactChoice();
+        }
+    }
+
     public void LevelUpWeapon(int slotIndex, int upgradeIndex)
     {
-        if(weaponSlots.Count > slotIndex)
+        if (weaponSlots.Count > slotIndex)
         {
             WeaponController weapon = weaponSlots[slotIndex];
             if (!weapon.weaponData.NextLevelPrefab)
@@ -122,7 +147,7 @@ public class InventoryManager : MonoBehaviour
             Destroy(passiveItem.gameObject);
             weaponLevels[slotIndex] = upgradedPassiveItem.GetComponent<PassiveItem>().passiveItemData.Level;
 
-            passiveItemUpgradeOptions[upgradeIndex].passiveItemData = upgradedPassiveItem.GetComponent <PassiveItem>().passiveItemData;
+            passiveItemUpgradeOptions[upgradeIndex].passiveItemData = upgradedPassiveItem.GetComponent<PassiveItem>().passiveItemData;
 
             if (GameManager.instance != null)
             {
@@ -131,6 +156,10 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// WEAPON AND PASSIVE ITEM UPGRADE SYSTEM
+    /// </summary>
+
     void ApplyUpgradeOptions()
     {
         List<WeaponUpgrade> availableWeaponUpgrades = new List<WeaponUpgrade>(weaponUpgradeOptions);
@@ -138,19 +167,19 @@ public class InventoryManager : MonoBehaviour
 
         foreach (var upgradeOption in upgradeUIOptions)
         {
-          
-            if(availableWeaponUpgrades.Count == 0 && availablePassiveItemUpgrades.Count == 0)
+
+            if (availableWeaponUpgrades.Count == 0 && availablePassiveItemUpgrades.Count == 0)
             {
                 return;
             }
 
             int upgradeType;
 
-            if(availableWeaponUpgrades.Count == 0)
+            if (availableWeaponUpgrades.Count == 0)
             {
                 upgradeType = 2;
             }
-            else if(availablePassiveItemUpgrades.Count == 0)
+            else if (availablePassiveItemUpgrades.Count == 0)
             {
                 upgradeType = 1;
             }
@@ -207,7 +236,7 @@ public class InventoryManager : MonoBehaviour
                     if (newWeapon) // Spawn a new weapon
                     {
                         upgradeOption.upgradeButton.onClick.AddListener(() => player.SpawnWeapon(chosenWeaponUpgrade.initialWeapon)); // Apply button functionality
-                        
+
                         // Set the name and description of the weapon
                         upgradeOption.upgradeDescriptionDisplay.text = chosenWeaponUpgrade.weaponData.Description;
                         upgradeOption.upgradeNameDisplay.text = chosenWeaponUpgrade.weaponData.Name;
@@ -218,7 +247,7 @@ public class InventoryManager : MonoBehaviour
             }
 
             else if (upgradeType == 2) // UpgradeType = 2 = Passive Items
-            { 
+            {
                 PassiveItemUpgrade chosenPassiveItemUpgrade = availablePassiveItemUpgrades[Random.Range(0, availablePassiveItemUpgrades.Count)]; // Checks what a player can upgrade
 
                 availablePassiveItemUpgrades.Remove(chosenPassiveItemUpgrade);
@@ -276,7 +305,7 @@ public class InventoryManager : MonoBehaviour
 
     void RemoveUpgradeOptions()
     {
-        foreach(var upgradeOption in upgradeUIOptions)
+        foreach (var upgradeOption in upgradeUIOptions)
         {
             upgradeOption.upgradeButton.onClick.RemoveAllListeners();
             DisableUpgradeUI(upgradeOption);
@@ -287,6 +316,72 @@ public class InventoryManager : MonoBehaviour
     {
         RemoveUpgradeOptions();
         ApplyUpgradeOptions();
+    }
+
+    /// <summary>
+    /// PACTS CHOICE SYSTEM
+    /// </summary>
+    /// 
+    void ApplyPactOptions()
+    {
+        List<PactItemUpgrade> availablePactOptions = new List<PactItemUpgrade>(pactItemOptions);
+
+        foreach (var pactOption in pactChoiceUIOptions)
+        {
+            PactItemUpgrade chosenPactItem = availablePactOptions[Random.Range(0, availablePactOptions.Count)]; // Checks what a player can upgrade
+
+            availablePactOptions.Remove(chosenPactItem);
+
+            EnableUpgradedUI(pactOption);
+
+            bool newPactItem = false; // Set a flag, assuming the passive item is not new
+
+            for (int i = 0; i < pactItemSlots.Count; i++) // Check the inventory, slot by slot
+            {
+                // If the passive item slot is null, it'll assume that weapon is new.
+                // If the passive item isn't null, it checks if that slot's item matches the same as the chosen upgrade
+                if (pactItemSlots[i] != null && pactItemSlots[i].pactItemData == chosenPactItem.pactItemData)
+                {
+                    newPactItem = false; // Confirming that newPassiveItem is false
+
+                    if (!newPactItem)
+                    {
+                        DisableUpgradeUI(pactOption);
+                        break;
+                    }
+                }
+                else
+                {
+                    newPactItem = true;
+                }
+            }
+            if (newPactItem)
+            {
+                pactOption.upgradeButton.onClick.AddListener(() => player.SpawnPactItem(chosenPactItem.initialPactItem)); // Apply button functionality
+
+                // Set the name and description of the weapon
+                pactOption.upgradeDescriptionDisplay.text = chosenPactItem.pactItemData.Description;
+                pactOption.upgradeNameDisplay.text = chosenPactItem.pactItemData.Name;
+            }
+            pactOption.upgradeIcon.sprite = chosenPactItem.pactItemData.Icon;
+        }
+    }
+
+
+
+    void RemovePactOptions()
+    {
+        foreach(var pactOption in pactChoiceUIOptions)
+        {
+            pactOption.upgradeButton.onClick.RemoveAllListeners();
+            DisableUpgradeUI(pactOption);
+        }
+    }
+
+    public void RemoveAndApplyPacts()
+    {
+        RemovePactOptions();
+        ApplyPactOptions();
     }
 
     void DisableUpgradeUI(UpgradeUI upgradeUI)

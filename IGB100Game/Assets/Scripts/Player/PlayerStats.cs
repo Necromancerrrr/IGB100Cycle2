@@ -175,6 +175,7 @@ public class PlayerStats : MonoBehaviour
     [Header("Experience/Level")]
     public int experience = 0;
     public int level = 1;
+    public int levelForPact = 5;
     public int experienceCap;
 
     // Class for defining a level range and the corresponding experience cap increase for that range
@@ -199,6 +200,7 @@ public class PlayerStats : MonoBehaviour
     InventoryManager inventory;
     public int weaponIndex;
     public int passiveItemIndex;
+    public int pactItemIndex;
 
     // Inventory Test (please delete)
     public GameObject secondWeaponTest;
@@ -244,7 +246,7 @@ public class PlayerStats : MonoBehaviour
     {
         //Intialise the experience cap as the first experience cap increase
         experienceCap = levelRanges[0].experienceCapIncrease;
-
+        
         // Initialise Stat Tracking on Pause Menu
         GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth.ToString();
         GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery.ToString();
@@ -298,7 +300,21 @@ public class PlayerStats : MonoBehaviour
 
             experienceCap += experienceCapIncrease;
 
-            GameManager.instance.StartLevelUp();
+            // If the player is level 5, or level 10, make them choose a pact. Otherwise, make them choose a weapon/passive item
+            switch (level) // Change to if else statement with % 5
+            {
+                case 2:
+                    GameManager.instance.StartPactChoice();
+                    break;
+
+                case 4:
+                    GameManager.instance.StartPactChoice();
+                    break;
+
+                default:
+                    GameManager.instance.StartLevelUp();
+                    break;
+            }
         }
     }
     void PassiveHeal()
@@ -367,7 +383,7 @@ public class PlayerStats : MonoBehaviour
         //checking if inventory is full
         if(weaponIndex >= inventory.weaponSlots.Count - 1)
         {
-            Debug.LogError("Inventory slots already full");
+            Debug.LogError("Weapon Inventory slots already full");
             return;
         }
 
@@ -384,7 +400,7 @@ public class PlayerStats : MonoBehaviour
         //checking if inventory is full
         if (passiveItemIndex >= inventory.passiveItemSlots.Count - 1)
         {
-            Debug.LogError("Inventory slots already full");
+            Debug.LogError("Passive Item Inventory slots already full");
             return;
         }
 
@@ -394,5 +410,21 @@ public class PlayerStats : MonoBehaviour
         inventory.AddPassiveItem(passiveItemIndex, spawnedPassiveItem.GetComponent<PassiveItem>()); // Add the weapon to it's inventory slot
 
         passiveItemIndex++;
+    }
+
+    public void SpawnPactItem(GameObject pactItem)
+    {
+        //checking if inventory is full
+        if (pactItemIndex >= inventory.pactItemSlots.Count)
+        {
+            Debug.LogError("Pact Item Slots Are Full");
+            return;
+        }
+
+        GameObject spawnedPactItem = Instantiate(pactItem, transform.position, Quaternion.identity);
+        spawnedPactItem.transform.SetParent(transform);
+        inventory.AddPactItem(pactItemIndex, spawnedPactItem.GetComponent<PactItem>());
+
+        pactItemIndex++;
     }
 }

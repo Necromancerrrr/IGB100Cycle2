@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     // Flag to check if the player is levelling up
     public bool isChoosingLvlUp = false;
 
+    // Flag to check if the player is levelling up
+    public bool IsChoosingPact = false;
+
     // Reference to the player
     public GameObject playerObject;
 
@@ -23,7 +26,8 @@ public class GameManager : MonoBehaviour
         Gameplay,
         Pause,
         GameOver,
-        LevelUp
+        LevelUp,
+        PactChoice
     }
 
     // Store the current state of the game
@@ -40,6 +44,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject resultsScreen;
     public GameObject levelUpScreen;
+    public GameObject pactSelectScreen;
 
 
     // Current stat displays
@@ -63,6 +68,7 @@ public class GameManager : MonoBehaviour
 
     public List<Image> chosenWeaponsUI = new List<Image>(6);
     public List<Image> chosenPassiveItemsUI = new List<Image>(6);
+    public List<Image> chosenPactsUI = new List<Image>(2);
 
     void Awake()
     {
@@ -104,6 +110,7 @@ public class GameManager : MonoBehaviour
                     DisplayResults();
                 }
                 break;
+
             case GameState.LevelUp:
                 if (!isChoosingLvlUp)
                 {
@@ -113,6 +120,17 @@ public class GameManager : MonoBehaviour
                     levelUpScreen.SetActive(true);
                 }
                 break;
+
+            case GameState.PactChoice:
+                if (!IsChoosingPact)
+                {
+                    IsChoosingPact = true;
+                    Time.timeScale = 0f;
+                    Debug.Log("Player is CHOOSING PACT");
+                    pactSelectScreen.SetActive(true);
+                }
+                break;
+
             default:
                 Debug.LogWarning("STATE DOES NOT EXIST");
                 break;
@@ -193,6 +211,7 @@ public class GameManager : MonoBehaviour
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
         levelUpScreen.SetActive(false);
+        pactSelectScreen.SetActive(false);
     }
 
     public void GameOver()
@@ -271,6 +290,20 @@ public class GameManager : MonoBehaviour
         isChoosingLvlUp = false;
         Time.timeScale = 1.0f; // Resumes game
         levelUpScreen.SetActive(false);
+        ChangeGameState(GameState.Gameplay);
+    }
+
+    public void StartPactChoice()
+    {
+        ChangeGameState(GameState.PactChoice);
+        playerObject.SendMessage("RemoveAndApplyPacts");
+    }
+
+    public void EndPactChoice()
+    {
+        IsChoosingPact = false;
+        Time.timeScale = 1.0f; // Resumes game
+        pactSelectScreen.SetActive(false);
         ChangeGameState(GameState.Gameplay);
     }
 }
