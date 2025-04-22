@@ -36,7 +36,6 @@ public class PlayerStats : MonoBehaviour
             {
                 //Update the real time value of the stat
                 currentHealth = value;
-                Debug.Log("HEALTH IS UPDATED");
 
                 // Update player UI
                 if (GameManager.instance != null)
@@ -175,7 +174,6 @@ public class PlayerStats : MonoBehaviour
     [Header("Experience/Level")]
     public int experience = 0;
     public int level = 1;
-    public int levelForPact = 5;
     public int experienceCap;
 
     // Class for defining a level range and the corresponding experience cap increase for that range
@@ -201,10 +199,6 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
     public int pactItemIndex;
-
-    // Inventory Test (please delete)
-    public GameObject secondWeaponTest;
-    public GameObject firstPassiveItemTest, secondPassiveItemTest;
 
     // Animation Script
     PlayerAnimator playerAnimator;
@@ -237,9 +231,6 @@ public class PlayerStats : MonoBehaviour
 
         //Spawn the starting weapon
         SpawnWeapon(characterData.StartingWeapon);
-        //SpawnWeapon(secondWeaponTest);
-        //SpawnPassiveItem(firstPassiveItemTest);
-        SpawnPassiveItem(secondPassiveItemTest);
     }
 
     void Start()

@@ -308,9 +308,9 @@ MonoBehaviour:
   weaponIndex: 0
   passiveItemIndex: 0
   pactItemIndex: 0
-  secondWeaponTest: {fileID: 6883820235095941995, guid: f3163566e17677b4a88ee4f1bdcd21fb, type: 3}
-  firstPassiveItemTest: {fileID: 5069994856143371818, guid: adc76bb1388a5ca48adf11be98e09c59, type: 3}
-  secondPassiveItemTest: {fileID: 2215225900889134074, guid: d542297b54da851459cc06a759b906fe, type: 3}
+  secondWeaponTest: {fileID: 0}
+  firstPassiveItemTest: {fileID: 0}
+  secondPassiveItemTest: {fileID: 0}
 --- !u!114 &28801787229457722
 MonoBehaviour:
   m_ObjectHideFlags: 0

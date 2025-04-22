@@ -15,9 +15,11 @@ public class PlayerMovement : MonoBehaviour
     // References
     Rigidbody2D rb;
     PlayerStats player;
+    SpriteRenderer playerSpriteRenderer;
     void Start()
     {
         player = GetComponent<PlayerStats>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         lastMovedVector = new Vector2(1, 0f); // If we don't do this, game starts and the player doesn't move, the projectile won't move.
     }
@@ -44,6 +46,16 @@ public class PlayerMovement : MonoBehaviour
         {
             lastHorizontalVector = moveDir.x;
             lastMovedVector = new Vector2(lastHorizontalVector, 0f); // Last moved X
+
+            // Flips the player's sprite when moving in a direction
+            if(moveDir.x < 0) // Moving right
+            {
+               playerSpriteRenderer.flipX = false; // Flip to the right
+            }
+            else if (moveDir.x > 0)// Moving left 
+            {
+                playerSpriteRenderer.flipX = true; // Flip to the left
+            }
         }
 
         if (moveDir.y != 0)
@@ -61,5 +73,11 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         rb.linearVelocity = new Vector2(moveDir.x * player.CurrentMoveSpeed, moveDir.y * player.CurrentMoveSpeed);
+
+        // if lastMovedVector.x > 0
+        // then make sprite face right
+        // else if lastMovedVector.x < 0
+        // then make sprite face left
+        // else
     }
 }
