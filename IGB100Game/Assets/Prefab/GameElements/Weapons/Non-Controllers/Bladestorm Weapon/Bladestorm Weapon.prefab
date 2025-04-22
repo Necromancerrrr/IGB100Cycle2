@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7761810881093073892}
   - component: {fileID: 1685534493872710158}
   - component: {fileID: 3739580759676614411}
+  - component: {fileID: -7151711915813389275}
   - component: {fileID: 3801715706223897613}
   m_Layer: 0
   m_Name: Bladestorm Weapon
@@ -125,6 +126,21 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
+--- !u!114 &-7151711915813389275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686938345842361232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95d6b6210a3e834393751f26062806f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 919539a7098bb474283c4b70fe7c4d68, type: 2}
+  destoryAfterSeconds: 0
+  hitResetInterval: 0.5
 --- !u!50 &3801715706223897613
 Rigidbody2D:
   serializedVersion: 5

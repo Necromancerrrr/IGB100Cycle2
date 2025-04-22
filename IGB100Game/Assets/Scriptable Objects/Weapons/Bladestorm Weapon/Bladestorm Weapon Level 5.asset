@@ -17,8 +17,9 @@ MonoBehaviour:
   speed: 0
   cooldownDuration: 0
   pierce: 0
+  projectileDuration: 0
   level: 0
   nextLevelPrefab: {fileID: 0}
-  name: 
-  description: 
+  name: Bladestorm MAX
+  description: Upgrade MAX
   icon: {fileID: -4360754683449048810, guid: 8b102acf98bfef24b8140a23b036bb6d, type: 3}

@@ -17,8 +17,9 @@ MonoBehaviour:
   speed: 0
   cooldownDuration: 0
   pierce: 0
+  projectileDuration: 0
   level: 0
   nextLevelPrefab: {fileID: 6883820235095941995, guid: 9ddef5874a9536c4cac5bdfed32956c3, type: 3}
   name: Bladestorm
-  description: 
+  description: 'Manifests blades that spin around the player. '
   icon: {fileID: -4360754683449048810, guid: 8b102acf98bfef24b8140a23b036bb6d, type: 3}
