@@ -19,6 +19,7 @@ public class PlayerStats : MonoBehaviour
     float currentMoveSpeed;
     float currentMight;
     float currentProjectileSpeed;
+    float currentProjectileDuration;
     float currentMagnet;
 
     /// <summary>
@@ -124,7 +125,26 @@ public class PlayerStats : MonoBehaviour
             }
         }
     }
+    public float CurrentProjectileDuration
+    {
+        get { return currentProjectileDuration; }
+        set
+        {
+            // Check if the value has changed
+            if (currentProjectileDuration != value)
+            {
+                //Update the real time value of the stat
+                currentProjectileDuration = value;
 
+                // Update player UI
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentProjectileDurationDisplay.text = "Projectile Duration: " + currentProjectileDuration.ToString();
+                }
+
+            }
+        }
+    }
     public float CurrentMagnet
     {
         get { return currentMagnet; }
@@ -144,6 +164,8 @@ public class PlayerStats : MonoBehaviour
             }
         }
     }
+
+
 
     #endregion
 
@@ -208,6 +230,7 @@ public class PlayerStats : MonoBehaviour
         CurrentMoveSpeed = characterData.MoveSpeed;
         CurrentMight = characterData.Might;
         CurrentProjectileSpeed = characterData.ProjectileSpeed;
+        CurrentProjectileDuration = characterData.ProjectileDuration;
         CurrentMagnet = characterData.Magnet;
 
         //Spawn the starting weapon
@@ -228,6 +251,7 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentAttackDisplay.text = "Attack: " + currentMight.ToString();
         GameManager.instance.currentMoveSpeedDisplay.text = "Movespeed: " + currentMoveSpeed.ToString();
         GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed.ToString();
+        GameManager.instance.currentProjectileDurationDisplay.text = "Projectile Duration: " + currentProjectileDuration.ToString();
         GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet.ToString();
 
         GameManager.instance.AssignChosenCharacterUI(characterData);

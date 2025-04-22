@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text currentMoveSpeedDisplay;
     public TMP_Text currentAttackDisplay;
     public TMP_Text currentProjectileSpeedDisplay;
+    public TMP_Text currentProjectileDurationDisplay;
     public TMP_Text currentMagnetDisplay;
 
     

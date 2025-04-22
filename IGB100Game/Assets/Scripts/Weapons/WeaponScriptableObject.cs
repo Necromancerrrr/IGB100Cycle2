@@ -26,6 +26,10 @@ public class WeaponScriptableObject : ScriptableObject
     public int Pierce { get => pierce; private set => pierce = value; }
 
     [SerializeField]
+    float projectileDuration;
+    public float ProjectileDuration { get => projectileDuration; private set => projectileDuration = value; }
+
+    [SerializeField]
     int level;      // NOT meant to be modified in the game [Only in Editor]
     public int Level { get => level; private set => level = value; }
 
