@@ -453,5 +453,7 @@ public class PlayerStats : MonoBehaviour
         inventory.AddPactItem(pactItemIndex, spawnedPactItem.GetComponent<PactItem>());
 
         pactItemIndex++;
+
+        
     }
 }
