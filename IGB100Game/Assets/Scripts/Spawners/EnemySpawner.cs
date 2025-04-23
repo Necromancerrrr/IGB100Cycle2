@@ -43,12 +43,10 @@ public class EnemySpawner : BaseSpawner
     private Wave currentWave;
     private int currentWaveNumber = 0;
 
-    //BaseSpawner spawner = new BaseSpawner();
-
     void Update()
     {
         currentWave = waves[currentWaveNumber];
-
+        
         enemiesSpawned = GameObject.FindGameObjectsWithTag("Enemy");
 
         waveTimer += Time.deltaTime;
@@ -77,7 +75,6 @@ public class EnemySpawner : BaseSpawner
                     SpawnEnemy(randomPosition);
                 }
             }
-            
         }
 
         if (waveTimer >= waveFrequency)
@@ -89,11 +86,9 @@ public class EnemySpawner : BaseSpawner
     
     void SpawnEnemy(Vector2 randomPosition)
     {
-        
         GameObject randomEnemy = currentWave.enemyType[Random.Range(0, currentWave.enemyType.Length)];
         
         Vector2 spawnPos = Camera.main.ViewportToWorldPoint(randomPosition);
         Instantiate(randomEnemy, spawnPos, Quaternion.identity);
     }
-
 }
