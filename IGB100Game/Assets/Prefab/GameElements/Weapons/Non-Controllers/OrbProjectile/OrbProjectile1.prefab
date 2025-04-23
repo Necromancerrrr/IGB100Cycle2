@@ -50,9 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 9e4082d2de270f249abdc7d600e80302, type: 2}
-  destroyAfterSeconds: 0
+  destroyAfterSeconds: 3
   par: {fileID: 4801259901059878610}
-  pulseTimer: 10
 --- !u!50 &559294093597345711
 Rigidbody2D:
   serializedVersion: 5

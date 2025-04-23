@@ -5,6 +5,7 @@ public class PlayerCollector : MonoBehaviour
     PlayerStats player;
     CircleCollider2D playerCollectArea;
     public float pullSpeed;
+    bool isCollected;
 
     void Start()
     {
@@ -30,8 +31,7 @@ public class PlayerCollector : MonoBehaviour
 
             //Applies force to the item in the forceDirection
             rb.AddForce(forceDirection * pullSpeed);
-
-
+  
             // If it does, call the collect method
             collectible.Collect();
         }

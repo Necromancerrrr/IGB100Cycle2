@@ -325,11 +325,11 @@ public class PlayerStats : MonoBehaviour
             // If the player is level 5, or level 10, make them choose a pact. Otherwise, make them choose a weapon/passive item
             switch (level) // Change to if else statement with % 5
             {
-                case 2:
+                case 5:
                     GameManager.instance.StartPactChoice();
                     break;
 
-                case 4:
+                case 10:
                     GameManager.instance.StartPactChoice();
                     break;
 

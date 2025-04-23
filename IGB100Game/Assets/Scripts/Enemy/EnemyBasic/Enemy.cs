@@ -34,7 +34,12 @@ public class Enemy : EnemyStats
     public override void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce = 5, float knockbackDuration = 0.2F)
     {
         base.TakeDamage(dmg, sourcePosition, knockbackForce, knockbackDuration);
-        
+
+        if (dmg > 0)
+        {
+            GameManager.GenerateFloatingText(Mathf.FloorToInt(dmg).ToString(), transform);
+        }
+
         if (knockbackDuration > 0)
         {
             Vector2 dir = (Vector2)transform.position - sourcePosition;

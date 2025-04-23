@@ -6,7 +6,8 @@ public class Pickup : MonoBehaviour
     {
         if (col.CompareTag("Player")) // Destorys the object if it gets too close to the player
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 0.2f);
+            Debug.Log("Destroyed");
         }
     }
 }

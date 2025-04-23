@@ -5,10 +5,12 @@ using UnityEngine;
 public class GarlicBehaviour : MeleeWeaponBehaviour
 {
     List<GameObject> markedEnemies;
+    float weaponDamage;
     protected override void Start()
     {
         base.Start();
         markedEnemies = new List<GameObject>();
+        weaponDamage = GetCurrentDamage();
     }
 
     protected override void OnTriggerEnter2D(Collider2D col)
@@ -16,7 +18,7 @@ public class GarlicBehaviour : MeleeWeaponBehaviour
         if(col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage(), transform.position);
+            enemy.TakeDamage(weaponDamage, transform.position);
 
             markedEnemies.Add(col.gameObject); // Mark the enemy so it doesn't take another instance of damage from this "garlic"
         }
@@ -24,7 +26,7 @@ public class GarlicBehaviour : MeleeWeaponBehaviour
         {
             if (col.gameObject.TryGetComponent(out BreakableProps breakable) && !markedEnemies.Contains(col.gameObject))
             {
-                breakable.TakeDamage(GetCurrentDamage());
+                breakable.TakeDamage(weaponDamage);
 
                 markedEnemies.Add(col.gameObject);
             }

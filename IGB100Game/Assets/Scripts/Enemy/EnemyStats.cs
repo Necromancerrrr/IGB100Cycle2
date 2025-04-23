@@ -24,6 +24,7 @@ public abstract class EnemyStats : MonoBehaviour
     public float deathFadeTime = 0.6f;
     Color originalColor;
     protected SpriteRenderer sr;
+    protected Collider2D enemyCollider;
 
 
     protected void Awake()
@@ -34,6 +35,7 @@ public abstract class EnemyStats : MonoBehaviour
         currentDamage = enemyData.Damage;
         player = FindFirstObjectByType<PlayerStats>();
         sr = GetComponent<SpriteRenderer>();
+        enemyCollider = GetComponent<Collider2D>();
         originalColor = sr.color;
     }
 
@@ -48,10 +50,7 @@ public abstract class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         StartCoroutine(DamageFlash());
 
-        if (dmg > 0)
-        {
-            GameManager.GenerateFloatingText(Mathf.FloorToInt(dmg).ToString(), transform);
-        }
+        Debug.Log(dmg);
 
         if (currentHealth <= 0)
         {
@@ -60,6 +59,9 @@ public abstract class EnemyStats : MonoBehaviour
     }
     public void Kill()
     {
+        enemyCollider.enabled = false;
+        currentMoveSpeed = 0;
+        player.CurrentKills++;
         StartCoroutine(KillFade());
     }
 

@@ -6,12 +6,14 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
     List<GameObject> markedEnemies;
     public float hitResetInterval = 0.5f; // Time in seconds before enemies can be hit again
     private float timer;
+    private float weaponDamage;
 
     protected override void Start()
     {
         base.Start();
         markedEnemies = new List<GameObject>();
         timer = hitResetInterval;
+        weaponDamage = GetCurrentDamage();
     }
 
     void Update()
@@ -34,7 +36,7 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             if (enemy != null)
             {
-                enemy.TakeDamage(GetCurrentDamage(), transform.position);
+                enemy.TakeDamage(weaponDamage, transform.position);
                 markedEnemies.Add(col.gameObject);
             }
         }
@@ -42,7 +44,7 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
         {
             if (col.gameObject.TryGetComponent(out BreakableProps breakable) && !markedEnemies.Contains(col.gameObject))
             {
-                breakable.TakeDamage(GetCurrentDamage());
+                breakable.TakeDamage(weaponDamage);
                 markedEnemies.Add(col.gameObject);
             }
         }
