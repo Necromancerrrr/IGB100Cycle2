@@ -9373,7 +9373,7 @@ PrefabInstance:
     - target: {fileID: 8394955625019812218, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: characterData
       value: 
-      objectReference: {fileID: 11400000, guid: ae9898998acd02649b987f2f6c4d2bc5, type: 2}
+      objectReference: {fileID: 11400000, guid: 88dd0f85e1389ff44804b7e5cbb964d5, type: 2}
     - target: {fileID: 9035113680227125748, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: m_Name
       value: Player
