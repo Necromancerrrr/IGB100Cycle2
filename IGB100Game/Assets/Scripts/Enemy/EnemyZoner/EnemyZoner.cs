@@ -40,6 +40,10 @@ public class EnemyZonerStats : EnemyStats
     private void Movement()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+
+        //Sprite flips towards player
+        Vector2 lookDirection = (player.transform.position - transform.position).normalized;
+        sr.flipX = lookDirection.x > 0;
     }
     private void AOEUpdate()
     {

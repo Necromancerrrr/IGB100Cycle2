@@ -235,8 +235,12 @@ public class PlayerStats : MonoBehaviour
     void Awake()
     {
         // Comment out these two lines if you want to play without going to character select scene
-        //characterData = CharacterSelector.GetData();
-        //CharacterSelector.instance.DestorySingleton();
+        
+        if(characterData == null)
+        {
+            characterData = CharacterSelector.GetData();
+            CharacterSelector.instance.DestorySingleton();
+        }
 
         inventory = GetComponent<InventoryManager>();
         playerAnimator = GetComponent<PlayerAnimator>();

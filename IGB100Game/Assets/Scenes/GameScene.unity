@@ -9471,6 +9471,14 @@ PrefabInstance:
       propertyPath: pactChoiceUIOptions.Array.data[1].upgradeDescriptionDisplay
       value: 
       objectReference: {fileID: 1564929814}
+    - target: {fileID: 1935311422793257062, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: pullSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872719287268276842, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6974384590535723267, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9511,10 +9519,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8394955625019812218, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
-      propertyPath: characterData
-      value: 
-      objectReference: {fileID: 11400000, guid: eef787046c9396c4a962e400fc52c4a0, type: 2}
     - target: {fileID: 9035113680227125748, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: m_Name
       value: Player

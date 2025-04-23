@@ -23,7 +23,7 @@ public abstract class EnemyStats : MonoBehaviour
     public float damageFlashDuration = 0.2f;
     public float deathFadeTime = 0.6f;
     Color originalColor;
-    SpriteRenderer sr;
+    protected SpriteRenderer sr;
 
 
     protected void Awake()

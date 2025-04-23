@@ -59,6 +59,10 @@ public class EnemyShooterStats : EnemyStats
                 MovementTimer = 3;
             }
         }
+
+        //Sprite flips towards player
+        Vector2 lookDirection = (player.transform.position - transform.position).normalized;
+        sr.flipX = lookDirection.x > 0;
     }
     private void ShootUpdate()
     {
