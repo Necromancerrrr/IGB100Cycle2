@@ -67,9 +67,9 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     }
     private void SetScale() // Matches the scale of the collider and VFX to match area size
     {
-        colli.radius = 2;
+        colli.radius = currentAreaSize;
         var shape = par.shape;
-        shape.radius = 2; // set to match area size
+        shape.radius = currentAreaSize; // set to match area size
         var main = par.main;
         main.startSize = new ParticleSystem.MinMaxCurve(0.1f * 2, 0.2f * 2);
     }
@@ -79,7 +79,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage(), transform.position); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(GetCurrentDamage(), transform.position, 0f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
         }
         else if (col.CompareTag("Prop"))
         {

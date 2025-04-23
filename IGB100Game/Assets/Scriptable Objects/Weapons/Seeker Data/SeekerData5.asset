@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114fd6e77a6020a459c57a1720345771, type: 3}
   m_Name: SeekerData5
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8391479871286726765, guid: 8ed1427f470194947ac4059762be1d9e, type: 3}
+  prefab: {fileID: 2767978684359668698, guid: bd22fe54d41cc7042a29de032fd156b9, type: 3}
   damage: 5
-  speed: 40
+  speed: 20
   cooldownDuration: 8
   pierce: 9999
-  projectileDuration: 8
+  areaSize: 0
+  projectileCount: 12
+  duration: 6
   level: 1
   nextLevelPrefab: {fileID: 0}
   name: Spirit guardians

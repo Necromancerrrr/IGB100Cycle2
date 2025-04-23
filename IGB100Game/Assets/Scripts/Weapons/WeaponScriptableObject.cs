@@ -9,25 +9,33 @@ public class WeaponScriptableObject : ScriptableObject
     public GameObject Prefab { get => prefab; private set => prefab = value; }
     // Base stats for weapons
     [Header("Weapon Stats")]
-    [SerializeField]
+    [SerializeField] // Damage of the weapon
     float damage;
     public float Damage { get => damage; private set => damage = value; }
 
-    [SerializeField]
+    [SerializeField] // Speed of the weapon (effect varies)
     float speed;
     public float Speed { get => speed; private set => speed = value; }
 
-    [SerializeField]
+    [SerializeField] // How often the weapon activates
     float cooldownDuration;
     public float CooldownDuration { get => cooldownDuration; private set => cooldownDuration = value; }
 
     [SerializeField]
-    int pierce;
+    int pierce; // How many enemies the projectile can collide with before self-terminating
     public int Pierce { get => pierce; private set => pierce = value; }
 
     [SerializeField]
-    float projectileDuration;
-    public float ProjectileDuration { get => projectileDuration; private set => projectileDuration = value; }
+    float areaSize; // How large the size of the collider of a weapon becomes
+    public float AreaSize { get => areaSize; private set => areaSize = value; }
+
+    [SerializeField]
+    float projectileCount; // How many projectiles are created per activation
+    public float ProjectileCount { get => projectileCount; private set => projectileCount = value; }
+
+    [SerializeField]
+    float duration; // How long effects of the weapon last (varies)
+    public float Duration { get => duration; private set => duration = value; }
 
     [SerializeField]
     int level;      // NOT meant to be modified in the game [Only in Editor]

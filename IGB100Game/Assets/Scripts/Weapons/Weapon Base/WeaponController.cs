@@ -7,7 +7,8 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
-    float currentCooldown;
+    [SerializeField] float currentCooldown;
+    [SerializeField] protected float currentProjectileCount;
 
     protected PlayerMovement pm;
 
@@ -15,6 +16,7 @@ public class WeaponController : MonoBehaviour
     {
         pm = FindFirstObjectByType<PlayerMovement>();
         currentCooldown = weaponData.CooldownDuration; // At the start, set current cooldown to the cooldown duration;
+        currentProjectileCount = Mathf.Round(weaponData.ProjectileCount); // In case you need to repeat certain commands (instantiates)
     }
 
     protected virtual void Update()

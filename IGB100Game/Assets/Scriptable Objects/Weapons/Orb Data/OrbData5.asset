@@ -17,7 +17,9 @@ MonoBehaviour:
   speed: 2
   cooldownDuration: 4
   pierce: 9999
-  projectileDuration: 4
+  areaSize: 4
+  projectileCount: 2
+  duration: 10
   level: 1
   nextLevelPrefab: {fileID: 0}
   name: Orb

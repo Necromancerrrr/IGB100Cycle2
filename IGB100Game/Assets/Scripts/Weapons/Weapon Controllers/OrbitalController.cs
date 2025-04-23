@@ -14,6 +14,5 @@ public class OrbitalController : WeaponController
         base.Attack();
         GameObject orbitalInstance = Instantiate(weaponData.Prefab);
         orbitalInstance.transform.position = transform.position; // Assign the position to be the same as this object, which is parented to the player
-        orbitalInstance.transform.parent = transform;
     }
 }

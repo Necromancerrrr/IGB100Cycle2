@@ -39,6 +39,10 @@ public class EnemyProjectile : MonoBehaviour
             player.TakeDamage(damage); // Make sure to use currentDamage instead of enemyData.Damage in case of any damage multipliers in the future
             Destroy(gameObject);
         }
+        if (col.gameObject.CompareTag("Shield"))
+        {
+            Destroy(gameObject);
+        }
     }
     void Update() // Ensures the projectile doesn't become a memory leak
     {

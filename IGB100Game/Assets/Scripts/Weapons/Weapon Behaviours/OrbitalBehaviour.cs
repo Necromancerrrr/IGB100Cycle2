@@ -41,7 +41,7 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
         if (Timer <= 0 && Active == false)
         {
             anim.SetBool("Active", true);
-            Timer = currentAOEDuration;
+            Timer = currentDuration;
             colli.enabled = true;
             Active = true;
             var main = par.main;
@@ -63,14 +63,14 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
     private void SetPosition() // Randomly places Orbital in an area somewhat close to the player
     {
         Vector2 angle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; // Generate random angle
-        transform.position = (Vector2)player.transform.position + angle * Random.Range(10f + 5f, 30f + 5f);
+        transform.position = (Vector2)player.transform.position + angle * Random.Range(10f + currentAreaSize, 30f + currentAreaSize);
     }
     private void SetScale() // Matches the scale of the collider and VFX to match area size
     {
-        colli.radius = 5;
-        sprite.size = new Vector2(2.8f * 5 , 2.8f * 5);
+        colli.radius = currentAreaSize;
+        sprite.size = new Vector2(2.8f * currentAreaSize, 2.8f * currentAreaSize);
         var main = par.main;
-        main.startSize = 2.8f * 5 / 0.3f;
+        main.startSize = 2.8f * currentAreaSize / 0.3f;
     }
     protected void OnTriggerStay2D(Collider2D col)
     {
@@ -78,7 +78,7 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
         {
             EnemyList.Add(col.gameObject);
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage(), transform.position); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(GetCurrentDamage(), transform.position, 0); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
         }
         else if (col.CompareTag("Prop"))
         {

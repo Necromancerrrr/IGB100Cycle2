@@ -45,7 +45,7 @@ public abstract class EnemyStats : MonoBehaviour
         yield return new WaitForSeconds(damageFlashDuration);
         sr.color = originalColor;
     }
-    public virtual void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce = 5f, float knockbackDuration = 0.2f)
+    public virtual void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce, float knockbackDuration = 0.2f)
     {
         currentHealth -= dmg;
         StartCoroutine(DamageFlash());

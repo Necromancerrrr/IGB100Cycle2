@@ -16,7 +16,9 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentSpeed;
     protected float currentCooldownDuration;
     protected int currentPierce;
-    protected float currentProjectileDuration;
+    protected float currentAreaSize;
+    protected float currentProjectileCount;
+    protected float currentDuration;
 
     void Awake()
     {
@@ -24,7 +26,10 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
-        currentProjectileDuration = weaponData.ProjectileDuration;
+        currentAreaSize = weaponData.AreaSize;
+        currentProjectileCount = weaponData.ProjectileCount;
+        currentDuration = weaponData.Duration;
+        destroyAfterSeconds = currentDuration;
     }
 
     public float GetCurrentDamage()
@@ -48,7 +53,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage(),transform.position); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(GetCurrentDamage(),transform.position, 0); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
             ReducePierce(); 
         }
         else if (col.CompareTag("Prop"))
