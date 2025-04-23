@@ -7555,19 +7555,19 @@ MonoBehaviour:
   - waveName: Test1
     enemyDensity: 5
     spawnFrequency: 1
-    enemyClusterCount: 2
+    enemyGroupCount: 0
     enemyType:
     - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
   - waveName: Test2
     enemyDensity: 5
     spawnFrequency: 2
-    enemyClusterCount: 1
+    enemyGroupCount: 0
     enemyType:
     - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
   - waveName: Test3
     enemyDensity: 5
     spawnFrequency: 1
-    enemyClusterCount: 1
+    enemyGroupCount: 0
     enemyType:
     - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
 --- !u!4 &956150512
@@ -9373,7 +9373,7 @@ PrefabInstance:
     - target: {fileID: 8394955625019812218, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: characterData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: ae9898998acd02649b987f2f6c4d2bc5, type: 2}
     - target: {fileID: 9035113680227125748, guid: bd98d4b1292bed149a77266ef0377b99, type: 3}
       propertyPath: m_Name
       value: Player
