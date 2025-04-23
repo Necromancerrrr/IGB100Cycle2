@@ -27,6 +27,11 @@ public abstract class EnemyStats : MonoBehaviour
     {
         currentHealth -= dmg;
 
+        if (dmg > 0)
+        {
+            GameManager.GenerateFloatingText(Mathf.FloorToInt(dmg).ToString(), transform);
+        }
+
         if (currentHealth <= 0)
         {
             Kill();

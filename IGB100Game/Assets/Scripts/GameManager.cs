@@ -35,6 +35,13 @@ public class GameManager : MonoBehaviour
     // Store the previous state of the game
     public GameState previousState;
 
+    [Header("Damage Text Settings")]
+    public Canvas damageTextCanvas;
+    public float textFontSize;
+    public TMP_FontAsset textFont;
+    public Camera referenceCamera;
+
+
     [Header("Stopwatch")]
     public float timeLimit; // Measured in seconds
     float stopwatchTime;
@@ -136,6 +143,61 @@ public class GameManager : MonoBehaviour
                 Debug.LogWarning("STATE DOES NOT EXIST");
                 break;
         }
+    }
+
+    IEnumerator GenerateFloatingTextCoroutine(string text, Transform target, float duration = 1f, float speed = 50f)
+    {
+        GameObject textObj = new GameObject("Damage Floating Text");
+        RectTransform rect = textObj.AddComponent<RectTransform>();
+        TextMeshProUGUI tmPro = textObj.AddComponent<TextMeshProUGUI>();
+
+        tmPro.text = text;
+        tmPro.horizontalAlignment = HorizontalAlignmentOptions.Center;
+        tmPro.verticalAlignment = VerticalAlignmentOptions.Middle;
+        tmPro.fontSize = textFontSize;
+
+        if (textFont)
+        {
+            tmPro.font = textFont;
+        }
+
+        rect.position = referenceCamera.WorldToScreenPoint(target.position);
+
+        Destroy(textObj, duration);
+
+        textObj.transform.SetParent(instance.damageTextCanvas.transform);
+        textObj.transform.SetAsFirstSibling();
+
+        WaitForEndOfFrame w = new WaitForEndOfFrame();
+        float t = 0;
+        float yOffset = 0;
+        while (t < duration) 
+        {
+            tmPro.color = new Color(tmPro.color.r, tmPro.color.g, tmPro.color.b, 1 - t / duration);
+            if (target)
+            {
+                yOffset += speed * Time.deltaTime;
+                rect.position = referenceCamera.WorldToScreenPoint(target.position + new Vector3(0, yOffset));
+            }
+            else
+            {
+                rect.position += new Vector3(0, speed * Time.deltaTime, 0);
+            }
+
+            yield return w;
+            t += Time.deltaTime;
+        }
+    }
+
+    public static void GenerateFloatingText(string text, Transform target, float duration = 1f, float speed = 1f)
+    {
+        // If the canvas is not set, end the function so we don't generate floating text
+        if (!instance.damageTextCanvas) { return; }
+
+        // Find a relevant camera that can be used to convert the world position to a screen position
+        if (!instance.referenceCamera) { instance.referenceCamera = Camera.main; }
+
+        instance.StartCoroutine(instance.GenerateFloatingTextCoroutine(text,target,duration,speed));   
     }
 
     //Define the method to change the state of the game

@@ -35,7 +35,6 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(GetCurrentDamage());
-                Debug.Log(col.gameObject.name + "took damage from bladestorm");
                 markedEnemies.Add(col.gameObject);
             }
         }
