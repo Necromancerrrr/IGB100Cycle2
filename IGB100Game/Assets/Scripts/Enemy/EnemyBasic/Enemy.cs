@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class Enemy : EnemyStats
 {
-    Transform player;
     new void Awake()
     {
         base.Awake();
         // Locates player
-        player = GameObject.FindWithTag("Player").transform;
+
     }
     void Update()
     {

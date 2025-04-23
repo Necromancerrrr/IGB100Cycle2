@@ -3,6 +3,10 @@ using UnityEngine;
 public abstract class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
+    
+    // Reference the player
+    [HideInInspector]
+    public PlayerStats player;
 
     // Current stats
     [HideInInspector]
@@ -17,6 +21,7 @@ public abstract class EnemyStats : MonoBehaviour
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
+        player = FindFirstObjectByType<PlayerStats>();
     }
     public void TakeDamage(float dmg)
     {
@@ -30,5 +35,6 @@ public abstract class EnemyStats : MonoBehaviour
     public void Kill()
     {
         Destroy(gameObject);
+        player.CurrentKills++;
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bladestorm Weapon
   m_EditorClassIdentifier: 
   prefab: {fileID: 686938345842361232, guid: b02cc65f6701e754dbe3f73f17f02369, type: 3}
-  damage: 1
+  damage: 1000
   speed: 0
   cooldownDuration: 5
   pierce: 0

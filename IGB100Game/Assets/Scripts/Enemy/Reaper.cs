@@ -4,12 +4,9 @@ public class Reaper : EnemyStats
 {
     // Reaper Logic
     float SpeedIncreaseTimer = 5;
-    Transform player;
     new void Awake()
     {
         base.Awake();
-        // Locates player
-        player = GameObject.FindWithTag("Player").transform;
     }
     void Update()
     {

@@ -21,6 +21,7 @@ public class PlayerStats : MonoBehaviour
     float currentProjectileSpeed;
     float currentProjectileDuration;
     float currentMagnet;
+    int currentKills;
 
     /// <summary>
     ///  Real Time Stat Tracking ( USE THESE FOR CHECKING PLAYER STATS IN CODE )
@@ -164,6 +165,24 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public int CurrentKills
+    {
+        get { return currentKills; }
+        set
+        {
+            if (currentKills != value)
+            {
+                currentKills = value;
+            }
+
+            // Update player UI
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.currentKillsDisplay.text = "Kills: " + currentKills.ToString();
+            }
+        }
+    }
+
 
 
     #endregion
@@ -226,6 +245,9 @@ public class PlayerStats : MonoBehaviour
         CurrentProjectileDuration = characterData.ProjectileDuration;
         CurrentMagnet = characterData.Magnet;
 
+        // Reset kills stat
+        CurrentKills = 0;
+
         //Spawn the starting weapon
         SpawnWeapon(characterData.StartingWeapon);
     }
@@ -244,6 +266,8 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentProjectileDurationDisplay.text = "Projectile Duration: " + currentProjectileDuration.ToString();
         GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet.ToString();
 
+
+        GameManager.instance.currentKillsDisplay.text = "Kills: " + currentKills.ToString();
         GameManager.instance.AssignChosenCharacterUI(characterData);
         GameManager.instance.AssignLevelReachedUI(level);
     }

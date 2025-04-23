@@ -19,8 +19,6 @@ public class EnemyChargerStats : EnemyStats
     public int ChargingPhase = 0;
     public float ChargeTimer = 5f;
 
-    // Components
-    Transform player;
     Vector2 target;
     Rigidbody2D rb;
 
@@ -33,8 +31,6 @@ public class EnemyChargerStats : EnemyStats
         chargeDuration = chargerData.ChargeDuration;
         chargeFreeze = chargerData.ChargeFreeze;
 
-        // Locates player
-        player = GameObject.FindWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()

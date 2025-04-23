@@ -18,8 +18,6 @@ public class EnemyShooterStats : EnemyStats
     float ShootTimer = 5;
     public float MovementTimer = 0;
 
-    // Components
-    Transform player;
     Rigidbody2D rb;
     [SerializeField] GameObject projectile;
 
@@ -33,8 +31,6 @@ public class EnemyShooterStats : EnemyStats
         projectileSpeed = shooterData.ProjectileSpeed;
 
         Ammo = projectileCount;
-        // Locates components
-        player = GameObject.FindWithTag("Player").transform;
         rb = player.GetComponent<Rigidbody2D>();
     }
     void Update()

@@ -16,8 +16,6 @@ public class EnemyZonerStats : EnemyStats
     // Zoner logic
     float zoneTimer = 5;
 
-    // Components
-    Transform player;
     [SerializeField] GameObject AOE;
 
     new void Awake()
@@ -29,8 +27,6 @@ public class EnemyZonerStats : EnemyStats
         zoneSize = zonerData.ZoneSize;
         zoneDelay = zonerData.ZoneDelay;
 
-        // Locates player
-        player = GameObject.FindWithTag("Player").transform;
     }
     void Update()
     {
