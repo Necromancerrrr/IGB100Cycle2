@@ -15,9 +15,9 @@ MonoBehaviour:
   icon: {fileID: 0}
   name: 
   startingWeapon: {fileID: 5297606356293451816, guid: d9cd84fb61250f4459ad58e55e7aa609, type: 3}
-  maxHealth: 3
+  maxHealth: 30000000
   recovery: 0
-  moveSpeed: 3
+  moveSpeed: 10
   might: 0
   projectileSpeed: 0
   projectileCount: 0

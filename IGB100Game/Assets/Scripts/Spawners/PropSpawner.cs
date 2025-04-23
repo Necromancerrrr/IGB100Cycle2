@@ -4,7 +4,7 @@ using UnityEngine;
 public class PropSpawner : BaseSpawner
 {
     [Tooltip("Distance things will spawn")]
-    [SerializeField] float spawnDistance = 0.5f;
+    [SerializeField] float spawnDistance = 1f;
     [SerializeField] int maxProps;
     [SerializeField] GameObject[] propType;
     
@@ -17,6 +17,8 @@ public class PropSpawner : BaseSpawner
     void Update()
     {
         spawnTimer += Time.deltaTime;
+
+        propsSpawned = GameObject.FindGameObjectsWithTag("Prop");
 
         if (spawnTimer >= 1 && propsSpawned.Length <= maxProps)
         {

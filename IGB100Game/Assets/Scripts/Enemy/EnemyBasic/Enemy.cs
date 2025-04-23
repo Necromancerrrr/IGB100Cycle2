@@ -14,6 +14,7 @@ public class Enemy : EnemyStats
     void Update()
     {
         Movement();
+        RespawnNearPlayer();
     }
     private void Movement()
     {
@@ -69,10 +70,14 @@ public class Enemy : EnemyStats
     
     public void RespawnNearPlayer()
     {
-        if (Camera.main.WorldToViewportPoint(transform.position).x > 1.5f || Camera.main.WorldToViewportPoint(transform.position).y > 1.5f)
+        //Vector3.Distance (transform.position, player.transform.position) > 10
+        //Camera.main.WorldToViewportPoint(transform.position).x > 1.5f || Camera.main.WorldToViewportPoint(transform.position).y > 1.5f // delete later
+
+        if (Vector3.Distance (transform.position, player.transform.position) > 50) // check dist between enemy and player
         {
             Vector2 respawnPoint = RespawnPosition(1);
-            transform.position = respawnPoint;
+            
+            transform.position = Camera.main.ViewportToWorldPoint(respawnPoint);
         }
     }
     

@@ -26,6 +26,7 @@ public class BladestormController : WeaponController
 
             GameObject blade = Instantiate(weaponData.Prefab, spawnPosition, Quaternion.identity);
             blade.transform.parent = transform; // Attach to player so they orbit
+            // blade.transform.localScale = new Vector3();
 
             // rotate the blade to face outward 
             blade.transform.up = offset.normalized;

@@ -20,6 +20,8 @@ public class PlayerStats : MonoBehaviour
     float currentMight;
     float currentProjectileSpeed;
     float currentProjectileDuration;
+    float currentProjectileCount; // WIP
+    float currentAOE; // WIP
     float currentMagnet;
     int currentKills;
 
@@ -142,6 +144,45 @@ public class PlayerStats : MonoBehaviour
                     GameManager.instance.currentProjectileDurationDisplay.text = "Projectile Duration: " + currentProjectileDuration.ToString();
                 }
 
+            }
+        }
+    }
+    public float CurrentProjectileCount
+    {
+        get { return currentProjectileCount; }
+        set
+        {
+            // Check if the value has changed
+            if (currentProjectileCount != value)
+            {
+                //Update the real time value of the stat
+                currentProjectileCount = value;
+
+                // Update player UI
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentProjectileCountDisplay.text = "Projectile Duration: " + currentProjectileCount.ToString();
+                }
+
+            }
+        }
+    }
+    public float CurrentAOE
+    {
+        get { return currentAOE; }
+        set
+        {
+            // Check if the value has changed
+            if (currentAOE != value)
+            {
+                //Update the real time value of the stat
+                currentAOE = value;
+
+                // Update player UI
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentAOEDisplay.text = "Projectile Duration: " + currentAOE.ToString();
+                }
             }
         }
     }
