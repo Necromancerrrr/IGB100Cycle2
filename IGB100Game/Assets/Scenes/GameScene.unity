@@ -7535,7 +7535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &956150511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7549,22 +7549,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 1
-  waveFrequency: 10
+  waveFrequency: 30
   maxEnemyCapacity: 300
   waves:
   - waveName: Test1
     enemyDensity: 5
     spawnFrequency: 1
+    enemyClusterCount: 2
     enemyType:
     - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
   - waveName: Test2
     enemyDensity: 5
     spawnFrequency: 2
+    enemyClusterCount: 1
     enemyType:
     - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
   - waveName: Test3
     enemyDensity: 5
     spawnFrequency: 1
+    enemyClusterCount: 1
     enemyType:
     - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
 --- !u!4 &956150512

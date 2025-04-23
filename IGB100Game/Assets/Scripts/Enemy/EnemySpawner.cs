@@ -12,6 +12,9 @@ public class Wave
     [Tooltip("How fast each spawn cycle is (seconds)")]
     public float spawnFrequency;
 
+    [Tooltip("How many groups each cycle will spawn, set to 0 if no clustering")]
+    public int enemyGroupCount;
+
     [Tooltip("Types of enemies that will be randomly spawned this wave")]
     public GameObject[] enemyType;
 }
@@ -27,6 +30,8 @@ public class EnemySpawner : MonoBehaviour
 
     [Tooltip("How many enemies can be in the game world at once")]
     [SerializeField] int maxEnemyCapacity;
+
+    
 
     [Tooltip("Array of all waves")]
     [SerializeField] Wave[] waves;
@@ -51,10 +56,27 @@ public class EnemySpawner : MonoBehaviour
         if (spawnTimer >= currentWave.spawnFrequency && enemiesSpawned.Length < maxEnemyCapacity)
         {
             spawnTimer = 0.0f;
-            for (int i = 0; i < currentWave.enemyDensity; i++)
+            if (currentWave.enemyGroupCount > 0)
             {
-                SpawnEnemy();
+                for (int i = 0; i < currentWave.enemyGroupCount; i++)
+                {
+                    Vector2 randomPosition = GetRandomPosition();
+
+                    for (int j = 0; j < currentWave.enemyDensity; j++)
+                    {
+                        SpawnEnemy(randomPosition);
+                    }
+                }
             }
+            else
+            {
+                for (int i = 0; i < currentWave.enemyDensity; i++)
+                {
+                    Vector2 randomPosition = GetRandomPosition();
+                    SpawnEnemy(randomPosition);
+                }
+            }
+            
         }
 
         if (waveTimer >= waveFrequency)
@@ -63,12 +85,11 @@ public class EnemySpawner : MonoBehaviour
             waveTimer = 0;
         }
     }
-
-    void SpawnEnemy()
+    
+    Vector2 GetRandomPosition()
     {
         Vector2 randomPosition;
-        GameObject randomEnemy = currentWave.enemyType[Random.Range(0, currentWave.enemyType.Length)];
-        
+
         if (Random.Range(0f, 1f) > 0.5f) // Spawn on the sides of the screen
         {
             randomPosition.y = Random.Range(0.5f - spawnDistance, 0.5f + spawnDistance);
@@ -96,6 +117,14 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
+        return randomPosition;
+    }
+    
+    void SpawnEnemy(Vector2 randomPosition)
+    {
+        
+        GameObject randomEnemy = currentWave.enemyType[Random.Range(0, currentWave.enemyType.Length)];
+        
         Vector2 spawnPos = Camera.main.ViewportToWorldPoint(randomPosition);
         Instantiate(randomEnemy, spawnPos, Quaternion.identity);
     }
