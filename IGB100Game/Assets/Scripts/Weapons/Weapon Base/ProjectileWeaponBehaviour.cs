@@ -33,7 +33,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     }
     protected virtual void Start()
     {
-        Destroy(gameObject, currentProjectileDuration);
+        Destroy(gameObject, destroyAfterSeconds);
     }
 
 

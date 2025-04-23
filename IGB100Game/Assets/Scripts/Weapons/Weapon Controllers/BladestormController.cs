@@ -8,6 +8,7 @@ public class BladestormController : WeaponController
     protected override void Start()
     {
         base.Start();
+        Attack();
     }
 
     protected override void Attack()

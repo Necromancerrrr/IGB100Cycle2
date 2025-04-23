@@ -17,6 +17,7 @@ MonoBehaviour:
   speed: 8
   cooldownDuration: 0.5
   pierce: 1
+  projectileDuration: 3
   level: 2
   nextLevelPrefab: {fileID: 4142939955346733007, guid: d7ecc4f20e89d7d4f802d873058c07e7, type: 3}
   name: Knife 2

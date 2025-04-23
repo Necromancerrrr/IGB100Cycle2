@@ -17,6 +17,7 @@ MonoBehaviour:
   speed: 0
   cooldownDuration: 2
   pierce: 0
+  projectileDuration: 2
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Garlic MAX

@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class BladestormBehaviour : MeleeWeaponBehaviour
 {
-    HashSet<GameObject> markedEnemies;
+    List<GameObject> markedEnemies;
     public float hitResetInterval = 0.5f; // Time in seconds before enemies can be hit again
     private float timer;
 
     protected override void Start()
     {
         base.Start();
-        markedEnemies = new HashSet<GameObject>();
+        markedEnemies = new List<GameObject>();
         timer = hitResetInterval;
     }
 
@@ -35,12 +35,13 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(GetCurrentDamage());
+                Debug.Log(col.gameObject.name + "took damage from bladestorm");
                 markedEnemies.Add(col.gameObject);
             }
         }
         else if (col.CompareTag("Prop"))
         {
-            if (col.TryGetComponent(out BreakableProps breakable) && !markedEnemies.Contains(col.gameObject))
+            if (col.gameObject.TryGetComponent(out BreakableProps breakable) && !markedEnemies.Contains(col.gameObject))
             {
                 breakable.TakeDamage(GetCurrentDamage());
                 markedEnemies.Add(col.gameObject);
