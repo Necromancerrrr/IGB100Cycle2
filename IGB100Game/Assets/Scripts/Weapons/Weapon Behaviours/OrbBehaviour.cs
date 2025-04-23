@@ -79,7 +79,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage()); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(GetCurrentDamage(), transform.position); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
         }
         else if (col.CompareTag("Prop"))
         {

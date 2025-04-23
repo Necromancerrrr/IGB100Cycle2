@@ -5,6 +5,8 @@ public class EnemyChargerStats : EnemyStats
 {
     public EnemyChargerScriptableObject chargerData;
 
+    Vector2 knockbackVelocity;
+    float knockbackDuration;
     // Current stats
     [HideInInspector]
     public float chargeFrequency;
@@ -77,5 +79,27 @@ public class EnemyChargerStats : EnemyStats
             player.TakeDamage(currentDamage); // Make sure to use currentDamage instead of enemyData.Damage in case of any damage multipliers in the future
 
         }
+    }
+
+    public override void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce = 5, float knockbackDuration = 0.2F)
+    {
+        base.TakeDamage(dmg, sourcePosition, knockbackForce, knockbackDuration);
+
+        if (knockbackDuration > 0)
+        {
+            Vector2 dir = (Vector2)transform.position - sourcePosition;
+            Knockback(dir.normalized * knockbackForce, knockbackDuration);
+        }
+
+    }
+
+    public void Knockback(Vector2 velocity, float duration)
+    {
+        // Stops the knockback
+        if (knockbackDuration > 0) { return; }
+
+        // Begins knockback
+        knockbackVelocity = velocity;
+        knockbackDuration = duration;
     }
 }

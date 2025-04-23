@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11cd1384b29b58498ff2173ed3c23fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 8c1845d10a535724e9489235228404da, type: 2}
+  characterData: {fileID: 11400000, guid: eef787046c9396c4a962e400fc52c4a0, type: 2}
   experience: 0
   level: 1
   experienceCap: 0
@@ -307,6 +307,7 @@ MonoBehaviour:
   weaponIndex: 0
   passiveItemIndex: 0
   pactItemIndex: 0
+  damageEffect: {fileID: 3938433948344025923, guid: f260839b36439924facabb4494537ad8, type: 3}
 --- !u!114 &28801787229457722
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -219,10 +219,16 @@ public class PlayerStats : MonoBehaviour
     public int passiveItemIndex;
     public int pactItemIndex;
 
+    // Player Particles
+    [Header("Player Particle Effects")]
+    public ParticleSystem damageEffect;
+
     // Animation Script
+    [Header("Player Animation")]
     PlayerAnimator playerAnimator;
 
     // Audio Feedback Script
+    [Header("Player Audio")]
     PlayerAudio playerAudio;
  
 
@@ -360,7 +366,12 @@ public class PlayerStats : MonoBehaviour
     {
         if (!isInvincible)
         {
-            currentHealth -= dmg;
+            CurrentHealth -= dmg;
+
+            if (damageEffect)
+            {
+                Instantiate(damageEffect, transform.position, Quaternion.identity);
+            }
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;

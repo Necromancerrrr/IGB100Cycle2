@@ -890,7 +890,7 @@ MonoBehaviour:
   previousState: 0
   damageTextCanvas: {fileID: 780782262}
   textFontSize: 12
-  textFont: {fileID: 0}
+  textFont: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   referenceCamera: {fileID: 1300841917}
   timeLimit: 300
   stopwatchDisplay: {fileID: 2093112540}
