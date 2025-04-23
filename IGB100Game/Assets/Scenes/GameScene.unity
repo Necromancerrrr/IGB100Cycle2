@@ -2312,6 +2312,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271232815}
   m_CullTransparentMesh: 1
+--- !u!1 &279559788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 279559789}
+  - component: {fileID: 279559790}
+  m_Layer: 0
+  m_Name: PropSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &279559789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279559788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0850853, y: 1.5485135, z: 0.072207645}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &279559790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279559788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5233d61b945a3d3408e99cc9b03a6edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDistance: 0.5
+  maxProps: 100
+  propType:
+  - {fileID: 75189837149871536, guid: b3ea54a6980c33945892111ae18bb1ec, type: 3}
 --- !u!1 &283282513
 GameObject:
   m_ObjectHideFlags: 0
@@ -7755,27 +7803,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 956150510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27fae8a55d9f1c3449389b6ff5ff63f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 59e5aa08a9ffe674780eddd3e4e9ba73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 1
-  waveFrequency: 30
+  waveFrequency: 60
   maxEnemyCapacity: 300
   waves:
-  - waveName: Test1
-    enemyDensity: 5
-    spawnFrequency: 1
-    enemyGroupCount: 0
-    enemyType:
-    - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
-  - waveName: Test2
-    enemyDensity: 5
-    spawnFrequency: 2
-    enemyGroupCount: 0
-    enemyType:
-    - {fileID: 4564404143333738025, guid: c9be4cbb3ac93d7408dcead8a50ebe0f, type: 3}
-  - waveName: Test3
-    enemyDensity: 5
+  - waveName: test
+    enemyDensity: 10
     spawnFrequency: 1
     enemyGroupCount: 0
     enemyType:
@@ -15469,6 +15505,7 @@ SceneRoots:
   - {fileID: 752694654}
   - {fileID: 780782263}
   - {fileID: 708339193}
+  - {fileID: 279559789}
   - {fileID: 485684217}
   - {fileID: 483397747}
   - {fileID: 1432522992}

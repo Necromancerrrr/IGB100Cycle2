@@ -20,7 +20,8 @@ public class Wave
 }
 
 
-public class EnemySpawner : MonoBehaviour
+
+public class EnemySpawner : BaseSpawner
 {
     [Tooltip("Distance enemies will spawn from the centre of the screen e.g. 1 = 1 screen size")]
     [SerializeField] float spawnDistance = 1f;
@@ -30,8 +31,6 @@ public class EnemySpawner : MonoBehaviour
 
     [Tooltip("How many enemies can be in the game world at once")]
     [SerializeField] int maxEnemyCapacity;
-
-    
 
     [Tooltip("Array of all waves")]
     [SerializeField] Wave[] waves;
@@ -43,6 +42,8 @@ public class EnemySpawner : MonoBehaviour
 
     private Wave currentWave;
     private int currentWaveNumber = 0;
+
+    //BaseSpawner spawner = new BaseSpawner();
 
     void Update()
     {
@@ -60,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 for (int i = 0; i < currentWave.enemyGroupCount; i++)
                 {
-                    Vector2 randomPosition = GetRandomPosition();
+                    Vector2 randomPosition = base.GetRandomPosition(spawnDistance);
 
                     for (int j = 0; j < currentWave.enemyDensity; j++)
                     {
@@ -72,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 for (int i = 0; i < currentWave.enemyDensity; i++)
                 {
-                    Vector2 randomPosition = GetRandomPosition();
+                    Vector2 randomPosition =  base.GetRandomPosition(spawnDistance);
                     SpawnEnemy(randomPosition);
                 }
             }
@@ -84,40 +85,6 @@ public class EnemySpawner : MonoBehaviour
             currentWaveNumber++;
             waveTimer = 0;
         }
-    }
-    
-    Vector2 GetRandomPosition()
-    {
-        Vector2 randomPosition;
-
-        if (Random.Range(0f, 1f) > 0.5f) // Spawn on the sides of the screen
-        {
-            randomPosition.y = Random.Range(0.5f - spawnDistance, 0.5f + spawnDistance);
-            
-            if (Random.Range(0f, 1f) > 0.5f) // Spawn right
-            {
-                randomPosition.x = 0.5f + spawnDistance;
-            }
-            else // Spawn left
-            {
-                randomPosition.x = 0.5f - spawnDistance;
-            }
-        }
-        else // Spawn on top/bottom of the screen
-        {
-            randomPosition.x = Random.Range(0.5f - spawnDistance, 0.5f + spawnDistance);
-
-            if (Random.Range(0f, 1f) > 0.5f) // Spawn top
-            {
-                randomPosition.y = 0.5f + spawnDistance;
-            }
-            else // Spawn bottom
-            {
-                randomPosition.y = 0.5f - spawnDistance;
-            }
-        }
-
-        return randomPosition;
     }
     
     void SpawnEnemy(Vector2 randomPosition)
