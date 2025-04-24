@@ -5,17 +5,19 @@ public class Enemy : EnemyStats
 
     Vector2 knockbackVelocity;
     float knockbackDuration;
+
     new void Awake()
     {
         base.Awake();
         // Locates player
-
     }
+    
     void Update()
     {
         Movement();
         RespawnNearPlayer();
     }
+
     private void Movement()
     {
         if (knockbackDuration > 0) 
@@ -39,6 +41,7 @@ public class Enemy : EnemyStats
         if (dmg > 0)
         {
             GameManager.GenerateFloatingText(Mathf.FloorToInt(dmg).ToString(), transform);
+            
         }
 
         if (knockbackDuration > 0)
@@ -70,9 +73,6 @@ public class Enemy : EnemyStats
     
     public void RespawnNearPlayer()
     {
-        //Vector3.Distance (transform.position, player.transform.position) > 10
-        //Camera.main.WorldToViewportPoint(transform.position).x > 1.5f || Camera.main.WorldToViewportPoint(transform.position).y > 1.5f // delete later
-
         if (Vector3.Distance (transform.position, player.transform.position) > 50) // check dist between enemy and player
         {
             Vector2 respawnPoint = RespawnPosition(1);

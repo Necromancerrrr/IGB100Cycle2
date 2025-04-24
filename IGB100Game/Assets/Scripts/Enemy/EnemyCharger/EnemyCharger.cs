@@ -40,6 +40,7 @@ public class EnemyChargerStats : EnemyStats
         ChargeUpdate();
         Movement();
     }
+
     private void Movement()
     {
         if (ChargingPhase == 0) // For all movement outside of the charge
@@ -66,6 +67,7 @@ public class EnemyChargerStats : EnemyStats
             ChargeTimer = chargeFreeze;
             Vector2 angle = new Vector2(rb.transform.position.x - target.x, rb.transform.position.y - target.y).normalized;
             rb.linearVelocity = -angle * chargeSpeed;
+            enemyAudio.PlayEnemyChargeSound();
         }
         else if (ChargeTimer < 0 && ChargingPhase == 2) // Charge ends, reset cooldown
         {

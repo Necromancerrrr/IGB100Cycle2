@@ -30,7 +30,6 @@ public class EnemyZonerStats : EnemyStats
         zoneCount = zonerData.ZoneCount;
         zoneSize = zonerData.ZoneSize;
         zoneDelay = zonerData.ZoneDelay;
-
     }
     void Update()
     {
@@ -62,6 +61,7 @@ public class EnemyZonerStats : EnemyStats
         GameObject instance = Instantiate(AOE);
         instance.transform.position = transform.position; // Assign the position to be the same as this object which is parented to the player
         instance.GetComponent<EnemyAOE>().SetStats(currentDamage, zoneSize, zoneDelay);
+        enemyAudio.PlayEnemyZoneActiveSound();
     }
     private void OnCollisionStay2D(Collision2D col)
     {

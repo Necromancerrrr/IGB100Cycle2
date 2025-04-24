@@ -17,6 +17,9 @@ public abstract class EnemyStats : MonoBehaviour
     public float currentHealth;
     [HideInInspector]
     public float currentDamage;
+    [HideInInspector]
+    public EnemyAudio enemyAudio;
+
 
     [Header("Damage Feedback")]
     public Color damageColor = new Color(1, 0, 0, 1);
@@ -25,7 +28,7 @@ public abstract class EnemyStats : MonoBehaviour
     Color originalColor;
     protected SpriteRenderer sr;
     protected Collider2D enemyCollider;
-
+    
 
     protected void Awake()
     {
@@ -37,6 +40,7 @@ public abstract class EnemyStats : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         enemyCollider = GetComponent<Collider2D>();
         originalColor = sr.color;
+        enemyAudio = GetComponent<EnemyAudio>();
     }
 
     IEnumerator DamageFlash()
@@ -49,6 +53,7 @@ public abstract class EnemyStats : MonoBehaviour
     {
         currentHealth -= dmg;
         StartCoroutine(DamageFlash());
+        enemyAudio.PlayEnemyHurtSound();
 
         Debug.Log(dmg);
 

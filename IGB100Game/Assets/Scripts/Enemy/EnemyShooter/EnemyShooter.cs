@@ -85,6 +85,7 @@ public class EnemyShooterStats : EnemyStats
         GameObject instance = Instantiate(projectile);
         instance.transform.position = transform.position; // Assign the position to be the same as this object which is parented to the player
         instance.GetComponent<EnemyProjectile>().SetStats(currentDamage, projectileSpeed);
+        enemyAudio.PlayEnemyShootSound();
     }
     private void OnCollisionStay2D(Collision2D col)
     {

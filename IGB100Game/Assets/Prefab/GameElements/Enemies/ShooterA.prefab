@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7346567420959452717}
   - component: {fileID: 1476480783760685198}
   - component: {fileID: -4001461327363300624}
+  - component: {fileID: -6778524135113133569}
   - component: {fileID: 4301642214087049820}
   - component: {fileID: 4144501403651834557}
   - component: {fileID: -1507337799349336710}
@@ -54,6 +55,7 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  enemyAudio: {fileID: 0}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
@@ -85,6 +87,23 @@ MonoBehaviour:
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
     dropValue: 5
+--- !u!114 &-6778524135113133569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4564404143333738025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6410a51c5caaf42aec1e84de0c880d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyHurt: {fileID: 8300000, guid: 2d51ca26e18eb7647a19d51cadab23f3, type: 3}
+  EnemyCharge: {fileID: 8300000, guid: 1c504a54cba0a3742851c2ea4fbc3bb2, type: 3}
+  EnemyShoot: {fileID: 8300000, guid: b285507f290b4b04a9d7fe3c720b8982, type: 3}
+  EnemyZonePrepare: {fileID: 8300000, guid: 366043861ef1f2a42a50a252577007f1, type: 3}
+  EnemyZoneActive: {fileID: 8300000, guid: 6052d702aa557384ab9fec40b346c08f, type: 3}
 --- !u!212 &4301642214087049820
 SpriteRenderer:
   m_ObjectHideFlags: 0
