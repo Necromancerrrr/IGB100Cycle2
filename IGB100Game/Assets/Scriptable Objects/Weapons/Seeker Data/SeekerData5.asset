@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 6
   level: 1
   nextLevelPrefab: {fileID: 0}
-  name: Spirit guardians
+  name: Spirit Seekers
   description: +5 projectile count
   icon: {fileID: 3810473490841819008, guid: 04b5526d8747d084c9963a296f7927c2, type: 3}

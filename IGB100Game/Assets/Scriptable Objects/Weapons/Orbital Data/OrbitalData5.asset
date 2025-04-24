@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 12
   level: 1
   nextLevelPrefab: {fileID: 0}
-  name: Curse of perception
+  name: Curse of Perception
   description: +7 duration
   icon: {fileID: 2702398421418402710, guid: ec9de6724f4427a4a8450ab2c7a48a3c, type: 3}
