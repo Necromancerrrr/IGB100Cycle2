@@ -34,7 +34,6 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         burstTime += Time.deltaTime;
         if (pulseTimer <= 0) 
         {
-            Debug.Log("pulse");
             Pulse();
             pulseTimer = tickRate;
         }
@@ -52,7 +51,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(burstTime, burstParticles) });
     }
     private void SetEnemy() // Selects a random enemy as the target. If there are no valid targets, self destruct.
-    {
+    { 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0) { Destroy(gameObject); }
         else

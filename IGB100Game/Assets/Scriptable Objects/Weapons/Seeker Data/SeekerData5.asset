@@ -24,4 +24,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Spirit guardians
   description: +5 projectile count
-  icon: {fileID: 0}
+  icon: {fileID: 3810473490841819008, guid: 04b5526d8747d084c9963a296f7927c2, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ChargerBoss
   m_EditorClassIdentifier: 
   chargeFrequency: 15
-  chargeSpeed: 5
+  chargeSpeed: 20
   chargeDuration: 1
   chargeFreeze: 0.5

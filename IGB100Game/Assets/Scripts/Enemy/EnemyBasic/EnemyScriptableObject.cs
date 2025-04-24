@@ -6,7 +6,7 @@ public class EnemyScriptableObject : ScriptableObject
     // Base stats for enemies
     [Header("Enemy Base Stats")]
     [SerializeField]
-    float maxHealth;
+    public float maxHealth;
     public float MaxHealth { get => maxHealth; private set => maxHealth = value; }
 
     [SerializeField]

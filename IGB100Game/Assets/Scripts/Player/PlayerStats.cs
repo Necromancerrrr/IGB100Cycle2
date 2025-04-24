@@ -334,7 +334,6 @@ public class PlayerStats : MonoBehaviour
         {
             isInvincible = false;
         }
-
         PassiveHeal();
     }
     public void IncreaseExperience(int amount)

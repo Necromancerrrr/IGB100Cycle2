@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Corrupt Grass Corner Blend.png_0: -4202268465708439401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

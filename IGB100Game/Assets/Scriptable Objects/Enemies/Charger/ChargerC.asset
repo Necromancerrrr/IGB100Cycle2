@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ChargerC
   m_EditorClassIdentifier: 
   chargeFrequency: 10
-  chargeSpeed: 15
+  chargeSpeed: 20
   chargeDuration: 1
   chargeFreeze: 0.5

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Corrupt Grass_0: -5249399246363896039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

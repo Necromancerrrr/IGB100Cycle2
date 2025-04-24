@@ -32,7 +32,7 @@ public class Enemy : EnemyStats
         sr.flipX = lookDirection.x > 0;
     }
 
-    public override void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce = 5, float knockbackDuration = 0.2F)
+    public override void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce, float knockbackDuration = 0.2F)
     {
         base.TakeDamage(dmg, sourcePosition, knockbackForce, knockbackDuration);
 

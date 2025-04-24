@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   name: 
-  startingWeapon: {fileID: 5297606356293451816, guid: d9cd84fb61250f4459ad58e55e7aa609, type: 3}
-  maxHealth: 30000000
+  startingWeapon: {fileID: 8391479871286726765, guid: 4bc13ed61692e274190222bb45bfd0d9, type: 3}
+  maxHealth: 3
   recovery: 0
-  moveSpeed: 10
-  might: 0
-  projectileSpeed: 0
-  projectileCount: 0
-  projectileDuration: 0
+  moveSpeed: 4
+  might: 1
+  projectileSpeed: 1
+  projectileCount: 1
+  projectileDuration: 1
   magnet: 2
   cooldown: 0
   playerSize: 0

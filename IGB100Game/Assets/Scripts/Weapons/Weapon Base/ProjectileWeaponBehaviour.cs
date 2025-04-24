@@ -12,7 +12,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     public float destroyAfterSeconds;
 
     // Current stats
-    protected float currentDamage;
+    [SerializeField] protected float currentDamage;
     protected float currentSpeed;
     protected float currentCooldownDuration;
     protected int currentPierce;
