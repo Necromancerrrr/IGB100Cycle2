@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 4504450538706352346, guid: 8b102acf98bfef24b8140a23b036bb6d, type: 3}
   name: Bladestorm
   startingWeapon: {fileID: 6883820235095941995, guid: 40aeb378dfbffe24e8b1b8bc92c3fdea, type: 3}
-  maxHealth: 3
+  maxHealth: 16
   recovery: 0
   moveSpeed: 4
   might: 1

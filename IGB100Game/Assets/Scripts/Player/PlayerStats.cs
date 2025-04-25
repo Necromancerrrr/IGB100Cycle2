@@ -5,10 +5,14 @@ using Unity.UI;
 using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
+using System;
 
 public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData; // REMOVE PUBLIC BEFORE FINISHING
+
+    public static event Action OnPlayerDamaged;
+    public static event Action OnPlayerDeath;
 
 
     /// <summary>
@@ -412,6 +416,8 @@ public class PlayerStats : MonoBehaviour
         {
             CurrentHealth -= dmg;
 
+            OnPlayerDamaged?.Invoke();
+
             if (damageEffect)
             {
                 Instantiate(damageEffect, transform.position, Quaternion.identity);
@@ -438,6 +444,7 @@ public class PlayerStats : MonoBehaviour
         {
             playerAnimator.PlayPlayerDeadAnim();
             playerAudio.PlayPlayerDeathSound();
+            OnPlayerDeath?.Invoke();
 
             GameManager.instance.AssignLevelReachedUI(level);
             GameManager.instance.AssignChosenWeaponsAndPassiveItemsUI(inventory.weaponUISlots, inventory.passiveItemUISlots);
