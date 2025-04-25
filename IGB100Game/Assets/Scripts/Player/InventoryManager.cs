@@ -171,6 +171,10 @@ public class InventoryManager : MonoBehaviour
             {
                 return;
             }
+            else if (weaponSlots[5] != null && passiveItemSlots[5] != null)
+            {
+                return;
+            }
 
             int upgradeType;
 
