@@ -4,9 +4,14 @@ public class Reaper : EnemyStats
 {
     // Reaper Logic
     float SpeedIncreaseTimer = 5;
+    private Animator anim;
     new void Awake()
     {
         base.Awake();
+    }
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -22,7 +27,9 @@ public class Reaper : EnemyStats
         SpeedIncreaseTimer -= Time.deltaTime;
         if (SpeedIncreaseTimer < 0)
         {
-            currentMoveSpeed += 1;
+            currentMoveSpeed += 0.2f;
+            anim.speed += 0.2f;
+            SpeedIncreaseTimer = 5;
         }   
     }
     private void OnCollisionStay2D(Collision2D col)
