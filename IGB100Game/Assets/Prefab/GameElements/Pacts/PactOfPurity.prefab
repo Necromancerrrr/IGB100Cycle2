@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5297606356293451816
+--- !u!1 &9053325686187930708
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5606491628956402022}
-  - component: {fileID: 8271135198309654418}
+  - component: {fileID: 7099146114895158856}
+  - component: {fileID: 3555281311983625198}
   m_Layer: 0
-  m_Name: OrbitalController2
+  m_Name: PactOfPurity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5606491628956402022
+--- !u!4 &7099146114895158856
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5297606356293451816}
+  m_GameObject: {fileID: 9053325686187930708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 543.08636, y: 369.6389, z: -1.2097316}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8271135198309654418
+--- !u!114 &3555281311983625198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5297606356293451816}
+  m_GameObject: {fileID: 9053325686187930708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b47e70128f48b84ab29b9702a855376, type: 3}
+  m_Script: {fileID: 11500000, guid: f68c8045ceda40541b9bde576028408c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: d6283fb3f87ad08409b0d2c6f2410a2f, type: 2}
-  currentCooldown: 5
-  currentProjectileCount: 0
+  pactItemData: {fileID: 11400000, guid: fb5d57503fe0d1a41bcd42db9bf3597b, type: 2}

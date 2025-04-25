@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1dc97fb8cb21045a51ccf682a71196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pullSpeed: 300
+  pullSpeed: 40
 --- !u!58 &2872719287268276842
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!1 &5848403144304457624
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,9 +363,27 @@ MonoBehaviour:
   - weaponUpgradeIndex: 1
     initialWeapon: {fileID: 6883820235095941995, guid: f3163566e17677b4a88ee4f1bdcd21fb, type: 3}
     weaponData: {fileID: 11400000, guid: f822da3987a27a543972906839aec2e4, type: 2}
-  - weaponUpgradeIndex: 1
+  - weaponUpgradeIndex: 2
     initialWeapon: {fileID: 6883820235095941995, guid: 40aeb378dfbffe24e8b1b8bc92c3fdea, type: 3}
     weaponData: {fileID: 11400000, guid: 919539a7098bb474283c4b70fe7c4d68, type: 2}
+  - weaponUpgradeIndex: 3
+    initialWeapon: {fileID: 5174747787104083617, guid: c636127ae7ff3e94a812b72067088855, type: 3}
+    weaponData: {fileID: 11400000, guid: f66bab48188b661479766418c99b1f4b, type: 2}
+  - weaponUpgradeIndex: 4
+    initialWeapon: {fileID: 8391479871286726765, guid: 4bc13ed61692e274190222bb45bfd0d9, type: 3}
+    weaponData: {fileID: 11400000, guid: 9e4082d2de270f249abdc7d600e80302, type: 2}
+  - weaponUpgradeIndex: 5
+    initialWeapon: {fileID: 8391479871286726765, guid: 4bc13ed61692e274190222bb45bfd0d9, type: 3}
+    weaponData: {fileID: 11400000, guid: 9e4082d2de270f249abdc7d600e80302, type: 2}
+  - weaponUpgradeIndex: 6
+    initialWeapon: {fileID: 5297606356293451816, guid: c721d4c08144a5e418fca8331b517207, type: 3}
+    weaponData: {fileID: 11400000, guid: 9fa93a57c4e4bb545a5e3071dcd0812a, type: 2}
+  - weaponUpgradeIndex: 7
+    initialWeapon: {fileID: 8391479871286726765, guid: 5780c7f8d28302043966cc6500eca076, type: 3}
+    weaponData: {fileID: 11400000, guid: c13fbfc37b14a0144b725d476aa7cc41, type: 2}
+  - weaponUpgradeIndex: 8
+    initialWeapon: {fileID: 53529854424434218, guid: cfd57990b2667e347a71b9325e224bf3, type: 3}
+    weaponData: {fileID: 11400000, guid: a4f903661d3093d4d9b648111f3e2a7c, type: 2}
   passiveItemUpgradeOptions:
   - passiveItemUpgradeIndex: 0
     initialPassiveItem: {fileID: 5069994856143371818, guid: adc76bb1388a5ca48adf11be98e09c59, type: 3}
@@ -375,11 +393,17 @@ MonoBehaviour:
     passiveItemData: {fileID: 11400000, guid: c7204f5a801dc9142b16bf60d6645a49, type: 2}
   pactItemOptions:
   - pactItemUpgradeIndex: 0
-    initialPactItem: {fileID: 7552695210783612384, guid: f190cc260a283c646ae99952ad6747d9, type: 3}
-    pactItemData: {fileID: 11400000, guid: c14b4549fdc76cf4ba34eef2b99eb2b4, type: 2}
+    initialPactItem: {fileID: 296385800125878727, guid: bc1c4f8263ff5f3499336cceaf964fb1, type: 3}
+    pactItemData: {fileID: 11400000, guid: 7914d1fb482273d42b7d0013edf13310, type: 2}
   - pactItemUpgradeIndex: 1
-    initialPactItem: {fileID: 2947561480536728017, guid: 2167ee4474f2338419fed48fe7e914d3, type: 3}
-    pactItemData: {fileID: 11400000, guid: 1f2c481a92ca54941835f1b22e4ddb52, type: 2}
+    initialPactItem: {fileID: 9089747927838628013, guid: 82ab9d112b765134388148c20fc7664a, type: 3}
+    pactItemData: {fileID: 11400000, guid: 0b7f84d740162e24ab411b01805125f8, type: 2}
+  - pactItemUpgradeIndex: 2
+    initialPactItem: {fileID: 4911011443941689990, guid: 46977ba2f2399bf40b17d69c32f850b3, type: 3}
+    pactItemData: {fileID: 11400000, guid: 562fed93540d90d4fa269703910e871f, type: 2}
+  - pactItemUpgradeIndex: 3
+    initialPactItem: {fileID: 9053325686187930708, guid: c730175df86c2fb418d8dc2ef9553491, type: 3}
+    pactItemData: {fileID: 11400000, guid: fb5d57503fe0d1a41bcd42db9bf3597b, type: 2}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 0}
     upgradeDescriptionDisplay: {fileID: 0}

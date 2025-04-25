@@ -17,9 +17,9 @@ MonoBehaviour:
   speed: 1
   cooldownDuration: 30
   pierce: 0
-  areaSize: 0
+  areaSize: 2
   projectileCount: 0
-  duration: 0
+  duration: 5
   level: 1
   nextLevelPrefab: {fileID: 5297606356293451816, guid: def2e20c8067f2f4aaca87b3e5246d6d, type: 3}
   name: Curse of Perception

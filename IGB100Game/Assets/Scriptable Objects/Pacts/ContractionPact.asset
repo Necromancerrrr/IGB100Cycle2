@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f07fb660698cb3d45a8636c84c7b4d09, type: 3}
-  m_Name: Test 2 Pact
+  m_Name: ContractionPact
   m_EditorClassIdentifier: 
-  name: Pact Test 2
-  description: Ruh roh
-  icon: {fileID: 347890322861753272, guid: 57a66a5d54d76014ab637135b5fa7a36, type: 3}
+  name: Pact of Contraction
+  description: Become smaller, faster, but do less damage
+  icon: {fileID: 0}
