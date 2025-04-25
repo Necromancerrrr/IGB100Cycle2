@@ -20,7 +20,7 @@ MonoBehaviour:
   areaSize: 4
   projectileCount: 2
   duration: 10
-  level: 1
+  level: 4
   nextLevelPrefab: {fileID: 8391479871286726765, guid: 7db67aba60bb63b4086b63ae9ad5629e, type: 3}
   name: Orb
   description: +4 duration

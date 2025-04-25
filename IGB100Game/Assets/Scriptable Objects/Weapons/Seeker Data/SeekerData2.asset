@@ -20,7 +20,7 @@ MonoBehaviour:
   areaSize: 0
   projectileCount: 3
   duration: 3
-  level: 1
+  level: 2
   nextLevelPrefab: {fileID: 8391479871286726765, guid: c3b27c04ddb2ff840a3106a5fe8d405f, type: 3}
   name: Spirit Seekers
   description: -2 second cooldown

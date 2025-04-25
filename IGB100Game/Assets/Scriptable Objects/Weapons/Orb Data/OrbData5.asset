@@ -20,7 +20,7 @@ MonoBehaviour:
   areaSize: 4
   projectileCount: 2
   duration: 10
-  level: 1
+  level: 5
   nextLevelPrefab: {fileID: 0}
   name: Orb
   description: +10 damage

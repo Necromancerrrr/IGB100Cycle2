@@ -20,8 +20,8 @@ MonoBehaviour:
   areaSize: 0
   projectileCount: 0
   duration: 10
-  level: 0
+  level: 5
   nextLevelPrefab: {fileID: 0}
   name: Sentient Shield
-  description: 
+  description: +10 knockback
   icon: {fileID: 0}

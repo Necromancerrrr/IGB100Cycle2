@@ -20,7 +20,7 @@ MonoBehaviour:
   areaSize: 0
   projectileCount: 6
   duration: 3
-  level: 1
+  level: 3
   nextLevelPrefab: {fileID: 8391479871286726765, guid: 9b7cc8442b529fd4e9bd058283dbe798, type: 3}
   name: Spirit Seekers
   description: +3 projectile count

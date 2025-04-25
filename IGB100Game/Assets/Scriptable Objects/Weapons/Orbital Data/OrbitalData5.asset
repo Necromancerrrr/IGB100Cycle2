@@ -20,7 +20,7 @@ MonoBehaviour:
   areaSize: 12
   projectileCount: 1
   duration: 12
-  level: 1
+  level: 5
   nextLevelPrefab: {fileID: 0}
   name: Curse of Perception
   description: +7 duration

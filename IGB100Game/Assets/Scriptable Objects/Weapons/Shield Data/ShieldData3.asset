@@ -20,8 +20,8 @@ MonoBehaviour:
   areaSize: 0
   projectileCount: 0
   duration: 7
-  level: 0
+  level: 3
   nextLevelPrefab: {fileID: 8186614856194216389, guid: a6753dd4b71172e4e968c52d6b4e17bd, type: 3}
   name: Sentient Shield
-  description: 
+  description: -5 cooldown
   icon: {fileID: 0}

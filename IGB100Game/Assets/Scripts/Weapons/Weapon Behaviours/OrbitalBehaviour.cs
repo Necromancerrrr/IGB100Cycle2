@@ -63,7 +63,7 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
     private void SetPosition() // Randomly places Orbital in an area somewhat close to the player
     {
         Vector2 angle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; // Generate random angle
-        transform.position = (Vector2)player.transform.position + angle * Random.Range(10f + currentAreaSize, 30f + currentAreaSize);
+        transform.position = (Vector2)player.transform.position + angle * Random.Range(10f + currentAreaSize, 20f + currentAreaSize);
     }
     private void SetScale() // Matches the scale of the collider and VFX to match area size
     {
