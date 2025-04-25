@@ -240,6 +240,7 @@ public class PlayerStats : MonoBehaviour
     public int experience = 0;
     public int level = 1;
     public int experienceCap;
+    public XPUIManager XPBar;
 
     // Class for defining a level range and the corresponding experience cap increase for that range
     [System.Serializable]
@@ -326,6 +327,10 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentKillsDisplay.text = "Kills: \n" + currentKills.ToString();
         GameManager.instance.AssignChosenCharacterUI(characterData);
         GameManager.instance.AssignLevelReachedUI(level);
+
+        // Set XP Bar
+        XPBar.SetXPCap(experienceCap);
+        XPBar.SetXPBar(experience);
     }
     void Update()
     {
@@ -344,10 +349,11 @@ public class PlayerStats : MonoBehaviour
     public void IncreaseExperience(int amount)
     {
         experience += amount;
+        XPBar.SetXPBar(experience);
         playerAudio.PlayEXPGainSound();
         LevelUpChecker();
     }
-
+    
     void LevelUpChecker()
     {
         if(experience >= experienceCap)
@@ -366,6 +372,8 @@ public class PlayerStats : MonoBehaviour
             }
 
             experienceCap += experienceCapIncrease;
+            XPBar.SetXPCap(experienceCap);
+            XPBar.SetXPBar(experience);
 
             // If the player is level 5, or level 10, make them choose a pact. Otherwise, make them choose a weapon/passive item
             switch (level) // Change to if else statement with % 5

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Health_Three_Quarter_0: -7208928228666729961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
