@@ -333,7 +333,7 @@ public class InventoryManager : MonoBehaviour
 
             EnableUpgradedUI(pactOption);
 
-            bool newPactItem = false; // Set a flag, assuming the passive item is not new
+            bool newPactItem = true; // Set a flag, assuming the passive item is not new
 
             for (int i = 0; i < pactItemSlots.Count; i++) // Check the inventory, slot by slot
             {
@@ -346,7 +346,7 @@ public class InventoryManager : MonoBehaviour
                     if (!newPactItem)
                     {
                         DisableUpgradeUI(pactOption);
-                        break;
+                        continue;
                     }
                 }
                 else

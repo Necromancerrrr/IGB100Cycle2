@@ -17,9 +17,11 @@ MonoBehaviour:
   speed: 4
   cooldownDuration: 2
   pierce: 999
-  projectileDuration: 0
+  areaSize: 0
+  projectileCount: 0
+  duration: 0
   level: 1
   nextLevelPrefab: {fileID: 0}
-  name: appy joose
+  name: Apple Juice
   description: 
   icon: {fileID: 0}
