@@ -45,5 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: a2f44ae35e5b01845ac9366503036f49, type: 2}
-  numberOfBlades: 4
+  currentCooldown: 10
+  currentProjectileCount: 0
+  numberOfBlades: 6
   radius: 1.5
