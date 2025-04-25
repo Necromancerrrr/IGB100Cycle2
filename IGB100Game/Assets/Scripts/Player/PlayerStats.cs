@@ -390,9 +390,8 @@ public class PlayerStats : MonoBehaviour
         {
             CurrentHealth += CurrentRecovery * Time.deltaTime; // Heal per second
 
-            if(Mathf.FloorToInt(CurrentRecovery * Time.deltaTime) % 2 == 0)
+            if(Mathf.FloorToInt(CurrentRecovery * Time.deltaTime) % 2 == 0) // bad math lol
             {
-                Debug.Log("Boom");
                 OnPlayerDamaged.Invoke();
             }
 
