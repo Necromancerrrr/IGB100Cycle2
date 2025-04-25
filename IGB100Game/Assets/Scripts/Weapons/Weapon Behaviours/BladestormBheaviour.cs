@@ -36,7 +36,7 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             if (enemy != null)
             {
-                enemy.TakeDamage(GetCurrentDamage(), transform.position, 5f);
+                enemy.TakeDamage(weaponDamage, transform.position, 5f);
                 markedEnemies.Add(col.gameObject);
             }
         }

@@ -309,16 +309,16 @@ public class PlayerStats : MonoBehaviour
         experienceCap = levelRanges[0].experienceCapIncrease;
         
         // Initialise Stat Tracking on Pause Menu
-        GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth.ToString();
-        GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery.ToString();
-        GameManager.instance.currentAttackDisplay.text = "Attack: " + currentMight.ToString();
-        GameManager.instance.currentMoveSpeedDisplay.text = "Movespeed: " + currentMoveSpeed.ToString();
-        GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed.ToString();
-        GameManager.instance.currentProjectileDurationDisplay.text = "Projectile Duration: " + currentProjectileDuration.ToString();
-        GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet.ToString();
+        GameManager.instance.currentHealthDisplay.text = "Health: \n" + currentHealth.ToString();
+        GameManager.instance.currentRecoveryDisplay.text = "Recovery: \n" + currentRecovery.ToString();
+        GameManager.instance.currentAttackDisplay.text = "Attack: \n" + currentMight.ToString();
+        GameManager.instance.currentMoveSpeedDisplay.text = "Movespeed: \n" + currentMoveSpeed.ToString();
+        GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: \n" + currentProjectileSpeed.ToString();
+        GameManager.instance.currentProjectileDurationDisplay.text = "Projectile Duration: \n" + currentProjectileDuration.ToString();
+        GameManager.instance.currentMagnetDisplay.text = "Magnet: \n" + currentMagnet.ToString();
 
 
-        GameManager.instance.currentKillsDisplay.text = "Kills: " + currentKills.ToString();
+        GameManager.instance.currentKillsDisplay.text = "Kills: \n" + currentKills.ToString();
         GameManager.instance.AssignChosenCharacterUI(characterData);
         GameManager.instance.AssignLevelReachedUI(level);
     }
@@ -448,7 +448,7 @@ public class PlayerStats : MonoBehaviour
     public void SpawnWeapon(GameObject weapon)
     {
         //checking if inventory is full
-        if(weaponIndex >= inventory.weaponSlots.Count - 1)
+        if(weaponIndex >= inventory.weaponSlots.Count)
         {
             Debug.LogError("Weapon Inventory slots already full");
             return;
@@ -465,7 +465,7 @@ public class PlayerStats : MonoBehaviour
     public void SpawnPassiveItem(GameObject passiveItem)
     {
         //checking if inventory is full
-        if (passiveItemIndex >= inventory.passiveItemSlots.Count - 1)
+        if (passiveItemIndex >= inventory.passiveItemSlots.Count)
         {
             Debug.LogError("Passive Item Inventory slots already full");
             return;

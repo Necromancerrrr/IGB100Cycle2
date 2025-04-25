@@ -167,7 +167,6 @@ public class InventoryManager : MonoBehaviour
 
         foreach (var upgradeOption in upgradeUIOptions)
         {
-
             if (availableWeaponUpgrades.Count == 0 && availablePassiveItemUpgrades.Count == 0)
             {
                 return;
@@ -175,11 +174,11 @@ public class InventoryManager : MonoBehaviour
 
             int upgradeType;
 
-            if (availableWeaponUpgrades.Count == 0)
+            if (availableWeaponUpgrades.Count == 0 || weaponSlots[5] != null)
             {
                 upgradeType = 2;
             }
-            else if (availablePassiveItemUpgrades.Count == 0)
+            else if (availablePassiveItemUpgrades.Count == 0 || passiveItemSlots[5] != null)
             {
                 upgradeType = 1;
             }

@@ -55,8 +55,6 @@ public abstract class EnemyStats : MonoBehaviour
         StartCoroutine(DamageFlash());
         enemyAudio.PlayEnemyHurtSound();
 
-        Debug.Log(dmg);
-
         if (currentHealth <= 0)
         {
             Kill();
