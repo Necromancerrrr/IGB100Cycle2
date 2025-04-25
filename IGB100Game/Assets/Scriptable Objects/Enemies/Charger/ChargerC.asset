@@ -15,4 +15,4 @@ MonoBehaviour:
   chargeFrequency: 10
   chargeSpeed: 20
   chargeDuration: 1
-  chargeFreeze: 0.5
+  chargeFreeze: 1

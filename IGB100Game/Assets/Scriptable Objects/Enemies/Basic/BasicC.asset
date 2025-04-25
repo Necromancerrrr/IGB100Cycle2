@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104091b96b0cb8047803f0d394653f6c, type: 3}
   m_Name: BasicC
   m_EditorClassIdentifier: 
-  maxHealth: 15
-  moveSpeed: 2
+  maxHealth: 150
+  moveSpeed: 5
   damage: 1

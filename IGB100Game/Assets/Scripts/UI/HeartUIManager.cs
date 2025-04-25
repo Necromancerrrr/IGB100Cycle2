@@ -39,7 +39,7 @@ public class HeartUIManager : MonoBehaviour
             {
                 GameObject heartInstance = Instantiate(heartPrefab);
                 heartInstance.transform.SetParent(heartParent.transform, false);
-                heartInstance.transform.position = new Vector2(-100 * (i - 1), 0) + (Vector2)heartParent.transform.position;
+                heartInstance.transform.position = new Vector2(-75 * (i - 1), 0) + (Vector2)heartParent.transform.position;
                 heartsList.Add(heartInstance);
             }
             if (currentHealth >= i)
