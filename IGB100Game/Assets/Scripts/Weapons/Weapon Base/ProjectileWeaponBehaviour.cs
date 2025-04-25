@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -20,6 +21,8 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentProjectileCount;
     protected float currentDuration;
 
+    float weaponDamage;
+
     void Awake()
     {
         currentDamage = weaponData.Damage;
@@ -34,10 +37,12 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 
     public float GetCurrentDamage()
     {
+
         return currentDamage *= FindFirstObjectByType<PlayerStats>().CurrentMight;
     }
     protected virtual void Start()
     {
+        weaponDamage = GetCurrentDamage();
         Destroy(gameObject, destroyAfterSeconds);
     }
 
@@ -53,14 +58,14 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage(),transform.position, 0); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(weaponDamage, transform.position, 0); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
             ReducePierce(); 
         }
         else if (col.CompareTag("Prop"))
         {
             if(col.gameObject.TryGetComponent(out BreakableProps breakable))
             {
-                breakable.TakeDamage(GetCurrentDamage());
+                breakable.TakeDamage(weaponDamage);
                 ReducePierce();
             }
         }
