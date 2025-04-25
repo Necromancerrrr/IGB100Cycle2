@@ -5,12 +5,10 @@ using UnityEngine;
 public class GarlicBehaviour : MeleeWeaponBehaviour
 {
     List<GameObject> markedEnemies;
-    float weaponDamage;
     protected override void Start()
     {
         base.Start();
         markedEnemies = new List<GameObject>();
-        weaponDamage = GetCurrentDamage();
     }
 
     protected override void OnTriggerEnter2D(Collider2D col)

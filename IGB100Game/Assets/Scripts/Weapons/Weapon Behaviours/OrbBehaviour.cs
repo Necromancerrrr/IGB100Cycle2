@@ -19,6 +19,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     override protected void Start()
     {
         base.Start();
+        weaponDamage = GetCurrentDamage();
         pulseTimer = tickRate;
         rb = GetComponent<Rigidbody2D>();
         colli = GetComponent<CircleCollider2D>();
@@ -78,13 +79,13 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage(), transform.position, 0f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(weaponDamage, transform.position, 0f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
         }
         else if (col.CompareTag("Prop"))
         {
             if (col.gameObject.TryGetComponent(out BreakableProps breakable))
             {
-                breakable.TakeDamage(GetCurrentDamage());
+                breakable.TakeDamage(weaponDamage);
             }
         }
     }

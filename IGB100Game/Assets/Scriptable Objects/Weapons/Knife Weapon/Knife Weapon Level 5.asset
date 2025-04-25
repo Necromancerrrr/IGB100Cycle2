@@ -15,9 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 9090303139471724996, guid: 647134da9eba0d84d9fc8310aea163e8, type: 3}
   damage: 20
   speed: 8
-  cooldownDuration: 0.5
+  cooldownDuration: 3
   pierce: 1
-  projectileDuration: 3
+  areaSize: 0
+  projectileCount: 0
+  duration: 3
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Knife MAX

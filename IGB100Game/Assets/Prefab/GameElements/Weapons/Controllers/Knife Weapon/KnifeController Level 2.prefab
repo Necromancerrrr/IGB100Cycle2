@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: c721dd87ef519b34c93f9ab46b9e785e, type: 2}
+  currentCooldown: 2
+  currentProjectileCount: 0

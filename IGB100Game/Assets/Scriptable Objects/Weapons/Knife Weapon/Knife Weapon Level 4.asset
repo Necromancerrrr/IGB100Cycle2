@@ -15,9 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 9090303139471724996, guid: 10da9f611fc3b914c9af5f39f4b5f990, type: 3}
   damage: 15
   speed: 8
-  cooldownDuration: 0.5
+  cooldownDuration: 3
   pierce: 1
-  projectileDuration: 3
+  areaSize: 0
+  projectileCount: 0
+  duration: 3
   level: 4
   nextLevelPrefab: {fileID: 4142939955346733007, guid: fd1263943378b3e4c8382c1068e69438, type: 3}
   name: Knife 4

@@ -6,14 +6,12 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
     List<GameObject> markedEnemies;
     public float hitResetInterval = 0.5f; // Time in seconds before enemies can be hit again
     private float timer;
-    private float weaponDamage;
 
     protected override void Start()
     {
         base.Start();
         markedEnemies = new List<GameObject>();
         timer = hitResetInterval;
-        weaponDamage = GetCurrentDamage();
     }
 
     void Update()

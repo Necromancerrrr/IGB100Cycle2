@@ -17,7 +17,9 @@ MonoBehaviour:
   speed: 0
   cooldownDuration: 2
   pierce: 0
-  projectileDuration: 2
+  areaSize: 0
+  projectileCount: 0
+  duration: 2
   level: 4
   nextLevelPrefab: {fileID: 6883820235095941995, guid: 606239f71e90d7944ae5722db7e3c09f, type: 3}
   name: Garlic 4

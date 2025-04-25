@@ -21,7 +21,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentProjectileCount;
     protected float currentDuration;
 
-    float weaponDamage;
+    protected float weaponDamage;
 
     void Awake()
     {
