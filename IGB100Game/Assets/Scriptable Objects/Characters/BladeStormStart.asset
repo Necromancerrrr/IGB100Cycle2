@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Bladestorm
   startingWeapon: {fileID: 6883820235095941995, guid: 40aeb378dfbffe24e8b1b8bc92c3fdea, type: 3}
   maxHealth: 16
-  recovery: 0
+  recovery: 0.5
   moveSpeed: 4
   might: 1
   projectileSpeed: 1

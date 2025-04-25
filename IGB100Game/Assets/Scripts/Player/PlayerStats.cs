@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
 using System;
+using UnityEditor.Rendering;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -388,7 +389,13 @@ public class PlayerStats : MonoBehaviour
         if (CurrentHealth < characterData.MaxHealth)
         {
             CurrentHealth += CurrentRecovery * Time.deltaTime; // Heal per second
-            
+
+            if(Mathf.FloorToInt(CurrentRecovery * Time.deltaTime) % 2 == 0)
+            {
+                Debug.Log("Boom");
+                OnPlayerDamaged.Invoke();
+            }
+
             if (CurrentHealth > characterData.MaxHealth)
             {
                 CurrentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
@@ -402,6 +409,9 @@ public class PlayerStats : MonoBehaviour
         {
             CurrentHealth += amount;
             playerAudio.PlayHealthGainSound();
+
+            OnPlayerDamaged?.Invoke();
+
             if (CurrentHealth > characterData.MaxHealth) 
             {
                 CurrentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
