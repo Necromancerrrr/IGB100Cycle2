@@ -17,8 +17,8 @@ MonoBehaviour:
   speed: 1
   cooldownDuration: 20
   pierce: 0
-  areaSize: 12
-  projectileCount: 1
+  areaSize: 8
+  projectileCount: 0
   duration: 12
   level: 5
   nextLevelPrefab: {fileID: 0}

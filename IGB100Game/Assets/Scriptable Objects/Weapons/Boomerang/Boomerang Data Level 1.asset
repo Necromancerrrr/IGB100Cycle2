@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 0}
   name: Boomerang
-  description: Reeee
+  description: Fires a boomerang which does damage to all enemies hit
   icon: {fileID: -403755840339538957, guid: 87b70cb2bbb68a647a3d39caabc140ae, type: 3}

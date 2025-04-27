@@ -1,12 +1,12 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.UI;
+//using Unity.UI;
 using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
 using System;
-using UnityEditor.Rendering;
+//using UnityEditor.Rendering;
 
 public class PlayerStats : MonoBehaviour
 {

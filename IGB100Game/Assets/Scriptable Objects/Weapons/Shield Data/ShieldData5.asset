@@ -15,11 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 7010695086612353368, guid: 74ba01450eb71224caa11074e1007b80, type: 3}
   damage: 15
   speed: 5
-  cooldownDuration: 25
+  cooldownDuration: 20
   pierce: 0
   areaSize: 0
   projectileCount: 0
-  duration: 10
+  duration: 15
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Sentient Shield
