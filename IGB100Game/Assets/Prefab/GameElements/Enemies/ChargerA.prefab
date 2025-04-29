@@ -66,6 +66,7 @@ MonoBehaviour:
   chargeFreeze: 0
   ChargingPhase: 0
   ChargeTimer: 5
+  indicator: {fileID: 2776374217380053490, guid: 53184b40173e0384eb9a8ab5836c6167, type: 3}
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 771522b975a2b00409e46fa35d5470fe, type: 2}
   destroyAfterSeconds: 0
+  currentDamage: 0
   par: {fileID: 3505170534362614781, guid: c56796fb3afb8ab449dd2100a6df9e18, type: 3}
 --- !u!50 &8247120590710101690
 Rigidbody2D:
@@ -113,7 +114,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.15
+  m_Radius: 0.2
 --- !u!212 &4840465800870458585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

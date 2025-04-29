@@ -23,6 +23,7 @@ public class EnemyChargerStats : EnemyStats
 
     Vector2 target;
     Rigidbody2D rb;
+    public GameObject indicator;
 
     new void Awake()
     {
@@ -46,25 +47,27 @@ public class EnemyChargerStats : EnemyStats
         if (ChargingPhase == 0) // For all movement outside of the charge
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+            // Sprite flips to play
+            Vector2 lookDirection = (player.transform.position - transform.position).normalized;
+            sr.flipX = lookDirection.x > 0;
         }
-
-        // Sprite flips to play
-        Vector2 lookDirection = (player.transform.position - transform.position).normalized;
-        sr.flipX = lookDirection.x > 0;
     }
     private void ChargeUpdate()
     {
         ChargeTimer -= Time.deltaTime;
-        if (ChargeTimer < 0 && ChargingPhase == 0) // Locks in the targetted position and freezes in place
-        {
+        if (ChargeTimer < 0 && ChargingPhase == 0 && new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude >= 3f)
+        { // Starts the charge if the charger is within a certain distance of the player, locks the enemy in place, locks target position and spawns indicator
             ChargingPhase = 1;
-            ChargeTimer = chargeDuration;
+            ChargeTimer = chargeFreeze;
             target = new Vector2(player.transform.position.x, player.transform.position.y);
+            GameObject indInstance = Instantiate(indicator);
+            indInstance.transform.position = gameObject.transform.position;
+            indInstance.GetComponent<EnemyChargeIndicator>().Setup(chargeFreeze, target);
         }
         else if (ChargeTimer < 0 && ChargingPhase == 1) // Calculates the angle at which to move and starts charge towards the targetted position
         {
             ChargingPhase = 2;
-            ChargeTimer = chargeFreeze;
+            ChargeTimer = chargeDuration;
             Vector2 angle = new Vector2(rb.transform.position.x - target.x, rb.transform.position.y - target.y).normalized;
             rb.linearVelocity = -angle * chargeSpeed;
             enemyAudio.PlayEnemyChargeSound();
@@ -83,10 +86,8 @@ public class EnemyChargerStats : EnemyStats
         {
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
             player.TakeDamage(currentDamage); // Make sure to use currentDamage instead of enemyData.Damage in case of any damage multipliers in the future
-
         }
     }
-
     public override void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce = 5, float knockbackDuration = 0.2F)
     {
         base.TakeDamage(dmg, sourcePosition, knockbackForce, knockbackDuration);
@@ -98,7 +99,6 @@ public class EnemyChargerStats : EnemyStats
         }
 
     }
-
     public void Knockback(Vector2 velocity, float duration)
     {
         // Stops the knockback

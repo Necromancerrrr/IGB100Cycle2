@@ -19,7 +19,6 @@ public class EnemyShooterStats : EnemyStats
     // Shooting Logic
     float Ammo;
     float ShootTimer = 5;
-    public float MovementTimer = 0;
 
     Rigidbody2D rb;
     [SerializeField] GameObject projectile;
@@ -43,21 +42,13 @@ public class EnemyShooterStats : EnemyStats
     }
     private void Movement()
     {
-        MovementTimer -= Time.deltaTime;
         if (new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude >= 10f) // If the shooter is a significant distance away
         {
-            rb.linearVelocity = Vector2.zero;
-            MovementTimer = 0;
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
         }
-        else
+        else if (new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude <= 3f) // If the shooter is too close
         {
-            if (MovementTimer <= 0)
-            {
-                Vector2 angle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                rb.linearVelocity = angle * Random.Range(currentMoveSpeed * 0.8f, currentMoveSpeed * 1.2f);
-                MovementTimer = 3;
-            }
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, -1 * currentMoveSpeed * Time.deltaTime); // Constantly moves away from the player
         }
 
         //Sprite flips towards player
@@ -67,17 +58,23 @@ public class EnemyShooterStats : EnemyStats
     private void ShootUpdate()
     {
         ShootTimer -= Time.deltaTime;
-        if (ShootTimer < 0 && Ammo <= 1) 
-        {
-            ShootTimer = Random.Range(firingFrequency * 0.9f, firingFrequency * 1.1f);
-            Ammo = projectileCount;
-            SpawnProjectile();
-        }
-        else if (ShootTimer < 0 && Ammo > 1)
-        {
+        if (ShootTimer < 0 && Ammo <= 0 && new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude >= 3f)
+        { // Prepares to shoot if player has no ammo and is far enough away
             ShootTimer = projectileInterval;
+            Ammo = projectileCount;
+        }
+        else if (ShootTimer < 0 && Ammo >= 1) // Fires projectile
+        {
             Ammo -= 1;
             SpawnProjectile();
+            if (Ammo >= 1) // If there is at least one ammo left, prepare to shoot again
+            {
+                ShootTimer = projectileInterval;
+            }
+            else // Set shooting on cooldown
+            {
+                ShootTimer = Random.Range(firingFrequency * 0.9f, firingFrequency * 1.1f);
+            }
         }
     }
     private void SpawnProjectile()
