@@ -14,7 +14,7 @@ public class MeleeWeaponBehaviour : MonoBehaviour
     protected float currentSpeed;
     protected float currentCooldownDuration;
     protected int currentPierce;
-    protected float currentAreaSize;
+    [SerializeField] protected float currentAreaSize;
     protected float currentProjectileCount;
     protected float currentDuration;
 

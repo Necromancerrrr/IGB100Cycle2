@@ -17,7 +17,10 @@ public class FireballExpBehaviour : MonoBehaviour
     public void WeaponStatsSet(WeaponScriptableObject stats)
     {
         damage = stats.Damage * FindFirstObjectByType<PlayerStats>().CurrentMight;
+        areaSize = stats.AreaSize;
         var shape = par.shape;
+        var emission = par.emission;
+        emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0.01f, 50 * areaSize)});
         shape.radius = areaSize;
         colli.radius = areaSize;
     }
@@ -35,7 +38,7 @@ public class FireballExpBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(damage, transform.position, 2f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(damage, transform.position, 2f);
         }
         else if (col.CompareTag("Prop"))
         {

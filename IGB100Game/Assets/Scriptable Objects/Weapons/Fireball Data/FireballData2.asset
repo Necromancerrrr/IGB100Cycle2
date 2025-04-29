@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5267748959714968319, guid: 655e193955c495f40aa48fa8f676c243, type: 3}
   damage: 15
-  speed: 5
+  speed: 8
   cooldownDuration: 15
   pierce: 0
   areaSize: 2
   projectileCount: 3
-  duration: 0.5
+  duration: 1
   level: 2
   nextLevelPrefab: {fileID: 8171205830150268015, guid: fb25058b7369acd45a923a81e5130b4b, type: 3}
   name: Fan of fireballs

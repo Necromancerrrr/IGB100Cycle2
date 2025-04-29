@@ -49,11 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292448b4ad9c8e949bfc45de21ae3a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: e7e8e6fca1347954493261a8b5f65a8d, type: 2}
+  weaponData: {fileID: 11400000, guid: d6283fb3f87ad08409b0d2c6f2410a2f, type: 2}
   destoryAfterSeconds: 0
+  currentAreaSize: 0
   par: {fileID: 1335959959648711549}
-  Timer: 10
-  Active: 0
 --- !u!50 &5624762079047949086
 Rigidbody2D:
   serializedVersion: 5

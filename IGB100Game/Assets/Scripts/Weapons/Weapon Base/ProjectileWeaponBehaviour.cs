@@ -37,7 +37,6 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 
     public float GetCurrentDamage()
     {
-
         return currentDamage *= FindFirstObjectByType<PlayerStats>().CurrentMight;
     }
     protected virtual void Start()
@@ -45,8 +44,6 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         weaponDamage = GetCurrentDamage();
         Destroy(gameObject, destroyAfterSeconds);
     }
-
-
     public void DirectionChecker(Vector3 dir)
     {
         direction = dir;
@@ -70,7 +67,6 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             }
         }
     }
-
     void ReducePierce() // Will destory the object after going through 'X' enemies
     {
         currentPierce--;

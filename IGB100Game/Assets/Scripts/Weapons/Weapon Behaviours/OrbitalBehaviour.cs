@@ -19,8 +19,9 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
     private float TickRate = 0.2f;
     private float ListTimer;
     private List<GameObject> EnemyList;
-    override protected void Start()
+    new void Start()
     {
+        weaponDamage = GetCurrentDamage();
         player = GameObject.FindWithTag("Player");
         colli = GetComponent<CircleCollider2D>();
         colli.enabled = false;
@@ -63,7 +64,7 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
     private void SetPosition() // Randomly places Orbital in an area somewhat close to the player
     {
         Vector2 angle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; // Generate random angle
-        transform.position = (Vector2)player.transform.position + angle * Random.Range(10f + currentAreaSize, 20f + currentAreaSize);
+        transform.position = (Vector2)player.transform.position + angle * Random.Range(5f + currentAreaSize, 20f + currentAreaSize);
     }
     private void SetScale() // Matches the scale of the collider and VFX to match area size
     {
@@ -78,7 +79,7 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
         {
             EnemyList.Add(col.gameObject);
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(weaponDamage, transform.position, -3f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(weaponDamage, transform.position, -5f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
         }
         else if (col.CompareTag("Prop"))
         {
