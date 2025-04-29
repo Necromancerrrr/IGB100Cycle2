@@ -35,7 +35,7 @@ public class FireballExpBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(damage, transform.position, 0f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(damage, transform.position, 2f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
         }
         else if (col.CompareTag("Prop"))
         {

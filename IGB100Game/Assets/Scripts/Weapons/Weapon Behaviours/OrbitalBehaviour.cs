@@ -78,13 +78,13 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
         {
             EnemyList.Add(col.gameObject);
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage(), transform.position, 0); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(weaponDamage, transform.position, -3f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
         }
         else if (col.CompareTag("Prop"))
         {
             if (col.gameObject.TryGetComponent(out BreakableProps breakable))
             {
-                breakable.TakeDamage(GetCurrentDamage());
+                breakable.TakeDamage(weaponDamage);
             }
         }
     }

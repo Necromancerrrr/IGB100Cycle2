@@ -17,9 +17,14 @@ public abstract class EnemyStats : MonoBehaviour
     public float currentHealth;
     [HideInInspector]
     public float currentDamage;
+    [HideInInspector] 
+    public float knockbackModifier;
     [HideInInspector]
     public EnemyAudio enemyAudio;
 
+    // Knockback logic
+    protected Vector2 knockbackVelocity;
+    protected float knockbackDuration;
 
     [Header("Damage Feedback")]
     public Color damageColor = new Color(1, 0, 0, 1);
@@ -36,13 +41,21 @@ public abstract class EnemyStats : MonoBehaviour
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
+        knockbackModifier = enemyData.KnockbackMod;
         player = FindFirstObjectByType<PlayerStats>();
         sr = GetComponent<SpriteRenderer>();
         enemyCollider = GetComponent<Collider2D>();
         originalColor = sr.color;
         enemyAudio = GetComponent<EnemyAudio>();
     }
-
+    protected void Update()
+    {
+        if (knockbackDuration > 0)
+        {
+            transform.position += (Vector3)knockbackVelocity * Time.deltaTime;
+            knockbackDuration -= Time.deltaTime;
+        }
+    }
     IEnumerator DamageFlash()
     {
         sr.color = damageColor;
@@ -54,11 +67,28 @@ public abstract class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         StartCoroutine(DamageFlash());
         enemyAudio.PlayEnemyHurtSound();
-
+        if (dmg > 0)
+        {
+            GameManager.GenerateFloatingText(Mathf.FloorToInt(dmg).ToString(), transform);
+        }
+        if (knockbackDuration * knockbackModifier > 0)
+        {
+            Vector2 dir = (Vector2)transform.position - sourcePosition;
+            Knockback(dir.normalized * knockbackForce * knockbackModifier, knockbackDuration * knockbackModifier);
+        }
         if (currentHealth <= 0)
         {
             Kill();
         }
+    }
+    public void Knockback(Vector2 velocity, float duration)
+    {
+        // Stops the knockback
+        if (knockbackDuration > 0) { return; }
+
+        // Begins knockback
+        knockbackVelocity = velocity;
+        knockbackDuration = duration;
     }
     public void Kill()
     {

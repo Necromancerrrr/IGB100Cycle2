@@ -8,19 +8,23 @@ public class Reaper : EnemyStats
     new void Awake()
     {
         base.Awake();
-    }
-    private void Start()
-    {
         anim = GetComponent<Animator>();
-    }
-    void Update()
+    } 
+    new void Update()
     {
+        base.Update();
         Movement();
         SpeedIncrease();
     }
     private void Movement()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+        if (knockbackDuration <= 0) 
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+            //Sprite flips towards player
+            Vector2 lookDirection = (player.transform.position - transform.position).normalized;
+            sr.flipX = lookDirection.x > 0;
+        }
     }
     private void SpeedIncrease()
     {

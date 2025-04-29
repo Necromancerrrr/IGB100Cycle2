@@ -3,9 +3,6 @@ using UnityEngine;
 public class EnemyShooterStats : EnemyStats
 {
     public EnemyShooterScriptableObject shooterData;
-
-    Vector2 knockbackVelocity;
-    float knockbackDuration;
     // Current stats
     [HideInInspector]
     public float firingFrequency;
@@ -35,25 +32,28 @@ public class EnemyShooterStats : EnemyStats
         Ammo = projectileCount;
         rb = player.GetComponent<Rigidbody2D>();
     }
-    void Update()
+    new void Update()
     {
+        base.Update();
         Movement();
         ShootUpdate();
     }
     private void Movement()
     {
-        if (new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude >= 10f) // If the shooter is a significant distance away
+        if (knockbackDuration <= 0)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+            if (new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude >= 10f) // If the shooter is a significant distance away
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+            }
+            else if (new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude <= 3f) // If the shooter is too close
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, -1 * currentMoveSpeed * Time.deltaTime); // Constantly moves away from the player
+            }
+            //Sprite flips towards player
+            Vector2 lookDirection = (player.transform.position - transform.position).normalized;
+            sr.flipX = lookDirection.x > 0;
         }
-        else if (new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude <= 3f) // If the shooter is too close
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, -1 * currentMoveSpeed * Time.deltaTime); // Constantly moves away from the player
-        }
-
-        //Sprite flips towards player
-        Vector2 lookDirection = (player.transform.position - transform.position).normalized;
-        sr.flipX = lookDirection.x > 0;
     }
     private void ShootUpdate()
     {
@@ -93,27 +93,5 @@ public class EnemyShooterStats : EnemyStats
             player.TakeDamage(currentDamage); // Make sure to use currentDamage instead of enemyData.Damage in case of any damage multipliers in the future
 
         }
-    }
-
-    public override void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce = 5, float knockbackDuration = 0.2F)
-    {
-        base.TakeDamage(dmg, sourcePosition, knockbackForce, knockbackDuration);
-
-        if (knockbackDuration > 0)
-        {
-            Vector2 dir = (Vector2)transform.position - sourcePosition;
-            Knockback(dir.normalized * knockbackForce, knockbackDuration);
-        }
-
-    }
-
-    public void Knockback(Vector2 velocity, float duration)
-    {
-        // Stops the knockback
-        if (knockbackDuration > 0) { return; }
-
-        // Begins knockback
-        knockbackVelocity = velocity;
-        knockbackDuration = duration;
     }
 }

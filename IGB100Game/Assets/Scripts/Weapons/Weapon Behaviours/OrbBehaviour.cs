@@ -72,6 +72,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         shape.radius = currentAreaSize; // set to match area size
         var main = par.main;
         main.startSize = new ParticleSystem.MinMaxCurve(0.1f * 2, 0.2f * 2);
+        main.startSpeed = -currentAreaSize;
     }
     override protected void OnTriggerEnter2D(Collider2D col)
     {
@@ -79,7 +80,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(weaponDamage, transform.position, 0f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(weaponDamage, transform.position, Mathf.Clamp(weaponDamage / -5, -10, 0)); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
         }
         else if (col.CompareTag("Prop"))
         {

@@ -15,3 +15,4 @@ MonoBehaviour:
   maxHealth: 175
   moveSpeed: 3
   damage: 1
+  knockbackMod: 1
