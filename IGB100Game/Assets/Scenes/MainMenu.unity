@@ -178,8 +178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7b52139a973377a499039e96dfe93551, type: 2}
-  m_sharedMaterial: {fileID: -6247106558783145777, guid: 7b52139a973377a499039e96dfe93551, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
+  m_sharedMaterial: {fileID: 2178458096316189103, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -421,7 +421,6 @@ GameObject:
   - component: {fileID: 218769215}
   - component: {fileID: 218769214}
   - component: {fileID: 218769213}
-  - component: {fileID: 218769216}
   m_Layer: 5
   m_Name: HelpButton
   m_TagString: Untagged
@@ -444,9 +443,9 @@ RectTransform:
   - {fileID: 1753685954}
   m_Father: {fileID: 363797337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -655, y: -210}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 454, y: -221}
   m_SizeDelta: {x: 300, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218769213
@@ -543,20 +542,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218769211}
   m_CullTransparentMesh: 1
---- !u!114 &218769216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218769211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8c2aa611c0e2d48a5b1447d5ffd34d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonText: {fileID: 1753685955}
-  menuManager: {fileID: 856809092}
 --- !u!1 &276378001
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,8 +771,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7b52139a973377a499039e96dfe93551, type: 2}
-  m_sharedMaterial: {fileID: -6247106558783145777, guid: 7b52139a973377a499039e96dfe93551, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
+  m_sharedMaterial: {fileID: 2178458096316189103, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1369,7 +1354,6 @@ GameObject:
   - component: {fileID: 1055562009}
   - component: {fileID: 1055562008}
   - component: {fileID: 1055562007}
-  - component: {fileID: 1055562010}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -1392,9 +1376,9 @@ RectTransform:
   - {fileID: 53652023}
   m_Father: {fileID: 363797337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -655, y: -350}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 454, y: -361}
   m_SizeDelta: {x: 300, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1055562007
@@ -1491,20 +1475,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055562005}
   m_CullTransparentMesh: 1
---- !u!114 &1055562010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055562005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8c2aa611c0e2d48a5b1447d5ffd34d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonText: {fileID: 53652024}
-  menuManager: {fileID: 856809092}
 --- !u!1 &1223018626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,9 +1507,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 363797337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 418.76318, y: 328.57538}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 443, y: -274}
   m_SizeDelta: {x: 837.532, y: 390.2292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223018628
@@ -1958,8 +1928,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Help
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7b52139a973377a499039e96dfe93551, type: 2}
-  m_sharedMaterial: {fileID: -6247106558783145777, guid: 7b52139a973377a499039e96dfe93551, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
+  m_sharedMaterial: {fileID: 2178458096316189103, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2158,12 +2128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 32
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 240, y: 135}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2225,7 +2195,6 @@ GameObject:
   - component: {fileID: 1907838977}
   - component: {fileID: 1907838976}
   - component: {fileID: 1907838975}
-  - component: {fileID: 1907838980}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -2248,9 +2217,9 @@ RectTransform:
   - {fileID: 461332407}
   m_Father: {fileID: 363797337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -655, y: -70}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 454, y: -81}
   m_SizeDelta: {x: 300, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907838975
@@ -2347,20 +2316,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907838973}
   m_CullTransparentMesh: 1
---- !u!114 &1907838980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907838973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8c2aa611c0e2d48a5b1447d5ffd34d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonText: {fileID: 461332408}
-  menuManager: {fileID: 856809092}
 --- !u!1 &2057850639
 GameObject:
   m_ObjectHideFlags: 0
