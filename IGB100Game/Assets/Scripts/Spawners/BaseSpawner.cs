@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RandPosNearPlayer : MonoBehaviour
+public class BaseSpawner : MonoBehaviour
 {
     public Vector2 GetRandomPosition(float spawnDistance)
     {

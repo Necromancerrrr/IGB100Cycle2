@@ -64,6 +64,7 @@ public class EnemySpawner : BaseSpawner
                     for (int j = 0; j < currentWave.enemyDensity; j++)
                     {
                         SpawnEnemy(randomPosition);
+                        randomPosition += new Vector2(Random.Range(-0.0001f, 0.0001f), Random.Range(-0.0001f, 0.0001f));
                     }
                 }
             }
