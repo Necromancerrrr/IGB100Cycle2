@@ -17,7 +17,7 @@ public class PlayerAnimator : MonoBehaviour
     }
     void CheckForMovement()
     {
-        if (rb.linearVelocity != Vector2.zero)
+        if (Input.GetKey(KeyCode.W) == true || Input.GetKey(KeyCode.A) == true || Input.GetKey(KeyCode.S) == true || Input.GetKey(KeyCode.D) == true)
         {
             animator.SetBool("Moving", true);
         }
@@ -41,7 +41,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator.SetTrigger("Dead");
     }
-    void AnimationTestFunction()
+    void AnimationTestFunction() // REMOVE THIS IN THE FINAL BUILD
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
