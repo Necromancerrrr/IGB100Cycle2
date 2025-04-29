@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 9e4082d2de270f249abdc7d600e80302, type: 2}
   destroyAfterSeconds: 3
+  currentDamage: 0
   par: {fileID: 4801259901059878610}
 --- !u!50 &559294093597345711
 Rigidbody2D:
@@ -200,18 +201,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3680829403261951361}
     m_Modifications:
-    - target: {fileID: 807754648027031827, guid: d55ae9e5c03de854aaea21b10138cf2e, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 807754648027031827, guid: d55ae9e5c03de854aaea21b10138cf2e, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 807754648027031827, guid: d55ae9e5c03de854aaea21b10138cf2e, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4251645450408100182, guid: d55ae9e5c03de854aaea21b10138cf2e, type: 3}
       propertyPath: m_Name
       value: OrbAOE
