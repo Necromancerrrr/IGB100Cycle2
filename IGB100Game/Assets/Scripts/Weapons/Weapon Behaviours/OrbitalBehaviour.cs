@@ -19,15 +19,21 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
     private float TickRate = 0.2f;
     private float ListTimer;
     private List<GameObject> EnemyList;
-    new void Start()
+    new void Awake()
     {
-        weaponDamage = GetCurrentDamage();
+        base.Awake();
         player = GameObject.FindWithTag("Player");
         colli = GetComponent<CircleCollider2D>();
         colli.enabled = false;
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         ListTimer = TickRate;
+    }
+    new void Start()
+    {
+        weaponDamage = GetCurrentDamage();
+        weaponSize = GetCurrentAreaSize();
+        weaponDuration = GetCurrentDuration();
         SetPosition();
         SetScale();
     }
@@ -42,7 +48,7 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
         if (Timer <= 0 && Active == false)
         {
             anim.SetBool("Active", true);
-            Timer = currentDuration;
+            Timer = weaponDuration;
             colli.enabled = true;
             Active = true;
             var main = par.main;
@@ -64,14 +70,14 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
     private void SetPosition() // Randomly places Orbital in an area somewhat close to the player
     {
         Vector2 angle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; // Generate random angle
-        transform.position = (Vector2)player.transform.position + angle * Random.Range(5f + currentAreaSize, 20f + currentAreaSize);
+        transform.position = (Vector2)player.transform.position + angle * Random.Range(5f + weaponSize, 20f + weaponSize);
     }
     private void SetScale() // Matches the scale of the collider and VFX to match area size
     {
-        colli.radius = currentAreaSize;
-        sprite.size = new Vector2(2.8f * currentAreaSize, 2.8f * currentAreaSize);
+        colli.radius = weaponSize;
+        sprite.size = new Vector2(2.8f * weaponSize, 2.8f * weaponSize);
         var main = par.main;
-        main.startSize = 2.8f * currentAreaSize / 0.3f;
+        main.startSize = 2.8f * weaponSize / 0.3f;
     }
     protected void OnTriggerStay2D(Collider2D col)
     {

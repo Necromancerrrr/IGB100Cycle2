@@ -22,6 +22,7 @@ MonoBehaviour:
   projectileSpeed: 1
   projectileCount: 1
   projectileDuration: 1
+  areaSize: 1
   magnet: 2
   cooldown: 0
   playerSize: 0

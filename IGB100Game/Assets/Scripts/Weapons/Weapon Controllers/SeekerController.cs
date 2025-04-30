@@ -10,7 +10,7 @@ public class SeekerController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        for (int i = 0; i < currentProjectileCount; i++)
+        for (int i = 0; i < weaponCount; i++)
         {
             GameObject seekerInstance = Instantiate(weaponData.Prefab);
             seekerInstance.transform.position = transform.position; // Assign the position to be the same as this object, which is parented to the player

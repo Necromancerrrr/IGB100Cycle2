@@ -7,8 +7,6 @@ public class MeleeWeaponBehaviour : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
 
-    public float destoryAfterSeconds;
-
     // Current stats
     protected float currentDamage;
     protected float currentSpeed;
@@ -18,9 +16,12 @@ public class MeleeWeaponBehaviour : MonoBehaviour
     protected float currentProjectileCount;
     protected float currentDuration;
 
+    // Stored numbers post modifier. USE THESE!!!
     protected float weaponDamage;
+    protected float weaponSize;
+    protected float weaponDuration;
 
-    void Awake()
+    protected void Awake()
     {
         currentDamage = weaponData.Damage;
         currentSpeed = weaponData.Speed;
@@ -29,18 +30,27 @@ public class MeleeWeaponBehaviour : MonoBehaviour
         currentAreaSize = weaponData.AreaSize;
         currentProjectileCount = weaponData.ProjectileCount;
         currentDuration = weaponData.Duration;
-        destoryAfterSeconds = weaponData.Duration;
     }
 
     public float GetCurrentDamage()
     {
         return currentDamage *= FindFirstObjectByType<PlayerStats>().CurrentMight;
     }
+    public float GetCurrentAreaSize()
+    {
+        return currentAreaSize *= FindFirstObjectByType<PlayerStats>().CurrentAOE;
+    }
+    public float GetCurrentDuration()
+    {
+        return currentDuration *= FindFirstObjectByType<PlayerStats>().CurrentProjectileDuration;
+    }
 
     protected virtual void Start()
     {
         weaponDamage = GetCurrentDamage();
-        Destroy(gameObject, destoryAfterSeconds);
+        weaponSize = GetCurrentAreaSize();
+        weaponDuration = GetCurrentDuration();
+        Destroy(gameObject, weaponDuration);
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D col)

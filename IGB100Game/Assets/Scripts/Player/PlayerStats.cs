@@ -25,7 +25,7 @@ public class PlayerStats : MonoBehaviour
     float currentMight;
     float currentProjectileSpeed;
     float currentProjectileDuration;
-    float currentProjectileCount; // WIP
+    [SerializeField]float currentProjectileCount; // WIP
     float currentAOE; // WIP
     float currentMagnet;
     int currentKills;
@@ -301,6 +301,8 @@ public class PlayerStats : MonoBehaviour
         CurrentProjectileSpeed = characterData.ProjectileSpeed;
         CurrentProjectileDuration = characterData.ProjectileDuration;
         CurrentMagnet = characterData.Magnet;
+        currentProjectileCount = characterData.ProjectileCount;
+        currentAOE = characterData.AreaSize;
 
         // Reset kills stat
         CurrentKills = 0;

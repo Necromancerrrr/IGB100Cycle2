@@ -4,6 +4,6 @@ public class MagnetPassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        player.CurrentMagnet *= 1 + passiveItemData.Multiplier / 100f; // Works to make a percentage increase
+        player.CurrentMagnet = player.characterData.Magnet * (1 + passiveItemData.Multiplier / 100f); // Works to make a percentage increase
     }
 }

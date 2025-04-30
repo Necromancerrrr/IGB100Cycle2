@@ -7,22 +7,39 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
-    [SerializeField] float currentCooldown;
-    [SerializeField] protected float currentProjectileCount;
+    float currentCooldown;
+    float currentProjectileCount;
 
     protected PlayerMovement pm;
+
+    [SerializeField] protected float weaponCooldown;
+    [SerializeField] protected float weaponCount;
+    public float GetCurrentCooldown()
+    {
+        return currentCooldown; //* FindFirstObjectByType<PlayerStats>().CurrentCooldown;
+    }
+    public float GetCurrentProjectileCount()
+    {
+        return Mathf.Round(currentProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
+    }
 
     protected virtual void Start()
     {
         pm = FindFirstObjectByType<PlayerMovement>();
+        recalculateStats();
+    }
+    void recalculateStats()
+    {
         currentCooldown = weaponData.CooldownDuration; // At the start, set current cooldown to the cooldown duration;
-        currentProjectileCount = Mathf.Round(weaponData.ProjectileCount); // In case you need to repeat certain commands (instantiates)
+        currentProjectileCount = weaponData.ProjectileCount; // In case you need to repeat certain commands (instantiates)
+        weaponCooldown = GetCurrentCooldown();
+        weaponCount = GetCurrentProjectileCount();
     }
 
     protected virtual void Update()
     {
-        currentCooldown -= Time.deltaTime;
-        if (currentCooldown <= 0f) 
+        weaponCooldown -= Time.deltaTime;
+        if (weaponCooldown <= 0f) 
         {
             Attack();
         }
@@ -30,6 +47,6 @@ public class WeaponController : MonoBehaviour
 
     protected virtual void Attack()
     {
-        currentCooldown = weaponData.CooldownDuration; // Reset cooldown
+        recalculateStats();
     }
 }

@@ -12,7 +12,7 @@ public class OrbController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        for (int i = 0; i < currentProjectileCount; i++)
+        for (int i = 0; i < weaponCount; i++)
         {
             GameObject orbInstance = Instantiate(weaponData.Prefab);
             orbInstance.transform.position = transform.position; // Assign the position to be the same as this object, which is parented to the player

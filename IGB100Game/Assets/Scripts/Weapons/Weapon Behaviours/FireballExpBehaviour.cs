@@ -14,10 +14,10 @@ public class FireballExpBehaviour : MonoBehaviour
         colli.enabled = true;
         Destroy(gameObject, 1);
     }
-    public void WeaponStatsSet(WeaponScriptableObject stats)
+    public void WeaponStatsSet(float Damage, float AreaSize)
     {
-        damage = stats.Damage * FindFirstObjectByType<PlayerStats>().CurrentMight;
-        areaSize = stats.AreaSize;
+        damage = Damage * FindFirstObjectByType<PlayerStats>().CurrentMight;
+        areaSize = AreaSize;
         var shape = par.shape;
         var emission = par.emission;
         emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0.01f, 50 * areaSize)});

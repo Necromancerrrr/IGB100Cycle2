@@ -39,10 +39,10 @@ public class FireballProjBehaviour : ProjectileWeaponBehaviour
             Destroy(gameObject);
         }
     }
-    protected void OnDestroy()
+    protected void OnDestroy() // Upon self destructing, create an explosion instance at current location with appropriate damage and size
     {
         GameObject explosionInstance = Instantiate(explosion);
         explosionInstance.transform.position = transform.position;
-        explosionInstance.GetComponent<FireballExpBehaviour>().WeaponStatsSet(weaponData);
+        explosionInstance.GetComponent<FireballExpBehaviour>().WeaponStatsSet(weaponDamage, weaponSize);
     }
 }

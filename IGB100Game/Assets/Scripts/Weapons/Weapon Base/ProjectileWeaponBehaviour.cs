@@ -10,7 +10,6 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     public WeaponScriptableObject weaponData;
 
     protected Vector3 direction;
-    public float destroyAfterSeconds;
 
     // Current stats
     [SerializeField] protected float currentDamage;
@@ -21,9 +20,12 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentProjectileCount;
     protected float currentDuration;
 
+    // Stored numbers post modifier. USE THESE!!!
     protected float weaponDamage;
+    protected float weaponSize;
+    protected float weaponDuration;
 
-    void Awake()
+    protected void Awake()
     {
         currentDamage = weaponData.Damage;
         currentSpeed = weaponData.Speed;
@@ -32,17 +34,26 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         currentAreaSize = weaponData.AreaSize;
         currentProjectileCount = weaponData.ProjectileCount;
         currentDuration = weaponData.Duration;
-        destroyAfterSeconds = currentDuration;
     }
 
     public float GetCurrentDamage()
     {
         return currentDamage *= FindFirstObjectByType<PlayerStats>().CurrentMight;
     }
+    public float GetCurrentAreaSize()
+    {
+        return currentAreaSize *= FindFirstObjectByType<PlayerStats>().CurrentAOE;
+    }
+    public float GetCurrentDuration()
+    {
+        return currentDuration *= FindFirstObjectByType<PlayerStats>().CurrentProjectileDuration;
+    }
     protected virtual void Start()
     {
         weaponDamage = GetCurrentDamage();
-        Destroy(gameObject, destroyAfterSeconds);
+        weaponSize = GetCurrentAreaSize();
+        weaponDuration = GetCurrentDuration();
+        Destroy(gameObject, weaponDuration);
     }
     public void DirectionChecker(Vector3 dir)
     {

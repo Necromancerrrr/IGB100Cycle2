@@ -19,7 +19,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     override protected void Start()
     {
         base.Start();
-        weaponDamage = GetCurrentDamage();
+        GetCurrentDamage();
         pulseTimer = tickRate;
         rb = GetComponent<Rigidbody2D>();
         colli = GetComponent<CircleCollider2D>();
@@ -67,12 +67,12 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     }
     private void SetScale() // Matches the scale of the collider and VFX to match area size
     {
-        colli.radius = currentAreaSize;
+        colli.radius = weaponSize;
         var shape = par.shape;
-        shape.radius = currentAreaSize; // set to match area size
+        shape.radius = weaponSize; // set to match area size
         var main = par.main;
         main.startSize = new ParticleSystem.MinMaxCurve(0.1f * 2, 0.2f * 2);
-        main.startSpeed = -currentAreaSize;
+        main.startSpeed = -weaponSize;
     }
     override protected void OnTriggerEnter2D(Collider2D col)
     {
