@@ -27,47 +27,5 @@ public class Enemy : EnemyStats
             //player.TakeDamage(currentDamage); // Make sure to use currentDamage instead of enemyData.Damage in case of any damage multipliers in the future
         }
     }
-    public void RespawnNearPlayer()
-    {
-        if (Vector3.Distance (transform.position, player.transform.position) > 50) // check dist between enemy and player
-        {
-            Vector2 respawnPoint = RespawnPosition(1);
-            
-            transform.position = Camera.main.ViewportToWorldPoint(respawnPoint);
-        }
-    }
     
-    public Vector2 RespawnPosition(float spawnDistance) // Really inefficient way to implement this because the code is already in BaseSpawner.cs BUT cant inherit multiple classes and dont wanna do it the proper way with interface wahtever
-    {
-        Vector2 randomPosition;
-
-        if (Random.Range(0f, 1f) > 0.5f) // Spawn on the sides of the screen
-        {
-            randomPosition.y = Random.Range(0.5f - spawnDistance, 0.5f + spawnDistance);
-            
-            if (Random.Range(0f, 1f) > 0.5f) // Spawn right
-            {
-                randomPosition.x = 0.5f + spawnDistance;
-            }
-            else // Spawn left
-            {
-                randomPosition.x = 0.5f - spawnDistance;
-            }
-        }
-        else // Spawn on top/bottom of the screen
-        {
-            randomPosition.x = Random.Range(0.5f - spawnDistance, 0.5f + spawnDistance);
-
-            if (Random.Range(0f, 1f) > 0.5f) // Spawn top
-            {
-                randomPosition.y = 0.5f + spawnDistance;
-            }
-            else // Spawn bottom
-            {
-                randomPosition.y = 0.5f - spawnDistance;
-            }
-        }
-
-        return randomPosition;
-    }
 }

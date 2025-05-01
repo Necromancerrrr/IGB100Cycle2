@@ -4,6 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public abstract class EnemyStats : MonoBehaviour
 {
+    public bool isBoss;
+    private BossHealthUI healthBar;
+
     public EnemyScriptableObject enemyData;
 
     // Reference the player
@@ -47,7 +50,16 @@ public abstract class EnemyStats : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();
         originalColor = sr.color;
         enemyAudio = GetComponent<EnemyAudio>();
+        
+        
+        if (isBoss == true)
+        {
+            healthBar = GetComponentInChildren<BossHealthUI>();
+            healthBar.SetHealthMax(enemyData.MaxHealth);
+            healthBar.SetHealthValue(currentHealth);
+        }
     }
+
     protected void Update()
     {
         if (knockbackDuration > 0)
@@ -65,6 +77,10 @@ public abstract class EnemyStats : MonoBehaviour
     public virtual void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce, float knockbackDuration = 0.2f)
     {
         currentHealth -= dmg;
+        if (isBoss == true)
+        {
+            healthBar.SetHealthValue(currentHealth);
+        }
         StartCoroutine(DamageFlash());
         enemyAudio.PlayEnemyHurtSound();
         if (dmg > 0)
@@ -96,6 +112,50 @@ public abstract class EnemyStats : MonoBehaviour
         currentMoveSpeed = 0;
         player.CurrentKills++;
         StartCoroutine(KillFade());
+    }
+
+    public void RespawnNearPlayer()
+    {
+        if (Vector3.Distance (transform.position, player.transform.position) > 50) // check dist between enemy and player
+        {
+            Vector2 respawnPoint = RespawnPosition(1);
+            
+            transform.position = Camera.main.ViewportToWorldPoint(respawnPoint);
+        }
+    }
+    
+    public Vector2 RespawnPosition(float spawnDistance) // Really inefficient way to implement this because the code is already in BaseSpawner.cs BUT cant inherit multiple classes and dont wanna do it the proper way with interface wahtever
+    {
+        Vector2 randomPosition;
+
+        if (Random.Range(0f, 1f) > 0.5f) // Spawn on the sides of the screen
+        {
+            randomPosition.y = Random.Range(0.5f - spawnDistance, 0.5f + spawnDistance);
+            
+            if (Random.Range(0f, 1f) > 0.5f) // Spawn right
+            {
+                randomPosition.x = 0.5f + spawnDistance;
+            }
+            else // Spawn left
+            {
+                randomPosition.x = 0.5f - spawnDistance;
+            }
+        }
+        else // Spawn on top/bottom of the screen
+        {
+            randomPosition.x = Random.Range(0.5f - spawnDistance, 0.5f + spawnDistance);
+
+            if (Random.Range(0f, 1f) > 0.5f) // Spawn top
+            {
+                randomPosition.y = 0.5f + spawnDistance;
+            }
+            else // Spawn bottom
+            {
+                randomPosition.y = 0.5f - spawnDistance;
+            }
+        }
+
+        return randomPosition;
     }
 
     IEnumerator KillFade()
