@@ -24,4 +24,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 8171205830150268015, guid: fb25058b7369acd45a923a81e5130b4b, type: 3}
   name: Fan of fireballs
   description: +1 area size
-  icon: {fileID: 0}
+  icon: {fileID: 5353841184698615464, guid: 4b0223db9300136449aa04d7df511be4, type: 3}

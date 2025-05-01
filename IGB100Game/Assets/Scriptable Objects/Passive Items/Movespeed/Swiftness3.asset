@@ -17,4 +17,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 5069994856143371818, guid: b481b83c05fafc74b91ad7f64a6a9f7e, type: 3}
   name: Swiftness
   description: +15% movement speed
-  icon: {fileID: -6960903314270103029, guid: a327ec3ef71ea5e439eeafa83dfd9087, type: 3}
+  icon: {fileID: 4368688791620862549, guid: c0e4ee9a822ec6746b1c98f278bd5d21, type: 3}

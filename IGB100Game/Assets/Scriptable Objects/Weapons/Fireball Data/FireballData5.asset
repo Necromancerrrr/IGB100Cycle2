@@ -24,4 +24,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Fan of fireballs
   description: +2 projectile count
-  icon: {fileID: 0}
+  icon: {fileID: 5353841184698615464, guid: 4b0223db9300136449aa04d7df511be4, type: 3}

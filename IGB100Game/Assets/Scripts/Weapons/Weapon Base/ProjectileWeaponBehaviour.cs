@@ -12,13 +12,13 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected Vector3 direction;
 
     // Current stats
-    [SerializeField] protected float currentDamage;
+    protected float currentDamage;
     protected float currentSpeed;
     protected float currentCooldownDuration;
     protected int currentPierce;
     protected float currentAreaSize;
     protected float currentProjectileCount;
-    protected float currentDuration;
+    [SerializeField] protected float currentDuration;
 
     // Stored numbers post modifier. USE THESE!!!
     protected float weaponDamage;

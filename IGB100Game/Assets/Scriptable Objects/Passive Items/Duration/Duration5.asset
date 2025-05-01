@@ -17,4 +17,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Duration MAX
   description: +50% duration
-  icon: {fileID: 0}
+  icon: {fileID: -3925895545554303150, guid: 552b8d4b844c14b448b8516089ca8d7c, type: 3}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114fd6e77a6020a459c57a1720345771, type: 3}
+  m_Name: Bouncer1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8510583410625965766, guid: 97a9596d5c2fa984d84e39f52b3ff04d, type: 3}
+  damage: 15
+  speed: 5
+  cooldownDuration: 15
+  pierce: 999
+  areaSize: 0
+  projectileCount: 10
+  duration: 5
+  level: 1
+  nextLevelPrefab: {fileID: 8288019790181334820, guid: fa28771d40733f44a90d676a81f6d201, type: 3}
+  name: Bouncer
+  description: It almost seems intelligent
+  icon: {fileID: -7052261092988475347, guid: 12405edd8b6cecd49917360cd93c7fc5, type: 3}

@@ -24,4 +24,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Sentient Shield
   description: +10 knockback
-  icon: {fileID: 0}
+  icon: {fileID: 2389193319765324094, guid: 6149c721e07d62a4aafdd731f8a29054, type: 3}

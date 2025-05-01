@@ -19,7 +19,6 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     override protected void Start()
     {
         base.Start();
-        GetCurrentDamage();
         pulseTimer = tickRate;
         rb = GetComponent<Rigidbody2D>();
         colli = GetComponent<CircleCollider2D>();
