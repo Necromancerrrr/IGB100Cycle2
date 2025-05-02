@@ -14,6 +14,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     private GameObject player;
     [SerializeField] float angle;
     float nextShot;
+    float heal = 0; bool healed = false;
     // Update is called once per frame
     override protected void Start()
     {
@@ -75,6 +76,11 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
             }
             projectileCheck();
         }
+        if (Timer <= 2 && healed == false)
+        {
+            player.GetComponent<PlayerStats>().RestoreHealth(heal);
+            healed = true;
+        }
         gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
         if (Timer <= 0) { Destroy(gameObject); }
     }
@@ -95,7 +101,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     {
         GameObject projInstance = Instantiate(projectile);
         projInstance.transform.position = projPoint.transform.position;
-        projInstance.transform.rotation = Quaternion.identity;
+        projInstance.transform.rotation = transform.rotation;
         projInstance.GetComponent<VampiricProjectileBehaviour>().SetStats(weaponDamage, weaponSize, angle, currentSpeed);
     }
     new protected void OnTriggerEnter2D(Collider2D col)
@@ -105,7 +111,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(weaponDamage, transform.position, weaponSize/3 + 3); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
-            // Insert heal here
+            heal += 1;
         }
         else if (col.CompareTag("Prop"))
         {

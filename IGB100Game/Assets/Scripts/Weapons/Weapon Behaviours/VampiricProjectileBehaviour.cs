@@ -4,6 +4,7 @@ public class VampiricProjectileBehaviour : MonoBehaviour
 {
     float weaponDamage;
     float weaponSize;
+    float weaponSpeed;
     private void Awake()
     {
         Destroy(gameObject, 5f);
@@ -12,14 +13,17 @@ public class VampiricProjectileBehaviour : MonoBehaviour
     {
         weaponDamage = damage;
         weaponSize = size;
+        weaponSpeed = speed;
         SetScale();
-        GetComponent<Rigidbody2D>().linearVelocity = new Vector2(Mathf.Cos(angle) * Mathf.Rad2Deg, Mathf.Sin(angle) * Mathf.Rad2Deg).normalized * speed;
     }
     void SetScale()
     {
-        transform.localScale = new Vector2(weaponSize/10, weaponSize/10);
+        transform.localScale = new Vector2(weaponSize/20, weaponSize/20);
     }
-
+    private void Update()
+    {
+        transform.position += transform.rotation * new Vector3(0, weaponSpeed, 0) * Time.deltaTime;
+    }
     void OnTriggerEnter2D(Collider2D col)
     {
         // Reference the script from the collided collider and deal damage using TakeDamage()
