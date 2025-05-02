@@ -35,7 +35,7 @@ public class EnemyZonerStats : EnemyStats
     }
     private void Movement()
     {
-        if (knockbackDuration >= 0)
+        if (knockbackDuration <= 0)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
             //Sprite flips towards player

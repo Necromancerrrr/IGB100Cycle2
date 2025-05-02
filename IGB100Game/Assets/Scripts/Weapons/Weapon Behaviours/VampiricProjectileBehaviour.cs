@@ -13,7 +13,7 @@ public class VampiricProjectileBehaviour : MonoBehaviour
         weaponDamage = damage;
         weaponSize = size;
         SetScale();
-        GetComponent<Rigidbody2D>().linearVelocity = new Vector2(Mathf.Sin(angle) * Mathf.Rad2Deg, Mathf.Cos(angle) * Mathf.Rad2Deg).normalized * speed;
+        GetComponent<Rigidbody2D>().linearVelocity = new Vector2(Mathf.Cos(angle) * Mathf.Rad2Deg, Mathf.Sin(angle) * Mathf.Rad2Deg).normalized * speed;
     }
     void SetScale()
     {

@@ -12,7 +12,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     [SerializeField] private GameObject projPoint;
     [SerializeField] private GameObject projectile;
     private GameObject player;
-    float angle;
+    [SerializeField] float angle;
     float nextShot;
     // Update is called once per frame
     override protected void Start()
@@ -47,7 +47,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
             Vector2 angleVec = ((Vector2)transform.position - target).normalized;
             if (clockwise == true) 
             { 
-                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg - 180;
+                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg + 180;
                 nextShot = angle - 120 / projectileCount;
             }
             else if (clockwise == false) 
@@ -95,6 +95,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     {
         GameObject projInstance = Instantiate(projectile);
         projInstance.transform.position = projPoint.transform.position;
+        projInstance.transform.rotation = Quaternion.identity;
         projInstance.GetComponent<VampiricProjectileBehaviour>().SetStats(weaponDamage, weaponSize, angle, currentSpeed);
     }
     new protected void OnTriggerEnter2D(Collider2D col)
