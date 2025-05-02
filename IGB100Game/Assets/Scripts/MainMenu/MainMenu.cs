@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] public List<TMP_FontAsset> FontList;
     [SerializeField] public List<int> FontSize;
-
+    /*
     // Logic for buttons
     public void CharacterSelect()
     {
@@ -29,4 +29,5 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    */
 }

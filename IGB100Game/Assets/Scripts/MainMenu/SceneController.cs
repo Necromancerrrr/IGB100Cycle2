@@ -5,15 +5,27 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private HelpOverlay helpMenu;
-    public void SceneChange(string name)
+
+    public Animator animator;
+
+    private string sceneName;
+
+    public void FadeOutAnim(string name)
     {
-        Time.timeScale = 1.0f;
-        SceneManager.LoadScene(name);
+        sceneName = name;
+        animator.SetTrigger("FadeOut");
     }
+
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void Help()
     {
         helpMenu.ButtonPress();
     }
+
     public void Quit()
     {
         Application.Quit();
