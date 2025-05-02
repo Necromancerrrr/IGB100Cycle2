@@ -51,11 +51,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81af2d17b49ab84439f4fc187919a031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   enemyData: {fileID: 11400000, guid: 0594417d573d4a946b85ac6cef4e81c8, type: 2}
   player: {fileID: 0}
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  knockbackModifier: 0
   enemyAudio: {fileID: 0}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2

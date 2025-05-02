@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonAnim : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ButtonAnim : MonoBehaviour
 {
     public TMP_Text ButtonText;
     public MainMenu menuManager;
@@ -23,18 +23,12 @@ public class ButtonAnim : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
     void Update()
     {
-        AnimateMethod();
+        // AnimateMethod();
     }
-    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
-    {
-        hovered = true;
-    }
-    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
-    {
-        hovered = false;
-    }
+
     // If the button is hovered and the timer has elapsed, change the font randomly.
     // Otherwise, tick down the timer
+    /*
     public void AnimateMethod()
     {
         if (timer <= 0f && hovered)
@@ -49,4 +43,5 @@ public class ButtonAnim : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             timer -= Time.deltaTime;
         }
     }
+    */
 }
