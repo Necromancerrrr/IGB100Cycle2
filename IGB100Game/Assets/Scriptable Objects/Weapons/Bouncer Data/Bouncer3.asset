@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8510583410625965766, guid: 4ab2935e38fa1fa4c9e9010cec9ff7ab, type: 3}
   damage: 30
-  speed: 5
+  speed: 20
   cooldownDuration: 10
   pierce: 999
   areaSize: 0

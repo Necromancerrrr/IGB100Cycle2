@@ -49,12 +49,12 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
             target = enemyList[0].transform.position; // Ensures the previous target is no longer a concern
             foreach (GameObject enemy in enemyList)
             {
-                if ((enemy.transform.position - transform.position).magnitude >= ((Vector3)target - transform.position).magnitude)
+                if ((enemy.transform.position - transform.position).magnitude <= ((Vector3)target - transform.position).magnitude)
                 {
                     target = enemy.transform.position;
                 }
             }
-            rb.linearVelocity = (target - (Vector2)transform.position);
+            rb.linearVelocity = (target - (Vector2)transform.position).normalized * currentSpeed;
         }
         else { Destroy(gameObject); }
     }

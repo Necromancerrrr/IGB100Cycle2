@@ -128,12 +128,12 @@ TextureImporter:
       name: Vampiric Blade Animation_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 29
-        height: 29
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,12 +150,12 @@ TextureImporter:
       name: Vampiric Blade Animation_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 4
-        width: 26
-        height: 26
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: Vampiric Blade Animation_2
       rect:
         serializedVersion: 2
-        x: 65
-        y: 5
-        width: 25
-        height: 25
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: Vampiric Blade Animation_3
       rect:
         serializedVersion: 2
-        x: 97
-        y: 5
-        width: 25
-        height: 25
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: Vampiric Blade Animation_4
       rect:
         serializedVersion: 2
-        x: 129
-        y: 5
-        width: 25
-        height: 25
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 74a98ccb9a99a164a9d13a4fa4be737a
     internalID: 0
     vertices: []
     indices: 
