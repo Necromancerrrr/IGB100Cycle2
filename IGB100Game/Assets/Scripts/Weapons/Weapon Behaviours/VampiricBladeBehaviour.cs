@@ -11,6 +11,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     [SerializeField] private GameObject col;
     [SerializeField] private GameObject projPoint;
     [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject par;
     private GameObject player;
     [SerializeField] float angle;
     float nextShot;
@@ -29,6 +30,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     void SetScale()
     {
         col.transform.localScale = new Vector2(weaponSize, weaponSize);
+        par.transform.localScale = new Vector2(weaponSize, weaponSize);
         col.GetComponent<CapsuleCollider2D>().enabled = true;
     }
     void SetRotation() // Finds the closest enemy and takes their position. Converts that into an angle, then prepares for swing
