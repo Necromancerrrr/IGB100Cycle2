@@ -824,10 +824,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -199.99993896484376,
-            "y": -942.0000610351563,
+            "x": -211.99998474121095,
+            "y": -831.0,
             "width": 207.9999542236328,
-            "height": 278.00006103515627
+            "height": 278.0
         }
     },
     "m_Slots": [
@@ -1160,7 +1160,7 @@
     "m_Title": "offset silhouette in all directions",
     "m_Position": {
         "x": -1507.0,
-        "y": 345.9998779296875
+        "y": 345.99981689453127
     }
 }
 
@@ -1176,9 +1176,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 413.00006103515627,
-            "y": -957.0,
-            "width": 207.99993896484376,
+            "x": 401.0000305175781,
+            "y": -846.0,
+            "width": 207.99996948242188,
             "height": 326.0
         }
     },
@@ -2435,8 +2435,8 @@
     "m_ObjectId": "b02ac35a58ab48c08ef83210c624b433",
     "m_Title": "subtract silhouette from FAT offset version",
     "m_Position": {
-        "x": -86.0,
-        "y": -54.0
+        "x": -86.00004577636719,
+        "y": -54.00004196166992
     }
 }
 
@@ -2486,9 +2486,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 111.00006866455078,
-            "y": -955.0000610351563,
-            "width": 207.99996948242188,
+            "x": 99.0000228881836,
+            "y": -844.0,
+            "width": 207.99993896484376,
             "height": 302.0
         }
     },
@@ -2740,8 +2740,8 @@
     "m_ObjectId": "cc4cf478bc5247aaa449da8c0e48e0d9",
     "m_Title": "cleans up colouring (makes sure the extra nonsense in sampletext is not parsed through)",
     "m_Position": {
-        "x": -225.0,
-        "y": -1016.0
+        "x": -237.00001525878907,
+        "y": -904.9999389648438
     }
 }
 
@@ -2923,8 +2923,8 @@
     "m_ObjectId": "e55f3634d9c3404d9aeede67efc48523",
     "m_Title": "add all offsets together",
     "m_Position": {
-        "x": -634.0001220703125,
-        "y": 471.9998779296875
+        "x": -633.9998779296875,
+        "y": 471.9998474121094
     }
 }
 
@@ -3050,8 +3050,8 @@
     "m_ObjectId": "f3ab13945ee34a129ba5fb95c9c1341c",
     "m_Title": "Sample sprite",
     "m_Position": {
-        "x": -789.0,
-        "y": -333.9998779296875
+        "x": -788.9998779296875,
+        "y": -333.9999694824219
     }
 }
 
