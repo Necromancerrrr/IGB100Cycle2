@@ -78,7 +78,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             }
         }
     }
-    void ReducePierce() // Will destory the object after going through 'X' enemies
+    protected void ReducePierce() // Will destory the object after going through 'X' enemies
     {
         currentPierce--;
         if (currentPierce <= 0)

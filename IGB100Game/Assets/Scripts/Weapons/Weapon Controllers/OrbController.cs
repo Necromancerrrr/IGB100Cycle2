@@ -16,6 +16,11 @@ public class OrbController : WeaponController
         {
             GameObject orbInstance = Instantiate(weaponData.Prefab);
             orbInstance.transform.position = transform.position; // Assign the position to be the same as this object, which is parented to the player
+            if (i == 0)
+            {
+                orbInstance.GetComponent<OrbBehaviour>().targetSet(false);
+            }
+            else { orbInstance.GetComponent<OrbBehaviour>().targetSet(true); }
         }
     }
 }

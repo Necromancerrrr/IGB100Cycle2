@@ -21,7 +21,7 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
     private void Movement()
     {
         rb.linearVelocity = player.GetComponent<PlayerMovement>().lastMovedVector * currentSpeed * -1; // Move away from where the player last moved
-        rb.position = Vector2.ClampMagnitude(rb.position - (Vector2)player.transform.position, 1.5f) + (Vector2)player.transform.position; // Clamp to within 1.5f of the player
+        rb.position = Vector2.ClampMagnitude(rb.position - (Vector2)player.transform.position, 2f) + (Vector2)player.transform.position; // Clamp to within 1.5f of the player
     }
     override protected void OnTriggerEnter2D(Collider2D col) // Instead of dealing damage, the shield deals knockback scaling with damage
     {

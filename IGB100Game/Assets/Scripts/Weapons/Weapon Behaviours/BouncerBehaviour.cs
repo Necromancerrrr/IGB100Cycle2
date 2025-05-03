@@ -23,6 +23,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
             enemy.TakeDamage(weaponDamage, transform.position, 0);
             hitList.Add(col.gameObject);
             FindTarget();
+            ReducePierce();
         }
         else if (col.CompareTag("Prop"))
         {
@@ -32,6 +33,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
             }
             hitList.Add(col.gameObject);
             FindTarget();
+            ReducePierce();
         }
     }
     void FindTarget()

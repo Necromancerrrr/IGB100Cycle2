@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ShieldData1
   m_EditorClassIdentifier: 
   prefab: {fileID: 7010695086612353368, guid: c5b033212fca7fa49a3154981a55197c, type: 3}
-  damage: 5
-  speed: 5
-  cooldownDuration: 30
+  damage: 10
+  speed: 10
+  cooldownDuration: 20
   pierce: 0
   areaSize: 0
   projectileCount: 0

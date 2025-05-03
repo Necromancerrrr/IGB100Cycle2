@@ -25,8 +25,9 @@ public class PlayerStats : MonoBehaviour
     float currentMight;
     float currentProjectileSpeed;
     float currentProjectileDuration;
-    [SerializeField]float currentProjectileCount; // WIP
-    float currentAOE; // WIP
+    float currentProjectileCount;
+    float currentAOE;
+    float currentCDR;
     float currentMagnet;
     int currentKills;
 
@@ -146,7 +147,7 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentProjectileDurationDisplay.text = "Projectile Duration: " + currentProjectileDuration.ToString();
+                    GameManager.instance.currentProjectileDurationDisplay.text = "Duration: " + currentProjectileDuration.ToString();
                 }
 
             }
@@ -166,7 +167,7 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentProjectileCountDisplay.text = "Projectile Duration: " + currentProjectileCount.ToString();
+                    GameManager.instance.currentProjectileCountDisplay.text = "Projectile Count: " + currentProjectileCount.ToString();
                 }
 
             }
@@ -186,7 +187,26 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentAOEDisplay.text = "Projectile Duration: " + currentAOE.ToString();
+                    GameManager.instance.currentAOEDisplay.text = "AOE: " + currentAOE.ToString();
+                }
+            }
+        }
+    }
+    public float CurrentCDR
+    {
+        get { return currentCDR; }
+        set
+        {
+            // Check if the value has changed
+            if (currentCDR != value)
+            {
+                //Update the real time value of the stat
+                currentCDR = value;
+
+                // Update player UI
+                if (GameManager.instance != null)
+                {
+                    //GameManager.instance.currentCDRDisplay.text = "Cooldown reduction: " + currentAOE.ToString();
                 }
             }
         }
@@ -303,6 +323,7 @@ public class PlayerStats : MonoBehaviour
         CurrentMagnet = characterData.Magnet;
         currentProjectileCount = characterData.ProjectileCount;
         currentAOE = characterData.AreaSize;
+        currentCDR = characterData.Cooldown;
 
         // Reset kills stat
         CurrentKills = 0;

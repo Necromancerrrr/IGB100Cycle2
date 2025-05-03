@@ -8,6 +8,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     private Rigidbody2D rb;
     private CircleCollider2D colli;
     [SerializeField] private ParticleSystem par;
+    bool targetRand;
 
     // Orb logic
     float tickRate = 1f;
@@ -26,6 +27,10 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         SetEnemy();
         SetMovement();
         SetScale();
+    }
+    public void targetSet(bool tar)
+    {
+        targetRand = tar;
     }
     // Update is called once per frame
     protected void Update()
@@ -54,9 +59,21 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     { 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0) { Destroy(gameObject); }
-        else
+        else if (targetRand == true)
         {
             target = enemies[Random.Range(0, enemies.Length - 1)];
+        }
+        else if (targetRand ==  false)
+        {
+            target = enemies[0];
+            GameObject player = GameObject.FindWithTag("Player");
+            foreach (GameObject enemy in enemies)
+            {
+                if ((enemy.transform.position - player.transform.position).magnitude <= (target.transform.position - player.transform.position).magnitude)
+                {
+                    target = enemy;
+                }
+            }
         }
     }
     private void SetMovement() // Sends out projectile towards selected target

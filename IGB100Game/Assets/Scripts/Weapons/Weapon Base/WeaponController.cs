@@ -16,7 +16,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] protected float weaponCount;
     public float GetCurrentCooldown()
     {
-        return currentCooldown; //* FindFirstObjectByType<PlayerStats>().CurrentCooldown;
+        return currentCooldown / FindFirstObjectByType<PlayerStats>().CurrentCDR; //* FindFirstObjectByType<PlayerStats>().CurrentCooldown;
     }
     public float GetCurrentProjectileCount()
     {

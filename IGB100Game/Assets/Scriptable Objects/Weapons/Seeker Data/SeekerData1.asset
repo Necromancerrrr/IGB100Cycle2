@@ -19,7 +19,7 @@ MonoBehaviour:
   pierce: 9999
   areaSize: 0
   projectileCount: 3
-  duration: 3
+  duration: 5
   level: 1
   nextLevelPrefab: {fileID: 8391479871286726765, guid: f52cf0a8c9cf7474a833ed215dc86feb, type: 3}
   name: Spirit Seekers

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ShieldData3
   m_EditorClassIdentifier: 
   prefab: {fileID: 7010695086612353368, guid: baa7706d74300ef43a452838cf70f4f7, type: 3}
-  damage: 5
-  speed: 5
-  cooldownDuration: 20
+  damage: 10
+  speed: 10
+  cooldownDuration: 15
   pierce: 0
   areaSize: 0
   projectileCount: 0
@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 3
   nextLevelPrefab: {fileID: 8186614856194216389, guid: a6753dd4b71172e4e968c52d6b4e17bd, type: 3}
   name: Sentient Shield
-  description: -510cooldown
+  description: -5 cooldown
   icon: {fileID: 2389193319765324094, guid: 6149c721e07d62a4aafdd731f8a29054, type: 3}
