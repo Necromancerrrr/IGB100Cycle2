@@ -9,7 +9,7 @@ public class VampiricProjectileBehaviour : MonoBehaviour
     {
         Destroy(gameObject, 5f);
     }
-    public void SetStats(float damage, float size, float angle, float speed)
+    public void SetStats(float damage, float size, float speed)
     {
         weaponDamage = damage;
         weaponSize = size;

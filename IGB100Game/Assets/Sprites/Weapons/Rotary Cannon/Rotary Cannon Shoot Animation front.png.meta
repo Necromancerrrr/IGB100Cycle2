@@ -63,7 +63,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,10 +131,10 @@ TextureImporter:
       name: Rotary Cannon Shoot Animation front_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 3
-        width: 23
-        height: 23
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Rotary Cannon Shoot Animation front_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 3
-        width: 23
-        height: 23
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Rotary Cannon Shoot Animation front_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 3
-        width: 23
-        height: 24
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Rotary Cannon Shoot Animation front_3
       rect:
         serializedVersion: 2
-        x: 102
-        y: 3
-        width: 23
-        height: 24
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: Rotary Cannon Shoot Animation front_4
       rect:
         serializedVersion: 2
-        x: 134
-        y: 3
-        width: 23
-        height: 25
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Rotary Cannon Shoot Animation front_5
       rect:
         serializedVersion: 2
-        x: 166
-        y: 3
-        width: 23
-        height: 23
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a89d5f1691691014cb33634385d7a170
     internalID: 0
     vertices: []
     indices: 

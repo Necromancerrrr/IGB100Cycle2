@@ -104,7 +104,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         GameObject projInstance = Instantiate(projectile);
         projInstance.transform.position = projPoint.transform.position;
         projInstance.transform.rotation = transform.rotation;
-        projInstance.GetComponent<VampiricProjectileBehaviour>().SetStats(weaponDamage, weaponSize, angle, currentSpeed);
+        projInstance.GetComponent<VampiricProjectileBehaviour>().SetStats(weaponDamage, weaponSize, currentSpeed);
     }
     new protected void OnTriggerEnter2D(Collider2D col)
     {

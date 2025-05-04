@@ -8,7 +8,6 @@ public class BouncerController : WeaponController
         float angle = 360 / (weaponCount - 1);
         for (int i = 0; i < weaponCount; i++)
         {
-            Debug.Log("fire");
             GameObject bounceInstance = Instantiate(weaponData.Prefab);
             bounceInstance.transform.position = transform.position; // Assign the position to be the same as this object, which is parented to the player
             float projSpeed = weaponData.Speed * FindFirstObjectByType<PlayerStats>().CurrentProjectileSpeed;
