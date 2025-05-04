@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class FireballProjBehaviour : ProjectileWeaponBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private Vector2 target;
+    private float angle;
     private Rigidbody2D rb;
     [SerializeField] private GameObject explosion;
     override protected void Start()
@@ -14,8 +13,9 @@ public class FireballProjBehaviour : ProjectileWeaponBehaviour
         SetEnemy();
         Fire();
     }
-    private void SetEnemy() // Selects a random enemy as the target. If there are no valid targets, self destruct
+    private void SetEnemy() // Selects the closest enemy as the target and grabs their angle. If there are no valid targets, self destruct
     {
+        Vector2 target;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0) { Destroy(gameObject); }
         else
@@ -29,14 +29,17 @@ public class FireballProjBehaviour : ProjectileWeaponBehaviour
                     target = enemy.transform.position;
                 }
             }
-            float magMod = ((Vector2)player.transform.position - target).magnitude;
-            target += new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(0f, 0.5f * magMod);
+            Vector2 calc = target - (Vector2)player.transform.position;
+            angle = 360 - (Mathf.Atan2(calc.x, calc.y) * Mathf.Rad2Deg);
         }
+    }
+    private void Update()
+    {
+        transform.position += transform.rotation * new Vector3(0, currentSpeed, 0) * Time.deltaTime;
     }
     private void Fire() // Fires towards target
     {
-        Vector2 angle = (Vector2)rb.transform.position - target;
-        rb.linearVelocity -= angle.normalized * currentSpeed;
+        transform.rotation = Quaternion.Euler(0, 0, angle + Random.Range(-30f, 30f));
     }
     override protected void OnTriggerEnter2D(Collider2D col)
     {

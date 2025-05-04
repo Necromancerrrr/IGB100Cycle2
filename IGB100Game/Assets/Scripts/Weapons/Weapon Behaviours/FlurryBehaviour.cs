@@ -1,0 +1,84 @@
+using System.Drawing;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.U2D;
+using static UnityEngine.GraphicsBuffer;
+
+public class FlurryBehaviour : ProjectileWeaponBehaviour
+{
+    [SerializeField] private GameObject projectile;
+    private GameObject player;
+    private float angle;
+    private float timer;
+    private float projCount;
+    private float phaseCounter;
+    private float phase;
+    new void Awake()
+    {
+        base.Awake();
+        player = GameObject.FindWithTag("Player");
+        projCount = Mathf.Round(currentProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
+        timer = 2;
+        phaseCounter = 0;
+        phase = 0;
+    }
+    new void Start()
+    {
+        weaponDamage = GetCurrentDamage();
+        weaponSize = GetCurrentAreaSize();
+        weaponDuration = GetCurrentDuration();
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if (phase == 0)
+        {
+            SetEnemy();
+            timer -= Time.deltaTime;
+            if (timer <= 0) { phase = 1; timer = 1 / projCount; }
+        }
+        if (phase == 1)
+        {
+            ShootCheck();
+            if (phaseCounter >= projCount) { phase = 2; timer = 1; }
+        }
+        if (phase == 2)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0) { Destroy(gameObject); }
+        }
+    }
+    private void SetEnemy() // Selects the position of the closest enemy as the target. If there are no valid targets, self destruct
+    {
+        Vector2 target;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies.Length <= 0) { Destroy(gameObject); }
+        else
+        {
+            target = enemies[0].transform.position;
+            foreach (GameObject enemy in enemies)
+            {
+                if ((enemy.transform.position - transform.position).magnitude <= (target - (Vector2)transform.position).magnitude)
+                {
+                    target = enemy.transform.position;
+                }
+            }
+            Vector2 calc = target - (Vector2)transform.position;
+            angle = 360 - (Mathf.Atan2(calc.x, calc.y) * Mathf.Rad2Deg);
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+    }
+    void ShootCheck()
+    {
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            GameObject projInstance = Instantiate(projectile);
+            projInstance.transform.position = transform.position;
+            projInstance.transform.rotation = Quaternion.Euler(0, 0, angle + Random.Range(-10f, 10f));
+            projInstance.GetComponent<FlurryProjectileBehaviour>().SetStats(weaponDamage, currentSpeed);
+            timer = 1 / projCount;
+            phaseCounter += 1;
+        }
+    }
+}

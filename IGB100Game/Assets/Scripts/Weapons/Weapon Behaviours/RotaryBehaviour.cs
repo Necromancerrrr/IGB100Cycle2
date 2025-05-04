@@ -31,14 +31,14 @@ public class RotaryBehaviour : ProjectileWeaponBehaviour
         Shoot();
         //Anim();
     }
-    void Movement()
+    void Movement() // Rotates the cannons
     {
         if (clockwise) { angle -= Time.deltaTime * currentSpeed; }
         else { angle += Time.deltaTime * currentSpeed; }
         transform.rotation = Quaternion.Euler(0, 0, angle);
         transform.position = player.transform.position;
     }
-    void Shoot()
+    void Shoot() // Fires out of the cannons
     {
         shootTimer -= Time.deltaTime;
         if (shootTimer < 0)
@@ -54,7 +54,7 @@ public class RotaryBehaviour : ProjectileWeaponBehaviour
             shootTimer = 1 / projectileCount;
         }
     }
-    private void Anim()
+    private void Anim() // Don't use, it looks jank
     {
         float angle2 = angle % 360;
         if (angle2 < 0) { angle2 += 360; }

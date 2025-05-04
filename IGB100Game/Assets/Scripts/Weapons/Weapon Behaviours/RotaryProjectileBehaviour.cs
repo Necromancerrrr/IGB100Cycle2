@@ -13,7 +13,7 @@ public class RotaryProjectileBehaviour : MonoBehaviour
         weaponDamage = damage;
         weaponSpeed = speed;
     }
-    private void Update()
+    private void Update() // Moves in the direction it is currently facing
     {
         transform.position += transform.rotation * new Vector3(0, weaponSpeed, 0) * Time.deltaTime;
     }
