@@ -5,6 +5,8 @@ public class FireballProjBehaviour : ProjectileWeaponBehaviour
     private float angle;
     private Rigidbody2D rb;
     [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject sprite;
+    [SerializeField] private GameObject trail;
     override protected void Start()
     {
         // Pulls stats and finds components
@@ -43,12 +45,13 @@ public class FireballProjBehaviour : ProjectileWeaponBehaviour
     }
     override protected void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy") || col.CompareTag("Prop"))
         {
-            Destroy(gameObject);
-        }
-        else if (col.CompareTag("Prop"))
-        {
+            transform.DetachChildren();
+            Destroy(sprite);
+            var emission = trail.GetComponent<ParticleSystem>().emission;
+            emission.rateOverTime = 0;
+            Destroy(trail, 1);
             Destroy(gameObject);
         }
     }
