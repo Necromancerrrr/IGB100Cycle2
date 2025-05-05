@@ -298,8 +298,9 @@ public class PlayerStats : MonoBehaviour
     // Audio Feedback Script
     [Header("Player Audio")]
     PlayerAudio playerAudio;
- 
 
+    // Screen shake
+    CinemachineImpulseSource impulse;
     void Awake()
     {
         // Comment out these two lines if you want to play without going to character select scene
@@ -313,6 +314,7 @@ public class PlayerStats : MonoBehaviour
         inventory = GetComponent<InventoryManager>();
         playerAnimator = GetComponent<PlayerAnimator>();
         playerAudio = GetComponent<PlayerAudio>();
+        impulse = GetComponent<CinemachineImpulseSource>();
 
         // Assign the variables
         CurrentHealth = characterData.MaxHealth;
@@ -368,6 +370,12 @@ public class PlayerStats : MonoBehaviour
         {
             isInvincible = false;
         }
+        if (isFrozen == true && TimerIsDone() == true && GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentState != GameManager.GameState.Pause)
+        {
+            Time.timeScale = originalTimeScale;
+            isFrozen = false;
+        }
+  
         PassiveHeal();
     }
     public void IncreaseExperience(int amount)
@@ -457,8 +465,8 @@ public class PlayerStats : MonoBehaviour
         {
             CurrentHealth -= dmg;
 
-            GameObject camera = GameObject.FindWithTag("MainCamera");
-            camera.GetComponent<CinemachineShake>().ShakeCamera(dmg, invincibilityDuration);
+            impulse.GenerateImpulse();
+            Freeze(0.5f);
 
             OnPlayerDamaged?.Invoke();
 
@@ -495,7 +503,31 @@ public class PlayerStats : MonoBehaviour
             GameManager.instance.GameOver();
         }
     }
-
+    // Freeze variables
+    bool isFrozen;
+    float originalTimeScale;
+    float duration;
+    float lastTime;
+    private void Freeze(float duration)
+    {
+        if (!isFrozen) // isFrozen tracks when the game should be in freeze frame
+        {
+            originalTimeScale = Time.timeScale; // Record timeScale before freezing
+            isFrozen = true;
+            Time.timeScale = 0.1f; // Slow down timescale
+            StartTimer(duration);  // Start the timer
+        }
+    }
+    public void StartTimer(float newDuration)
+    {
+        duration = newDuration;
+        lastTime = Time.unscaledTime; // Record the start time (unscaledTime records seconds since game start)
+    } // Call to start time scale independent timer
+    public bool TimerIsDone()
+    {
+        return (Time.unscaledTime - lastTime) >= duration;
+        // return current time stamp - lastTime(timestamp since freezeframe start) = duration elapsed
+    } // Call to check if timer is done
     public void SpawnWeapon(GameObject weapon)
     {
         //checking if inventory is full
