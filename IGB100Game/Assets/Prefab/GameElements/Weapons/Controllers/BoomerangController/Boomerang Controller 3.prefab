@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8303440660122177106}
   - component: {fileID: 8845604477267182949}
   m_Layer: 0
-  m_Name: Boomerang Controller
+  m_Name: Boomerang Controller 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 53529854424434218}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2250132, y: -0.42796212, z: -0.007010968}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46e5ec1e45e3e941bb7e4058c9c7f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: a4f903661d3093d4d9b648111f3e2a7c, type: 2}
+  weaponData: {fileID: 11400000, guid: 4ffd044662441da4d982bfbca51bfc98, type: 2}
+  weaponCooldown: 0
+  weaponCount: 0

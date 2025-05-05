@@ -15,7 +15,7 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
         dir = true;
         SetScale();
     }
-    public void targetSet(bool rand)
+    public void targetSet(bool rand) // Checks whether the targeting is for the closest enemy or random
     {
         targetRand = rand;
         player = GameObject.FindWithTag("Player");
@@ -25,7 +25,7 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
     {
         gameObject.transform.localScale = new Vector3(weaponSize, weaponSize, 0);
     }
-    private void SetEnemy() // Selects a random enemy as the target. If there are no valid targets, self destruct.
+    private void SetEnemy() // Selects an enemy as the target. If there are no valid targets, self destruct.
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0) { Destroy(gameObject); }
@@ -45,27 +45,27 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
                 }
             }
         }
-        angleVector = (target.transform.position - player.transform.position).normalized;
+        angleVector = (target.transform.position - player.transform.position).normalized; // The vector we will use for movement on the way out
     }
     void Update()
     {
         transform.Rotate(0, 0, Time.deltaTime * 720);
-        if (dir == true)
+        if (dir == true) // Moving outwards
         {
-            transform.position += (Vector3)angleVector * rangSpeed * Time.deltaTime; // Set the movement of the knife
+            transform.position += (Vector3)angleVector * rangSpeed * Time.deltaTime;
             rangSpeed -= (Time.deltaTime * 10);
-            if (rangSpeed <= 0 || (transform.position - (Vector3)angleVector).magnitude <= 0.2)
+            if (rangSpeed <= 0 || (transform.position - (Vector3)angleVector).magnitude <= 0.2) // Switches to moving back towards the player when reaching 0 speed or when reaching target
             {
                 dir = false;
                 rangSpeed *= -1;
             }
         }
-        else if (dir == false)
+        else if (dir == false) 
         {
             angleVector = (player.transform.position - transform.position).normalized;
             transform.position += (Vector3)angleVector * rangSpeed * Time.deltaTime; // Set the movement of the knife
             rangSpeed += (Time.deltaTime * 10);
-            if ((transform.position - player.transform.position).magnitude <= 0.2) { Destroy(gameObject); }
+            if ((transform.position - player.transform.position).magnitude <= 0.2) { Destroy(gameObject); } // Boomerang dies when close to the player
         }
     }
 }

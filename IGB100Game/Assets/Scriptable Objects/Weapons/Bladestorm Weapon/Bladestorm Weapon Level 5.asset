@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114fd6e77a6020a459c57a1720345771, type: 3}
   m_Name: Bladestorm Weapon Level 5
   m_EditorClassIdentifier: 
-  prefab: {fileID: 686938345842361232, guid: a8bb647a177614f4bbba2e89d435c3a3, type: 3}
+  prefab: {fileID: 686938345842361232, guid: f5a995b59d522e141b3f84f289819adc, type: 3}
   damage: 20
   speed: 0
   cooldownDuration: 10
   pierce: 0
-  areaSize: 0
+  areaSize: 2.5
   projectileCount: 0
   duration: 8
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Bladestorm MAX
-  description: Upgrade MAX
+  description: +4 duration
   icon: {fileID: -4360754683449048810, guid: 8b102acf98bfef24b8140a23b036bb6d, type: 3}

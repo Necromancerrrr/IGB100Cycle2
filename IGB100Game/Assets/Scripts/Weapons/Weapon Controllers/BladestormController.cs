@@ -4,10 +4,13 @@ public class BladestormController : WeaponController
 {
     [SerializeField] private int numberOfBlades = 4;
     [SerializeField] private float radius = 1.5f;
+    float weaponSize;
 
     protected override void Start()
     {
         base.Start();
+        weaponSize = weaponData.AreaSize * FindFirstObjectByType<PlayerStats>().CurrentAOE;
+        radius = weaponSize;
         Attack();
     }
 

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114fd6e77a6020a459c57a1720345771, type: 3}
   m_Name: Bladestorm Weapon Level 4
   m_EditorClassIdentifier: 
-  prefab: {fileID: 686938345842361232, guid: 3a564f328397df24db85449d2f02f1a7, type: 3}
+  prefab: {fileID: 686938345842361232, guid: 7494d1e862496704b8a6f5f8d78003ce, type: 3}
   damage: 20
   speed: 0
   cooldownDuration: 10
   pierce: 0
-  areaSize: 0
+  areaSize: 2.5
   projectileCount: 0
-  duration: 5
+  duration: 4
   level: 4
   nextLevelPrefab: {fileID: 6883820235095941995, guid: ba3da5cb6f031194ab3bb98f912c1907, type: 3}
-  name: Bladestorm 4
-  description: Upgrade 4
+  name: Bladestorm
+  description: -5 cooldown
   icon: {fileID: -4360754683449048810, guid: 8b102acf98bfef24b8140a23b036bb6d, type: 3}

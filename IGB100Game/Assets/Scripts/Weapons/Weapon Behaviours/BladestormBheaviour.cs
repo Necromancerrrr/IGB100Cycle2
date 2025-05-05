@@ -12,8 +12,12 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
         base.Start();
         markedEnemies = new List<GameObject>();
         timer = hitResetInterval;
+        SetScale();
     }
-
+    void SetScale()
+    {
+        transform.localScale = new Vector3(weaponSize, weaponSize, 1);
+    }
     void Update()
     {
         // Clear marked enemies after the reset interval

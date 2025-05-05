@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 114fd6e77a6020a459c57a1720345771, type: 3}
-  m_Name: OrbData4
+  m_Name: Boomerang Data Level 2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2896348483173793368, guid: bdeff21f790ab9f44895fce81aa39f8a, type: 3}
+  prefab: {fileID: 2057112569438578086, guid: 72eb5ab7b480c854ebc8690bf0e927f0, type: 3}
   damage: 5
-  speed: 1.5
+  speed: 15
   cooldownDuration: 4
-  pierce: 9999
-  areaSize: 4
+  pierce: 999
+  areaSize: 2
   projectileCount: 2
-  duration: 10
-  level: 4
-  nextLevelPrefab: {fileID: 8391479871286726765, guid: 7db67aba60bb63b4086b63ae9ad5629e, type: 3}
-  name: Orb
-  description: +4 duration
-  icon: {fileID: -8985924484199272655, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}
+  duration: 7
+  level: 2
+  nextLevelPrefab: {fileID: 53529854424434218, guid: 381476cbe32791b459209d12e32fee95, type: 3}
+  name: Boomerang
+  description: +1 projectile count
+  icon: {fileID: -403755840339538957, guid: 87b70cb2bbb68a647a3d39caabc140ae, type: 3}
