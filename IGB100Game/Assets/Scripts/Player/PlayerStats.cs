@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
 using System;
+using Unity.Cinemachine;
 //using UnityEditor.Rendering;
 
 public class PlayerStats : MonoBehaviour
@@ -455,6 +456,9 @@ public class PlayerStats : MonoBehaviour
         if (!isInvincible)
         {
             CurrentHealth -= dmg;
+
+            GameObject camera = GameObject.FindWithTag("MainCamera");
+            camera.GetComponent<CinemachineShake>().ShakeCamera(dmg, invincibilityDuration);
 
             OnPlayerDamaged?.Invoke();
 
