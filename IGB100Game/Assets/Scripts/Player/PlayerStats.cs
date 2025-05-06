@@ -21,6 +21,7 @@ public class PlayerStats : MonoBehaviour
     /// Player Stats ( DO NOT USE TO CHECK PLAYER STATS IN CODE )
     /// </summary>
     float currentHealth;
+    float currentMaxHealth;
     float currentRecovery;
     float currentMoveSpeed;
     float currentMight;
@@ -36,6 +37,26 @@ public class PlayerStats : MonoBehaviour
     ///  Real Time Stat Tracking ( USE THESE FOR CHECKING PLAYER STATS IN CODE )
     /// </summary>
     #region Current Stats Properties
+    public float CurrentMaxHealth
+    {
+        get { return currentMaxHealth; }
+        set
+        {
+            // Check if the value has changed
+            if (currentMaxHealth != value)
+            {
+                //Update the real time value of the stat
+                currentMaxHealth = value;
+
+                // Update player UI
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentHealthDisplay.text = "Max Health: " + currentHealth.ToString();
+                }
+
+            }
+        }
+    }
     public float CurrentHealth
     {
         get { return currentHealth; }
@@ -255,8 +276,7 @@ public class PlayerStats : MonoBehaviour
     #endregion
 
 
-
-    //Experience and Level of the Player
+    // Experience and Level of the Player
     [Header("Experience/Level")]
     public int experience = 0;
     public int level = 1;
@@ -317,6 +337,7 @@ public class PlayerStats : MonoBehaviour
         impulse = GetComponent<CinemachineImpulseSource>();
 
         // Assign the variables
+        CurrentMaxHealth = characterData.MaxHealth;
         CurrentHealth = characterData.MaxHealth;
         CurrentRecovery = characterData.Recovery;
         CurrentMoveSpeed = characterData.MoveSpeed;
@@ -375,7 +396,7 @@ public class PlayerStats : MonoBehaviour
             Time.timeScale = originalTimeScale;
             isFrozen = false;
         }
-  
+
         PassiveHeal();
     }
     public void IncreaseExperience(int amount)
@@ -407,53 +428,53 @@ public class PlayerStats : MonoBehaviour
             XPBar.SetXPCap(experienceCap);
             XPBar.SetXPBar(experience);
 
+            GameManager.instance.StartLevelUp();
             // If the player is level 5, or level 10, make them choose a pact. Otherwise, make them choose a weapon/passive item
-            switch (level) // Change to if else statement with % 5
-            {
-                case 5:
-                    GameManager.instance.StartPactChoice();
-                    break;
-
-                case 10:
-                    GameManager.instance.StartPactChoice();
-                    break;
-
-                default:
-                    GameManager.instance.StartLevelUp();
-                    break;
-            }
+            //switch (level) // Change to if else statement with % 5
+            //{
+            //   case 5:
+            //        GameManager.instance.StartPactChoice();
+            //        break;
+            //
+            //    case 10:
+            //        GameManager.instance.StartPactChoice();
+            //        break;
+            //
+            //    default:
+            //        GameManager.instance.StartLevelUp();
+            //        break;
+            //}
         }
     }
+    // Variables for regen
+    private float regenTimer = 1;
     void PassiveHeal()
     {
-        if (CurrentHealth < characterData.MaxHealth)
+        if (CurrentRecovery != characterData.Recovery)
         {
-            CurrentHealth += CurrentRecovery * Time.deltaTime; // Heal per second
-
-            if(Mathf.FloorToInt(CurrentRecovery * Time.deltaTime) % 2 == 0) // bad math lol
+            
+            regenTimer -= Time.deltaTime;
+            if (regenTimer < 0)
             {
-                OnPlayerDamaged.Invoke();
-            }
-
-            if (CurrentHealth > characterData.MaxHealth)
-            {
-                CurrentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
+                RestoreHealth(10);
+                regenTimer = CurrentRecovery;
             }
         }
     }
     public void RestoreHealth(float amount)
     {
         // Only heal the player if their current health is less than their maximum
-        if(CurrentHealth < characterData.MaxHealth)
+        Debug.Log("Attempting to heal" + amount);
+        if(CurrentHealth < CurrentMaxHealth)
         {
             CurrentHealth += amount;
             playerAudio.PlayHealthGainSound();
 
             OnPlayerDamaged?.Invoke();
 
-            if (CurrentHealth > characterData.MaxHealth) 
+            if (CurrentHealth > CurrentMaxHealth) 
             {
-                CurrentHealth = characterData.MaxHealth; // To ensure the player doesn't "overheal"
+                CurrentHealth = CurrentMaxHealth; // To ensure the player doesn't "overheal"
             }
         }
         

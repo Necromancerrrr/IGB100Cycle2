@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 114fd6e77a6020a459c57a1720345771, type: 3}
-  m_Name: AppleJuiceScriptable
+  m_Name: AppleJuiceData1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3178717967552317519, guid: 31a5a6e29f64079448604d139a454e9b, type: 3}
-  damage: 10
-  speed: 4
-  cooldownDuration: 2
+  prefab: {fileID: 3771810774219688726, guid: 78b7e1db5f3be5e4ba184f321470129b, type: 3}
+  damage: 2
+  speed: 0
+  cooldownDuration: 10
   pierce: 999
-  areaSize: 0
+  areaSize: 2
   projectileCount: 0
-  duration: 0
+  duration: 4
   level: 1
   nextLevelPrefab: {fileID: 0}
   name: Apple Juice
