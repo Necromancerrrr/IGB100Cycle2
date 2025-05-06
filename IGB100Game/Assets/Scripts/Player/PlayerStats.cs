@@ -466,7 +466,7 @@ public class PlayerStats : MonoBehaviour
             CurrentHealth -= dmg;
 
             impulse.GenerateImpulse();
-            Freeze(0.5f);
+            //Freeze(0.5f);
 
             OnPlayerDamaged?.Invoke();
 
