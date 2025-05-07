@@ -58,6 +58,51 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     public void DirectionChecker(Vector3 dir)
     {
         direction = dir;
+
+
+        // Rotation of projecitles depending on player movement direction
+        float dirX = direction.x;
+        float dirY = direction.y;
+
+        Vector3 scale = transform.localScale;
+        Vector3 rotation = transform.rotation.eulerAngles;
+
+        if (dirX < 0 && dirY == 0)
+        {
+            scale.x = scale.x * -1;
+            scale.y = scale.y * 1;
+        }
+        else if (dirX == 0 && dirY < 0) // up
+        {
+            rotation.z = -90f;
+        }
+        else if (dirX == 0 && dirY > 0) // down
+        {
+            rotation.z = 90f;
+        }
+        else if (dir.x > 0 && dir.y > 0) // right up
+        {
+            rotation.z = 45f;
+        }
+        else if(dir.x > 0 && dir.y <0) // right down
+        {
+            rotation.z = -45f;
+        }
+        else if(dir.x < 0 && dir.y > 0)
+        {
+            scale.x = scale.x * -1;
+            scale.y = scale.y * 1;
+            rotation.z = -45f;
+        }
+        else if(dir.x < 0 && dir.y < 0)
+        {
+            scale.x = scale.x * -1;
+            scale.y= scale.y * 1;
+            rotation.z = 45f;
+        }
+
+        transform.localScale = scale;
+        transform.rotation = Quaternion.Euler(rotation);
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D col)

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         Pause,
         GameOver,
         LevelUp,
-        PactChoice
+        PactChoice,
     }
 
     // Store the current state of the game
@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     public TMP_FontAsset textFont;
     public Camera referenceCamera;
 
+    [Header("Dev Buttons")]
+    public GameObject devButtons;
 
     [Header("Stopwatch")]
     public float timeLimit; // Measured in seconds
@@ -104,6 +106,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Gameplay:
                 CheckForPauseAndResume();
+                CheckDevMode();
                 UpdateStopwatch();
                 break;
 
@@ -249,6 +252,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void CheckDevMode()
+    {
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            if (devButtons.activeSelf)
+            {
+                devButtons.SetActive(false);
+            }
+            else 
+            {
+                devButtons.SetActive(true);
+            }
+        }
+    }
+
+    public void ResetLevelState()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     void UpdateStopwatch()
     {
         stopwatchTime += Time.deltaTime;
@@ -277,6 +300,7 @@ public class GameManager : MonoBehaviour
         resultsScreen.SetActive(false);
         levelUpScreen.SetActive(false);
         pactSelectScreen.SetActive(false);
+        devButtons.SetActive(false);
     }
 
     public void GameOver()
