@@ -7,12 +7,29 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
     [SerializeField] private List<GameObject> hitList;
     [SerializeField] private Vector2 target;
     Rigidbody2D rb;
+    private float rotation;
+    private float rotRate;
+    private bool clockwise;
 
     // Update is called once per frame
     new void Start()
     {
         base.Start();
         rb = GetComponent<Rigidbody2D>();
+        rotation = Random.Range(0f, 360f);
+        SetRotSpeed();
+    }
+    void SetRotSpeed()
+    {
+        rotRate = Random.Range(0f, 50f);
+        if (Random.Range(0, 2) == 0) { clockwise = true; }
+        else { clockwise = false; }
+    }
+    private void Update()
+    {
+        if (clockwise) { rotation += rotRate * Time.deltaTime; }
+        else { rotation -= rotRate * Time.deltaTime; }
+        transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
     protected new void OnTriggerEnter2D(Collider2D col)
     {
@@ -24,6 +41,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
             hitList.Add(col.gameObject);
             FindTarget();
             ReducePierce();
+            SetRotSpeed();
         }
         else if (col.CompareTag("Prop"))
         {
@@ -34,6 +52,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
             hitList.Add(col.gameObject);
             FindTarget();
             ReducePierce();
+            SetRotSpeed();
         }
     }
     void FindTarget()

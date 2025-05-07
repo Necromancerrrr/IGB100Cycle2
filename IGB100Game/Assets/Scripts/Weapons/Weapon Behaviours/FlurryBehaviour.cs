@@ -7,12 +7,14 @@ using static UnityEngine.GraphicsBuffer;
 public class FlurryBehaviour : ProjectileWeaponBehaviour
 {
     [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject spriteRenderer;
     private GameObject player;
     private float angle;
     private float timer;
     private float projCount;
     private float phaseCounter;
     private float phase;
+    private bool anim;
     new void Awake()
     {
         base.Awake();
@@ -21,6 +23,7 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         timer = 2;
         phaseCounter = 0;
         phase = 0;
+        anim = false;
     }
     new void Start()
     {
@@ -35,12 +38,13 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         {
             SetEnemy();
             timer -= Time.deltaTime;
+            if (timer <= 0.25 && anim == false) { spriteRenderer.GetComponent<Animator>().SetTrigger("NextAnim"); anim = true; }
             if (timer <= 0) { phase = 1; timer = 1 / projCount; }
         }
         if (phase == 1)
         {
             ShootCheck();
-            if (phaseCounter >= projCount) { phase = 2; timer = 1; }
+            if (phaseCounter >= projCount) { phase = 2; timer = 1; spriteRenderer.GetComponent<Animator>().SetTrigger("NextAnim"); }
         }
         if (phase == 2)
         {
@@ -65,6 +69,8 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
             }
             Vector2 calc = target - (Vector2)transform.position;
             angle = 360 - (Mathf.Atan2(calc.x, calc.y) * Mathf.Rad2Deg);
+            if ((angle % 360) -180 <= 0) { spriteRenderer.GetComponent<SpriteRenderer>().flipY = true; }
+            else if ((angle % 360) - 180 >= 0) { spriteRenderer.GetComponent<SpriteRenderer>().flipY = false; }
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }

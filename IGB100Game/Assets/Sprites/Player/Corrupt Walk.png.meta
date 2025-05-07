@@ -124,12 +124,12 @@ TextureImporter:
       name: Corrupt Walk_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 67
-        width: 20
-        height: 28
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,155 +143,155 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Corrupt Walk 1_1
+      name: Corrupt Walk_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 66
-        width: 20
-        height: 28
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cf0cc5652d252e240800000000000000
-      internalID: 4819505614585381116
+      spriteID: e8afedbd70c0104408fc86d46e7a454f
+      internalID: -2111486913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Corrupt Walk 1_2
+      name: Corrupt Walk_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 66
-        width: 20
-        height: 27
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0c59fb0155186eb50800000000000000
-      internalID: 6622122504448087488
+      spriteID: 8fb903dcd37fe2c4c802f196f19b413d
+      internalID: 1189256470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Corrupt Walk 1_3
+      name: Corrupt Walk_3
       rect:
         serializedVersion: 2
-        x: 6
-        y: 34
-        width: 20
-        height: 27
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: aa8b322a2455bb3e0800000000000000
-      internalID: -2036940661778564950
+      spriteID: 3a036f0b46c7a874795323dd90c69022
+      internalID: 403033369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Corrupt Walk 1_4
+      name: Corrupt Walk_4
       rect:
         serializedVersion: 2
-        x: 38
-        y: 35
-        width: 20
-        height: 28
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9d0f3eb3c158a13f0800000000000000
-      internalID: -929284016788213543
+      spriteID: 19d837611b5eb934b8593fccb45302cc
+      internalID: -902723520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Corrupt Walk 1_5
+      name: Corrupt Walk_5
       rect:
         serializedVersion: 2
-        x: 70
-        y: 34
-        width: 20
-        height: 27
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 489e1521329f8ab50800000000000000
-      internalID: 6604802782565362052
+      spriteID: 0654c8cf78027ff40ac3b18e678636fe
+      internalID: -1322070615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Corrupt Walk 1_6
+      name: Corrupt Walk_6
       rect:
         serializedVersion: 2
-        x: 6
-        y: 2
-        width: 20
-        height: 27
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 41e4c192fa4d43fa0800000000000000
-      internalID: -5821794569509122540
+      spriteID: 6749e32246ac9824eba102a20e43163e
+      internalID: 767946652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Corrupt Walk 1_7
+      name: Corrupt Walk_7
       rect:
         serializedVersion: 2
-        x: 38
-        y: 2
-        width: 20
-        height: 27
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e46f282899eccb260800000000000000
-      internalID: 7114788670053480014
+      spriteID: ff58861b046320640a90830b3535cbe7
+      internalID: 241881240
       vertices: []
       indices: 
       edges: []
@@ -310,14 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Corrupt Walk 1_1: 4819505614585381116
-      Corrupt Walk 1_2: 6622122504448087488
-      Corrupt Walk 1_3: -2036940661778564950
-      Corrupt Walk 1_4: -929284016788213543
-      Corrupt Walk 1_5: 6604802782565362052
-      Corrupt Walk 1_6: -5821794569509122540
-      Corrupt Walk 1_7: 7114788670053480014
       Corrupt Walk_0: 172721312089601372
+      Corrupt Walk_1: -2111486913
+      Corrupt Walk_2: 1189256470
+      Corrupt Walk_3: 403033369
+      Corrupt Walk_4: -902723520
+      Corrupt Walk_5: -1322070615
+      Corrupt Walk_6: 767946652
+      Corrupt Walk_7: 241881240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

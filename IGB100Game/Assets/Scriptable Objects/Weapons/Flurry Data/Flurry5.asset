@@ -24,4 +24,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Flurry
   description: +10 projectile count
-  icon: {fileID: 0}
+  icon: {fileID: 7528584447651618575, guid: 6d028277c1220ae479654841efd96269, type: 3}

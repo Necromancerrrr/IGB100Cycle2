@@ -24,4 +24,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Bouncer
   description: +15 projectile count
-  icon: {fileID: -7052261092988475347, guid: 12405edd8b6cecd49917360cd93c7fc5, type: 3}
+  icon: {fileID: 152336797157599296, guid: da68df59e6eacb94c95724c83484db58, type: 3}

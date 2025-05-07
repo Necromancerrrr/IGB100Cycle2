@@ -24,4 +24,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 8288019790181334820, guid: fa28771d40733f44a90d676a81f6d201, type: 3}
   name: Bouncer
   description: It almost seems intelligent
-  icon: {fileID: -7052261092988475347, guid: 12405edd8b6cecd49917360cd93c7fc5, type: 3}
+  icon: {fileID: 152336797157599296, guid: da68df59e6eacb94c95724c83484db58, type: 3}
