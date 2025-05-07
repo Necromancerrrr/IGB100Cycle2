@@ -18,7 +18,7 @@ MonoBehaviour:
   cooldownDuration: 10
   pierce: 0
   areaSize: 2.5
-  projectileCount: 0
+  projectileCount: 4
   duration: 4
   level: 3
   nextLevelPrefab: {fileID: 6883820235095941995, guid: 859886d4e311fb6498dbe3b753b00c7d, type: 3}
