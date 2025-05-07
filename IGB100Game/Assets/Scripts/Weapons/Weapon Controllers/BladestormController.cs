@@ -10,6 +10,7 @@ public class BladestormController : WeaponController
     {
         base.Start();
         weaponSize = weaponData.AreaSize * FindFirstObjectByType<PlayerStats>().CurrentAOE;
+        numberOfBlades = Mathf.RoundToInt(weaponData.ProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
         radius = weaponSize;
         Attack();
     }
