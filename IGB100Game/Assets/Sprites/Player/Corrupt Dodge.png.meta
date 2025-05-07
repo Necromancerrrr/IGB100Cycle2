@@ -117,6 +117,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -309,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Corrupt Dodge_0: -7283776034467153085
+      Corrupt Dodge_1: 8286060017147917255
+      Corrupt Dodge_2: -2549224135860756107
+      Corrupt Dodge_3: -3898284400293033508
+      Corrupt Dodge_4: -8418263248027800297
+      Corrupt Dodge_5: -5416895813798942421
+      Corrupt Dodge_6: 1983200838686373928
+      Corrupt Dodge_7: -2548230430705540053
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
