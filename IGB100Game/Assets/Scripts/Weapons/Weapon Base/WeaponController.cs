@@ -26,7 +26,8 @@ public class WeaponController : MonoBehaviour
     protected virtual void Start()
     {
         pm = FindFirstObjectByType<PlayerMovement>();
-        recalculateStats();
+        Attack();
+        //recalculateStats();
     }
     void recalculateStats()
     {

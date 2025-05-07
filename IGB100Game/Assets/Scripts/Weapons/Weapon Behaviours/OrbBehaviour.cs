@@ -78,8 +78,11 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     }
     private void SetMovement() // Sends out projectile towards selected target
     {
-        Vector2 angle = rb.transform.position - target.transform.position;
-        rb.linearVelocity -= angle.normalized * currentSpeed;
+        if(target != null)
+        {
+            Vector2 angle = rb.transform.position - target.transform.position;
+            rb.linearVelocity -= angle.normalized * currentSpeed;
+        }
     }
     private void SetScale() // Matches the scale of the collider and VFX to match area size
     {

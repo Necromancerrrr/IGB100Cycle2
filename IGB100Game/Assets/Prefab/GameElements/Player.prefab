@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2308394695545148025
 Transform:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5848403144304457624}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -123,7 +123,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5848403144304457624}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -147,12 +147,12 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 34
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 1
   orthographic size: 10
-  m_Depth: -1
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 4272038321691265326}
   - component: {fileID: 7220013373509904407}
   - component: {fileID: 2582297634824720687}
+  - component: {fileID: 4710969743307111823}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -289,21 +290,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11cd1384b29b58498ff2173ed3c23fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: eef787046c9396c4a962e400fc52c4a0, type: 2}
+  characterData: {fileID: 0}
+  defaultCharacterData: {fileID: 11400000, guid: 74919512c34bfa149bc84f7e722736b5, type: 2}
   experience: 0
   level: 1
   experienceCap: 0
+  XPBar: {fileID: 0}
   invincibilityDuration: 1
   levelRanges:
   - startLevel: 1
     endLevel: 1
-    experienceCapIncrease: 20
+    experienceCapIncrease: 5
   - startLevel: 2
     endLevel: 3
-    experienceCapIncrease: 40
+    experienceCapIncrease: 10
   - startLevel: 4
     endLevel: 99999
-    experienceCapIncrease: 100
+    experienceCapIncrease: 15
   weaponIndex: 0
   passiveItemIndex: 0
   pactItemIndex: 0
@@ -358,11 +361,11 @@ MonoBehaviour:
   - {fileID: 0}
   weaponUpgradeOptions:
   - weaponUpgradeIndex: 0
-    initialWeapon: {fileID: 4142939955346733007, guid: 3c9b9b2b37172be4da430462a5eae82a, type: 3}
-    weaponData: {fileID: 11400000, guid: c8470517aa0d91d4c9fe25ae97e0babb, type: 2}
+    initialWeapon: {fileID: 2341149984418418119, guid: 0f7eea2fd20e37444913ff871901d72a, type: 3}
+    weaponData: {fileID: 11400000, guid: 1db1f24bb22ec09448fa90d47ce9dedc, type: 2}
   - weaponUpgradeIndex: 1
-    initialWeapon: {fileID: 6883820235095941995, guid: f3163566e17677b4a88ee4f1bdcd21fb, type: 3}
-    weaponData: {fileID: 11400000, guid: f822da3987a27a543972906839aec2e4, type: 2}
+    initialWeapon: {fileID: 458585603324305255, guid: d251a943b4b36d144b8f2fd4e83eb72e, type: 3}
+    weaponData: {fileID: 11400000, guid: 1ae1b227bee7d3843b1bc8179aee76ba, type: 2}
   - weaponUpgradeIndex: 2
     initialWeapon: {fileID: 6883820235095941995, guid: 40aeb378dfbffe24e8b1b8bc92c3fdea, type: 3}
     weaponData: {fileID: 11400000, guid: 919539a7098bb474283c4b70fe7c4d68, type: 2}
@@ -373,8 +376,8 @@ MonoBehaviour:
     initialWeapon: {fileID: 8391479871286726765, guid: 4bc13ed61692e274190222bb45bfd0d9, type: 3}
     weaponData: {fileID: 11400000, guid: 9e4082d2de270f249abdc7d600e80302, type: 2}
   - weaponUpgradeIndex: 5
-    initialWeapon: {fileID: 8391479871286726765, guid: 4bc13ed61692e274190222bb45bfd0d9, type: 3}
-    weaponData: {fileID: 11400000, guid: 9e4082d2de270f249abdc7d600e80302, type: 2}
+    initialWeapon: {fileID: 8186614856194216389, guid: 2169ce304dbb29146b5fdad57ceb9cb8, type: 3}
+    weaponData: {fileID: 11400000, guid: a0c4212be3526c14e86a1a7f1841a337, type: 2}
   - weaponUpgradeIndex: 6
     initialWeapon: {fileID: 5297606356293451816, guid: c721d4c08144a5e418fca8331b517207, type: 3}
     weaponData: {fileID: 11400000, guid: 9fa93a57c4e4bb545a5e3071dcd0812a, type: 2}
@@ -384,6 +387,15 @@ MonoBehaviour:
   - weaponUpgradeIndex: 8
     initialWeapon: {fileID: 53529854424434218, guid: cfd57990b2667e347a71b9325e224bf3, type: 3}
     weaponData: {fileID: 11400000, guid: a4f903661d3093d4d9b648111f3e2a7c, type: 2}
+  - weaponUpgradeIndex: 9
+    initialWeapon: {fileID: 8171205830150268015, guid: 74f58303531072c47a13712a41d0a2d9, type: 3}
+    weaponData: {fileID: 11400000, guid: d013271e2678ff8448be49047571df24, type: 2}
+  - weaponUpgradeIndex: 10
+    initialWeapon: {fileID: 8288019790181334820, guid: 7c1340832a28ab84b94e10b89371df6c, type: 3}
+    weaponData: {fileID: 11400000, guid: bf3e979b1f3b1ce43a3347fad23f5831, type: 2}
+  - weaponUpgradeIndex: 11
+    initialWeapon: {fileID: 9057091771204904326, guid: 906d96ad247a50a49b8f28ebcb1318ba, type: 3}
+    weaponData: {fileID: 11400000, guid: 569ba7a6c357ca542a9ff470d6417085, type: 2}
   passiveItemUpgradeOptions:
   - passiveItemUpgradeIndex: 0
     initialPassiveItem: {fileID: 5069994856143371818, guid: adc76bb1388a5ca48adf11be98e09c59, type: 3}
@@ -391,6 +403,24 @@ MonoBehaviour:
   - passiveItemUpgradeIndex: 1
     initialPassiveItem: {fileID: 2215225900889134074, guid: d542297b54da851459cc06a759b906fe, type: 3}
     passiveItemData: {fileID: 11400000, guid: c7204f5a801dc9142b16bf60d6645a49, type: 2}
+  - passiveItemUpgradeIndex: 2
+    initialPassiveItem: {fileID: 8960848123848324934, guid: 081cfd3307f6ba84dbdb4dc8ec4e77b5, type: 3}
+    passiveItemData: {fileID: 11400000, guid: fcd22428164d84f4097afd2db9728e4b, type: 2}
+  - passiveItemUpgradeIndex: 3
+    initialPassiveItem: {fileID: 8250571217130720332, guid: f3d555ed61acabb4391c88b02dfa6764, type: 3}
+    passiveItemData: {fileID: 11400000, guid: f3b893919a9bfd84281ed4f0cffc23f9, type: 2}
+  - passiveItemUpgradeIndex: 4
+    initialPassiveItem: {fileID: 4125246489530779494, guid: 30833b7011af5c34fbc39643d71363bf, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 588903ee10066ae4d937f08b73c3c69c, type: 2}
+  - passiveItemUpgradeIndex: 5
+    initialPassiveItem: {fileID: 4212134037999648944, guid: b75e60aab8f12f64b97a49bf9b5d90fd, type: 3}
+    passiveItemData: {fileID: 11400000, guid: cd3990110a8101b4eb6a728234bedae4, type: 2}
+  - passiveItemUpgradeIndex: 5
+    initialPassiveItem: {fileID: 7638046672803214659, guid: 77e1b83d7b60220418219e9b86c749e5, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 302b994658e820748a17044ec3985ef2, type: 2}
+  - passiveItemUpgradeIndex: 5
+    initialPassiveItem: {fileID: 1014273309742442131, guid: ddcb27fc058ec2e4a8d657655ed32106, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 58be8887a8cfb0e4f9e3aa5656c9b5ce, type: 2}
   pactItemOptions:
   - pactItemUpgradeIndex: 0
     initialPactItem: {fileID: 296385800125878727, guid: bc1c4f8263ff5f3499336cceaf964fb1, type: 3}
@@ -598,3 +628,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4710969743307111823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035113680227125748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImpulseDefinition:
+    ImpulseChannel: 1
+    ImpulseShape: 3
+    CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ImpulseDuration: 0.2
+    ImpulseType: 1
+    DissipationRate: 0.25
+    RawSignal: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    RepeatMode: 0
+    Randomize: 1
+    TimeEnvelope:
+      AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      AttackTime: 0
+      SustainTime: 0.2
+      DecayTime: 0.7
+      ScaleWithImpact: 1
+      HoldForever: 0
+    ImpactRadius: 100
+    DirectionMode: 0
+    DissipationMode: 2
+    DissipationDistance: 100
+    PropagationSpeed: 343
+  DefaultVelocity: {x: 0.2, y: 0.2, z: 0}

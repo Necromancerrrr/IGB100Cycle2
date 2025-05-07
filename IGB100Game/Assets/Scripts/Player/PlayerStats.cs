@@ -13,6 +13,9 @@ public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData; // REMOVE PUBLIC BEFORE FINISHING
 
+    [SerializeField]
+    CharacterScriptableObject defaultCharacterData;
+
     public static event Action OnPlayerDamaged;
     public static event Action OnPlayerDeath;
 
@@ -323,12 +326,15 @@ public class PlayerStats : MonoBehaviour
     CinemachineImpulseSource impulse;
     void Awake()
     {
-        // Comment out these two lines if you want to play without going to character select scene
         
-        if(characterData == null)
+        if(CharacterSelector.instance != null)
         {
             characterData = CharacterSelector.GetData();
             CharacterSelector.instance.DestorySingleton();
+        }
+        else
+        {
+            characterData = defaultCharacterData;
         }
 
         inventory = GetComponent<InventoryManager>();
