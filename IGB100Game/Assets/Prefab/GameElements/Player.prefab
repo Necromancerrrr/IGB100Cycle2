@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
-  defaultCharacterData: {fileID: 11400000, guid: 74919512c34bfa149bc84f7e722736b5, type: 2}
+  defaultCharacterData: {fileID: 11400000, guid: 8c1845d10a535724e9489235228404da, type: 2}
   experience: 0
   level: 1
   experienceCap: 0

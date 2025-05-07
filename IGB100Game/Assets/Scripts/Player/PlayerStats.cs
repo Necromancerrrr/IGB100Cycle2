@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 //using Unity.UI;
 using TMPro;
 using Unity.VisualScripting;
@@ -310,6 +311,11 @@ public class PlayerStats : MonoBehaviour
     public int passiveItemIndex;
     public int pactItemIndex;
 
+    //Player UI
+    [Header("Player UI")]
+    [SerializeField] 
+    public Slider _healthBarSlider;
+
     // Player Particles
     [Header("Player Particle Effects")]
     public ParticleSystem damageEffect;
@@ -336,6 +342,8 @@ public class PlayerStats : MonoBehaviour
         {
             characterData = defaultCharacterData;
         }
+
+        Assert.IsNotNull(_healthBarSlider, "Health bar not set!");
 
         inventory = GetComponent<InventoryManager>();
         playerAnimator = GetComponent<PlayerAnimator>();
@@ -381,6 +389,10 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.AssignChosenCharacterUI(characterData);
         GameManager.instance.AssignLevelReachedUI(level);
 
+        // Set health bar
+        _healthBarSlider.maxValue = CurrentMaxHealth;
+        _healthBarSlider.value = CurrentHealth;
+
         // Set XP Bar
         XPBar.SetXPCap(experienceCap);
         XPBar.SetXPBar(experience);
@@ -402,7 +414,7 @@ public class PlayerStats : MonoBehaviour
             Time.timeScale = originalTimeScale;
             isFrozen = false;
         }
-
+        _healthBarSlider.value = CurrentHealth;
         PassiveHeal();
     }
     public void IncreaseExperience(int amount)
@@ -491,6 +503,7 @@ public class PlayerStats : MonoBehaviour
         if (!isInvincible)
         {
             CurrentHealth -= dmg;
+            
 
             impulse.GenerateImpulse();
             //Freeze(0.5f);
