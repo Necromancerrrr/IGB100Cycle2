@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -343,8 +342,6 @@ public class PlayerStats : MonoBehaviour
             characterData = defaultCharacterData;
         }
 
-        Assert.IsNotNull(_healthBarSlider, "Health bar not set!");
-
         inventory = GetComponent<InventoryManager>();
         playerAnimator = GetComponent<PlayerAnimator>();
         playerAudio = GetComponent<PlayerAudio>();
@@ -416,6 +413,12 @@ public class PlayerStats : MonoBehaviour
         }
         _healthBarSlider.value = CurrentHealth;
         PassiveHeal();
+
+
+        // Developer Shortcuts
+
+
+
     }
     public void IncreaseExperience(int amount)
     {
