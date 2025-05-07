@@ -19,6 +19,7 @@ public class EnemyAOE : MonoBehaviour
     CircleCollider2D colli;
     ParticleSystem trail;
     [SerializeField] ParticleSystem par;
+    [SerializeField] ParticleSystem sub;
     Vector2 target;
     void Awake() // Gets components and disables irrelevant ones for now
     {
@@ -40,7 +41,7 @@ public class EnemyAOE : MonoBehaviour
     }
     void SetPosition() // Generates an angle, then multiply that by a random magnitude (capping out at area size). Place the object at that point.
     {
-        target = (Vector2)player.position + new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(0f, zoneSize);
+        target = (Vector2)player.position + new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(0f, zoneSize * 2);
     }
     void SetVFX() // Increase the scale of the object to match the size. Alter the lifetime of the VFX to match the delay.
     {
@@ -48,9 +49,17 @@ public class EnemyAOE : MonoBehaviour
         gameObject.transform.localScale = new Vector2(zoneSize, zoneSize);
         var main = par.main;
         main.startLifetime = zoneDelay;
-        main.startSize = new ParticleSystem.MinMaxCurve(0.2f * zoneSize, 0.4f * zoneSize);
+        var emission = par.emission;
+        emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0.01f, 15 * zoneSize) });
         var shape = par.shape;
         shape.radius = zoneSize;
+    }
+    void SetSubemitter()
+    {
+        var emission = sub.emission;
+        emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0.01f, 2 * zoneSize) });
+        trail.TriggerSubEmitter(0);
+        Debug.Log("why");
     }
     void Update() // Enables the collider at once the delay ends, then disables the collider after 0.1f.
     {
@@ -58,10 +67,11 @@ public class EnemyAOE : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target, travelSpeed * Time.deltaTime);
             par.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-            if ((Vector2)transform.position == target)
+            if ((Vector2)transform.position == target) // Turns off the trail
             {
                 targetReached = true;
                 SetVFX();
+                SetSubemitter();
                 var emission = trail.emission;
                 emission.rateOverTime = 0;
             }

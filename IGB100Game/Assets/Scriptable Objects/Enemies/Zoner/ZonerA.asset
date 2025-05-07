@@ -15,4 +15,4 @@ MonoBehaviour:
   zoneFrequency: 15
   zoneCount: 1
   zoneSize: 4
-  zoneDelay: 5
+  zoneDelay: 3
