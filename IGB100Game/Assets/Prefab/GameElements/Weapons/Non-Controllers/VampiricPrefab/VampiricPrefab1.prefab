@@ -264,8 +264,9 @@ MonoBehaviour:
   col: {fileID: 2665191289967149010}
   projPoint: {fileID: 5062438866944765560}
   projectile: {fileID: 1975679561529679908, guid: 05aa29d5b6c766c44be4c4bcc2ae4c94, type: 3}
-  par: {fileID: 6285991713289335144}
-  angle: 0
+  parTemp: {fileID: 3394028756833445843, guid: a352d8bcd9e6e2148b6507194f20ca51, type: 3}
+  parColour: {r: 0.54901963, g: 0.1254902, b: 0.1254902, a: 1}
+  par: {fileID: 5483784591801265088, guid: 1296e3cfcace0a042980aac532db2f63, type: 3}
 --- !u!50 &6265502275661108009
 Rigidbody2D:
   serializedVersion: 5
@@ -304,6 +305,18 @@ PrefabInstance:
     - target: {fileID: 3394028756833445843, guid: a352d8bcd9e6e2148b6507194f20ca51, type: 3}
       propertyPath: m_Name
       value: VampiricBladeTrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941575077750589026, guid: a352d8bcd9e6e2148b6507194f20ca51, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941575077750589026, guid: a352d8bcd9e6e2148b6507194f20ca51, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941575077750589026, guid: a352d8bcd9e6e2148b6507194f20ca51, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8941575077750589026, guid: a352d8bcd9e6e2148b6507194f20ca51, type: 3}
       propertyPath: m_LocalPosition.x
@@ -353,10 +366,5 @@ PrefabInstance:
 --- !u!4 &301895296494014681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8941575077750589026, guid: a352d8bcd9e6e2148b6507194f20ca51, type: 3}
-  m_PrefabInstance: {fileID: 8657703010826999483}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6285991713289335144 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3394028756833445843, guid: a352d8bcd9e6e2148b6507194f20ca51, type: 3}
   m_PrefabInstance: {fileID: 8657703010826999483}
   m_PrefabAsset: {fileID: 0}

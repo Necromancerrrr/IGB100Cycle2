@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class VampiricProjectileBehaviour : MonoBehaviour
 {
+    // Stats
     float weaponDamage;
     float weaponSize;
     float weaponSpeed;
+
+    // Visual Feedback Par
+    [SerializeField] private Color parColour;
+    [SerializeField] private GameObject par;
     private void Awake()
     {
         Destroy(gameObject, 5f);
@@ -31,6 +36,8 @@ public class VampiricProjectileBehaviour : MonoBehaviour
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(weaponDamage, transform.position, weaponSize / 4 + 1); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            GameObject parInstance = Instantiate(par);
+            parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
             Destroy(gameObject);
         }
         else if (col.CompareTag("Prop"))
@@ -39,6 +46,8 @@ public class VampiricProjectileBehaviour : MonoBehaviour
             {
                 breakable.TakeDamage(weaponDamage);
             }
+            GameObject parInstance = Instantiate(par);
+            parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
             Destroy(gameObject);
         }
     }

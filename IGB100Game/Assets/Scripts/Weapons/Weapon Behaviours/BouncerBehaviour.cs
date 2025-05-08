@@ -3,15 +3,22 @@ using UnityEngine;
 
 public class BouncerBehaviour : ProjectileWeaponBehaviour
 {
+    // Targetting logic
     [SerializeField] private List<GameObject> enemyList;
     [SerializeField] private List<GameObject> hitList;
     [SerializeField] private Vector2 target;
+    
+    // Components
     Rigidbody2D rb;
+
+    // Sprite anim
     private float rotation;
     private float rotRate;
     private bool clockwise;
 
-    // Update is called once per frame
+    // Visual Feedback Par
+    [SerializeField] private Color parColour;
+    [SerializeField] private GameObject par;
     new void Start()
     {
         base.Start();
@@ -40,6 +47,8 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(weaponDamage, transform.position, 0);
             hitList.Add(col.gameObject);
+            GameObject parInstance = Instantiate(par);
+            parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
             FindTarget();
             ReducePierce();
             SetRotSpeed();
@@ -51,6 +60,8 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
                 breakable.TakeDamage(weaponDamage);
             }
             hitList.Add(col.gameObject);
+            GameObject parInstance = Instantiate(par);
+            parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
             FindTarget();
             ReducePierce();
             SetRotSpeed();

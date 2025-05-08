@@ -5,9 +5,12 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
     float rangSpeed;
     bool targetRand;
     bool dir; // True = outwards, false = inwards
-    public GameObject target;
-    public Vector2 angleVector;
+    private GameObject target;
+    private Vector2 angleVector;
     GameObject player;
+
+    [SerializeField] private Color parColour;
+    [SerializeField] private GameObject par;
     protected override void Start()
     {
         base.Start();
@@ -66,6 +69,26 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
             transform.position += (Vector3)angleVector * rangSpeed * Time.deltaTime; // Set the movement of the knife
             rangSpeed += (Time.deltaTime * 10);
             if ((transform.position - player.transform.position).magnitude <= 0.2) { Destroy(gameObject); } // Boomerang dies when close to the player
+        }
+    }
+    new protected void OnTriggerEnter2D(Collider2D col)
+    {
+        // Reference the script from the collided collider and deal damage using TakeDamage()
+        if (col.CompareTag("Enemy"))
+        {
+            EnemyStats enemy = col.GetComponent<EnemyStats>();
+            enemy.TakeDamage(weaponDamage, transform.position, 0); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            GameObject parInstance = Instantiate(par);
+            parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
+        }
+        else if (col.CompareTag("Prop"))
+        {
+            if (col.gameObject.TryGetComponent(out BreakableProps breakable))
+            {
+                breakable.TakeDamage(weaponDamage);
+            }
+            GameObject parInstance = Instantiate(par);
+            parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
         }
     }
 }

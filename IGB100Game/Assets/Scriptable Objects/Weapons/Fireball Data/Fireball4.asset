@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 1
   level: 4
   nextLevelPrefab: {fileID: 8171205830150268015, guid: 084803283e7a9864397ed507e8c56d6f, type: 3}
-  name: Fan of fireballs
+  name: Fan of Fireballs
   description: -3 cooldown
   icon: {fileID: 5353841184698615464, guid: 4b0223db9300136449aa04d7df511be4, type: 3}

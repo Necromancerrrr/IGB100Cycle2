@@ -7,6 +7,9 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
     public float hitResetInterval = 0.5f; // Time in seconds before enemies can be hit again
     private float timer;
 
+    // Visual Feedback Par
+    [SerializeField] private Color parColour;
+    [SerializeField] private GameObject par;
     protected override void Start()
     {
         base.Start();
@@ -40,6 +43,8 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
             {
                 enemy.TakeDamage(weaponDamage, transform.position, 5f);
                 markedEnemies.Add(col.gameObject);
+                GameObject parInstance = Instantiate(par);
+                parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
             }
         }
         else if (col.CompareTag("Prop"))
@@ -49,6 +54,8 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
                 breakable.TakeDamage(weaponDamage);
                 markedEnemies.Add(col.gameObject);
             }
+            GameObject parInstance = Instantiate(par);
+            parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
         }
     }
 }

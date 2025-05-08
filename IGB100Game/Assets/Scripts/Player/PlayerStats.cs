@@ -405,7 +405,7 @@ public class PlayerStats : MonoBehaviour
         else if (isInvincible)
         {
             isInvincible = false;
-            CurrentMoveSpeed = characterData.MoveSpeed;
+            movespeedMod = 1;
         }
         if (isFrozen == true && TimerIsDone() == true && GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentState != GameManager.GameState.Pause)
         {
@@ -501,7 +501,7 @@ public class PlayerStats : MonoBehaviour
         }
         
     }
-
+    public float movespeedMod = 1;
     public void TakeDamage(float dmg)
     {
         if (!isInvincible)
@@ -521,7 +521,7 @@ public class PlayerStats : MonoBehaviour
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
-            CurrentMoveSpeed = characterData.MoveSpeed + 2;
+            movespeedMod = 1.3f;
 
             if (CurrentHealth <= 0)
             {

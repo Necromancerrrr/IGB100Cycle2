@@ -104,8 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 1a75b708418f9144a9afba0ec8c38817, type: 2}
   currentDuration: 0
-  target: {fileID: 0}
-  angleVector: {x: 0, y: 0}
+  parColour: {r: 0.36862746, g: 0.24313726, b: 0.09411765, a: 1}
+  par: {fileID: 5483784591801265088, guid: 1296e3cfcace0a042980aac532db2f63, type: 3}
 --- !u!50 &6551590831727609686
 Rigidbody2D:
   serializedVersion: 5

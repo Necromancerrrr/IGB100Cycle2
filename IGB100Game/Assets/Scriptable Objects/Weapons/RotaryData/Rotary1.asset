@@ -18,10 +18,10 @@ MonoBehaviour:
   cooldownDuration: 15
   pierce: 0
   areaSize: 0
-  projectileCount: 7
+  projectileCount: 10
   duration: 4
   level: 1
   nextLevelPrefab: {fileID: 458585603324305255, guid: d1122bcc3569998408f14ec7609b5721, type: 3}
-  name: Rotary
-  description: Creates two cannons that circle you
+  name: Conjured Cannons
+  description: Rain hell upon thy enemies
   icon: {fileID: -1438640473944929051, guid: 1abcd686ee41e054499b5a82df2e2d4f, type: 3}

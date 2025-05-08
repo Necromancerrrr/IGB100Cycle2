@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 15
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Sentient Shield
+  name: Sentient Shield MAX
   description: +15 knockback
   icon: {fileID: 2389193319765324094, guid: 6149c721e07d62a4aafdd731f8a29054, type: 3}

@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b423742307eec11459b61a145275b779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parColour: {r: 0.54901963, g: 0.1254902, b: 0.1254902, a: 1}
+  par: {fileID: 5483784591801265088, guid: 1296e3cfcace0a042980aac532db2f63, type: 3}
 --- !u!50 &4727120494956587996
 Rigidbody2D:
   serializedVersion: 5

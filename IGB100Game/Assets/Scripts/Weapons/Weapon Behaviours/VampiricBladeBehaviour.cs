@@ -11,12 +11,17 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     [SerializeField] private GameObject col;
     [SerializeField] private GameObject projPoint;
     [SerializeField] private GameObject projectile;
-    [SerializeField] private GameObject par;
+    [SerializeField] private GameObject parTemp;
     private GameObject player;
-    [SerializeField] float angle;
+    float angle;
     float nextShot;
-    float heal = 0; bool healed = false;
-    // Update is called once per frame
+
+    // Heal Logic
+    float heal = 0;
+    bool healed = false;
+    // Visual Feedback Par
+    [SerializeField] private Color parColour;
+    [SerializeField] private GameObject par;
     override protected void Start()
     {
         base.Start();
@@ -30,7 +35,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     void SetScale()
     {
         col.transform.localScale = new Vector2(weaponSize, weaponSize);
-        par.transform.localScale = new Vector2(weaponSize, weaponSize);
+        parTemp.transform.localScale = new Vector2(weaponSize, weaponSize);
         col.GetComponent<CapsuleCollider2D>().enabled = true;
     }
     void SetRotation() // Finds the closest enemy and takes their position. Converts that into an angle, then prepares for swing
@@ -114,6 +119,8 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(weaponDamage, transform.position, weaponSize/3 + 3); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
             heal += 1;
+            GameObject parInstance = Instantiate(par);
+            parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
         }
         else if (col.CompareTag("Prop"))
         {
@@ -121,6 +128,8 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
             {
                 breakable.TakeDamage(weaponDamage);
             }
+            GameObject parInstance = Instantiate(par);
+            parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
         }
     }
 }
