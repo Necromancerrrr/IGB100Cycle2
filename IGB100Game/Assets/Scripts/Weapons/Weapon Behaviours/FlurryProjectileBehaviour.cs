@@ -4,9 +4,12 @@ public class FlurryProjectileBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject spriteRenderer;
     bool clockwise;
-    float angle;
+    float spriteAngle;
     float weaponDamage;
     float weaponSpeed;
+    float angle;
+    float angleMod;
+    bool randSet;
     private void Awake()
     {
         Destroy(gameObject, 5f);
@@ -15,7 +18,8 @@ public class FlurryProjectileBehaviour : MonoBehaviour
     {
         weaponDamage = damage;
         weaponSpeed = speed;
-        angle = Random.Range(0f, 360f);
+        randSet = false;
+        spriteAngle = Random.Range(0f, 360f);
         if (Random.Range(0, 2) == 0) { clockwise = true; }
         else { clockwise = false; }
     }
@@ -26,13 +30,27 @@ public class FlurryProjectileBehaviour : MonoBehaviour
     }
     void Spin()
     {
-        if (clockwise == true) { angle += 200 * Time.deltaTime; }
-        else { angle -= 200 * Time.deltaTime; }
-        spriteRenderer.transform.rotation = Quaternion.Euler(0, 0, angle);
+        if (clockwise == true) { spriteAngle += 200 * Time.deltaTime; }
+        else { spriteAngle -= weaponSpeed * 20 * Time.deltaTime; }
+        spriteRenderer.transform.rotation = Quaternion.Euler(0, 0, spriteAngle);
     }
     void Movement()
     {
-        if (weaponSpeed >= 0) { weaponSpeed -= weaponSpeed * Time.deltaTime;  }
+        if (weaponSpeed >= 0.5)
+        {
+            weaponSpeed -= weaponSpeed * Time.deltaTime;
+        }
+        else if (randSet == false)
+        {
+            angle = transform.rotation.eulerAngles.z;
+            angleMod = Random.Range(-10f, 10f);
+            randSet = true;
+        }
+        else
+        {
+            angle += angleMod * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
         transform.position += transform.rotation * new Vector3(0, weaponSpeed, 0) * Time.deltaTime;
     }
     void OnTriggerEnter2D(Collider2D col)

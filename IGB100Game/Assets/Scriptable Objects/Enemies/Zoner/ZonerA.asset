@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoneFrequency: 15
   zoneCount: 1
-  zoneSize: 4
+  zoneSize: 3
   zoneDelay: 3

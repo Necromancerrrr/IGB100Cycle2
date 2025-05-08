@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Bouncer1
   m_EditorClassIdentifier: 
   prefab: {fileID: 8510583410625965766, guid: 97a9596d5c2fa984d84e39f52b3ff04d, type: 3}
-  damage: 15
+  damage: 10
   speed: 20
   cooldownDuration: 15
-  pierce: 10
+  pierce: 5
   areaSize: 0
-  projectileCount: 10
+  projectileCount: 7
   duration: 5
   level: 1
   nextLevelPrefab: {fileID: 8288019790181334820, guid: fa28771d40733f44a90d676a81f6d201, type: 3}

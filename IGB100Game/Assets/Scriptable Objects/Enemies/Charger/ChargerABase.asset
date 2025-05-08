@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104091b96b0cb8047803f0d394653f6c, type: 3}
   m_Name: ChargerABase
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 40
   moveSpeed: 2
   damage: 10
   knockbackMod: 1

@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe50450095e8c44b9eb3a6b362962dc, type: 3}
   m_Name: ZonerBoss
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  moveSpeed: 4
-  damage: 2
-  zoneFrequency: 5
-  zoneCount: 5
+  zoneFrequency: 7
+  zoneCount: 4
   zoneSize: 8
   zoneDelay: 3

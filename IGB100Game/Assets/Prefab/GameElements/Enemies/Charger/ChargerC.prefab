@@ -119,11 +119,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a8570f9424bf849a8628e27e411b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   enemyData: {fileID: 11400000, guid: a2f0671d0a065284a9e7315bf1d21163, type: 2}
   player: {fileID: 0}
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  knockbackModifier: 0
   enemyAudio: {fileID: 0}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
@@ -135,7 +137,7 @@ MonoBehaviour:
   chargeFreeze: 0
   ChargingPhase: 0
   ChargeTimer: 5
-  indicator: {fileID: 0}
+  indicator: {fileID: 2776374217380053490, guid: 53184b40173e0384eb9a8ab5836c6167, type: 3}
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +262,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: 943f3c56e25adb7418c8f322f6195dc5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

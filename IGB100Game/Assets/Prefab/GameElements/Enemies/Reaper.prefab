@@ -49,11 +49,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553fc4db6a8c76045bc908055a6fbbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   enemyData: {fileID: 11400000, guid: 542c320476078624981b1243135e0913, type: 2}
   player: {fileID: 0}
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  knockbackModifier: 0
   enemyAudio: {fileID: 0}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
@@ -70,11 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e78d730256af77449389115bbc322dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drops:
-  - name: Experience
-    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
-    dropRate: 100
-    dropValue: 1
+  drops: []
 --- !u!50 &-3496637171563405784
 Rigidbody2D:
   serializedVersion: 5
@@ -161,7 +159,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: 943f3c56e25adb7418c8f322f6195dc5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

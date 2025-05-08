@@ -15,6 +15,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
     new void Start()
     {
         base.Start();
+        currentPierce = (int)Mathf.Round(currentPierce * FindFirstObjectByType<PlayerStats>().CurrentProjectileDuration);
         rb = GetComponent<Rigidbody2D>();
         rotation = Random.Range(0f, 360f);
         SetRotSpeed();

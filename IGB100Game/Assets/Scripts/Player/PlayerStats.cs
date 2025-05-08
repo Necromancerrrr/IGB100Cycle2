@@ -400,11 +400,12 @@ public class PlayerStats : MonoBehaviour
         { 
             invincibilityTimer -= Time.deltaTime;
         }
-
+        
         //If the invulnerability timer has reached 0, make the player vulnerable again.
         else if (isInvincible)
         {
             isInvincible = false;
+            CurrentMoveSpeed = characterData.MoveSpeed;
         }
         if (isFrozen == true && TimerIsDone() == true && GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentState != GameManager.GameState.Pause)
         {
@@ -520,6 +521,7 @@ public class PlayerStats : MonoBehaviour
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
+            CurrentMoveSpeed = characterData.MoveSpeed + 2;
 
             if (CurrentHealth <= 0)
             {

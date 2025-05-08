@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Bouncer5
   m_EditorClassIdentifier: 
   prefab: {fileID: 8510583410625965766, guid: 3c89744e9797652469bf2c7029ecbf05, type: 3}
-  damage: 30
+  damage: 20
   speed: 20
   cooldownDuration: 10
-  pierce: 10
+  pierce: 8
   areaSize: 0
-  projectileCount: 25
+  projectileCount: 7
   duration: 8
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Bouncer
-  description: +15 projectile count
+  description: +8 projectile count
   icon: {fileID: 152336797157599296, guid: da68df59e6eacb94c95724c83484db58, type: 3}

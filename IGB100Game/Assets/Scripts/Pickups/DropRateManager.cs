@@ -37,7 +37,8 @@ public class DropRateManager : MonoBehaviour
         if (possibleDrops.Count > 0)
         { 
             Drops drops = possibleDrops[UnityEngine.Random.Range(0, possibleDrops.Count)];
-            GameObject spawn = Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);
+            Vector3 dropPos = (Vector2)transform.position + new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f));
+            GameObject spawn = Instantiate(drops.itemPrefab, dropPos, Quaternion.identity);
             spawn.GetComponent<ICollectable>().SetValue(drops.dropValue);
         }
     }

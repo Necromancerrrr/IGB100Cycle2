@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
   m_Name: MaxHealth5
   m_EditorClassIdentifier: 
-  multiplier: 120
+  multiplier: 250
   level: 1
   nextLevelPrefab: {fileID: 0}
   name: Vitality MAX
-  description: +40 max health
+  description: +90 max health
   icon: {fileID: 8249094882186487767, guid: 31ed72ab9d0e2a541b2fff1f429968a8, type: 3}

@@ -21,7 +21,7 @@ MonoBehaviour:
   projectileCount: 20
   duration: 0
   level: 2
-  nextLevelPrefab: {fileID: 2839875110414678627, guid: d3fbb2f5a60885e45a6e3c74667aa312, type: 3}
+  nextLevelPrefab: {fileID: 2341149984418418119, guid: f1ba46b8720bf6145ad8e40f6ffd4e39, type: 3}
   name: Flurry
   description: +10 projectile count
   icon: {fileID: 7528584447651618575, guid: 6d028277c1220ae479654841efd96269, type: 3}
