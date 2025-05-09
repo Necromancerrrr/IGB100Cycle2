@@ -81,7 +81,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e78d730256af77449389115bbc322dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drops: []
+  drops:
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 80
 --- !u!114 &1790229731600626446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +225,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 8950eeb42596ece4694190f9d263e6dd, type: 3}
+  - {fileID: -876546973899608171, guid: 943f3c56e25adb7418c8f322f6195dc5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

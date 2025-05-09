@@ -152,11 +152,11 @@ MonoBehaviour:
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 15
+    dropValue: 25
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 15
+    dropValue: 25
 --- !u!114 &-4988447024562877813
 MonoBehaviour:
   m_ObjectHideFlags: 0
