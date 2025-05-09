@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114fd6e77a6020a459c57a1720345771, type: 3}
+  m_Name: MIneData1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6655240166658021228, guid: 0f604be4c4b182142bc29c0191fc2b81, type: 3}
+  damage: 15
+  speed: 0
+  cooldownDuration: 20
+  pierce: 0
+  areaSize: 5
+  projectileCount: 0
+  duration: 10
+  level: 1
+  nextLevelPrefab: {fileID: 6925212643635929430, guid: 60f9ad0be36baa8469ab8ec6c79a2540, type: 3}
+  name: Demon Bait
+  description: They've got a nasty appetite.
+  icon: {fileID: 0}

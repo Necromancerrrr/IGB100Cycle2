@@ -28,6 +28,7 @@ public class EnemyAOE : MonoBehaviour
         trail = GetComponent<ParticleSystem>();
         par.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         player = GameObject.FindWithTag("Player").transform;
+        Destroy(gameObject, 15f); // Failsafe
     }
     public void SetStats(float Damage, float Speed, float Size, float Delay) // This is called when the projectile is instantiated
     {

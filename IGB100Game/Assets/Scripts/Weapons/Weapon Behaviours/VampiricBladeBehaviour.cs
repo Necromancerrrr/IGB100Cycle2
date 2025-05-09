@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class VampiricBladeBehaviour : MeleeWeaponBehaviour
 {
-    float Timer = 4.2f;
+    float Timer = 2.2f;
     bool clockwise;
     float projectileCount;
     [SerializeField] private GameObject col;
@@ -71,7 +71,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     {
         gameObject.transform.position = player.transform.position;
         Timer -= Time.deltaTime;
-        if (Timer <= 2.2 && Timer >= 2)
+        if (Timer <= 1.2 && Timer >= 1)
         {
             if (clockwise == true)
             {
@@ -83,7 +83,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
             }
             projectileCheck();
         }
-        if (Timer <= 2 && healed == false)
+        if (Timer <= 1 && healed == false)
         {
             player.GetComponent<PlayerStats>().RestoreHealth(heal);
             healed = true;

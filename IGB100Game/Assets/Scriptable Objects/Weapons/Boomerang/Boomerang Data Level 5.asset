@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boomerang Data Level 5
   m_EditorClassIdentifier: 
   prefab: {fileID: 2057112569438578086, guid: 50f074c40daeef74eaedf79dd9ddd58c, type: 3}
-  damage: 10
+  damage: 20
   speed: 15
   cooldownDuration: 2.5
   pierce: 999

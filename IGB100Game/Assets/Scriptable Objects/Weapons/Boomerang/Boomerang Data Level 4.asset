@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boomerang Data Level 4
   m_EditorClassIdentifier: 
   prefab: {fileID: 2057112569438578086, guid: c957fa3b147e85a4d8fbd8e43efd71fd, type: 3}
-  damage: 10
+  damage: 20
   speed: 15
   cooldownDuration: 2.5
   pierce: 999
@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 4
   nextLevelPrefab: {fileID: 53529854424434218, guid: 6cafd0ce53049ce4790e07be47b28f6d, type: 3}
   name: Boomerang
-  description: +5 damage
+  description: +10 damage
   icon: {fileID: -403755840339538957, guid: 87b70cb2bbb68a647a3d39caabc140ae, type: 3}
