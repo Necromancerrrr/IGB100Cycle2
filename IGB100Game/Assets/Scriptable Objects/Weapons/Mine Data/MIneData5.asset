@@ -19,7 +19,7 @@ MonoBehaviour:
   pierce: 0
   areaSize: 8
   projectileCount: 0
-  duration: 10
+  duration: 15
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Monster Mine MAX

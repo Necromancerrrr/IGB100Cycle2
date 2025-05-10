@@ -5,7 +5,7 @@ public class EnemyAOE : MonoBehaviour
 {
     // Zone stats
     float damage;
-    float travelSpeed;
+    [SerializeField] float travelSpeed;
     float zoneSize;
     float zoneDelay;
 
@@ -20,7 +20,7 @@ public class EnemyAOE : MonoBehaviour
     ParticleSystem trail;
     [SerializeField] ParticleSystem par;
     [SerializeField] ParticleSystem sub;
-    Vector2 target;
+    [SerializeField] Vector2 target;
     void Awake() // Gets components and disables irrelevant ones for now
     {
         colli = GetComponent<CircleCollider2D>();

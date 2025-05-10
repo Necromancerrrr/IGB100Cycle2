@@ -106,10 +106,10 @@ TextureImporter:
       name: Landmine Active 1_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 7
-        width: 24
-        height: 13
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: Landmine Active 1_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 7
-        width: 24
-        height: 13
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8e0cb567847f25844869ffead7d6b481
     internalID: 0
     vertices: []
     indices: 
