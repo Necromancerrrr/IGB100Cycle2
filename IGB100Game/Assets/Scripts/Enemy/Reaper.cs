@@ -31,8 +31,8 @@ public class Reaper : EnemyStats
         SpeedIncreaseTimer -= Time.deltaTime;
         if (SpeedIncreaseTimer < 0)
         {
-            currentMoveSpeed += 0.2f;
-            anim.speed += 0.2f;
+            currentMoveSpeed += 0.4f;
+            anim.speed += 0.4f;
             SpeedIncreaseTimer = 5;
         }   
     }

@@ -6,7 +6,7 @@ public class MineBehaviour : ProjectileWeaponBehaviour
     new void Start()
     {
         base.Start();
-        transform.localScale = new Vector3(1 + weaponSize / 10, 1 + weaponSize / 10, 1);
+        transform.localScale = new Vector3(0.5f + weaponSize / 10, 0.5f + weaponSize / 10, 1);
     }
 
     // Update is called once per frame

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dbefcbd1d159a4093eed3927ec1022, type: 3}
   m_Name: ChargerBoss
   m_EditorClassIdentifier: 
-  chargeFrequency: 15
-  chargeSpeed: 20
+  chargeFrequency: 5
+  chargeSpeed: 30
   chargeDuration: 1
   chargeFreeze: 1

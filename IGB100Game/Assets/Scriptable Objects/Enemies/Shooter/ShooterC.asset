@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff85873859c963745849c55c79a2c8c0, type: 3}
   m_Name: ShooterC
   m_EditorClassIdentifier: 
-  maxHealth: 150
-  moveSpeed: 5
-  damage: 1
   firingFrequency: 8
-  projectileCount: 2
+  projectileCount: 3
   projectileInterval: 0.5
-  projectileSpeed: 10
+  projectileSpeed: 15

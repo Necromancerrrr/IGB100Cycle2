@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe50450095e8c44b9eb3a6b362962dc, type: 3}
   m_Name: ZonerC
   m_EditorClassIdentifier: 
-  zoneFrequency: 10
+  zoneFrequency: 8
   zoneCount: 4
   zoneSize: 8
   zoneDelay: 3

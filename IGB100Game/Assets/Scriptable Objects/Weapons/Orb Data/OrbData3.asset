@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2896348483173793368, guid: a793a5cf38daf3b40b76d5d14ea9c2d9, type: 3}
   damage: 5
-  speed: 1.5
+  speed: 2
   cooldownDuration: 4
   pierce: 9999
-  areaSize: 5
+  areaSize: 4
   projectileCount: 2
   duration: 6
   level: 3
   nextLevelPrefab: {fileID: 8391479871286726765, guid: 2365bcb77a1ad6a4f8eb210020e4053b, type: 3}
   name: Gravity Orb
-  description: +2 area size
+  description: +1.5 area size
   icon: {fileID: -8985924484199272655, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}

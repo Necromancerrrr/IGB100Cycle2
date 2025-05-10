@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104091b96b0cb8047803f0d394653f6c, type: 3}
   m_Name: BasicD
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  moveSpeed: 3.5
+  maxHealth: 120
+  moveSpeed: 4
   damage: 10
-  knockbackMod: 1
+  knockbackMod: 0.5
