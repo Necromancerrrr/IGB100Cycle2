@@ -8,17 +8,27 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
 {
     private GameObject player;
     private float TickRate = 1f;
+    private float Timer;
     private float ListTimer;
-    public List<GameObject> playerList;
+    private List<GameObject> playerList;
+    private CapsuleCollider2D col;
+    [SerializeField] private GameObject appleJuiceBox;
+    bool boxDelete = false;
+    bool colEnabled = false;
     new void Awake()
     {
         base.Awake();
         player = GameObject.FindWithTag("Player");
         playerList = new List<GameObject>();
+        col = GetComponent<CapsuleCollider2D>();
+        col.enabled = false;
     }
     new void Start()
     {
-        base.Start();
+        weaponDamage = GetCurrentDamage();
+        weaponSize = GetCurrentAreaSize();
+        weaponDuration = GetCurrentDuration();
+        Timer = weaponDuration + 2;
         SetScale();
         SetPos();
     }
@@ -35,6 +45,11 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
     // Update is called once per frame
     void Update()
     {
+        TickCounter();
+        Animating();
+    }
+    void TickCounter()
+    {
         if (playerList.Count != 0)
         {
             ListTimer -= Time.deltaTime;
@@ -42,6 +57,24 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
             {
                 playerList.Clear();
             }
+        }
+    }
+    void Animating()
+    {
+        Timer -= Time.deltaTime;
+        if (Timer <= weaponDuration + 0.5f && boxDelete == false)
+        {
+            boxDelete = true;
+            Destroy(appleJuiceBox);
+        }
+        else if (Timer <= weaponDuration && colEnabled == false)
+        {
+            colEnabled = true;
+            col.enabled = true;
+        }
+        else if (Timer <= 0)
+        {
+            Destroy(gameObject);
         }
     }
     new protected void OnTriggerEnter2D(Collider2D col)
