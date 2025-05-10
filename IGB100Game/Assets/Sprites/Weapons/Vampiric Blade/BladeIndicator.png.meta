@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: f211a9a84e52e414cb1f5fdc095f6323
+guid: d4a2e5f704ceca645805155f78fa7c1d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 691481987653309519
-    second: Landmine Active 1_0
-  - first:
-      213: -2295208478663421504
-    second: Landmine Active 1_1
+      213: -2687047542245619477
+    second: BladeIndicator_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Landmine Active 1_0
+      name: BladeIndicator_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4418a24433a89900800000000000000
-      internalID: 691481987653309519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Landmine Active 1_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c15dc79c08c520e0800000000000000
-      internalID: -2295208478663421504
+      spriteID: be80dd53f70b5bad0800000000000000
+      internalID: -2687047542245619477
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8e0cb567847f25844869ffead7d6b481
+    spriteID: 1aa62c4ff2b01be4287607cf06cf9d6d
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Landmine Active 1_0: 691481987653309519
-      Landmine Active 1_1: -2295208478663421504
+      BladeIndicator_0: -2687047542245619477
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

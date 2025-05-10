@@ -1,17 +1,19 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using UnityEngine;
 
 public class VampiricBladeBehaviour : MeleeWeaponBehaviour
 {
-    float Timer = 2.2f;
+    float Timer = 2.5f;
     bool clockwise;
     float projectileCount;
     [SerializeField] private GameObject col;
     [SerializeField] private GameObject projPoint;
     [SerializeField] private GameObject projectile;
-    [SerializeField] private GameObject parTemp;
+    [SerializeField] private GameObject trailPar;
+    [SerializeField] private GameObject indicator;
     private GameObject player;
     float angle;
     float nextShot;
@@ -26,8 +28,18 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     {
         base.Start();
         player = GameObject.FindWithTag("Player");
-        if (Random.Range(0, 2)  == 0) { clockwise = true; } // Randomly generates direction
-        else { clockwise = false; }
+        if (Random.Range(0, 2)  == 0) // Randomly generates direction
+        { 
+            clockwise = true;
+            indicator.transform.localPosition = new Vector3(0.3f, 0.5f, 0);
+            indicator.GetComponent<SpriteRenderer>().flipX = false;
+        } 
+        else 
+        { 
+            clockwise = false;
+            indicator.transform.localPosition = new Vector3(-0.3f, 0.5f, 0);
+            indicator.GetComponent<SpriteRenderer>().flipX = true;
+        }
         projectileCount = Mathf.Round(weaponData.ProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
         SetScale();
         SetRotation();
@@ -35,7 +47,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     void SetScale()
     {
         col.transform.localScale = new Vector2(weaponSize, weaponSize);
-        parTemp.transform.localScale = new Vector2(weaponSize, weaponSize);
+        trailPar.transform.localScale = new Vector2(weaponSize, weaponSize);
         col.GetComponent<CapsuleCollider2D>().enabled = true;
     }
     void SetRotation() // Finds the closest enemy and takes their position. Converts that into an angle, then prepares for swing
@@ -71,8 +83,9 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     {
         gameObject.transform.position = player.transform.position;
         Timer -= Time.deltaTime;
-        if (Timer <= 1.2 && Timer >= 1)
+        if (Timer <= 0.7 && Timer >= 0.5)
         {
+            Destroy(indicator);
             if (clockwise == true)
             {
                 angle -= Time.deltaTime * 600;
@@ -83,7 +96,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
             }
             projectileCheck();
         }
-        if (Timer <= 1 && healed == false)
+        if (Timer <= 0.5 && healed == false)
         {
             player.GetComponent<PlayerStats>().RestoreHealth(heal);
             healed = true;

@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: MIneData1
   m_EditorClassIdentifier: 
   prefab: {fileID: 6655240166658021228, guid: 0f604be4c4b182142bc29c0191fc2b81, type: 3}
-  damage: 15
+  damage: 30
   speed: 0
   cooldownDuration: 20
   pierce: 0
   areaSize: 5
   projectileCount: 0
-  duration: 10
+  duration: 15
   level: 1
   nextLevelPrefab: {fileID: 6925212643635929430, guid: 60f9ad0be36baa8469ab8ec6c79a2540, type: 3}
-  name: Demon Bait
-  description: They've got a nasty appetite.
-  icon: {fileID: 0}
+  name: Monster Mine
+  description: They've got a nasty appetite
+  icon: {fileID: 175630848476357612, guid: 245d3fc324a8d1a4b8c727954c089e8c, type: 3}

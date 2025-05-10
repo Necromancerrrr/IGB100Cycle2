@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dbefcbd1d159a4093eed3927ec1022, type: 3}
   m_Name: ChargerC
   m_EditorClassIdentifier: 
-  chargeFrequency: 10
-  chargeSpeed: 20
+  chargeFrequency: 8
+  chargeSpeed: 30
   chargeDuration: 1
-  chargeFreeze: 1
+  chargeFreeze: 0.75
