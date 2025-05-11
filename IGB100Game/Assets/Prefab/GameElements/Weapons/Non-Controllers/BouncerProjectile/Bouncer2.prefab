@@ -49,6 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 60c5d475758695a49b1b3d7ce56d7a62, type: 2}
   currentDuration: 0
+  enemyList: []
+  hitList: []
+  target: {x: 0, y: 0}
   parColour: {r: 0.84705883, g: 0.4745098, b: 0.83137256, a: 1}
   par: {fileID: 5483784591801265088, guid: 1296e3cfcace0a042980aac532db2f63, type: 3}
 --- !u!50 &4946377081599033828
@@ -157,7 +160,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 152336797157599296, guid: da68df59e6eacb94c95724c83484db58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

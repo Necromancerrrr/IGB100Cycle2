@@ -49,8 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: c13fbfc37b14a0144b725d476aa7cc41, type: 2}
-  destroyAfterSeconds: 0
-  currentDamage: 0
+  currentDuration: 0
   par: {fileID: 3505170534362614781, guid: c56796fb3afb8ab449dd2100a6df9e18, type: 3}
 --- !u!50 &8247120590710101690
 Rigidbody2D:
@@ -158,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 3810473490841819008, guid: 04b5526d8747d084c9963a296f7927c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

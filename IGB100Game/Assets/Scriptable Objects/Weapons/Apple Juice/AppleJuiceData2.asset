@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AppleJuiceData2
   m_EditorClassIdentifier: 
   prefab: {fileID: 3771810774219688726, guid: 00fa95c3179694c41a9b5674733bbfe8, type: 3}
-  damage: 2
+  damage: 3
   speed: 0
   cooldownDuration: 10
   pierce: 999

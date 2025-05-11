@@ -76,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -668847993
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1084177357206560785, guid: 703fd17fb5557174b8c76e356dec12c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 51ec3198c9c39a5419bfd010b765c597, type: 2}
-  destoryAfterSeconds: 2
+  currentAreaSize: 0
 --- !u!58 &3739580759676614411
 CircleCollider2D:
   m_ObjectHideFlags: 0
