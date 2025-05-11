@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 300
   moveSpeed: 5
-  damage: 20
+  damage: 25
   knockbackMod: 0.5

@@ -23,7 +23,7 @@ public class MineDamageBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime; Debug.Log(timer); Debug.Log(phase);
+        timer -= Time.deltaTime; Debug.Log(timer);
         if (phase == 0 && timer <= 0.4) 
         { 
             phase = 1;
