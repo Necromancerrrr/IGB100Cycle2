@@ -9,6 +9,7 @@ TagManager:
   - Shield
   - XPManager
   - CineCamera
+  - AudioManager
   layers:
   - Default
   - TransparentFX

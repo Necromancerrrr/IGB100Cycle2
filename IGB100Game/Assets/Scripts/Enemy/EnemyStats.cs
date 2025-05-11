@@ -22,8 +22,11 @@ public abstract class EnemyStats : MonoBehaviour
     public float currentDamage;
     [HideInInspector] 
     public float knockbackModifier;
+
+
     [HideInInspector]
     public EnemyAudio enemyAudio;
+    private GameObject audioManager;
 
     // Knockback logic
     protected Vector2 knockbackVelocity;
@@ -51,6 +54,7 @@ public abstract class EnemyStats : MonoBehaviour
         originalColor = sr.color;
         enemyAudio = GetComponent<EnemyAudio>();
         
+        audioManager = GameObject.FindWithTag("AudioManager");
         
         if (isBoss == true)
         {
@@ -82,7 +86,10 @@ public abstract class EnemyStats : MonoBehaviour
             healthBar.SetHealthValue(currentHealth);
         }
         StartCoroutine(DamageFlash());
-        enemyAudio.PlayEnemyHurtSound();
+
+        //enemyAudio.PlayEnemyHurtSound();
+        audioManager.GetComponent<AudioManager>().enemyHurtQueue += 1;
+
         if (dmg > 0)
         {
             GameManager.GenerateFloatingText(Mathf.FloorToInt(dmg).ToString(), transform);
