@@ -8,10 +8,17 @@ public class EnemyDeathParticle : MonoBehaviour
         
     }
 
+    float timer;
+
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+
+        if (timer >= 2)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnParticleSystemStopped()

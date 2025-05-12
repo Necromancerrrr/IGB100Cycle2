@@ -6,7 +6,6 @@ public class Enemy : EnemyStats
     {
         base.Update();
         Movement();
-        RespawnNearPlayer();
     }
     private void Movement()
     {

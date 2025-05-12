@@ -72,6 +72,7 @@ public abstract class EnemyStats : MonoBehaviour
             transform.position += (Vector3)knockbackVelocity * Time.deltaTime;
             knockbackDuration -= Time.deltaTime;
         }
+        RespawnNearPlayer();
     }
     IEnumerator DamageFlash()
     {
