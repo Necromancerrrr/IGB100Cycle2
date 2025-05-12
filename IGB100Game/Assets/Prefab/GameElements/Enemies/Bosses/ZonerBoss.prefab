@@ -64,6 +64,7 @@ MonoBehaviour:
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
+  deathParticleSystem: {fileID: 3323002518545278477, guid: 866e8193f09861e4e9bdff27f3eb2c8c, type: 3}
   zonerData: {fileID: 11400000, guid: 9aa019e4245c4d24d80b7e05ba9f2eff, type: 2}
   zoneFrequency: 0
   zoneCount: 0

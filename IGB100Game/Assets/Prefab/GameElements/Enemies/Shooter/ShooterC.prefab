@@ -130,6 +130,7 @@ MonoBehaviour:
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
+  deathParticleSystem: {fileID: 3323002518545278477, guid: 866e8193f09861e4e9bdff27f3eb2c8c, type: 3}
   shooterData: {fileID: 11400000, guid: 7f0747e82e8663a438f671fe7a7af4e7, type: 2}
   firingFrequency: 0
   projectileCount: 0

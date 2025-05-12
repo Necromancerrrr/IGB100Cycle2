@@ -64,6 +64,7 @@ MonoBehaviour:
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
+  deathParticleSystem: {fileID: 3323002518545278477, guid: 866e8193f09861e4e9bdff27f3eb2c8c, type: 3}
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0

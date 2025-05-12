@@ -40,6 +40,7 @@ public abstract class EnemyStats : MonoBehaviour
     protected SpriteRenderer sr;
     protected Collider2D enemyCollider;
     
+    [SerializeField] private GameObject deathParticleSystem;
 
     protected void Awake()
     {
@@ -169,7 +170,7 @@ public abstract class EnemyStats : MonoBehaviour
     {
         WaitForEndOfFrame w = new WaitForEndOfFrame();
         float t = 0, originalAlpha = sr.color.a;
-
+        Instantiate(deathParticleSystem, transform.position, Quaternion.identity);
         while(t < deathFadeTime)
         {
             yield return w;
@@ -179,5 +180,6 @@ public abstract class EnemyStats : MonoBehaviour
         }
 
         Destroy(gameObject);
+        
     }
 }

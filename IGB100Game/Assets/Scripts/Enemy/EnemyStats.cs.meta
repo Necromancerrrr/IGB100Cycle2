@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 22279fb55dbdb4d409343e4f9068d2fc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - enemyData: {instanceID: 0}
+  - player: {instanceID: 0}
+  - enemyAudio: {instanceID: 0}
+  - deathParticleSystem: {fileID: 3323002518545278477, guid: 866e8193f09861e4e9bdff27f3eb2c8c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

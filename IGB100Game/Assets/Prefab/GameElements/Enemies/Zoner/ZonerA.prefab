@@ -130,6 +130,7 @@ MonoBehaviour:
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
+  deathParticleSystem: {fileID: 3323002518545278477, guid: 866e8193f09861e4e9bdff27f3eb2c8c, type: 3}
   zonerData: {fileID: 11400000, guid: d1f5d9a7183b84a4e83d5f0aa5f54b3f, type: 2}
   zoneFrequency: 0
   zoneCount: 0
