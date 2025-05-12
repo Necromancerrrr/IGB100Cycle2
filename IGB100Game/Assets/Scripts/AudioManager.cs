@@ -22,8 +22,6 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(enemyHurtQueue);
-
         timer += Time.deltaTime;
         /*
         while (enemyHurtQueue != 0)
