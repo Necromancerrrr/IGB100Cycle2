@@ -8,33 +8,19 @@ public class AudioManager : MonoBehaviour
     //Queue enemyHurtQueue = new Queue();
 
     [SerializeField] private AudioClip EnemyHurt;
-    [HideInInspector] public int enemyHurtQueue = 0;
+    [HideInInspector] public int enemyHurtQueue = 0; // int representing number of times enemyHurt needs to be played
 
     private AudioSource audioSource;
     private float timer;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        /*
-        while (enemyHurtQueue != 0)
-        {
-            if (timer >= 0.02)
-            {
-                audioSource.clip = EnemyHurt;
-                audioSource.Play();
-                enemyHurtQueue -= 1;
-                timer = 0;
-            }
-        }
-        */
         if (enemyHurtQueue != 0 && timer >= 0.05)
         {
             audioSource.clip = EnemyHurt;
@@ -42,6 +28,5 @@ public class AudioManager : MonoBehaviour
             enemyHurtQueue -= 1;
             timer = 0;
         }
-        
     }
 }

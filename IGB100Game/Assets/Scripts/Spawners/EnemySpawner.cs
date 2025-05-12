@@ -131,7 +131,7 @@ public class EnemySpawner : BaseSpawner
         return sum;
     }
 
-    GameObject RandomEnemyToBeSpawned(float upperBound)
+    GameObject RandomEnemyToBeSpawned(float upperBound) // upperBound is the total sum of all spawn chances
     {
         float randomFloat = Random.Range(0.0f, upperBound);
 
@@ -147,7 +147,8 @@ public class EnemySpawner : BaseSpawner
             return null;
         }
         
-
+        // iterates through all spawn chances given
+        // generates random number and if it is lower than the sum of the previous spawn chances the return that enemy type, otherwise keep going
         for (int i = 0; i < currentWave.enemySpawnChance.Length; i++)
         {
             sumOfChances += currentWave.enemySpawnChance[i];
