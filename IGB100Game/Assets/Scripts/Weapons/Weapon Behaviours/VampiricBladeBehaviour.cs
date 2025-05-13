@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class VampiricBladeBehaviour : MeleeWeaponBehaviour
@@ -24,6 +25,8 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     // Visual Feedback Par
     [SerializeField] private Color parColour;
     [SerializeField] private GameObject par;
+    bool impulseBool = false;
+    CinemachineImpulseSource impulse;
     override protected void Start()
     {
         base.Start();
@@ -43,6 +46,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         projectileCount = Mathf.Round(weaponData.ProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
         SetScale();
         SetRotation();
+        impulse = GetComponent<CinemachineImpulseSource>();
     }
     void SetScale()
     {
@@ -95,6 +99,11 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
                 angle += Time.deltaTime * 600;
             }
             projectileCheck();
+            if (impulseBool == false)
+            {
+                impulseBool = true;
+                impulse.GenerateImpulse();
+            }
         }
         if (Timer <= 0.5 && healed == false)
         {

@@ -1159,8 +1159,8 @@
     "m_ObjectId": "361808a9b6014fc99df977425600f19a",
     "m_Title": "offset silhouette in all directions",
     "m_Position": {
-        "x": -1507.33349609375,
-        "y": 346.6666259765625
+        "x": -1507.0,
+        "y": 346.0
     }
 }
 
@@ -2435,8 +2435,8 @@
     "m_ObjectId": "b02ac35a58ab48c08ef83210c624b433",
     "m_Title": "subtract silhouette from FAT offset version",
     "m_Position": {
-        "x": -86.6668701171875,
-        "y": -53.3333740234375
+        "x": -86.00016784667969,
+        "y": -54.0
     }
 }
 
@@ -2740,8 +2740,8 @@
     "m_ObjectId": "cc4cf478bc5247aaa449da8c0e48e0d9",
     "m_Title": "cleans up colouring (makes sure the extra nonsense in sampletext is not parsed through)",
     "m_Position": {
-        "x": -237.3333740234375,
-        "y": -904.666748046875
+        "x": -237.0,
+        "y": -904.9999389648438
     }
 }
 
@@ -2923,8 +2923,8 @@
     "m_ObjectId": "e55f3634d9c3404d9aeede67efc48523",
     "m_Title": "add all offsets together",
     "m_Position": {
-        "x": -634.666748046875,
-        "y": 472.6667785644531
+        "x": -634.0,
+        "y": 472.0
     }
 }
 
@@ -2992,9 +2992,9 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.0,
-        "g": 0.9515676498413086,
-        "b": 1.0,
+        "r": 0.7843137383460999,
+        "g": 0.7843137383460999,
+        "b": 0.7843137383460999,
         "a": 0.0
     },
     "isMainColor": false,
@@ -3050,8 +3050,8 @@
     "m_ObjectId": "f3ab13945ee34a129ba5fb95c9c1341c",
     "m_Title": "Sample sprite",
     "m_Position": {
-        "x": -789.3333740234375,
-        "y": -333.3333740234375
+        "x": -789.0,
+        "y": -334.0
     }
 }
 

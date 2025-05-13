@@ -16,7 +16,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     float pulseTimer = 10f;
     bool colliderActive = false;
     float burstTime = 0.05f;
-    float burstParticles = 30;
+    float burstParticles;
     override protected void Start()
     {
         base.Start();
@@ -24,6 +24,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         rb = GetComponent<Rigidbody2D>();
         colli = GetComponent<CircleCollider2D>();
         colli.enabled = false;
+        burstParticles = weaponSize * 15;
         SetEnemy();
         SetMovement();
         SetScale();

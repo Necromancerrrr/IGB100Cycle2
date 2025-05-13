@@ -50,8 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60772c9200571094d9117f62fdc69ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  travelSpeed: 0
   par: {fileID: 1127830136044686875}
   sub: {fileID: 1585389872414424344}
+  target: {x: 0, y: 0}
 --- !u!50 &2484282101083288097
 Rigidbody2D:
   serializedVersion: 5
@@ -4901,7 +4903,7 @@ ParticleSystemRenderer:
   m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -4966,6 +4968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AOEIndicator
       objectReference: {fileID: 0}
+    - target: {fileID: 7992488580572327321, guid: bf1eb1dff316dcd4399c430517e0cea4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 8261164559457792795, guid: bf1eb1dff316dcd4399c430517e0cea4, type: 3}
       propertyPath: playOnAwake
       value: 1
@@ -5073,6 +5079,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AOEIndicator2
       objectReference: {fileID: 0}
+    - target: {fileID: 7992488580572327321, guid: bf1eb1dff316dcd4399c430517e0cea4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 8261164559457792795, guid: bf1eb1dff316dcd4399c430517e0cea4, type: 3}
       propertyPath: playOnAwake
       value: 1
