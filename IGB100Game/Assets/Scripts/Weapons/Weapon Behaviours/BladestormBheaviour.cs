@@ -19,6 +19,7 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
     }
     void SetScale()
     {
+        // lerp (0, weaponSize, 1)
         transform.localScale = new Vector3(weaponSize, weaponSize, 1);
     }
     void Update()
