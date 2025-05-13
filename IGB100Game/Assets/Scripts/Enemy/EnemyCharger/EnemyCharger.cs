@@ -38,6 +38,7 @@ public class EnemyChargerStats : EnemyStats
         base.Update();
         ChargeUpdate();
         Movement();
+        RespawnNearPlayer();
     }
 
     private void Movement()

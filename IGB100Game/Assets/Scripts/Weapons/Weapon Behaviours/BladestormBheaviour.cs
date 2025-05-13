@@ -1,11 +1,16 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class BladestormBehaviour : MeleeWeaponBehaviour
 {
     List<GameObject> markedEnemies;
     public float hitResetInterval = 0.5f; // Time in seconds before enemies can be hit again
     private float timer;
+    private float windDownTimer;
+    private float scaleUpSpeed = 0f;
+    private float scaleDownSpeed = 0f;
 
     // Visual Feedback Par
     [SerializeField] private Color parColour;
@@ -19,13 +24,14 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
     }
     void SetScale()
     {
-        // lerp (0, weaponSize, 1)
-        transform.localScale = new Vector3(weaponSize, weaponSize, 1);
+        // (weaponSize, weaponSize, 1)
+        transform.localScale = new Vector3(0, 0, 1);
     }
     void Update()
     {
         // Clear marked enemies after the reset interval
         timer -= Time.deltaTime;
+        windDownTimer += Time.deltaTime;
         if (timer <= 0f)
         {
             markedEnemies.Clear();
@@ -33,6 +39,18 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
         }
 
         transform.RotateAround(transform.parent.position, Vector3.forward, 300 * Time.deltaTime);
+        
+        if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
+        {
+            transform.localScale = new Vector3(Mathf.Lerp(0, weaponSize, scaleUpSpeed), Mathf.Lerp(0, weaponSize, scaleUpSpeed), 1);
+            scaleUpSpeed += 0.004f;
+        }
+
+        if (windDownTimer >= weaponDuration - 0.5)
+        {
+            transform.localScale = new Vector3(Mathf.Lerp(weaponSize, 0, scaleDownSpeed), Mathf.Lerp(weaponSize, 0, scaleDownSpeed), 1);
+            scaleDownSpeed += 0.004f;
+        }
     }
 
     protected override void OnTriggerEnter2D(Collider2D col)

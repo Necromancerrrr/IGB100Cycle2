@@ -32,6 +32,7 @@ public class EnemyZonerStats : EnemyStats
         base.Update();
         Movement();
         AOEUpdate();
+        RespawnNearPlayer();
     }
     private void Movement()
     {

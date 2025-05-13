@@ -37,6 +37,7 @@ public class EnemyShooterStats : EnemyStats
         base.Update();
         Movement();
         ShootUpdate();
+        RespawnNearPlayer();
     }
     private void Movement()
     {

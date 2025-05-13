@@ -72,7 +72,7 @@ public abstract class EnemyStats : MonoBehaviour
             transform.position += (Vector3)knockbackVelocity * Time.deltaTime;
             knockbackDuration -= Time.deltaTime;
         }
-        RespawnNearPlayer();
+        
     }
     IEnumerator DamageFlash()
     {
@@ -125,10 +125,10 @@ public abstract class EnemyStats : MonoBehaviour
 
     public void RespawnNearPlayer()
     {
-        if (Vector3.Distance (transform.position, player.transform.position) > 50) // check dist between enemy and player
+        //Vector3.Distance (transform.position, player.transform.position) > 25
+        if (Mathf.Abs(player.transform.position.x - transform.position.x) > 25 || Mathf.Abs(player.transform.position.y - transform.position.y) > 15) // check dist between enemy and player
         {
-            Vector2 respawnPoint = RespawnPosition(1);
-            
+            Vector2 respawnPoint = RespawnPosition(0.6f);
             transform.position = Camera.main.ViewportToWorldPoint(respawnPoint);
         }
     }
