@@ -10,7 +10,7 @@ public class HelpOverlay : MonoBehaviour
     }
     private void Update()
     {
-        if (Enabled = true && Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.anyKey)
+        if (Enabled = true && Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.anyKeyDown)
         {
             Enabled = false;
             gameObject.SetActive(Enabled);

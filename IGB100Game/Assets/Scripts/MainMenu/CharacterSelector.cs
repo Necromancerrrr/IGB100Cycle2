@@ -7,14 +7,14 @@ public class CharacterSelector : MonoBehaviour
 
     void Awake()
     {
-        if(instance == null)
+        if(instance != null)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            Debug.Log("Extra Character Selector");
         }
         else
         {
-            Debug.LogWarning("EXTRA " + this + " DELETED");
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 
