@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 7
   level: 2
   nextLevelPrefab: {fileID: 5174747787104083617, guid: a4d9f0d56007cc8438056655bd74769d, type: 3}
-  name: Apple Juice
+  name: Apple Juice +1
   description: +3 duration
   icon: {fileID: 8691383858929479862, guid: 2946e841ba1a314499e07589c7a8cd2d, type: 3}

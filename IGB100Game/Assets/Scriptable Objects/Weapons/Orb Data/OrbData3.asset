@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 6
   level: 3
   nextLevelPrefab: {fileID: 8391479871286726765, guid: 2365bcb77a1ad6a4f8eb210020e4053b, type: 3}
-  name: Gravity Orb
+  name: Gravity Orb +2
   description: +1.5 area size
   icon: {fileID: -8985924484199272655, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}

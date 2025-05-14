@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 5297606356293451816, guid: 385d0e94a6c7d414fb7a46d66791aa60, type: 3}
   name: Gor'azuth's Gaze
-  description: They should do their best to remain unseen
+  description: Deals massive damage in an area after a large delay
   icon: {fileID: 2702398421418402710, guid: ec9de6724f4427a4a8450ab2c7a48a3c, type: 3}

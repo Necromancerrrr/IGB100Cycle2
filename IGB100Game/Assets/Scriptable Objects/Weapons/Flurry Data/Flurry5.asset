@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 0
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Frank the Frog MAX
+  name: Frank the Frog +MAX
   description: +15 projectile count
   icon: {fileID: 7528584447651618575, guid: 6d028277c1220ae479654841efd96269, type: 3}

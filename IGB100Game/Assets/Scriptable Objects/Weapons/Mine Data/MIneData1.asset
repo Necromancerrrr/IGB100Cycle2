@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 6925212643635929430, guid: 60f9ad0be36baa8469ab8ec6c79a2540, type: 3}
   name: Monster Mine
-  description: They've got a nasty appetite
+  description: Creates a zone of destruction when touched by an enemy
   icon: {fileID: 175630848476357612, guid: 245d3fc324a8d1a4b8c727954c089e8c, type: 3}

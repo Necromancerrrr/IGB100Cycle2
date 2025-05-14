@@ -15,6 +15,6 @@ MonoBehaviour:
   multiplier: 75
   level: 3
   nextLevelPrefab: {fileID: 8960848123848324934, guid: 06058490cf0532842bbb1ab0806d2f15, type: 3}
-  name: Reach
+  name: Reach +3
   description: +25% area size
   icon: {fileID: 5884407655333904010, guid: 3c2552e55696dea4ea91f65bd53ec294, type: 3}
