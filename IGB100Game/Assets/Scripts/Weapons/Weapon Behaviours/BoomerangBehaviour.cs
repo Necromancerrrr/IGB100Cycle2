@@ -11,12 +11,20 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
 
     [SerializeField] private Color parColour;
     [SerializeField] private GameObject par;
+
+    bool trailOn = false;
+    [SerializeField] private GameObject trail1;
+    [SerializeField] private GameObject trail2;
     protected override void Start()
     {
         base.Start();
         rangSpeed = currentSpeed;
         dir = true;
         SetScale();
+        var emission1 = trail1.GetComponent<ParticleSystem>().emission;
+        emission1.enabled = false;
+        var emission2 = trail2.GetComponent<ParticleSystem>().emission;
+        emission2.enabled = false;
     }
     public void targetSet(bool rand) // Checks whether the targeting is for the closest enemy or random
     {
@@ -66,6 +74,14 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
         else if (dir == false) 
         {
             angleVector = (player.transform.position - transform.position).normalized;
+            if (rangSpeed >= 0 && trailOn == false)
+            {
+                var emission1 = trail1.GetComponent<ParticleSystem>().emission;
+                emission1.enabled = true;
+                var emission2 = trail2.GetComponent<ParticleSystem>().emission;
+                emission2.enabled = true;
+                trailOn = true;
+            }
             transform.position += (Vector3)angleVector * rangSpeed * Time.deltaTime; // Set the movement of the knife
             rangSpeed += (Time.deltaTime * 10);
             if ((transform.position - player.transform.position).magnitude <= 0.2) { Destroy(gameObject); } // Boomerang dies when close to the player
@@ -77,7 +93,8 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(weaponDamage, transform.position, 0); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            if (dir == false && rangSpeed >= 0) { enemy.TakeDamage(weaponDamage * 2, transform.position, 0); } // enhanced damage for the way back in
+            else { enemy.TakeDamage(weaponDamage, transform.position, 0); } // normal damage
             GameObject parInstance = Instantiate(par);
             parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
         }

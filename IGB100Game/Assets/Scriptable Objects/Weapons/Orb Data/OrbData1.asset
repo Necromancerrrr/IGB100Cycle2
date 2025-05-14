@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 8391479871286726765, guid: 4b2daa051edd05b47999603dc3ea8d5a, type: 3}
   name: Gravity Orb
-  description: You feel your gaze pulled towards it
+  description: Pulls enemies in while drifting forward
   icon: {fileID: -8985924484199272655, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}

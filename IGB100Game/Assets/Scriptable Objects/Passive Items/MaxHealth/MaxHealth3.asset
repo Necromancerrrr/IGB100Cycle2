@@ -15,6 +15,6 @@ MonoBehaviour:
   multiplier: 120
   level: 1
   nextLevelPrefab: {fileID: 7638046672803214659, guid: 867bff85566b8a1409e9a2d48363ed51, type: 3}
-  name: Vitality
+  name: Vitality +3
   description: +40 max health
   icon: {fileID: 8249094882186487767, guid: 31ed72ab9d0e2a541b2fff1f429968a8, type: 3}

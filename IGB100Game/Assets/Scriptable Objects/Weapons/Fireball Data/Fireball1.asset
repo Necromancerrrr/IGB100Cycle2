@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 8171205830150268015, guid: 7f61857f6bbcb4b48adfa52df6f64cf3, type: 3}
   name: Fan of Fireballs
-  description: For when one explosion isn't enough
+  description: Fires multiple fireballs in a cone that explode
   icon: {fileID: 5353841184698615464, guid: 4b0223db9300136449aa04d7df511be4, type: 3}

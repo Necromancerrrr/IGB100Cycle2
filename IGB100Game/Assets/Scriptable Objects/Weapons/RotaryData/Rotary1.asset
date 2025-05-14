@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 458585603324305255, guid: d1122bcc3569998408f14ec7609b5721, type: 3}
   name: Conjured Cannons
-  description: Rain hell upon thy enemies
+  description: Fires a large amount of projectiles out of rotating cannons
   icon: {fileID: -1438640473944929051, guid: 1abcd686ee41e054499b5a82df2e2d4f, type: 3}

@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 15
   level: 3
   nextLevelPrefab: {fileID: 6925212643635929430, guid: 12f18fcafb0618f4faf3fd64abb8efd3, type: 3}
-  name: Monster Mine
+  name: Monster Mine +2
   description: +20 damage
   icon: {fileID: 175630848476357612, guid: 245d3fc324a8d1a4b8c727954c089e8c, type: 3}

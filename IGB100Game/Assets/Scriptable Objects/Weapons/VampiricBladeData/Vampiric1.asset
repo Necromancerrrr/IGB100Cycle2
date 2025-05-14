@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 9057091771204904326, guid: 232ee1894c057ef498c4791888041889, type: 3}
   name: Goreleech
-  description: Harvest thy enemy
+  description: Harvest enemies with a deadly blade
   icon: {fileID: 7588280050347366653, guid: 8d0a595b08425d64ab7f22f48c4e1d6b, type: 3}

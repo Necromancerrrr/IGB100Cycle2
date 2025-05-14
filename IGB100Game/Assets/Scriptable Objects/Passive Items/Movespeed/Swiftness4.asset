@@ -15,6 +15,6 @@ MonoBehaviour:
   multiplier: 60
   level: 4
   nextLevelPrefab: {fileID: 5069994856143371818, guid: 5ded9552327d0bf4185d854f01f0a3a1, type: 3}
-  name: Swiftness
+  name: Swiftness +4
   description: +15% movement speed
   icon: {fileID: 4368688791620862549, guid: c0e4ee9a822ec6746b1c98f278bd5d21, type: 3}
