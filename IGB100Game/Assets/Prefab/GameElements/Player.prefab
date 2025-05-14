@@ -81,7 +81,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1
+  m_Radius: 1.5
 --- !u!1 &5848403144304457624
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 5678959672110681339}
   - component: {fileID: 3629855590357941984}
   - component: {fileID: 8743969402392185258}
+  - component: {fileID: 5018496786831281835}
   - component: {fileID: 4272038321691265326}
   - component: {fileID: 7220013373509904407}
   - component: {fileID: 2582297634824720687}
@@ -291,12 +292,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
-  defaultCharacterData: {fileID: 11400000, guid: 8c1845d10a535724e9489235228404da, type: 2}
+  defaultCharacterData: {fileID: 11400000, guid: 28dda91aac09a104db9dfa60996377ee, type: 2}
   experience: 0
   level: 1
   experienceCap: 0
   XPBar: {fileID: 0}
-  invincibilityDuration: 1
+  invincibilityDuration: 0.5
   levelRanges:
   - startLevel: 1
     endLevel: 1
@@ -305,12 +306,17 @@ MonoBehaviour:
     endLevel: 3
     experienceCapIncrease: 10
   - startLevel: 4
-    endLevel: 99999
+    endLevel: 15
     experienceCapIncrease: 15
+  - startLevel: 16
+    endLevel: 9999999
+    experienceCapIncrease: 20
   weaponIndex: 0
   passiveItemIndex: 0
   pactItemIndex: 0
+  _healthBarSlider: {fileID: 0}
   damageEffect: {fileID: 3938433948344025923, guid: f260839b36439924facabb4494537ad8, type: 3}
+  movespeedMod: 1
 --- !u!114 &28801787229457722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +376,7 @@ MonoBehaviour:
     initialWeapon: {fileID: 6883820235095941995, guid: 40aeb378dfbffe24e8b1b8bc92c3fdea, type: 3}
     weaponData: {fileID: 11400000, guid: 919539a7098bb474283c4b70fe7c4d68, type: 2}
   - weaponUpgradeIndex: 3
-    initialWeapon: {fileID: 5174747787104083617, guid: c636127ae7ff3e94a812b72067088855, type: 3}
+    initialWeapon: {fileID: 5174747787104083617, guid: 8b5ee0dd2caf4c948ab7e472efa18bb0, type: 3}
     weaponData: {fileID: 11400000, guid: f66bab48188b661479766418c99b1f4b, type: 2}
   - weaponUpgradeIndex: 4
     initialWeapon: {fileID: 8391479871286726765, guid: 4bc13ed61692e274190222bb45bfd0d9, type: 3}
@@ -396,6 +402,9 @@ MonoBehaviour:
   - weaponUpgradeIndex: 11
     initialWeapon: {fileID: 9057091771204904326, guid: 906d96ad247a50a49b8f28ebcb1318ba, type: 3}
     weaponData: {fileID: 11400000, guid: 569ba7a6c357ca542a9ff470d6417085, type: 2}
+  - weaponUpgradeIndex: 12
+    initialWeapon: {fileID: 6925212643635929430, guid: 98040cfcbeec5644e940ab164c12f5d3, type: 3}
+    weaponData: {fileID: 11400000, guid: 066f20b2236690149a9d01f335ce773a, type: 2}
   passiveItemUpgradeOptions:
   - passiveItemUpgradeIndex: 0
     initialPassiveItem: {fileID: 5069994856143371818, guid: adc76bb1388a5ca48adf11be98e09c59, type: 3}
@@ -486,8 +495,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHurt: {fileID: 8300000, guid: f998fb8132577db4e906dcdd7d9ed4be, type: 3}
   PlayerDeath: {fileID: 8300000, guid: cc5c9515fae73f048bb6a13c125f3c8a, type: 3}
-  EXPGain: {fileID: 8300000, guid: b84611b6c23d6a1429ba050170b29098, type: 3}
+  EXPGain: {fileID: 8300000, guid: ba5f4cc39101f5148ad9374254d1cfaf, type: 3}
   HealthGain: {fileID: 8300000, guid: c28cf09541eb8d14bb4be288667e61b1, type: 3}
+  PlayerAudioSource: {fileID: 0}
+  pitchTimer: 0.5
 --- !u!212 &8743969402392185258
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -543,6 +554,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &5018496786831281835
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035113680227125748}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ba5f4cc39101f5148ad9374254d1cfaf, type: 3}
+  m_Resource: {fileID: 8300000, guid: ba5f4cc39101f5148ad9374254d1cfaf, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!58 &4272038321691265326
 CircleCollider2D:
   m_ObjectHideFlags: 0

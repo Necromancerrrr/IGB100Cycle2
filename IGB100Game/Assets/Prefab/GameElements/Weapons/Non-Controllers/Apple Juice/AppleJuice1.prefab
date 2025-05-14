@@ -49,7 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: f66bab48188b661479766418c99b1f4b, type: 2}
-  currentDuration: 4
+  currentDuration: 999
+  slowPercent: 0.5
   appleJuiceBox: {fileID: 6827961648322138260}
 --- !u!50 &671427937228012773
 Rigidbody2D:

@@ -7,9 +7,10 @@ using UnityEngine.InputSystem.LowLevel;
 public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
 {
     private GameObject player;
+    public float slowPercent = 0.5f;
     private float TickRate = 1f;
     private float Timer;
-    private float ListTimer;
+    private float ListTimer = 1.0f;
     private List<GameObject> playerList;
     private CapsuleCollider2D col;
     [SerializeField] private GameObject appleJuiceBox;
@@ -88,6 +89,16 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
             col.GetComponent<PlayerStats>().RestoreHealth(weaponDamage);
             playerList.Add(col.gameObject);
             ListTimer = TickRate;
+        }
+        if(col.gameObject.CompareTag("Enemy") && playerList.Contains(col.gameObject) == false) 
+        {
+            Enemy enemy = col.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.ApplySlow(TickRate, 0.5f);
+                playerList.Add(col.gameObject);
+                ListTimer = TickRate;
+            }
         }
     }
 }

@@ -13,6 +13,14 @@ public abstract class EnemyStats : MonoBehaviour
     [HideInInspector]
     public PlayerStats player;
 
+    [HideInInspector]
+    public bool isDebuffed = false;
+
+    [HideInInspector]
+    public float debuffTimer;
+
+    public float baseMovespeed;
+
     // Current stats
     [HideInInspector]
     public float currentMoveSpeed;
@@ -46,6 +54,7 @@ public abstract class EnemyStats : MonoBehaviour
     {
         // Enemy base stats
         currentMoveSpeed = enemyData.MoveSpeed;
+        baseMovespeed = currentMoveSpeed;
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
         knockbackModifier = enemyData.KnockbackMod;
@@ -67,6 +76,16 @@ public abstract class EnemyStats : MonoBehaviour
 
     protected void Update()
     {
+        if (isDebuffed)
+        {
+            debuffTimer -= Time.deltaTime;
+
+            if (debuffTimer <= 0)
+            {
+                currentMoveSpeed = baseMovespeed;
+                isDebuffed = false;
+            }
+        }
         if (knockbackDuration > 0)
         {
             transform.position += (Vector3)knockbackVelocity * Time.deltaTime;
@@ -123,6 +142,17 @@ public abstract class EnemyStats : MonoBehaviour
         StartCoroutine(KillFade());
     }
 
+    public void ApplySlow(float duration, float percentSlow)
+    {
+        if (!isDebuffed)
+        {
+            Debug.Log("Apply slow");
+            debuffTimer = duration;
+            currentMoveSpeed *= percentSlow;
+            isDebuffed = true;
+        }
+    }
+
     public void RespawnNearPlayer()
     {
         //Vector3.Distance (transform.position, player.transform.position) > 25
@@ -169,6 +199,7 @@ public abstract class EnemyStats : MonoBehaviour
 
     IEnumerator KillFade()
     {
+        currentMoveSpeed = 0f;
         WaitForEndOfFrame w = new WaitForEndOfFrame();
         float t = 0, originalAlpha = sr.color.a;
         Instantiate(deathParticleSystem, transform.position, Quaternion.identity);
