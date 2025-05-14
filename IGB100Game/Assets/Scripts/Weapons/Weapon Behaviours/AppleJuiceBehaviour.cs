@@ -16,6 +16,7 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
     [SerializeField] private GameObject appleJuiceBox;
     bool boxDelete = false;
     bool colEnabled = false;
+
     new void Awake()
     {
         base.Awake();
@@ -24,6 +25,7 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
         col = GetComponent<CapsuleCollider2D>();
         col.enabled = false;
     }
+
     new void Start()
     {
         weaponDamage = GetCurrentDamage();
@@ -33,10 +35,12 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
         SetScale();
         SetPos();
     }
+
     void SetScale()
     {
-        transform.localScale = new Vector3(weaponSize, weaponSize, 1);
+        transform.localScale = new Vector3(0, 0, 1);
     }
+
     void SetPos()
     {
         Vector2 angle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; // Generate random angle
@@ -48,7 +52,27 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
     {
         TickCounter();
         Animating();
+
+
+        // EASING STUFFS
+        windDownTimer += Time.deltaTime;
+
+        // Ease in on spawn
+        if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
+        {
+            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.004f, weaponSize);
+        }
+
+        
+        /*
+        if (windDownTimer >= weaponDuration - 2)
+        {
+            appleJuiceBox.transform.localScale = new Vector3(Mathf.Lerp(weaponSize, 0, scaleDownSpeed), Mathf.Lerp(weaponSize, 0, scaleDownSpeed), 1);
+            scaleDownSpeed += 0.004f;
+        }
+        */
     }
+
     void TickCounter()
     {
         if (playerList.Count != 0)
@@ -60,13 +84,21 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
             }
         }
     }
+
     void Animating()
     {
         Timer -= Time.deltaTime;
         if (Timer <= weaponDuration + 0.5f && boxDelete == false)
         {
-            boxDelete = true;
-            Destroy(appleJuiceBox);
+            // Ease out on death
+            appleJuiceBox.transform.localScale = new Vector3(Mathf.Lerp(1, 0, scaleDownSpeed), Mathf.Lerp(1, 0, scaleDownSpeed), 1);
+            scaleDownSpeed += 0.008f;
+
+            if (appleJuiceBox.transform.localScale == new Vector3(0, 0, 1))
+            {
+                boxDelete = true;
+                Destroy(appleJuiceBox);
+            }
         }
         else if (Timer <= weaponDuration && colEnabled == false)
         {
@@ -78,10 +110,12 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
             Destroy(gameObject);
         }
     }
+
     new protected void OnTriggerEnter2D(Collider2D col)
     {
         // Intentionally left empty
     }
+
     protected void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player") && playerList.Contains(col.gameObject) == false)

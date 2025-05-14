@@ -34,7 +34,7 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
     }
     void SetScale()
     {
-        gameObject.transform.localScale = new Vector3(weaponSize, weaponSize, 0);
+        gameObject.transform.localScale = new Vector3(0, 0, 1);
     }
     private void SetEnemy() // Selects an enemy as the target. If there are no valid targets, self destruct.
     {
@@ -86,7 +86,18 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
             rangSpeed += (Time.deltaTime * 10);
             if ((transform.position - player.transform.position).magnitude <= 0.2) { Destroy(gameObject); } // Boomerang dies when close to the player
         }
+
+        // EASING STUFFS
+        //windDownTimer += Time.deltaTime;
+
+        // Ease in on spawn
+        if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
+        {
+            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.02f, weaponSize);
+        }
     }
+
+
     new protected void OnTriggerEnter2D(Collider2D col)
     {
         // Reference the script from the collided collider and deal damage using TakeDamage()

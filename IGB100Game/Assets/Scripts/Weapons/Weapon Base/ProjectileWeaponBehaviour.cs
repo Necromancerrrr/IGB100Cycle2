@@ -25,6 +25,11 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float weaponSize;
     protected float weaponDuration;
 
+    // scaling up and down transition vars
+    public float windDownTimer;
+    public float scaleUpSpeed = 0f;
+    public float scaleDownSpeed = 0f;
+
     protected void Awake()
     {
         currentDamage = weaponData.Damage;
@@ -48,6 +53,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     {
         return currentDuration *= FindFirstObjectByType<PlayerStats>().CurrentProjectileDuration;
     }
+    
     protected virtual void Start()
     {
         weaponDamage = GetCurrentDamage();
@@ -55,6 +61,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         weaponDuration = GetCurrentDuration();
         Destroy(gameObject, weaponDuration);
     }
+
     public void DirectionChecker(Vector3 dir)
     {
         direction = dir;
@@ -123,6 +130,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             }
         }
     }
+
     protected void ReducePierce() // Will destory the object after going through 'X' enemies
     {
         currentPierce--;
@@ -130,5 +138,19 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public float ScaleUpTransition(float scaleSpeed, float scaleRate, float scaleMax)
+    {
+        transform.localScale = new Vector3(Mathf.Lerp(0, scaleMax, scaleSpeed), Mathf.Lerp(0, scaleMax, scaleSpeed), 1);
+        scaleSpeed += scaleRate;
+        return scaleSpeed;
+    }
+
+    public float ScaleDownTransition(float scaleSpeed, float scaleRate, float scaleMax)
+    {
+        transform.localScale = new Vector3(Mathf.Lerp(scaleMax, 0, scaleSpeed), Mathf.Lerp(scaleMax, 0, scaleSpeed), 1);
+        scaleSpeed += scaleRate;
+        return scaleSpeed;
     }
 }

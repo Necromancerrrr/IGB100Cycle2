@@ -25,12 +25,16 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         phase = 0;
         anim = false;
     }
+
     new void Start()
     {
         weaponDamage = GetCurrentDamage();
         weaponSize = GetCurrentAreaSize();
         weaponDuration = GetCurrentDuration();
+        
+        transform.localScale = new Vector3(0, 0, 1);
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -51,7 +55,23 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0) { Destroy(gameObject); }
         }
+        
+        // EASING STUFFS
+        //windDownTimer += Time.deltaTime;
+
+        // Ease in on spawn
+        if (transform.localScale != new Vector3(1, 1, 1))
+        {
+            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.005f, 1);
+        }
+        
+        // Ease out on death
+        if (phase == 2)
+        {
+            scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.01f, 1);
+        }
     }
+    
     private void SetEnemy() // Selects the position of the closest enemy as the target. If there are no valid targets, self destruct
     {
         Vector2 target;

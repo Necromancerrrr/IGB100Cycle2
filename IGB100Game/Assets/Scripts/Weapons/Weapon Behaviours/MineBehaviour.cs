@@ -6,13 +6,18 @@ public class MineBehaviour : ProjectileWeaponBehaviour
     Animator anim;
     bool Close;
     float timer; bool speedChange;
+
+    Vector3 totalSize;
+
     new void Start()
     {
         base.Start();
         anim = GetComponent<Animator>();
         timer = weaponDuration - 5;
         speedChange = false;
-        transform.localScale = new Vector3(0.5f + weaponSize / 10, 0.5f + weaponSize / 10, 1);
+        totalSize = new Vector3(0.5f + weaponSize / 10, 0.5f + weaponSize / 10, 1);
+        // transform.localScale = totalSize;
+
     }
 
     private void Update()
@@ -31,7 +36,17 @@ public class MineBehaviour : ProjectileWeaponBehaviour
             speedChange = true;
             anim.speed = 2;
         }
+
+        // EASING STUFFS
+
+        // Ease in on spawn
+        if (transform.localScale != totalSize)
+        {
+            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.005f, 1);
+        }
+
     }
+
     private Vector2 ClosestCheck()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -49,6 +64,7 @@ public class MineBehaviour : ProjectileWeaponBehaviour
             return target.transform.position - transform.position;
         }
     }
+
     protected new void OnTriggerEnter2D(Collider2D col)
     {
         // Reference the script from the collided collider and deal damage using TakeDamage()

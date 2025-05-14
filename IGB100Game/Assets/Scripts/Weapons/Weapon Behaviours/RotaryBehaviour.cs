@@ -11,6 +11,7 @@ public class RotaryBehaviour : ProjectileWeaponBehaviour
     bool clockwise;
     float shootTimer;
     float projectileCount;
+
     new void Awake()
     {
         base.Awake();
@@ -19,18 +20,39 @@ public class RotaryBehaviour : ProjectileWeaponBehaviour
         shootTimer = 1 / projectileCount;
         projPoint1.GetComponent<Animator>().speed = projectileCount;
         projPoint2.GetComponent<Animator>().speed = projectileCount;
+
+        transform.localScale = new Vector3(0, 0, 1);
     }
+
     public void SetStats(float initialAngle, bool clockwiseBool)
     {
         angle = initialAngle;
         clockwise = clockwiseBool;
     }
+
     void Update()
     {
         Movement();
         Shoot();
         //Anim();
+
+
+        // EASING STUFFS
+        windDownTimer += Time.deltaTime;
+
+        // Ease in on spawn
+        if (transform.localScale != new Vector3(1, 1, 1))
+        {
+            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.004f, 1);
+        }
+
+        // Ease out on death
+        if (windDownTimer >= weaponDuration - 0.5)
+        {
+            scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.004f, 1);
+        }
     }
+
     void Movement() // Rotates the cannons
     {
         if (clockwise) { angle -= Time.deltaTime * currentSpeed; }
@@ -38,6 +60,7 @@ public class RotaryBehaviour : ProjectileWeaponBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
         transform.position = player.transform.position;
     }
+
     void Shoot() // Fires out of the cannons
     {
         shootTimer -= Time.deltaTime;
@@ -54,6 +77,7 @@ public class RotaryBehaviour : ProjectileWeaponBehaviour
             shootTimer = 1 / projectileCount;
         }
     }
+
     private void Anim() // Don't use, it looks jank
     {
         float angle2 = angle % 360;

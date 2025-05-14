@@ -27,6 +27,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     [SerializeField] private GameObject par;
     bool impulseBool = false;
     CinemachineImpulseSource impulse;
+
     override protected void Start()
     {
         base.Start();
@@ -47,13 +48,17 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         SetScale();
         SetRotation();
         impulse = GetComponent<CinemachineImpulseSource>();
+
+        transform.localScale = new Vector3(0, 0, 1);
     }
+
     void SetScale()
     {
         col.transform.localScale = new Vector2(weaponSize, weaponSize);
         trailPar.transform.localScale = new Vector2(weaponSize, weaponSize);
         col.GetComponent<CapsuleCollider2D>().enabled = true;
     }
+
     void SetRotation() // Finds the closest enemy and takes their position. Converts that into an angle, then prepares for swing
     {
         Vector2 target;
@@ -83,6 +88,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         }
         else { Destroy(gameObject); }
     }
+
     private void Update()
     {
         gameObject.transform.position = player.transform.position;
@@ -112,7 +118,25 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         }
         gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
         if (Timer <= 0) { Destroy(gameObject); }
+
+        
+        // EASING STUFFS
+        //windDownTimer += Time.deltaTime;
+
+        // Ease in on spawn
+        if (transform.localScale != new Vector3(weaponSize/3, weaponSize/3, 1))
+        {
+            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.004f, weaponSize/3);
+        }
+        
+        // Ease out on death
+        if (Timer <= 0.5)
+        {
+            scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.004f, weaponSize/3);
+        }
+        
     }
+
     void projectileCheck() // Checks if the next projectile should have fired already
     {
         if (nextShot >= angle && clockwise == true)
@@ -126,6 +150,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
             nextShot += 120 / projectileCount;
         }
     }
+
     void projectileFire()
     {
         GameObject projInstance = Instantiate(projectile);
@@ -133,6 +158,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         projInstance.transform.rotation = transform.rotation;
         projInstance.GetComponent<VampiricProjectileBehaviour>().SetStats(weaponDamage, weaponSize, currentSpeed);
     }
+
     new protected void OnTriggerEnter2D(Collider2D col)
     {
         // Reference the script from the collided collider and deal damage using TakeDamage()

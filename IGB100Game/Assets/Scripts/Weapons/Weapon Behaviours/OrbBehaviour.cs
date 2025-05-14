@@ -17,6 +17,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     bool colliderActive = false;
     float burstTime = 0.05f;
     float burstParticles;
+
     override protected void Start()
     {
         base.Start();
@@ -28,11 +29,14 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         SetEnemy();
         SetMovement();
         SetScale();
+        transform.localScale = new Vector3(0, 0, 1);
     }
+
     public void targetSet(bool tar)
     {
         targetRand = tar;
     }
+
     // Update is called once per frame
     protected void Update()
     {
@@ -48,7 +52,23 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
             colliderActive = false;
             colli.enabled = false;
         }
+
+        // EASING STUFFS
+        windDownTimer += Time.deltaTime;
+
+        // Ease in on spawn
+        if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
+        {
+            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.004f, 1);
+        }
+
+        // Ease out on death
+        if (windDownTimer >= weaponDuration - 0.5)
+        {
+            scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.004f, 1);
+        }
     }
+
     private void Pulse() // Activates the orb's collider and plays appropriate VFX.
     {
         colliderActive = true;
@@ -56,6 +76,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         var emission = par.emission;
         emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(burstTime, burstParticles) });
     }
+
     private void SetEnemy() // Selects a random enemy as the target. If there are no valid targets, self destruct.
     { 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -77,6 +98,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
             }
         }
     }
+
     private void SetMovement() // Sends out projectile towards selected target
     {
         if(target != null)
@@ -85,6 +107,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
             rb.linearVelocity -= angle.normalized * currentSpeed;
         }
     }
+
     private void SetScale() // Matches the scale of the collider and VFX to match area size
     {
         colli.radius = weaponSize;
@@ -94,6 +117,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         main.startSize = new ParticleSystem.MinMaxCurve(0.1f * 2, 0.2f * 2);
         main.startSpeed = -weaponSize;
     }
+
     override protected void OnTriggerEnter2D(Collider2D col)
     {
         // Reference the script from the collided collider and deal damage using TakeDamage()
