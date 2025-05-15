@@ -24,10 +24,11 @@ public class MineDamageBehaviour : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime; Debug.Log(timer);
-        if (phase == 0 && timer <= 0.4) 
+        if (phase == 0 && timer <= 0.4)
         { 
             phase = 1;
             col.enabled = true;
+            GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 10f, 0.4f);
         }
         else if (phase == 1 && timer <= 0.2) 
         {

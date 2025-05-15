@@ -25,8 +25,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     // Visual Feedback Par
     [SerializeField] private Color parColour;
     [SerializeField] private GameObject par;
-    bool impulseBool = false;
-    CinemachineImpulseSource impulse;
+    bool shakeBool = false;
 
     override protected void Start()
     {
@@ -47,7 +46,6 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         projectileCount = Mathf.Round(weaponData.ProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
         SetScale();
         SetRotation();
-        impulse = GetComponent<CinemachineImpulseSource>();
 
         transform.localScale = new Vector3(0, 0, 1);
     }
@@ -66,34 +64,34 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         if (enemyList.Length > 0)
         {
             target = enemyList[0].transform.position;
-            foreach (GameObject enemy in enemyList)
+            foreach (GameObject enemy in enemyList) // Search through every enemy
             {
                 if ((enemy.transform.position - player.transform.position).magnitude <= ((Vector3)target - player.transform.position).magnitude)
                 {
-                    target = enemy.transform.position;
+                    target = enemy.transform.position; // And if they are closer than the current target, swap them in
                 }
             }
-            Vector2 angleVec = ((Vector2)transform.position - target).normalized;
+            Vector2 angleVec = ((Vector2)transform.position - target).normalized; // Converts the enemy into a vector
             if (clockwise == true) 
             { 
-                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg + 180;
-                nextShot = angle - 120 / projectileCount;
+                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg + 180; // Sets position based on direction of swing
+                nextShot = angle - 120 / projectileCount; // Sets up projectile shooting
             }
             else if (clockwise == false) 
             { 
-                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg;
-                nextShot = angle + 120 / projectileCount;
+                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg; // Sets position based on direction of swing
+                nextShot = angle + 120 / projectileCount; // Sets up projectile shooting
             }
             
         }
-        else { Destroy(gameObject); }
+        else { Destroy(gameObject); } // Destroy object if no enemies exist
     }
 
     private void Update()
     {
-        gameObject.transform.position = player.transform.position;
+        gameObject.transform.position = player.transform.position; // Ensures the sword stays around the player
         Timer -= Time.deltaTime;
-        if (Timer <= 0.7 && Timer >= 0.5)
+        if (Timer <= 0.7 && Timer >= 0.5) // Hard coded values for swinging the sword
         {
             Destroy(indicator);
             if (clockwise == true)
@@ -105,10 +103,10 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
                 angle += Time.deltaTime * 600;
             }
             projectileCheck();
-            if (impulseBool == false)
+            if (shakeBool == false) // Sets the screen shake
             {
-                impulseBool = true;
-                impulse.GenerateImpulse();
+                shakeBool = true;
+                GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 10f, 0.4f);
             }
         }
         if (Timer <= 0.5 && healed == false)

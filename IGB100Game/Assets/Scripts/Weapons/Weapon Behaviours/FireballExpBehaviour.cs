@@ -23,6 +23,7 @@ public class FireballExpBehaviour : MonoBehaviour
         emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0.01f, 50 * areaSize)});
         shape.radius = areaSize;
         colli.radius = areaSize;
+        GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(areaSize * 2, 0.4f);
     }
     void Update()
     {

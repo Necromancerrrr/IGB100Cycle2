@@ -81,10 +81,22 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
                 var emission2 = trail2.GetComponent<ParticleSystem>().emission;
                 emission2.enabled = true;
                 trailOn = true;
+                trail1.transform.localScale = new Vector3(weaponSize, weaponSize, 1);
+                trail2.transform.localScale = new Vector3(weaponSize, weaponSize, 1);
             }
             transform.position += (Vector3)angleVector * rangSpeed * Time.deltaTime; // Set the movement of the knife
             rangSpeed += (Time.deltaTime * 10);
-            if ((transform.position - player.transform.position).magnitude <= 0.2) { Destroy(gameObject); } // Boomerang dies when close to the player
+            if ((transform.position - player.transform.position).magnitude <= 0.2) // Boomerang dies when close to the player
+            {
+                transform.DetachChildren();
+                var emission1 = trail1.GetComponent<ParticleSystem>().emission;
+                emission1.enabled = false;
+                var emission2 = trail2.GetComponent<ParticleSystem>().emission;
+                emission2.enabled = false;
+                Destroy(trail1, 1);
+                Destroy(trail2, 1);
+                Destroy(gameObject); 
+            } 
         }
 
         // EASING STUFFS

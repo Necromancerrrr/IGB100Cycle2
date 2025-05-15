@@ -52,6 +52,7 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
             colli.enabled = true;
             Active = true;
             var main = par.main;
+            GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 0.5f, weaponDuration + 0.2f);
         }
         else if (Timer <= 0 && Active == true)
         {
