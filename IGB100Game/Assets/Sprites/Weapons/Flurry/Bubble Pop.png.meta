@@ -160,10 +160,10 @@ TextureImporter:
       name: Bubble Pop_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 13
-        width: 7
-        height: 10
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: Bubble Pop_1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 19
-        width: 13
-        height: 10
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Bubble Pop_2
       rect:
         serializedVersion: 2
-        x: 19
-        y: 19
-        width: 9
-        height: 9
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,385 +222,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 14
-        width: 7
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f48d747e8d9af7830800000000000000
-      internalID: 4071159337224493135
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_4
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 20
-        width: 13
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d9ad3aaf02564150800000000000000
-      internalID: 5856458592676063702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_5
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 20
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 46cdf4289bf4d29a0800000000000000
-      internalID: -6256256649173935004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_6
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 15
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 054d123516ffccb00800000000000000
-      internalID: 850335223137817680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_7
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 14
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d01a7e0666855030800000000000000
-      internalID: 3482837659728613592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_8
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 21
-        width: 13
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ce8f5267b099be10800000000000000
-      internalID: 2213959809133153986
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_9
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 21
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ea6bd66ae0a9f4230800000000000000
-      internalID: 3625285612768966318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_10
-      rect:
-        serializedVersion: 2
-        x: 89
-        y: 15
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8498def702b6f01f0800000000000000
-      internalID: -1076523998588860088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_11
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 2
-        width: 16
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b321e7513a187420800000000000000
-      internalID: 2627879181800776632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_12
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 14
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a4460eaf4573cc1e0800000000000000
-      internalID: -2176303681801001910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_13
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 3
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0e5d4a93da7bee80800000000000000
-      internalID: -8148284051551330802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_14
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 2
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bfd4abf81bd1bfc90800000000000000
-      internalID: -7135076536180650501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_15
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 3
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 262f1971881a6e3f0800000000000000
-      internalID: -871831871966547358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_16
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 3
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f383b80f23e27d920800000000000000
-      internalID: 3014929271866734655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_17
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 2
-        width: 9
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e10641faa35ca6210800000000000000
-      internalID: 1327089896050155550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_18
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 3
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98ff6290a96d865c0800000000000000
-      internalID: -4221888693592981623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble Pop_19
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 1
-        width: 9
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ed44e0d76e5f9690800000000000000
-      internalID: -7593246646744101406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4bd9d92e51dd25e4480f5ddee080910c
     internalID: 0
     vertices: []
     indices: 
@@ -612,24 +238,7 @@ TextureImporter:
     nameFileIdTable:
       Bubble Pop_0: 8024334731763430621
       Bubble Pop_1: 6152142995980760216
-      Bubble Pop_10: -1076523998588860088
-      Bubble Pop_11: 2627879181800776632
-      Bubble Pop_12: -2176303681801001910
-      Bubble Pop_13: -8148284051551330802
-      Bubble Pop_14: -7135076536180650501
-      Bubble Pop_15: -871831871966547358
-      Bubble Pop_16: 3014929271866734655
-      Bubble Pop_17: 1327089896050155550
-      Bubble Pop_18: -4221888693592981623
-      Bubble Pop_19: -7593246646744101406
       Bubble Pop_2: -6912469126103127498
-      Bubble Pop_3: 4071159337224493135
-      Bubble Pop_4: 5856458592676063702
-      Bubble Pop_5: -6256256649173935004
-      Bubble Pop_6: 850335223137817680
-      Bubble Pop_7: 3482837659728613592
-      Bubble Pop_8: 2213959809133153986
-      Bubble Pop_9: 3625285612768966318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,10 +10,9 @@ public class FlurryProjectileBehaviour : MonoBehaviour
     float angle;
     float angleMod;
     bool randSet;
-    private void Awake()
-    {
-        Destroy(gameObject, 5f);
-    }
+
+    float destroyTimer = 5f;
+    bool destroySet = false;
     public void SetStats(float damage, float speed)
     {
         weaponDamage = damage;
@@ -22,11 +21,14 @@ public class FlurryProjectileBehaviour : MonoBehaviour
         spriteAngle = Random.Range(0f, 360f);
         if (Random.Range(0, 2) == 0) { clockwise = true; }
         else { clockwise = false; }
+        destroyTimer += Random.Range(-1f, 1f);
     }
     private void Update() // Moves in the direction it is currently facing
     {
         Spin();
         Movement();
+        destroyTimer -= Time.deltaTime;
+        if ( destroyTimer <= 0 ) { DestroySequence(); }
     }
     void Spin()
     {
@@ -36,20 +38,23 @@ public class FlurryProjectileBehaviour : MonoBehaviour
     }
     void Movement()
     {
-        if (weaponSpeed >= 0.5)
+        if (destroySet == false)
         {
-            weaponSpeed -= weaponSpeed * Time.deltaTime;
-        }
-        else if (randSet == false)
-        {
-            angle = transform.rotation.eulerAngles.z;
-            angleMod = Random.Range(-10f, 10f);
-            randSet = true;
-        }
-        else
-        {
-            angle += angleMod * Time.deltaTime;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            if (weaponSpeed >= 0.5)
+            {
+                weaponSpeed -= weaponSpeed * Time.deltaTime;
+            }
+            else if (randSet == false)
+            {
+                angle = transform.rotation.eulerAngles.z;
+                angleMod = Random.Range(-10f, 10f);
+                randSet = true;
+            }
+            else
+            {
+                angle += angleMod * Time.deltaTime;
+                transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
         }
         transform.position += transform.rotation * new Vector3(0, weaponSpeed, 0) * Time.deltaTime;
     }
@@ -60,7 +65,7 @@ public class FlurryProjectileBehaviour : MonoBehaviour
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(weaponDamage, transform.position, 1); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
-            Destroy(gameObject);
+            DestroySequence();
         }
         else if (col.CompareTag("Prop"))
         {
@@ -68,7 +73,14 @@ public class FlurryProjectileBehaviour : MonoBehaviour
             {
                 breakable.TakeDamage(weaponDamage);
             }
-            Destroy(gameObject);
+            DestroySequence();
         }
+    }
+    private void DestroySequence()
+    {
+        destroySet = true;
+        spriteRenderer.GetComponent<Animator>().SetTrigger("Pop");
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        Destroy(gameObject, 1f);
     }
 }
