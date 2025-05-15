@@ -13,7 +13,6 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     [SerializeField] private GameObject col;
     [SerializeField] private GameObject projPoint;
     [SerializeField] private GameObject projectile;
-    [SerializeField] private GameObject trailPar;
     [SerializeField] private GameObject indicator;
     private GameObject player;
     float angle;
@@ -22,6 +21,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     // Heal Logic
     float heal = 0;
     bool healed = false;
+
     // Visual Feedback Par
     [SerializeField] private Color parColour;
     [SerializeField] private GameObject par;
@@ -51,7 +51,6 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     void SetScale()
     {
         col.transform.localScale = new Vector3(0, 0, 1);
-        trailPar.transform.localScale = new Vector2(weaponSize, weaponSize);
         col.GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
