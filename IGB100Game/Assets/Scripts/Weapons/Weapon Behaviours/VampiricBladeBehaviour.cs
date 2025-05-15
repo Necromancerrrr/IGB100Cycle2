@@ -46,13 +46,11 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         projectileCount = Mathf.Round(weaponData.ProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
         SetScale();
         SetRotation();
-
-        transform.localScale = new Vector3(0, 0, 1);
     }
 
     void SetScale()
     {
-        col.transform.localScale = new Vector2(weaponSize, weaponSize);
+        col.transform.localScale = new Vector3(0, 0, 1);
         trailPar.transform.localScale = new Vector2(weaponSize, weaponSize);
         col.GetComponent<CapsuleCollider2D>().enabled = true;
     }
@@ -122,15 +120,17 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         //windDownTimer += Time.deltaTime;
 
         // Ease in on spawn
-        if (transform.localScale != new Vector3(weaponSize/3, weaponSize/3, 1))
+        if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
         {
-            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.004f, weaponSize/3);
+            col.transform.localScale = new Vector3(Mathf.Lerp(0, weaponSize, scaleUpSpeed), Mathf.Lerp(0, weaponSize, scaleUpSpeed), 1);
+            scaleUpSpeed += 0.004f;
         }
         
         // Ease out on death
         if (Timer <= 0.5)
         {
-            scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.004f, weaponSize/3);
+            col.transform.localScale = new Vector3(Mathf.Lerp(weaponSize, 0, scaleDownSpeed), Mathf.Lerp(weaponSize, 0, scaleDownSpeed), 1);
+            scaleDownSpeed += 0.004f;
         }
         
     }
