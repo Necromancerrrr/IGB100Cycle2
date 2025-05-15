@@ -327,8 +327,12 @@ public class PlayerStats : MonoBehaviour
     [Header("Player Audio")]
     PlayerAudio playerAudio;
 
-    // Screen shake
+    // Player damaged impulse
     CinemachineImpulseSource impulse;
+
+    // Damaged & Heal text
+    Color32 healTextColour = Color.green;
+    Color32 damagedTextColour = Color.red;
     void Awake()
     {
         
@@ -387,12 +391,16 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.AssignLevelReachedUI(level);
 
         // Set health bar
-        _healthBarSlider.maxValue = CurrentMaxHealth;
-        _healthBarSlider.value = CurrentHealth;
+        SetHealthBar();
 
         // Set XP Bar
         XPBar.SetXPCap(experienceCap);
         XPBar.SetXPBar(experience);
+    }
+    public void SetHealthBar()
+    {
+        _healthBarSlider.maxValue = CurrentMaxHealth;
+        _healthBarSlider.value = CurrentHealth;
     }
     void Update()
     {
@@ -489,6 +497,8 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Attempting to heal" + amount);
         if(CurrentHealth < CurrentMaxHealth)
         {
+            if (CurrentHealth + amount >= CurrentMaxHealth) { GameManager.GenerateFloatingText(CurrentMaxHealth - CurrentHealth, transform, healTextColour, 50); } // Displays abbreviated health amount if neccesary
+            else { GameManager.GenerateFloatingText(amount, transform, healTextColour, 50); } // Displays heal text
             CurrentHealth += amount;
             playerAudio.PlayHealthGainSound();
 
@@ -510,6 +520,7 @@ public class PlayerStats : MonoBehaviour
             
 
             impulse.GenerateImpulse();
+            GameManager.GenerateFloatingText(dmg, transform, damagedTextColour, 50);
             //Freeze(0.5f);
 
             OnPlayerDamaged?.Invoke();

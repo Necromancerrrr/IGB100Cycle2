@@ -33,7 +33,7 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
     {
         weaponDamage = GetCurrentDamage();
         weaponSize = GetCurrentAreaSize();
-        weaponDuration = GetCurrentDuration(); Debug.Log("Orbital Duration: " + weaponDuration);
+        weaponDuration = GetCurrentDuration();
         SetPosition();
         SetScale();
     }

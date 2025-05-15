@@ -8,14 +8,13 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
 {
     private GameObject player;
     public float slowPercent = 0.5f;
-    private float TickRate = 1f;
+    private float TickRate = 0.5f;
     private float Timer;
-    private float ListTimer = 1.0f;
+    private float TickTimer = 0.1f;
     private List<GameObject> playerList;
     private CapsuleCollider2D col;
     [SerializeField] private GameObject appleJuiceBox;
     bool boxDelete = false;
-    bool colEnabled = false;
 
     new void Awake()
     {
@@ -31,7 +30,7 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
         weaponDamage = GetCurrentDamage();
         weaponSize = GetCurrentAreaSize();
         weaponDuration = GetCurrentDuration();
-        Timer = weaponDuration + 2;
+        Timer = weaponDuration + 2; // Gives time for the animation to play
         SetScale();
         SetPos();
     }
@@ -75,12 +74,17 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
 
     void TickCounter()
     {
-        if (playerList.Count != 0)
+        if (Timer <= weaponDuration)
         {
-            ListTimer -= Time.deltaTime;
-            if (ListTimer <= 0)
+            TickTimer -= Time.deltaTime; Debug.Log("ticking");
+            if (TickTimer <= 0 && col.enabled == false)
             {
-                playerList.Clear();
+                col.enabled = true; Debug.Log("col enabled");
+                TickTimer = TickRate;
+            }
+            else if (TickRate - TickTimer >= 0.1 && col.enabled == true)
+            {
+                col.enabled = false; Debug.Log("col disabled");
             }
         }
     }
@@ -100,11 +104,6 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
                 Destroy(appleJuiceBox);
             }
         }
-        else if (Timer <= weaponDuration && colEnabled == false)
-        {
-            colEnabled = true;
-            col.enabled = true;
-        }
         else if (Timer <= 0)
         {
             Destroy(gameObject);
@@ -113,25 +112,17 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
 
     new protected void OnTriggerEnter2D(Collider2D col)
     {
-        // Intentionally left empty
-    }
-
-    protected void OnTriggerStay2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Player") && playerList.Contains(col.gameObject) == false)
+        Debug.Log("collision");
+        if (col.gameObject.CompareTag("Player"))
         {
             col.GetComponent<PlayerStats>().RestoreHealth(weaponDamage);
-            playerList.Add(col.gameObject);
-            ListTimer = TickRate;
         }
-        if(col.gameObject.CompareTag("Enemy") && playerList.Contains(col.gameObject) == false) 
+        if (col.gameObject.CompareTag("Enemy"))
         {
             Enemy enemy = col.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.ApplySlow(TickRate, 0.5f);
-                playerList.Add(col.gameObject);
-                ListTimer = TickRate;
             }
         }
     }

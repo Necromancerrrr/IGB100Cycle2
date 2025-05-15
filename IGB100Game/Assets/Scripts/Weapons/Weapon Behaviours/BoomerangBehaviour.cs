@@ -9,6 +9,7 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
     private Vector2 angleVector;
     GameObject player;
 
+    // HitFX values
     [SerializeField] private Color parColour;
     [SerializeField] private GameObject par;
 

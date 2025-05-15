@@ -8,5 +8,6 @@ public class MaxHealthPassive : PassiveItem
         Debug.Log("Reducing" + currentDamage);
         player.CurrentMaxHealth = player.characterData.MaxHealth + passiveItemData.Multiplier; // Flat health increase
         player.CurrentHealth = player.CurrentMaxHealth - currentDamage;
+        player.GetComponent<PlayerStats>().SetHealthBar(); // Updates health bar
     }
 }

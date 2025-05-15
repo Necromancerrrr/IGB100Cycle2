@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Damage Text Settings")]
     public Canvas damageTextCanvas;
-    public float textFontSize;
+    //public float textFontSize;
     public TMP_FontAsset textFont;
     public Camera referenceCamera;
 
@@ -150,16 +150,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator GenerateFloatingTextCoroutine(string text, Transform target, float duration = 1f, float speed = 50f)
+    IEnumerator GenerateFloatingTextCoroutine(float number, Transform target, Color colour, float size, float duration = 1f, float speed = 50f)
     {
         GameObject textObj = new GameObject("Damage Floating Text");
         RectTransform rect = textObj.AddComponent<RectTransform>();
         TextMeshProUGUI tmPro = textObj.AddComponent<TextMeshProUGUI>();
 
-        tmPro.text = text;
+        tmPro.text = Mathf.FloorToInt(number).ToString();
         tmPro.horizontalAlignment = HorizontalAlignmentOptions.Center;
         tmPro.verticalAlignment = VerticalAlignmentOptions.Middle;
-        tmPro.fontSize = textFontSize;
+        tmPro.color = colour;
+        if (number >= 10) { tmPro.fontSize = size + (number - 10); } // If the number is larger than 10, make it large
+        else { tmPro.fontSize = size; }
+        
 
         if (textFont)
         {
@@ -194,7 +197,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void GenerateFloatingText(string text, Transform target, float duration = 1f, float speed = 1f)
+    public static void GenerateFloatingText(float number, Transform target, Color colour, float size, float duration = 1f, float speed = 1f)
     {
         // If the canvas is not set, end the function so we don't generate floating text
         if (!instance.damageTextCanvas) { return; }
@@ -202,7 +205,7 @@ public class GameManager : MonoBehaviour
         // Find a relevant camera that can be used to convert the world position to a screen position
         if (!instance.referenceCamera) { instance.referenceCamera = Camera.main; }
 
-        instance.StartCoroutine(instance.GenerateFloatingTextCoroutine(text,target,duration,speed));   
+        instance.StartCoroutine(instance.GenerateFloatingTextCoroutine(number,target,colour,size,duration,speed));   
     }
 
     //Define the method to change the state of the game

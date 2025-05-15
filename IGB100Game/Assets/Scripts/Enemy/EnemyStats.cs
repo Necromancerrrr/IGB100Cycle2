@@ -40,6 +40,8 @@ public abstract class EnemyStats : MonoBehaviour
     protected Vector2 knockbackVelocity;
     protected float knockbackDuration;
 
+    Color32 damageTextColour = Color.white;
+
     [Header("Damage Feedback")]
     public Color damageColor = new Color(1, 0, 0, 1);
     public float damageFlashDuration = 0.2f;
@@ -113,7 +115,7 @@ public abstract class EnemyStats : MonoBehaviour
 
         if (dmg > 0)
         {
-            GameManager.GenerateFloatingText(Mathf.FloorToInt(dmg).ToString(), transform);
+            GameManager.GenerateFloatingText(dmg, transform, damageTextColour, 35);
         }
         if (knockbackDuration * knockbackModifier > 0)
         {

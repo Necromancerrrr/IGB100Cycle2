@@ -54,6 +54,9 @@ MonoBehaviour:
   isBoss: 0
   enemyData: {fileID: 11400000, guid: 6f6152241a8cc5d46be77942eabaf985, type: 2}
   player: {fileID: 0}
+  isDebuffed: 0
+  debuffTimer: 0
+  baseMovespeed: 0
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
@@ -79,7 +82,7 @@ MonoBehaviour:
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 5
+    dropValue: 10
 --- !u!114 &8402001699523968728
 MonoBehaviour:
   m_ObjectHideFlags: 0
