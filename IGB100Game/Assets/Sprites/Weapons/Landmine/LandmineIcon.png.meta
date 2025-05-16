@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: 92a6b7bbda3fb7f42b08b25ab08cc958
+guid: f97e7c3571906d143bfe0675edf0fdd5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4789071764141180900
-    second: Apple Juice Sprite_0
+      213: -8323618898185361059
+    second: Landmine 1_0
+  - first:
+      213: -786116558003265020
+    second: Landmine 1_1
+  - first:
+      213: 6030136403392233608
+    second: Landmine 1_2
+  - first:
+      213: 175630848476357612
+    second: Landmine 1_3
+  - first:
+      213: 7065656223317431867
+    second: Landmine 1_4
+  - first:
+      213: 8915414594333076707
+    second: Landmine 1_5
+  - first:
+      213: 2651173356468879428
+    second: Landmine 1_6
+  - first:
+      213: 8482774008362616596
+    second: Landmine 1_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +72,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,24 +117,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Apple Juice Sprite_0
+      name: LandmineIcon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,10 +134,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4e70d795563367240800000000000000
-      internalID: 4789071764141180900
+      spriteID: 93436696c7a1b864882cdb88e6a3f0cf
+      internalID: -1444565241
       vertices: []
       indices: 
       edges: []
@@ -138,7 +146,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a8ea230d161d84a4d837877409d38256
+    spriteID: 874a12cbf9129394680705caaed8707e
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +156,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Apple Juice Sprite_0: 4789071764141180900
+      LandmineIcon_0: -1444565241
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

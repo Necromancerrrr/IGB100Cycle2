@@ -112,7 +112,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FiringAfter
-  m_Speed: 1
+  m_Speed: 0.4
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -124,7 +124,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2b93046b9b3ef074d80c7ec7e248f2f7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6a3d7389f5f1ae84d95951dbd05359d8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

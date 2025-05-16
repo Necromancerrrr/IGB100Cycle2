@@ -53,7 +53,7 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         if (phase == 2)
         {
             timer -= Time.deltaTime;
-            if (timer <= 0) { Destroy(gameObject); }
+            if (timer <= -2.1f) { Destroy(gameObject); }
         }
         
         // EASING STUFFS
@@ -66,10 +66,10 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         }
         
         // Ease out on death
-        if (phase == 2)
-        {
-            scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.01f, 1);
-        }
+        //if (phase == 2)
+        //{
+        //    scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.01f, 1);
+        //}
     }
     
     private void SetEnemy() // Selects the position of the closest enemy as the target. If there are no valid targets, self destruct

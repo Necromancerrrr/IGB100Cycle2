@@ -1,10 +1,46 @@
 fileFormatVersion: 2
-guid: 92a6b7bbda3fb7f42b08b25ab08cc958
+guid: a4f4197c90c455741a27882ef68ae4a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4789071764141180900
-    second: Apple Juice Sprite_0
+      213: 2702398421418402710
+    second: Oribital Lazer_0
+  - first:
+      213: 2344272115511313086
+    second: Oribital Lazer_1
+  - first:
+      213: -5045528179419233803
+    second: Oribital Lazer_2
+  - first:
+      213: 5087526276751199213
+    second: Oribital Lazer_3
+  - first:
+      213: -8444997097144770101
+    second: Oribital Lazer_4
+  - first:
+      213: 6175373213385507257
+    second: Oribital Lazer_5
+  - first:
+      213: -5432882788652894573
+    second: Oribital Lazer_6
+  - first:
+      213: -4123330448424330555
+    second: Oribital Lazer_7
+  - first:
+      213: 2695557842678221468
+    second: Oribital Lazer_8
+  - first:
+      213: 4249962831038516359
+    second: Oribital Lazer_9
+  - first:
+      213: 225244626394239420
+    second: Oribital Lazer_10
+  - first:
+      213: -1762103807502285727
+    second: Oribital Lazer_11
+  - first:
+      213: -417445629163629898
+    second: Oribital Lazer_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +82,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,34 +147,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Apple Juice Sprite_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e70d795563367240800000000000000
-      internalID: 4789071764141180900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a8ea230d161d84a4d837877409d38256
+    spriteID: f1fd9ddfc1ef81c4db8068c09a1be864
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +161,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Apple Juice Sprite_0: 4789071764141180900
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

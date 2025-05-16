@@ -20,7 +20,7 @@ public class WeaponController : MonoBehaviour
     }
     public float GetCurrentProjectileCount()
     {
-        return Mathf.Round(currentProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
+        return Mathf.Ceil(currentProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
     }
 
     protected virtual void Start()

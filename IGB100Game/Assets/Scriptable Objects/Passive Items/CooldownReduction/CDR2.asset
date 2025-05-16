@@ -17,4 +17,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 4212134037999648944, guid: d515256df86a6ef479b8eacb1bc9da6a, type: 3}
   name: Frequency +2
   description: +20% cooldown reduction
-  icon: {fileID: 0}
+  icon: {fileID: 6530904453971224878, guid: f62b024fa54f9b44c997e00e43c0ae6e, type: 3}

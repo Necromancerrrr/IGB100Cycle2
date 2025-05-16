@@ -25,4 +25,4 @@ MonoBehaviour:
   name: Knife 1
   description: Throw a knife in the direction you're looking in. Pierces through
     the 2 enemies.
-  icon: {fileID: -4360754683449048810, guid: 8b102acf98bfef24b8140a23b036bb6d, type: 3}
+  icon: {fileID: 21300000, guid: 4f64a549e1e94c748912055857c8fe1f, type: 3}

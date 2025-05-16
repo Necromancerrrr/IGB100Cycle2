@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 92a6b7bbda3fb7f42b08b25ab08cc958
+guid: 8f54b838d681a7e4b8538705bce970b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4789071764141180900
-    second: Apple Juice Sprite_0
+      213: 5466914775881390998
+    second: SeekerIcon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Apple Juice Sprite_0
+      name: SeekerIcon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e70d795563367240800000000000000
-      internalID: 4789071764141180900
+      spriteID: 69b9eb116026edb40800000000000000
+      internalID: 5466914775881390998
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a8ea230d161d84a4d837877409d38256
+    spriteID: 5b3e1aa3975683d49b02b21875607352
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Apple Juice Sprite_0: 4789071764141180900
+      SeekerIcon_0: 5466914775881390998
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

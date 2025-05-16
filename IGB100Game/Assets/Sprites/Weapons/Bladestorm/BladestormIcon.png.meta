@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 92a6b7bbda3fb7f42b08b25ab08cc958
+guid: 135b164549f843f418ee0ccb40da510c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4789071764141180900
-    second: Apple Juice Sprite_0
+      213: -4360754683449048810
+    second: Bladestorm Sprite Icon_0
+  - first:
+      213: 4504450538706352346
+    second: Bladestorm Sprite Icon_1
+  - first:
+      213: 5632176954333219227
+    second: Bladestorm Sprite Icon_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Apple Juice Sprite_0
+      name: BladestormIcon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,10 +132,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4e70d795563367240800000000000000
-      internalID: 4789071764141180900
+      spriteID: 72a3e61d897fed44c99675eda89dee20
+      internalID: -253438507
       vertices: []
       indices: 
       edges: []
@@ -138,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a8ea230d161d84a4d837877409d38256
+    spriteID: 52839882b40dd3c48bfd4d709d720651
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +154,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Apple Juice Sprite_0: 4789071764141180900
+      BladestormIcon_0: -253438507
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

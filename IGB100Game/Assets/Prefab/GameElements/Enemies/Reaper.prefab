@@ -53,6 +53,9 @@ MonoBehaviour:
   isBoss: 0
   enemyData: {fileID: 11400000, guid: 542c320476078624981b1243135e0913, type: 2}
   player: {fileID: 0}
+  isDebuffed: 0
+  debuffTimer: 0
+  baseMovespeed: 0
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
@@ -61,6 +64,7 @@ MonoBehaviour:
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
+  deathParticleSystem: {fileID: 0}
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +140,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1.3
+  m_Radius: 0.15
 --- !u!212 &4301642214087049820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -186,7 +190,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

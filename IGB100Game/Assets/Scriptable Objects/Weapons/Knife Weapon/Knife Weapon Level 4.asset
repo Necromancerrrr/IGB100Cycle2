@@ -24,4 +24,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 4142939955346733007, guid: fd1263943378b3e4c8382c1068e69438, type: 3}
   name: Knife 4
   description: +3 Pierce
-  icon: {fileID: -4360754683449048810, guid: 8b102acf98bfef24b8140a23b036bb6d, type: 3}
+  icon: {fileID: 21300000, guid: 4f64a549e1e94c748912055857c8fe1f, type: 3}

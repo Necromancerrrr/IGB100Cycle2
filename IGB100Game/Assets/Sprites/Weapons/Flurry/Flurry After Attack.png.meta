@@ -79,7 +79,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +90,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -117,7 +117,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -147,8 +147,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 33
-        height: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,7 +170,7 @@ TextureImporter:
         x: 32
         y: 0
         width: 32
-        height: 31
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +191,8 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 31
-        height: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,8 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 31
-        height: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,8 +235,8 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 31
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +257,8 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 0
-        width: 31
-        height: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,8 +279,8 @@ TextureImporter:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 31
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,8 +301,8 @@ TextureImporter:
         serializedVersion: 2
         x: 224
         y: 0
-        width: 31
-        height: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,8 +323,8 @@ TextureImporter:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 31
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,8 +345,8 @@ TextureImporter:
         serializedVersion: 2
         x: 288
         y: 0
-        width: 31
-        height: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,8 +367,8 @@ TextureImporter:
         serializedVersion: 2
         x: 320
         y: 0
-        width: 31
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,8 +389,8 @@ TextureImporter:
         serializedVersion: 2
         x: 352
         y: 0
-        width: 31
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,8 +411,8 @@ TextureImporter:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 31
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,9 +432,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 1
-        width: 31
-        height: 29
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,9 +453,9 @@ TextureImporter:
       name: Flurry After Attack_14
       rect:
         serializedVersion: 2
-        x: 447
+        x: 448
         y: 0
-        width: 33
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -475,7 +475,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 79e4b45e6e7880a45adbd276999663a5
     internalID: 0
     vertices: []
     indices: 
@@ -484,7 +484,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Flurry After Attack_0: 1433225001300286415
+      Flurry After Attack_1: 2376388660446705264
+      Flurry After Attack_10: -8094927318748613916
+      Flurry After Attack_11: -9055742802487712817
+      Flurry After Attack_12: -4726291055347387466
+      Flurry After Attack_13: -7867518127660193905
+      Flurry After Attack_14: 62919373414843739
+      Flurry After Attack_2: -2113426476322487489
+      Flurry After Attack_3: 2644255275117434042
+      Flurry After Attack_4: 8255654169885581671
+      Flurry After Attack_5: -278834808144014267
+      Flurry After Attack_6: 7402021805630712691
+      Flurry After Attack_7: 2382006896477422961
+      Flurry After Attack_8: 1345885564971074499
+      Flurry After Attack_9: -8956848474964259060
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

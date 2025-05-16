@@ -49,11 +49,11 @@ public class ScreenShake : MonoBehaviour
             Debug.Log(i);
         }
         removeList.Clear();
-        float total = 0;
+        float shakeAmount = 0;
         foreach(float i in shakeIntensityList)
         {
-            total += i;
+            if (i >= shakeAmount) { shakeAmount = i; }
         }
-        perlinNoise.AmplitudeGain = total;
+        perlinNoise.AmplitudeGain = shakeAmount;
     }
 }
