@@ -122,12 +122,12 @@ TextureImporter:
       name: Dead Bush 1_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 8
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5
+        y: 9
+        width: 22
+        height: 13
+      alignment: 9
+      pivot: {x: 0.49530175, y: 0.5129199}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,55 +140,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Dead Bush 1_1
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 8
-        width: 9
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 627d46ac8b62cd2a0800000000000000
-      internalID: -6711446769577437402
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dead Bush 1_2
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 8
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c701eb5bd046c8fa0800000000000000
-      internalID: -5797148610286186372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d9b5739ee07ef1640ac223b0ba2e072b
     internalID: 0
     vertices: []
     indices: 
