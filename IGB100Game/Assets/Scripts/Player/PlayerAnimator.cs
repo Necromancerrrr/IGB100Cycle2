@@ -13,7 +13,6 @@ public class PlayerAnimator : MonoBehaviour
     void Update()
     {
         CheckForMovement();
-        AnimationTestFunction();
     }
     void CheckForMovement()
     {
@@ -40,20 +39,5 @@ public class PlayerAnimator : MonoBehaviour
     public void PlayPlayerDeadAnim()
     {
         animator.SetTrigger("Dead");
-    }
-    void AnimationTestFunction() // REMOVE THIS IN THE FINAL BUILD
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            SetPlayerCorruptSprite();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            PlayPlayerHurtAnim();
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            PlayPlayerDeadAnim();
-        }
     }
 }

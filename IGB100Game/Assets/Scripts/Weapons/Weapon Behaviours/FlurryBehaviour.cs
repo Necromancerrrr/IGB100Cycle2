@@ -52,7 +52,7 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         }
         if (phase == 2)
         {
-            timer -= Time.deltaTime;
+            timer -= Time.deltaTime; Debug.Log("Phase 2:"); Debug.Log(timer);
             if (timer <= -2.1f) { Destroy(gameObject); }
         }
         

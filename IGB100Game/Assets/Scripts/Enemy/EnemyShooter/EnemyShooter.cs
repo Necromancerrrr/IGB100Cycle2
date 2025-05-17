@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class EnemyShooterStats : EnemyStats
@@ -16,6 +17,10 @@ public class EnemyShooterStats : EnemyStats
     // Shooting Logic
     float Ammo;
     float ShootTimer = 5;
+
+    // Movement Logic
+    Vector2 altTarget;
+    float moveGenTimer;
 
     Rigidbody2D rb;
     [SerializeField] GameObject projectile;
@@ -43,17 +48,39 @@ public class EnemyShooterStats : EnemyStats
     {
         if (knockbackDuration <= 0)
         {
-            if (new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude >= 10f) // If the shooter is a significant distance away
+            if (new Vector2(transform.position.x - player.transform.position.x, transform.position.y - player.transform.position.y).magnitude >= 10f) // If the shooter is far
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime);
             }
-            else if (new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).magnitude <= 3f) // If the shooter is too close
+            else 
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, -1 * currentMoveSpeed * Time.deltaTime); // Constantly moves away from the player
+                moveGenTimer -= Time.deltaTime;
+                if (new Vector2(altTarget.x - player.transform.position.x, altTarget.y - player.transform.position.y).magnitude >= 10f || new Vector2(altTarget.x - player.transform.position.x, altTarget.y - player.transform.position.y).magnitude <= 3f)
+                {
+                    moveGenTimer = 0; 
+                }
+                if (moveGenTimer <= 0)
+                {
+                    MoveGen();
+                    moveGenTimer = Random.Range(3f, 5f);
+                }
+                transform.position = Vector2.MoveTowards(transform.position, altTarget, 3 * currentMoveSpeed * Time.deltaTime);
             }
             //Sprite flips towards player
             Vector2 lookDirection = (player.transform.position - transform.position).normalized;
             sr.flipX = lookDirection.x > 0;
+        }
+    }
+    private void MoveGen()
+    {
+        bool valid = false;
+        while (valid == false)
+        {
+            altTarget = new Vector2(5 * Random.Range(-1f, 1f), 5 * Random.Range(-1f, 1f)) + (Vector2)transform.position;
+            if (new Vector2(altTarget.x - player.transform.position.x, altTarget.y - player.transform.position.y).magnitude <= 10f && new Vector2(altTarget.x - player.transform.position.x, altTarget.y - player.transform.position.y).magnitude >= 3f)
+            {
+                valid = true;
+            }
         }
     }
     private void ShootUpdate()

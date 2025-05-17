@@ -17,4 +17,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 8250571217130720332, guid: 9fadc5ab92abb3a4ea9ee6800ef37ba4, type: 3}
   name: Abundance
   description: +25% projectile count
-  icon: {fileID: 6037482207015584742, guid: d39f787ebfeea4e44b7ff669c0b58663, type: 3}
+  icon: {fileID: 21300000, guid: d39f787ebfeea4e44b7ff669c0b58663, type: 3}
