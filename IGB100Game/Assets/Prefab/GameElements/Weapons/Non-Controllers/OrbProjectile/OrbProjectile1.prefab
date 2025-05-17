@@ -51,6 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 9e4082d2de270f249abdc7d600e80302, type: 2}
   currentDuration: 0
+  windDownTimer: 0
+  timeTakenUp: 0
+  timeTakenDown: 0
   par: {fileID: 4801259901059878610}
 --- !u!50 &559294093597345711
 Rigidbody2D:

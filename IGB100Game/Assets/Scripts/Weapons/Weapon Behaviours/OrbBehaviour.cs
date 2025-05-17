@@ -50,8 +50,10 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         if (destroyTimer <= 0)
         {
             transform.DetachChildren();
+            par.transform.localScale = new Vector3(1, 1, 1);
             var emission = par.emission;
             emission.rateOverTime = 0;
+            emission.SetBursts(new ParticleSystem.Burst[] { }); // Intentionally empty
             Destroy(par, 1);
             Destroy(gameObject);
         }
