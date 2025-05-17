@@ -18,6 +18,8 @@ public class MineBehaviour : ProjectileWeaponBehaviour
         totalSize = new Vector3(0.5f + weaponSize / 10, 0.5f + weaponSize / 10, 1);
         // transform.localScale = totalSize;
 
+        transform.localScale = new Vector3(0, 0, 1);
+
     }
 
     private void Update()
@@ -42,7 +44,7 @@ public class MineBehaviour : ProjectileWeaponBehaviour
         // Ease in on spawn
         if (transform.localScale != totalSize)
         {
-            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.005f, 1);
+            timeTakenUp = ScaleUpTransition(timeTakenUp, 1f, 0.5f);
         }
 
     }

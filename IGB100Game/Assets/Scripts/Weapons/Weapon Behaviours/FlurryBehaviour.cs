@@ -62,14 +62,8 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         // Ease in on spawn
         if (transform.localScale != new Vector3(1, 1, 1))
         {
-            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.005f, 1);
+            timeTakenUp = ScaleUpTransition(timeTakenUp, 1f, 0.5f);
         }
-        
-        // Ease out on death
-        //if (phase == 2)
-        //{
-        //    scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.01f, 1);
-        //}
     }
     
     private void SetEnemy() // Selects the position of the closest enemy as the target. If there are no valid targets, self destruct

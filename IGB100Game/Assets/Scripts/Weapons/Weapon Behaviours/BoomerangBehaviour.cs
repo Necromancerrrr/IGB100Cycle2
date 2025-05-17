@@ -27,16 +27,19 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
         var emission2 = trail2.GetComponent<ParticleSystem>().emission;
         emission2.enabled = false;
     }
+
     public void targetSet(bool rand) // Checks whether the targeting is for the closest enemy or random
     {
         targetRand = rand;
         player = GameObject.FindWithTag("Player");
         SetEnemy();
     }
+
     void SetScale()
     {
         gameObject.transform.localScale = new Vector3(0, 0, 1);
     }
+
     private void SetEnemy() // Selects an enemy as the target. If there are no valid targets, self destruct.
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -59,6 +62,7 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
         }
         angleVector = (target.transform.position - player.transform.position).normalized; // The vector we will use for movement on the way out
     }
+
     void Update()
     {
         transform.Rotate(0, 0, Time.deltaTime * 720);
@@ -106,7 +110,7 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
         // Ease in on spawn
         if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
         {
-            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.02f, weaponSize);
+            timeTakenUp = ScaleUpTransition(timeTakenUp, weaponSize, 0.25f);
         }
     }
 

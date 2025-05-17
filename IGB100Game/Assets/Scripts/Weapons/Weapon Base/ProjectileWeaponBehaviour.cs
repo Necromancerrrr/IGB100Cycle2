@@ -27,8 +27,8 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 
     // scaling up and down transition vars
     public float windDownTimer;
-    public float scaleUpSpeed = 0f;
-    public float scaleDownSpeed = 0f;
+    public float timeTakenUp = 0f;
+    public float timeTakenDown = 0f;
 
     protected void Awake()
     {
@@ -139,7 +139,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    /*
     public float ScaleUpTransition(float scaleSpeed, float scaleRate, float scaleMax)
     {
         transform.localScale = new Vector3(Mathf.Lerp(0, scaleMax, scaleSpeed), Mathf.Lerp(0, scaleMax, scaleSpeed), 1);
@@ -153,4 +153,26 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         scaleSpeed += scaleRate;
         return scaleSpeed;
     }
+
+    */
+
+    public float ScaleUpTransition(float timeTakenU, float scaleMax, float duration)
+    {
+        float t = timeTakenU / duration;
+        transform.localScale = new Vector3(Mathf.Lerp(0, scaleMax, t), Mathf.Lerp(0, scaleMax, t), 1);
+        //scaleSpeed += scaleRate;
+        timeTakenU += Time.deltaTime;
+        return timeTakenU;
+    }
+
+    public float ScaleDownTransition(float timeTakenD, float scaleMax, float duration)
+    {
+        float t = timeTakenD / duration;
+        transform.localScale = new Vector3(Mathf.Lerp(scaleMax, 0, t), Mathf.Lerp(scaleMax, 0, t), 1);
+        //scaleSpeed += scaleRate;
+        timeTakenD += Time.deltaTime;
+        return timeTakenD;
+    }
+
+    
 }

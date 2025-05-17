@@ -46,13 +46,13 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
         // Ease in on spawn
         if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
         {
-            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.004f, weaponSize);
+            timeTakenUp = ScaleUpTransition(timeTakenUp, weaponSize, 0.5f);
         }
 
         // Ease out on death
-        if (windDownTimer >= weaponDuration - 0.5)
+        if (windDownTimer >= weaponDuration - 0.51)
         {
-            scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.004f, weaponSize);
+            timeTakenDown = ScaleDownTransition(timeTakenDown, weaponSize, 0.5f);
         }
     }
 

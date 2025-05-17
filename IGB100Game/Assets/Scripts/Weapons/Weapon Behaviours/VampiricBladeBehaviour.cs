@@ -121,15 +121,17 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         // Ease in on spawn
         if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
         {
-            col.transform.localScale = new Vector3(Mathf.Lerp(0, weaponSize, scaleUpSpeed), Mathf.Lerp(0, weaponSize, scaleUpSpeed), 1);
-            scaleUpSpeed += 0.004f;
+            float t = timeTakenUp / 0.5f;
+            col.transform.localScale = new Vector3(Mathf.Lerp(0, weaponSize, t), Mathf.Lerp(0, weaponSize, t), 1);
+            timeTakenUp += Time.deltaTime;
         }
         
         // Ease out on death
-        if (Timer <= 0.5)
+        if (Timer <= 0.49)
         {
-            col.transform.localScale = new Vector3(Mathf.Lerp(weaponSize, 0, scaleDownSpeed), Mathf.Lerp(weaponSize, 0, scaleDownSpeed), 1);
-            scaleDownSpeed += 0.004f;
+            float t = timeTakenDown / 0.2f;
+            col.transform.localScale = new Vector3(Mathf.Lerp(weaponSize, 0, t), Mathf.Lerp(weaponSize, 0, t), 1);
+            timeTakenDown += Time.deltaTime;
         }
         
     }

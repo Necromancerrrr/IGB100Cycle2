@@ -59,13 +59,13 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         // Ease in on spawn
         if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
         {
-            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.004f, 1);
+            timeTakenUp = ScaleUpTransition(timeTakenUp, 1f, 0.5f);
         }
 
         // Ease out on death
         if (windDownTimer >= weaponDuration - 0.5)
         {
-            scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.004f, 1);
+            timeTakenDown = ScaleDownTransition(timeTakenDown, 1f, 0.5f);
         }
     }
 

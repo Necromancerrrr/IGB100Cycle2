@@ -27,13 +27,13 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
         // Ease in on spawn
         if (transform.localScale != new Vector3(1, 1, 1))
         {
-            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.004f, 1);
+            timeTakenUp = ScaleUpTransition(timeTakenUp, 1f, 0.5f);
         }
 
         // Ease out on death
-        if (windDownTimer >= weaponDuration - 0.5)
+        if (windDownTimer >= weaponDuration - 0.51)
         {
-            scaleDownSpeed = ScaleDownTransition(scaleDownSpeed, 0.004f, 1);
+            timeTakenDown = ScaleDownTransition(timeTakenDown, 1f, 0.5f);
         }
     }
 

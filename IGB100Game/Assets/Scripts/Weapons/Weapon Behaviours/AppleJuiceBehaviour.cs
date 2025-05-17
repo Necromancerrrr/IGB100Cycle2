@@ -59,7 +59,7 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
         // Ease in on spawn
         if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
         {
-            scaleUpSpeed = ScaleUpTransition(scaleUpSpeed, 0.004f, weaponSize);
+            timeTakenUp = ScaleUpTransition(timeTakenUp, weaponSize, 0.5f);
         }
 
         
@@ -95,8 +95,9 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
         if (Timer <= weaponDuration + 0.5f && boxDelete == false)
         {
             // Ease out on death
-            appleJuiceBox.transform.localScale = new Vector3(Mathf.Lerp(1, 0, scaleDownSpeed), Mathf.Lerp(1, 0, scaleDownSpeed), 1);
-            scaleDownSpeed += 0.008f;
+            float t = timeTakenDown / 0.25f;
+            appleJuiceBox.transform.localScale = new Vector3(Mathf.Lerp(1, 0, t), Mathf.Lerp(1, 0, t), 1);
+            timeTakenDown += Time.deltaTime;
 
             if (appleJuiceBox.transform.localScale == new Vector3(0, 0, 1))
             {
