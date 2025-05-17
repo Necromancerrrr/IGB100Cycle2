@@ -17,10 +17,14 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     bool colliderActive = false;
     float burstTime = 0.05f;
     float burstParticles;
+    float destroyTimer;
 
     override protected void Start()
     {
-        base.Start();
+        weaponDamage = GetCurrentDamage();
+        weaponSize = GetCurrentAreaSize();
+        weaponDuration = GetCurrentDuration();
+        destroyTimer = weaponDuration;
         pulseTimer = tickRate;
         rb = GetComponent<Rigidbody2D>();
         colli = GetComponent<CircleCollider2D>();
@@ -40,8 +44,17 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     // Update is called once per frame
     protected void Update()
     {
+        destroyTimer -= Time.deltaTime;
         pulseTimer -= Time.deltaTime;
         burstTime += Time.deltaTime;
+        if (destroyTimer <= 0)
+        {
+            transform.DetachChildren();
+            var emission = par.emission;
+            emission.rateOverTime = 0;
+            Destroy(par, 1);
+            Destroy(gameObject);
+        }
         if (pulseTimer <= 0) 
         {
             Pulse();
