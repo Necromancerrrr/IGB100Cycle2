@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyZonerStats : EnemyStats
 {
     public EnemyZonerScriptableObject zonerData;
+    private Animator anim;
     // Current stats
     [HideInInspector]
     public float zoneFrequency;
@@ -15,6 +16,8 @@ public class EnemyZonerStats : EnemyStats
 
     // Zoner logic
     float zoneTimer = 5;
+    bool casting = false;
+    bool cast = false;
 
     [SerializeField] GameObject AOE;
 
@@ -26,6 +29,7 @@ public class EnemyZonerStats : EnemyStats
         zoneCount = zonerData.ZoneCount;
         zoneSize = zonerData.ZoneSize;
         zoneDelay = zonerData.ZoneDelay;
+        anim = GetComponent<Animator>();
     }
     new void Update()
     {
@@ -36,7 +40,7 @@ public class EnemyZonerStats : EnemyStats
     }
     private void Movement()
     {
-        if (knockbackDuration <= 0)
+        if (knockbackDuration <= 0 && casting == false)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentMoveSpeed * Time.deltaTime); // Constantly moves towards player
             //Sprite flips towards player
@@ -47,12 +51,24 @@ public class EnemyZonerStats : EnemyStats
     private void AOEUpdate()
     {
         zoneTimer -= Time.deltaTime;
-        if (zoneTimer <= 0)
+        if (zoneTimer <= 1 && casting == false)
+        {
+            casting = true;
+            anim.SetBool("Attack", true);
+        }
+        else if (zoneTimer <= 0.2f && casting == true && cast == false)
         {
             for (int i = 0; i < zoneCount; i++)
             {
                 SpawnAOE();
             }
+            cast = true;
+        }
+        else if (zoneTimer <= 0)
+        {
+            casting = false;
+            cast = false;
+            anim.SetBool("Attack", false);
             zoneTimer = zoneFrequency;
         }
     }

@@ -29,6 +29,9 @@ public class EnemyProjectile : MonoBehaviour
         Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);
         Vector2 angle = new Vector2(rb.transform.position.x - target.x, rb.transform.position.y - target.y).normalized;
         rb.linearVelocity = -angle * projectileSpeed;
+        Vector2 calc = target - (Vector2)transform.position;
+        float rotangle = 360 - (Mathf.Atan2(calc.x, calc.y) * Mathf.Rad2Deg);
+        transform.rotation = Quaternion.Euler(0, 0, rotangle);
     }
     private void OnTriggerStay2D(Collider2D col)
     {

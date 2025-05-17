@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyChargerStats : EnemyStats
 {
     public EnemyChargerScriptableObject chargerData;
+    private Animator anim;
     // Current stats
     [HideInInspector]
     public float chargeFrequency;
@@ -32,6 +33,7 @@ public class EnemyChargerStats : EnemyStats
         chargeFreeze = chargerData.ChargeFreeze;
 
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     new void Update()
     {
@@ -62,6 +64,7 @@ public class EnemyChargerStats : EnemyStats
             GameObject indInstance = Instantiate(indicator);
             indInstance.transform.position = gameObject.transform.position;
             indInstance.GetComponent<EnemyChargeIndicator>().Setup(chargeFreeze, target);
+            anim.SetBool("Charge", true);
         }
         else if (ChargeTimer < 0 && ChargingPhase == 1) // Calculates the angle at which to move and starts charge towards the targetted position
         {
@@ -70,12 +73,15 @@ public class EnemyChargerStats : EnemyStats
             Vector2 angle = new Vector2(rb.transform.position.x - target.x, rb.transform.position.y - target.y).normalized;
             rb.linearVelocity = -angle * chargeSpeed;
             enemyAudio.PlayEnemyChargeSound();
+            anim.SetBool("Charge", false);
+            anim.speed = chargeSpeed * 0.1f;
         }
         else if (ChargeTimer < 0 && ChargingPhase == 2) // Charge ends, reset cooldown
         {
             ChargingPhase = 0;
             ChargeTimer = Random.Range(chargeFrequency * 0.9f, chargeFrequency * 1.1f);
             rb.linearVelocity = Vector2.zero;
+            anim.speed = 1;
         }
     }
     private void OnCollisionStay2D(Collision2D col)

@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 3
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Knife MAX
+  name: Dagger Toss MAX
   description: +10 Damage, +5 Pierce
   icon: {fileID: 21300000, guid: 4f64a549e1e94c748912055857c8fe1f, type: 3}

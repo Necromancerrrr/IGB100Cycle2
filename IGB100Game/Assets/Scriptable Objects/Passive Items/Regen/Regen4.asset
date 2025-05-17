@@ -15,6 +15,6 @@ MonoBehaviour:
   multiplier: 20
   level: 4
   nextLevelPrefab: {fileID: 0}
-  name: Regeneration +4
+  name: Regeneration +3
   description: -5 seconds between heals
   icon: {fileID: -4751123163905818129, guid: 808f1215313b0594fa2fe5d165af62a7, type: 3}

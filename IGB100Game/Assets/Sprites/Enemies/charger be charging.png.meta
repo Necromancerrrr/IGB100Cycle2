@@ -251,10 +251,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 20a193f50dfe07c80800000000000000
-      internalID: -8326892032778233342
+      spriteID: a9cd4dcd068685546a4140de00c199af
+      internalID: -169586500
       vertices: []
       indices: 
       edges: []
@@ -278,7 +278,7 @@ TextureImporter:
       charger be charging_2: 4132845782543859469
       charger be charging_3: -4352690852575507565
       charger be charging_4: 5765048076678848480
-      charger be charging_5: -8326892032778233342
+      charger be charging_5: -169586500
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

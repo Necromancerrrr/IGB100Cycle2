@@ -73,7 +73,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -111,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,10 +139,10 @@ TextureImporter:
       name: catt attack_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 5
-        width: 40
-        height: 30
+        x: 0
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: catt attack_1
       rect:
         serializedVersion: 2
-        x: 63
-        y: 5
-        width: 39
-        height: 30
+        x: 50
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: catt attack_2
       rect:
         serializedVersion: 2
-        x: 119
-        y: 5
-        width: 40
-        height: 30
+        x: 100
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: catt attack_3
       rect:
         serializedVersion: 2
-        x: 173
-        y: 5
-        width: 43
-        height: 30
+        x: 150
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: catt attack_4
       rect:
         serializedVersion: 2
-        x: 229
-        y: 5
-        width: 43
-        height: 30
+        x: 200
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +249,10 @@ TextureImporter:
       name: catt attack_5
       rect:
         serializedVersion: 2
-        x: 286
-        y: 5
-        width: 43
-        height: 31
+        x: 250
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +271,10 @@ TextureImporter:
       name: catt attack_6
       rect:
         serializedVersion: 2
-        x: 343
-        y: 5
-        width: 43
-        height: 32
+        x: 300
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: catt attack_7
       rect:
         serializedVersion: 2
-        x: 399
-        y: 5
-        width: 43
-        height: 32
+        x: 350
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: catt attack_8
       rect:
         serializedVersion: 2
-        x: 455
-        y: 5
-        width: 43
-        height: 32
+        x: 400
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +337,10 @@ TextureImporter:
       name: catt attack_9
       rect:
         serializedVersion: 2
-        x: 509
-        y: 5
-        width: 43
-        height: 30
+        x: 450
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,10 +359,10 @@ TextureImporter:
       name: catt attack_10
       rect:
         serializedVersion: 2
-        x: 565
-        y: 5
-        width: 43
-        height: 30
+        x: 500
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,10 +381,10 @@ TextureImporter:
       name: catt attack_11
       rect:
         serializedVersion: 2
-        x: 621
-        y: 5
-        width: 43
-        height: 30
+        x: 550
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +403,10 @@ TextureImporter:
       name: catt attack_12
       rect:
         serializedVersion: 2
-        x: 677
-        y: 5
-        width: 43
-        height: 30
+        x: 600
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,7 +425,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b5bb035d3715cf1469d0109d5f4dc514
     internalID: 0
     vertices: []
     indices: 
@@ -434,7 +434,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      catt attack_0: 3186835323457819605
+      catt attack_1: -149637335884754190
+      catt attack_10: -2223002129803090031
+      catt attack_11: 7952143833536693356
+      catt attack_12: 3737560665808702942
+      catt attack_2: 2544790259870405516
+      catt attack_3: 4435140255640662168
+      catt attack_4: 7823323759273709488
+      catt attack_5: -5958465771491118741
+      catt attack_6: -703645798090196462
+      catt attack_7: -3771142007891447691
+      catt attack_8: -8585627725848583429
+      catt attack_9: -5689153547834446012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

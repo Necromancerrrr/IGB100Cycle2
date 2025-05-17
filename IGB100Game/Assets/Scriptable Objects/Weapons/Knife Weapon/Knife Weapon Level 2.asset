@@ -22,6 +22,6 @@ MonoBehaviour:
   duration: 3
   level: 2
   nextLevelPrefab: {fileID: 4142939955346733007, guid: d7ecc4f20e89d7d4f802d873058c07e7, type: 3}
-  name: Knife 2
+  name: Dagger Toss +1
   description: +1 Projectile
   icon: {fileID: 21300000, guid: 4f64a549e1e94c748912055857c8fe1f, type: 3}
