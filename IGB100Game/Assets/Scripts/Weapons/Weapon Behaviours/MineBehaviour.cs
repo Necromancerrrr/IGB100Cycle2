@@ -9,6 +9,8 @@ public class MineBehaviour : ProjectileWeaponBehaviour
 
     Vector3 totalSize;
 
+    [SerializeField] private AudioClip spawnAudio;
+
     new void Start()
     {
         base.Start();
@@ -20,6 +22,7 @@ public class MineBehaviour : ProjectileWeaponBehaviour
 
         transform.localScale = new Vector3(0, 0, 1);
 
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
     }
 
     private void Update()

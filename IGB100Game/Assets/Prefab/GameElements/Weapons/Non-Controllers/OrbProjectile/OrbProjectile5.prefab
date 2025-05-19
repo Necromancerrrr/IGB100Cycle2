@@ -51,7 +51,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 88e9cbf7c226780439a67cdfc432238b, type: 2}
   currentDuration: 0
+  windDownTimer: 0
+  timeTakenUp: 0
+  timeTakenDown: 0
   par: {fileID: 4801259901059878610}
+  spawnAudio: {fileID: 8300000, guid: 15fcf9e80d3148a47b8ca1f807eb2fcd, type: 3}
 --- !u!50 &559294093597345711
 Rigidbody2D:
   serializedVersion: 5

@@ -7,6 +7,8 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
     private GameObject player;
     private Rigidbody2D rb;
 
+    [SerializeField] private AudioClip spawnAudio;
+
     override protected void Start()
     {
         base.Start();
@@ -14,6 +16,8 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         transform.localScale = new Vector3(0, 0, 1);
+
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
     }
 
     // Update is called once per frame

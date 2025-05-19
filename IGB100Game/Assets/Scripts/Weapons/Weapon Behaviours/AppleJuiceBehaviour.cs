@@ -16,6 +16,8 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
     [SerializeField] private GameObject appleJuiceBox;
     bool boxDelete = false;
 
+    [SerializeField] private AudioClip spawnAudio;
+
     new void Awake()
     {
         base.Awake();
@@ -33,6 +35,8 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
         Timer = weaponDuration + 2; // Gives time for the animation to play
         SetScale();
         SetPos();
+
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1);
     }
 
     void SetScale()

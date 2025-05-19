@@ -349,14 +349,15 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 3d29667feed80b94b8d29efa54c14dd6, type: 2}
   currentAreaSize: 0
   windDownTimer: 0
-  scaleUpSpeed: 0
-  scaleDownSpeed: 0
+  timeTakenUp: 0
+  timeTakenDown: 0
   col: {fileID: 2665191289967149010}
   projPoint: {fileID: 5062438866944765560}
   projectile: {fileID: 1975679561529679908, guid: 05aa29d5b6c766c44be4c4bcc2ae4c94, type: 3}
   indicator: {fileID: 4794561213453910452}
   parColour: {r: 0.54901963, g: 0.1254902, b: 0.1254902, a: 1}
   par: {fileID: 5483784591801265088, guid: 1296e3cfcace0a042980aac532db2f63, type: 3}
+  spawnAudio: {fileID: 8300000, guid: 866afa3274fc8094da44d606d7d23977, type: 3}
 --- !u!50 &7828984955360909834
 Rigidbody2D:
   serializedVersion: 5

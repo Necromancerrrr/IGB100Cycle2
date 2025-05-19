@@ -13,12 +13,16 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
     [SerializeField] private Color parColour;
     [SerializeField] private GameObject par;
 
+    [SerializeField] private AudioClip spawnAudio;
+
     protected override void Start()
     {
         base.Start();
         markedEnemies = new List<GameObject>();
         timer = hitResetInterval;
         SetScale();
+
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1);
     }
 
     void SetScale()

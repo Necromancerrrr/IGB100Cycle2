@@ -8,17 +8,24 @@ public class SeekerBehaviour : ProjectileWeaponBehaviour
     private GameObject target;
     private Rigidbody2D rb;
     [SerializeField] private GameObject par;
+
+    [SerializeField] private AudioClip spawnAudio;
+
     override protected void Start()
     {
         // Pulls stats and finds components
         base.Start();
         rb = GetComponent<Rigidbody2D>();
         SetEnemy();
+
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
     }
+
     protected void Update()
     {
         Movement();
     }
+
     private void Movement() // If there is no target, find one. Otherwise, move towards the current target
     {
         if (target == null)

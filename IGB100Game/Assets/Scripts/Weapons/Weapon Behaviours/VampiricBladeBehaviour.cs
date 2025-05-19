@@ -27,6 +27,8 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
     [SerializeField] private GameObject par;
     bool shakeBool = false;
 
+    [SerializeField] private AudioClip spawnAudio;
+
     override protected void Start()
     {
         base.Start();
@@ -46,6 +48,8 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         projectileCount = Mathf.Round(weaponData.ProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
         SetScale();
         SetRotation();
+
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
     }
 
     void SetScale()
@@ -116,7 +120,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
 
         
         // EASING STUFFS
-        //windDownTimer += Time.deltaTime;
+        windDownTimer += Time.deltaTime;
 
         // Ease in on spawn
         if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
@@ -127,7 +131,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         }
         
         // Ease out on death
-        if (Timer <= 0.49)
+        if (Timer <= 0.3)
         {
             float t = timeTakenDown / 0.2f;
             col.transform.localScale = new Vector3(Mathf.Lerp(weaponSize, 0, t), Mathf.Lerp(weaponSize, 0, t), 1);

@@ -5,9 +5,13 @@ public class KnifeBehaviour : ProjectileWeaponBehaviour
     // HitFX values
     [SerializeField] private Color parColour;
     [SerializeField] private GameObject par;
+
+    [SerializeField] private AudioClip spawnAudio;
+
     protected override void Start()
     {
         base.Start();
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
     }
 
     // Update is called once per frame

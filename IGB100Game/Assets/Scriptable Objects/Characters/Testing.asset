@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   name: 
-  startingWeapon: {fileID: 4142939955346733007, guid: 3c9b9b2b37172be4da430462a5eae82a, type: 3}
+  startingWeapon: {fileID: 6883820235095941995, guid: 40aeb378dfbffe24e8b1b8bc92c3fdea, type: 3}
   maxHealth: 100
   recovery: 35
   moveSpeed: 4

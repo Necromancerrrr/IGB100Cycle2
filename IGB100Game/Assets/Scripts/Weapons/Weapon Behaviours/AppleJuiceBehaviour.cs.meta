@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 28d3a7f2eb9f35948b998010e0084f01
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - weaponData: {instanceID: 0}
+  - appleJuiceBox: {instanceID: 0}
+  - pourAudio: {fileID: 8300000, guid: 10c9fde3c9c41324fb5ac9e1d6aaf916, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

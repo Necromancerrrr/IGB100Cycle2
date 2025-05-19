@@ -50,7 +50,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 61928fd06c6952a499532458dbc42852, type: 2}
   currentDuration: 4
+  windDownTimer: 0
+  timeTakenUp: 0
+  timeTakenDown: 0
+  slowPercent: 0.5
   appleJuiceBox: {fileID: 6827961648322138260}
+  spawnAudio: {fileID: 8300000, guid: 10c9fde3c9c41324fb5ac9e1d6aaf916, type: 3}
 --- !u!50 &671427937228012773
 Rigidbody2D:
   serializedVersion: 5

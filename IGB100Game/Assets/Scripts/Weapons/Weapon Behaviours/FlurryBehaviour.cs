@@ -15,6 +15,9 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
     private float phaseCounter;
     private float phase;
     private bool anim;
+
+    [SerializeField] private AudioClip spawnAudio;
+
     new void Awake()
     {
         base.Awake();
@@ -93,6 +96,8 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            AudioManager.instance.PlaySFX(spawnAudio, transform, 1);
+
             GameObject projInstance = Instantiate(projectile);
             projInstance.transform.position = transform.position;
             projInstance.transform.rotation = Quaternion.Euler(0, 0, angle + Random.Range(-10f, 10f));

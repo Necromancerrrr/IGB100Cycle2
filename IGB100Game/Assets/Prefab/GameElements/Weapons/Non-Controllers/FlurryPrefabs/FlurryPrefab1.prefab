@@ -47,8 +47,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 1db1f24bb22ec09448fa90d47ce9dedc, type: 2}
   currentDuration: 0
+  windDownTimer: 0
+  timeTakenUp: 0
+  timeTakenDown: 0
   projectile: {fileID: 5361931569672504149, guid: 072225f8fe5fbef4396d0b7cfcc9caa9, type: 3}
   spriteRenderer: {fileID: 4964937752839533638}
+  spawnAudio: {fileID: 8300000, guid: cc94bce9af60fd041910800b957456a8, type: 3}
 --- !u!1 &4964937752839533638
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class RotaryBehaviour : ProjectileWeaponBehaviour
     float shootTimer;
     float projectileCount;
 
+    [SerializeField] private AudioClip spawnAudio;
+
     new void Awake()
     {
         base.Awake();
@@ -66,6 +68,8 @@ public class RotaryBehaviour : ProjectileWeaponBehaviour
         shootTimer -= Time.deltaTime;
         if (shootTimer < 0)
         {
+            AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
+
             GameObject projInstance1 = Instantiate(projectile);
             projInstance1.transform.position = projPoint1.transform.position;
             projInstance1.transform.rotation = Quaternion.Euler(0, 0, angle - 90);

@@ -4,6 +4,19 @@ using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
+
+    public static AudioManager instance;
+    
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    [SerializeField] private AudioSource SFXObject;
+
     // use a queue if this needs to expand to other audio clips
     //Queue enemyHurtQueue = new Queue();
 
@@ -28,5 +41,20 @@ public class AudioManager : MonoBehaviour
             enemyHurtQueue -= 1;
             timer = 0;
         }
+    }
+
+    public void PlaySFX(AudioClip audioClip, Transform spawnTransform, float volume)
+    {
+        AudioSource generatedAudioSource = Instantiate(SFXObject, spawnTransform.position, Quaternion.identity);
+
+        generatedAudioSource.clip = audioClip;
+
+        generatedAudioSource.volume = volume;
+
+        generatedAudioSource.Play();
+
+        float audioLength = generatedAudioSource.clip.length;
+
+        Destroy(generatedAudioSource.gameObject, audioLength);
     }
 }
