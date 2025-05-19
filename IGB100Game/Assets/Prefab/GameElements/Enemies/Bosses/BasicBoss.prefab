@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4564404143333738025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.74, y: -0.24, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56,6 +56,9 @@ MonoBehaviour:
   isBoss: 1
   enemyData: {fileID: 11400000, guid: 681703f6fd534494783e65af38536e52, type: 2}
   player: {fileID: 0}
+  isDebuffed: 0
+  debuffTimer: 0
+  baseMovespeed: 0
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
@@ -240,7 +243,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1385694241
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 4
   m_Sprite: {fileID: 6896239562147355038, guid: cdfe37929cdc042459eb96008868d05c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
