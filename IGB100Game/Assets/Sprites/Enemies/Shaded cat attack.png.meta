@@ -472,7 +472,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shaded cat attack_0: 6357544478225498481
+      Shaded cat attack_1: -8864268061626867935
+      Shaded cat attack_10: -8903148266044339066
+      Shaded cat attack_11: -6816751363227505013
+      Shaded cat attack_12: 5801888429246210233
+      Shaded cat attack_13: -174376549558347984
+      Shaded cat attack_2: -3394298492175774019
+      Shaded cat attack_3: -1097808977083052269
+      Shaded cat attack_4: -3806091977475676184
+      Shaded cat attack_5: -603663838355555406
+      Shaded cat attack_6: -8712147032253607468
+      Shaded cat attack_7: 3225116603737872976
+      Shaded cat attack_8: -6699907950566909558
+      Shaded cat attack_9: 8568841634943199632
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -169,12 +169,17 @@ public class GameManager : MonoBehaviour
             tmPro.font = textFont;
         }
 
-        rect.position = referenceCamera.WorldToScreenPoint(target.position);
+        rect.position = target.position;
+            //referenceCamera.WorldToScreenPoint(target.position);
 
         Destroy(textObj, duration);
 
         textObj.transform.SetParent(instance.damageTextCanvas.transform);
         textObj.transform.SetAsFirstSibling();
+
+        textObj.transform.localScale = Vector3.one;
+
+        Vector3 initialSpawn = target.position;
 
         WaitForEndOfFrame w = new WaitForEndOfFrame();
         float t = 0;
@@ -185,7 +190,8 @@ public class GameManager : MonoBehaviour
             if (target)
             {
                 yOffset += speed * Time.deltaTime;
-                rect.position = referenceCamera.WorldToScreenPoint(target.position + new Vector3(0, yOffset));
+                rect.position = initialSpawn + new Vector3(0, yOffset);
+                    //referenceCamera.WorldToScreenPoint(target.position + new Vector3(0, yOffset));
             }
             else
             {
