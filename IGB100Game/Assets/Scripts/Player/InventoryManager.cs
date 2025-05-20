@@ -151,11 +151,11 @@ public class InventoryManager : MonoBehaviour
 
             int upgradeType;
 
-            if (availableWeaponUpgrades.Count == 0 || weaponSlots[5] != null)
+            if (availableWeaponUpgrades.Count == 0)
             {
                 upgradeType = 2;
             }
-            else if (availablePassiveItemUpgrades.Count == 0 || passiveItemSlots[5] != null)
+            else if (availablePassiveItemUpgrades.Count == 0)
             {
                 upgradeType = 1;
             }
