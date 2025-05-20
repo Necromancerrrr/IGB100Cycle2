@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class VampiricBladeBehaviour : MeleeWeaponBehaviour
 {
-    float Timer = 2.5f;
+    float Timer = 1.2f;
     bool clockwise;
     float projectileCount;
     [SerializeField] private GameObject col;
@@ -75,12 +75,12 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
             Vector2 angleVec = ((Vector2)transform.position - target).normalized; // Converts the enemy into a vector
             if (clockwise == true) 
             { 
-                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg + 180; // Sets position based on direction of swing
+                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg + 150; // Sets position based on direction of swing
                 nextShot = angle - 120 / projectileCount; // Sets up projectile shooting
             }
             else if (clockwise == false) 
             { 
-                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg; // Sets position based on direction of swing
+                angle = Mathf.Atan2(angleVec.y, angleVec.x) * Mathf.Rad2Deg + 30; // Sets position based on direction of swing
                 nextShot = angle + 120 / projectileCount; // Sets up projectile shooting
             }
             
