@@ -187,7 +187,7 @@ public class GameManager : MonoBehaviour
         while (t < duration) 
         {
             tmPro.color = new Color(tmPro.color.r, tmPro.color.g, tmPro.color.b, 1 - t / duration);
-            if (target)
+            if (target != null)
             {
                 yOffset += speed * Time.deltaTime;
                 rect.position = initialSpawn + new Vector3(0, yOffset);
