@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      the cat died_0: 5782711918858193233
+      the cat died_1: -6662260277604104178
+      the cat died_2: 4339870290100680189
+      the cat died_3: 2094504530687253433
+      the cat died_4: 817446133240149781
+      the cat died_5: -5183455936703468107
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

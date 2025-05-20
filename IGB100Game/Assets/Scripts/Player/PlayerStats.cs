@@ -308,7 +308,6 @@ public class PlayerStats : MonoBehaviour
     InventoryManager inventory;
     public int weaponIndex;
     public int passiveItemIndex;
-    public int pactItemIndex;
 
     //Player UI
     [Header("Player UI")]
@@ -616,23 +615,6 @@ public class PlayerStats : MonoBehaviour
         inventory.AddPassiveItem(passiveItemIndex, spawnedPassiveItem.GetComponent<PassiveItem>()); // Add the weapon to it's inventory slot
 
         passiveItemIndex++;
-    }
-
-    public void SpawnPactItem(GameObject pactItem)
-    {
-        //checking if inventory is full
-        if (pactItemIndex >= inventory.pactItemSlots.Count)
-        {
-            Debug.LogError("Pact Item Slots Are Full");
-            return;
-        }
-
-        GameObject spawnedPactItem = Instantiate(pactItem, transform.position, Quaternion.identity);
-        spawnedPactItem.transform.SetParent(transform);
-        inventory.AddPactItem(pactItemIndex, spawnedPactItem.GetComponent<PactItem>());
-
-        pactItemIndex++;
-
-        
-    }
+    } 
+   
 }
