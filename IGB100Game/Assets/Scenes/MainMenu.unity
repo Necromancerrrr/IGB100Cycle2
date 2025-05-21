@@ -2028,7 +2028,7 @@ RectTransform:
   m_GameObject: {fileID: 220285724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1710434829}
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d12b8383eaffcdc43b183801fa1f9f71, type: 3}
+  m_Texture: {fileID: 2800000, guid: 4e6ab1612761b42229e98a2b2de46204, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -9487,7 +9487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1702613124
 RectTransform:
   m_ObjectHideFlags: 0
