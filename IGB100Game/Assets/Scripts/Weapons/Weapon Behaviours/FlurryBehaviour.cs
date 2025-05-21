@@ -23,7 +23,7 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         base.Awake();
         player = GameObject.FindWithTag("Player");
         projCount = Mathf.Round(currentProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
-        timer = 2;
+        timer = 1.5f;
         phaseCounter = 0;
         phase = 0;
         anim = false;
@@ -55,7 +55,7 @@ public class FlurryBehaviour : ProjectileWeaponBehaviour
         }
         if (phase == 2)
         {
-            timer -= Time.deltaTime; Debug.Log("Phase 2:"); Debug.Log(timer);
+            timer -= Time.deltaTime;  
             if (timer <= -2.1f) { Destroy(gameObject); }
         }
         

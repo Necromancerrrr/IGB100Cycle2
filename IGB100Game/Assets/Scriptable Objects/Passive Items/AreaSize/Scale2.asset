@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
-  m_Name: Reach2
+  m_Name: Scale2
   m_EditorClassIdentifier: 
   multiplier: 50
   level: 2
   nextLevelPrefab: {fileID: 8960848123848324934, guid: 35d3354897ac7cf4fb0b914aa5711eb0, type: 3}
-  name: Reach +1
+  name: Scale +1
   description: +25% area size
   icon: {fileID: 5884407655333904010, guid: 3c2552e55696dea4ea91f65bd53ec294, type: 3}

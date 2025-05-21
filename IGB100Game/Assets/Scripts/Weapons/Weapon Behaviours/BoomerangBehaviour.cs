@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BoomerangBehaviour : ProjectileWeaponBehaviour
 {
@@ -8,6 +10,9 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
     private GameObject target;
     private Vector2 angleVector;
     GameObject player;
+
+    float listTimer = 0.25f;
+    List<GameObject> hitList = new List<GameObject>();
 
     // HitFX values
     [SerializeField] private Color parColour;
@@ -103,12 +108,20 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
                 emission1.enabled = false;
                 var emission2 = trail2.GetComponent<ParticleSystem>().emission;
                 emission2.enabled = false;
+                trail1.transform.localScale = Vector3.one;
+                trail2.transform.localScale = Vector3.one;
                 Destroy(trail1, 1);
                 Destroy(trail2, 1);
                 Destroy(gameObject); 
             } 
         }
 
+        if (hitList.Count >= 1) { listTimer -= Time.deltaTime; } // Clears hit list
+        if (listTimer <= 0)
+        {
+            hitList.Clear();
+            listTimer = 0.25f;
+        }
         // EASING STUFFS
         //windDownTimer += Time.deltaTime;
 
@@ -119,23 +132,28 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
         }
     }
 
-
     new protected void OnTriggerEnter2D(Collider2D col)
     {
+        // Intentionally left empty
+    }
+    protected void OnTriggerStay2D(Collider2D col)
+    {
         // Reference the script from the collided collider and deal damage using TakeDamage()
-        if (col.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy") && hitList.Contains(col.gameObject) == false)
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             if (dir == false && rangSpeed >= 0) { enemy.TakeDamage(weaponDamage * 2, transform.position, 0); } // enhanced damage for the way back in
             else { enemy.TakeDamage(weaponDamage, transform.position, 0); } // normal damage
+            hitList.Add(col.gameObject);
             GameObject parInstance = Instantiate(par);
             parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
         }
-        else if (col.CompareTag("Prop"))
+        else if (col.CompareTag("Prop") && hitList.Contains(col.gameObject) == false)
         {
             if (col.gameObject.TryGetComponent(out BreakableProps breakable))
             {
                 breakable.TakeDamage(weaponDamage);
+                hitList.Add(col.gameObject);
             }
             GameObject parInstance = Instantiate(par);
             parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
