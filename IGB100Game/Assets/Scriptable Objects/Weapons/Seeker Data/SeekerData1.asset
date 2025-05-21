@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 8391479871286726765, guid: f52cf0a8c9cf7474a833ed215dc86feb, type: 3}
   name: Spirit Seekers
-  description: Locks onto a random enemy and hunts them down
+  description: Hunts down random enemies relentlessly
   icon: {fileID: 3810473490841819008, guid: 04b5526d8747d084c9963a296f7927c2, type: 3}

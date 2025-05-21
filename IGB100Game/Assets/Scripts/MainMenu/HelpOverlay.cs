@@ -5,13 +5,14 @@ public class HelpOverlay : MonoBehaviour
     private int State = 0;
     [SerializeField] GameObject helpScreen1;
     [SerializeField] GameObject helpScreen2;
+    [SerializeField] GameObject helpScreen3;
     public void ButtonPress()
     {
         SetScreen1();
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
         {
             switch(State)
             {
@@ -19,6 +20,9 @@ public class HelpOverlay : MonoBehaviour
                     SetScreen2();
                     break;
                 case 2:
+                    SetScreen3();
+                    break;
+                case 3:
                     SetNoScreens();
                     break;
                 default:
@@ -26,7 +30,7 @@ public class HelpOverlay : MonoBehaviour
                     break;
             }
         }
-        else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W))
         {
             switch (State)
             {
@@ -35,6 +39,9 @@ public class HelpOverlay : MonoBehaviour
                     break;
                 case 2:
                     SetScreen1();
+                    break;
+                case 3:
+                    SetScreen2();
                     break;
                 default:
                     SetNoScreens();
@@ -51,17 +58,27 @@ public class HelpOverlay : MonoBehaviour
         State = 1;
         helpScreen1.SetActive(true);
         helpScreen2.SetActive(false);
+        helpScreen3.SetActive(false);
     }
     void SetScreen2()
     {
         State = 2;
         helpScreen1.SetActive(false);
         helpScreen2.SetActive(true);
+        helpScreen3.SetActive(false);
+    }
+    void SetScreen3()
+    {
+        State = 3;
+        helpScreen1.SetActive(false);
+        helpScreen2.SetActive(false);
+        helpScreen3.SetActive(true);
     }
     void SetNoScreens()
     {
         State = 0;
         helpScreen1.SetActive(false);
         helpScreen2.SetActive(false);
+        helpScreen3.SetActive(false);
     }
 }

@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 53529854424434218, guid: fcaed88e9a8464e4089773e50a47e291, type: 3}
   name: Boomerang
-  description: Fires a projectile that does more damage on the way back
+  description: Fire a projectile that does more damage on the way back
   icon: {fileID: -403755840339538957, guid: 87b70cb2bbb68a647a3d39caabc140ae, type: 3}
