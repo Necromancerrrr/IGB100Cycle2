@@ -338,11 +338,10 @@ public class PlayerStats : MonoBehaviour
         if(CharacterSelector.instance != null)
         {
             characterData = CharacterSelector.GetData();
-            CharacterSelector.instance.DestorySingleton();
         }
         else
         {
-            characterData = defaultCharacterData;
+                characterData = defaultCharacterData;
         }
 
         inventory = GetComponent<InventoryManager>();
