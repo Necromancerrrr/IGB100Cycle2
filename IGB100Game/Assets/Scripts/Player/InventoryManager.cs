@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    public Sprite healSprite;
+
     public List<WeaponController> weaponSlots = new List<WeaponController>(6);
     public int[] weaponLevels = new int[6];
     public List<Image> weaponUISlots = new List<Image>(6);
@@ -30,6 +32,7 @@ public class InventoryManager : MonoBehaviour
         public PassiveItemScriptableObject passiveItemData;
     }
 
+    
 
     [System.Serializable]
     public class UpgradeUI
@@ -79,7 +82,16 @@ public class InventoryManager : MonoBehaviour
             GameManager.instance.EndLevelUp();
         }
     }
+    
+    public void HealPlayerChoice()
+    {
 
+
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.EndLevelUp();
+        }
+    }
 
     public void LevelUpWeapon(int slotIndex, int upgradeIndex)
     {
@@ -149,6 +161,8 @@ public class InventoryManager : MonoBehaviour
                 return;
             }
 
+            bool healChoice = false;
+
             int upgradeType;
 
             if (availableWeaponUpgrades.Count == 0)
@@ -176,8 +190,11 @@ public class InventoryManager : MonoBehaviour
 
                     bool newWeapon = false; // Set a flag, assuming the weapon is not new
 
+
+
                     for (int i = 0; i < weaponSlots.Count; i++) // Check the inventory, slot by slot
                     {
+
                         // If the weapon slot is null, it'll assume that weapon is new.
                         // If the weapon slot isn't null, it checks if that slot's item matches the same as the chosen upgrade
                         if (weaponSlots[i] != null && weaponSlots[i].weaponData == chosenWeaponUpgrade.weaponData)
@@ -190,7 +207,6 @@ public class InventoryManager : MonoBehaviour
                                 if (!chosenWeaponUpgrade.weaponData.NextLevelPrefab)
                                 {
                                     DisableUpgradeUI(upgradeOption);
-
                                     break;
                                 }
 
@@ -203,22 +219,42 @@ public class InventoryManager : MonoBehaviour
                             }
                             break;
                         }
-                        else // If the upgrade option isn't found in the inventory, then it is a new weapon
-                        {
+                        else // If the upgrade option isn't found in the inventory, then it is a new weapon\
+                        { 
                             newWeapon = true;
                         }
                     }
 
                     if (newWeapon) // Spawn a new weapon
                     {
-                        upgradeOption.upgradeButton.onClick.AddListener(() => player.SpawnWeapon(chosenWeaponUpgrade.initialWeapon)); // Apply button functionality
+                        if (weaponSlots[5] != null)
+                        {
+                            upgradeOption.upgradeButton.onClick.AddListener(() => HealPlayerChoice());
+                            upgradeOption.upgradeDescriptionDisplay.text = "Heal 20 Health";
+                            upgradeOption.upgradeNameDisplay.text = "Heal";
+                            healChoice = true;
+                        }
 
-                        // Set the name and description of the weapon
-                        upgradeOption.upgradeDescriptionDisplay.text = chosenWeaponUpgrade.weaponData.Description;
-                        upgradeOption.upgradeNameDisplay.text = chosenWeaponUpgrade.weaponData.Name;
+                        else
+                        {
+                            upgradeOption.upgradeButton.onClick.AddListener(() => player.SpawnWeapon(chosenWeaponUpgrade.initialWeapon)); // Apply button functionality
+
+                            // Set the name and description of the weapon
+                            upgradeOption.upgradeDescriptionDisplay.text = chosenWeaponUpgrade.weaponData.Description;
+                            upgradeOption.upgradeNameDisplay.text = chosenWeaponUpgrade.weaponData.Name;
+                        }
+
                     }
 
-                    upgradeOption.upgradeIcon.sprite = chosenWeaponUpgrade.weaponData.Icon;
+                    if (healChoice)
+                    {
+                        upgradeOption.upgradeIcon.sprite = healSprite;
+                        healChoice = false;
+                    }
+                    else
+                    {
+                        upgradeOption.upgradeIcon.sprite = chosenWeaponUpgrade.weaponData.Icon;
+                    }
                 }
             }
 
@@ -261,19 +297,37 @@ public class InventoryManager : MonoBehaviour
                         }
                         else // If the upgrade option isn't found in the inventory, then it is a new passive item
                         {
-                            newPassiveItem = true;
+                             newPassiveItem = true;
                         }
                     }
 
                     if (newPassiveItem) // Spawn a new passive item
                     {
-                        upgradeOption.upgradeButton.onClick.AddListener(() => player.SpawnPassiveItem(chosenPassiveItemUpgrade.initialPassiveItem)); // Apply button functionality
+                        if (passiveItemSlots[5] != null)
+                        {
+                            upgradeOption.upgradeButton.onClick.AddListener(() => HealPlayerChoice());
+                            upgradeOption.upgradeDescriptionDisplay.text = "Heal 20 Health";
+                            upgradeOption.upgradeNameDisplay.text = "Heal";
+                            healChoice = true;
+                        }
+                        else
+                        {
+                            upgradeOption.upgradeButton.onClick.AddListener(() => player.SpawnPassiveItem(chosenPassiveItemUpgrade.initialPassiveItem)); // Apply button functionality
 
-                        upgradeOption.upgradeDescriptionDisplay.text = chosenPassiveItemUpgrade.passiveItemData.Description;
-                        upgradeOption.upgradeNameDisplay.text = chosenPassiveItemUpgrade.passiveItemData.Name;
+                            upgradeOption.upgradeDescriptionDisplay.text = chosenPassiveItemUpgrade.passiveItemData.Description;
+                            upgradeOption.upgradeNameDisplay.text = chosenPassiveItemUpgrade.passiveItemData.Name;
+                        }
                     }
 
-                    upgradeOption.upgradeIcon.sprite = chosenPassiveItemUpgrade.passiveItemData.Icon;
+                    if (healChoice)
+                    {
+                        upgradeOption.upgradeIcon.sprite = healSprite;
+                        healChoice = false;
+                    }
+                    else
+                    {
+                        upgradeOption.upgradeIcon.sprite = chosenPassiveItemUpgrade.passiveItemData.Icon;
+                    }
                 }
             }
         }

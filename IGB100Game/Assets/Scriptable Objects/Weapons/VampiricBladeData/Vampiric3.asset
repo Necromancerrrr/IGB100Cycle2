@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Vampiric3
   m_EditorClassIdentifier: 
   prefab: {fileID: 6811492750702185406, guid: 6dcfe33f3d526b845b63d035fa7151f7, type: 3}
-  damage: 40
+  damage: 30
   speed: 5
-  cooldownDuration: 20
+  cooldownDuration: 15
   pierce: 1
   areaSize: 5
   projectileCount: 10
@@ -23,5 +23,5 @@ MonoBehaviour:
   level: 3
   nextLevelPrefab: {fileID: 9057091771204904326, guid: 80f28d472c989214984a4e0aaf6ee5c5, type: 3}
   name: Goreleech +2
-  description: +20 damage
+  description: +15 damage
   icon: {fileID: 7588280050347366653, guid: 8d0a595b08425d64ab7f22f48c4e1d6b, type: 3}

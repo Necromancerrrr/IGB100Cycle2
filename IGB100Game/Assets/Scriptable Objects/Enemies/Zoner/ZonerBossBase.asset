@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104091b96b0cb8047803f0d394653f6c, type: 3}
   m_Name: ZonerBossBase
   m_EditorClassIdentifier: 
-  maxHealth: 2000
+  maxHealth: 1000
   moveSpeed: 3
   damage: 40
   knockbackMod: 0.5

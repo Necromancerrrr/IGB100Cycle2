@@ -1096,7 +1096,7 @@ PrefabInstance:
       objectReference: {fileID: 456840472}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYDown
+      value: TweenYUp
       objectReference: {fileID: 0}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1104,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYUp
+      value: TweenYDown
       objectReference: {fileID: 0}
     - target: {fileID: 1810818445326265378, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Sprite
@@ -1543,11 +1543,11 @@ PrefabInstance:
       objectReference: {fileID: 504719381}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYDown
+      value: TweenYUp
       objectReference: {fileID: 0}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYUp
+      value: TweenYDown
       objectReference: {fileID: 0}
     - target: {fileID: 1810818445326265378, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Sprite
@@ -3702,11 +3702,11 @@ PrefabInstance:
       objectReference: {fileID: 2354215131889041980}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYDown
+      value: TweenYUp
       objectReference: {fileID: 0}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYUp
+      value: TweenYDown
       objectReference: {fileID: 0}
     - target: {fileID: 1810818445326265378, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Sprite
