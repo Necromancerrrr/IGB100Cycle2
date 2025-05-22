@@ -229,8 +229,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6974384590535723267}
   - component: {fileID: 3983730634291276535}
+  - component: {fileID: 6735436859532434641}
   - component: {fileID: 8394955625019812218}
-  - component: {fileID: 28801787229457722}
   - component: {fileID: 5678959672110681339}
   - component: {fileID: 3629855590357941984}
   - component: {fileID: 8743969402392185258}
@@ -279,6 +279,26 @@ MonoBehaviour:
   lastVerticalVector: 0
   moveDir: {x: 0, y: 0}
   lastMovedVector: {x: 0, y: 0}
+  dirDelayTimer: 0
+  dirDelay: 0.2
+  delayDir: {x: 1, y: 0}
+--- !u!114 &6735436859532434641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035113680227125748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b6cbfd06b92b84d98cab2174b6781b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSlots: []
+  passiveSlots: []
+  availableWeapons: []
+  availablePassives: []
+  upgradeUIOptions: []
 --- !u!114 &8394955625019812218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +312,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
-  defaultCharacterData: {fileID: 11400000, guid: 28dda91aac09a104db9dfa60996377ee, type: 2}
+  defaultCharacterData: {fileID: 0}
+  baseStats:
+    maxHealth: 0
+    recovery: 0
+    moveSpeed: 0
+    might: 0
+    speed: 0
+    magnet: 0
+  actualStats:
+    maxHealth: 0
+    recovery: 0
+    moveSpeed: 0
+    might: 0
+    speed: 0
+    magnet: 0
   experience: 0
   level: 1
   experienceCap: 0
@@ -313,162 +347,9 @@ MonoBehaviour:
     experienceCapIncrease: 20
   weaponIndex: 0
   passiveItemIndex: 0
-  pactItemIndex: 0
   _healthBarSlider: {fileID: 0}
   damageEffect: {fileID: 3938433948344025923, guid: f260839b36439924facabb4494537ad8, type: 3}
   movespeedMod: 1
---- !u!114 &28801787229457722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9035113680227125748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0051075bf4dd6034d99c5de491841cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  weaponLevels: 000000000000000000000000000000000000000000000000
-  weaponUISlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  passiveItemSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  passiveItemLevels: 000000000000000000000000000000000000000000000000
-  passiveItemUISlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  pactItemSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  pactItemUISlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  weaponUpgradeOptions:
-  - weaponUpgradeIndex: 0
-    initialWeapon: {fileID: 2341149984418418119, guid: 0f7eea2fd20e37444913ff871901d72a, type: 3}
-    weaponData: {fileID: 11400000, guid: 1db1f24bb22ec09448fa90d47ce9dedc, type: 2}
-  - weaponUpgradeIndex: 1
-    initialWeapon: {fileID: 458585603324305255, guid: d251a943b4b36d144b8f2fd4e83eb72e, type: 3}
-    weaponData: {fileID: 11400000, guid: 1ae1b227bee7d3843b1bc8179aee76ba, type: 2}
-  - weaponUpgradeIndex: 2
-    initialWeapon: {fileID: 6883820235095941995, guid: 40aeb378dfbffe24e8b1b8bc92c3fdea, type: 3}
-    weaponData: {fileID: 11400000, guid: 919539a7098bb474283c4b70fe7c4d68, type: 2}
-  - weaponUpgradeIndex: 3
-    initialWeapon: {fileID: 5174747787104083617, guid: 8b5ee0dd2caf4c948ab7e472efa18bb0, type: 3}
-    weaponData: {fileID: 11400000, guid: f66bab48188b661479766418c99b1f4b, type: 2}
-  - weaponUpgradeIndex: 4
-    initialWeapon: {fileID: 8391479871286726765, guid: 4bc13ed61692e274190222bb45bfd0d9, type: 3}
-    weaponData: {fileID: 11400000, guid: 9e4082d2de270f249abdc7d600e80302, type: 2}
-  - weaponUpgradeIndex: 5
-    initialWeapon: {fileID: 8186614856194216389, guid: 2169ce304dbb29146b5fdad57ceb9cb8, type: 3}
-    weaponData: {fileID: 11400000, guid: a0c4212be3526c14e86a1a7f1841a337, type: 2}
-  - weaponUpgradeIndex: 6
-    initialWeapon: {fileID: 5297606356293451816, guid: c721d4c08144a5e418fca8331b517207, type: 3}
-    weaponData: {fileID: 11400000, guid: 9fa93a57c4e4bb545a5e3071dcd0812a, type: 2}
-  - weaponUpgradeIndex: 7
-    initialWeapon: {fileID: 8391479871286726765, guid: 5780c7f8d28302043966cc6500eca076, type: 3}
-    weaponData: {fileID: 11400000, guid: c13fbfc37b14a0144b725d476aa7cc41, type: 2}
-  - weaponUpgradeIndex: 8
-    initialWeapon: {fileID: 53529854424434218, guid: cfd57990b2667e347a71b9325e224bf3, type: 3}
-    weaponData: {fileID: 11400000, guid: a4f903661d3093d4d9b648111f3e2a7c, type: 2}
-  - weaponUpgradeIndex: 9
-    initialWeapon: {fileID: 8171205830150268015, guid: 74f58303531072c47a13712a41d0a2d9, type: 3}
-    weaponData: {fileID: 11400000, guid: d013271e2678ff8448be49047571df24, type: 2}
-  - weaponUpgradeIndex: 10
-    initialWeapon: {fileID: 8288019790181334820, guid: 7c1340832a28ab84b94e10b89371df6c, type: 3}
-    weaponData: {fileID: 11400000, guid: bf3e979b1f3b1ce43a3347fad23f5831, type: 2}
-  - weaponUpgradeIndex: 11
-    initialWeapon: {fileID: 9057091771204904326, guid: 906d96ad247a50a49b8f28ebcb1318ba, type: 3}
-    weaponData: {fileID: 11400000, guid: 569ba7a6c357ca542a9ff470d6417085, type: 2}
-  - weaponUpgradeIndex: 12
-    initialWeapon: {fileID: 6925212643635929430, guid: 98040cfcbeec5644e940ab164c12f5d3, type: 3}
-    weaponData: {fileID: 11400000, guid: 066f20b2236690149a9d01f335ce773a, type: 2}
-  passiveItemUpgradeOptions:
-  - passiveItemUpgradeIndex: 0
-    initialPassiveItem: {fileID: 5069994856143371818, guid: adc76bb1388a5ca48adf11be98e09c59, type: 3}
-    passiveItemData: {fileID: 11400000, guid: 2c87f49b756255447afc3caea6050025, type: 2}
-  - passiveItemUpgradeIndex: 1
-    initialPassiveItem: {fileID: 2215225900889134074, guid: d542297b54da851459cc06a759b906fe, type: 3}
-    passiveItemData: {fileID: 11400000, guid: c7204f5a801dc9142b16bf60d6645a49, type: 2}
-  - passiveItemUpgradeIndex: 2
-    initialPassiveItem: {fileID: 8960848123848324934, guid: 081cfd3307f6ba84dbdb4dc8ec4e77b5, type: 3}
-    passiveItemData: {fileID: 11400000, guid: fcd22428164d84f4097afd2db9728e4b, type: 2}
-  - passiveItemUpgradeIndex: 3
-    initialPassiveItem: {fileID: 8250571217130720332, guid: f3d555ed61acabb4391c88b02dfa6764, type: 3}
-    passiveItemData: {fileID: 11400000, guid: f3b893919a9bfd84281ed4f0cffc23f9, type: 2}
-  - passiveItemUpgradeIndex: 4
-    initialPassiveItem: {fileID: 4125246489530779494, guid: 30833b7011af5c34fbc39643d71363bf, type: 3}
-    passiveItemData: {fileID: 11400000, guid: 588903ee10066ae4d937f08b73c3c69c, type: 2}
-  - passiveItemUpgradeIndex: 5
-    initialPassiveItem: {fileID: 4212134037999648944, guid: b75e60aab8f12f64b97a49bf9b5d90fd, type: 3}
-    passiveItemData: {fileID: 11400000, guid: cd3990110a8101b4eb6a728234bedae4, type: 2}
-  - passiveItemUpgradeIndex: 5
-    initialPassiveItem: {fileID: 7638046672803214659, guid: 77e1b83d7b60220418219e9b86c749e5, type: 3}
-    passiveItemData: {fileID: 11400000, guid: 302b994658e820748a17044ec3985ef2, type: 2}
-  - passiveItemUpgradeIndex: 5
-    initialPassiveItem: {fileID: 1014273309742442131, guid: ddcb27fc058ec2e4a8d657655ed32106, type: 3}
-    passiveItemData: {fileID: 11400000, guid: 58be8887a8cfb0e4f9e3aa5656c9b5ce, type: 2}
-  pactItemOptions:
-  - pactItemUpgradeIndex: 0
-    initialPactItem: {fileID: 296385800125878727, guid: bc1c4f8263ff5f3499336cceaf964fb1, type: 3}
-    pactItemData: {fileID: 11400000, guid: 7914d1fb482273d42b7d0013edf13310, type: 2}
-  - pactItemUpgradeIndex: 1
-    initialPactItem: {fileID: 9089747927838628013, guid: 82ab9d112b765134388148c20fc7664a, type: 3}
-    pactItemData: {fileID: 11400000, guid: 0b7f84d740162e24ab411b01805125f8, type: 2}
-  - pactItemUpgradeIndex: 2
-    initialPactItem: {fileID: 4911011443941689990, guid: 46977ba2f2399bf40b17d69c32f850b3, type: 3}
-    pactItemData: {fileID: 11400000, guid: 562fed93540d90d4fa269703910e871f, type: 2}
-  - pactItemUpgradeIndex: 3
-    initialPactItem: {fileID: 9053325686187930708, guid: c730175df86c2fb418d8dc2ef9553491, type: 3}
-    pactItemData: {fileID: 11400000, guid: fb5d57503fe0d1a41bcd42db9bf3597b, type: 2}
-  upgradeUIOptions:
-  - upgradeNameDisplay: {fileID: 0}
-    upgradeDescriptionDisplay: {fileID: 0}
-    upgradeIcon: {fileID: 0}
-    upgradeButton: {fileID: 0}
-  - upgradeNameDisplay: {fileID: 0}
-    upgradeDescriptionDisplay: {fileID: 0}
-    upgradeIcon: {fileID: 0}
-    upgradeButton: {fileID: 0}
-  - upgradeNameDisplay: {fileID: 0}
-    upgradeDescriptionDisplay: {fileID: 0}
-    upgradeIcon: {fileID: 0}
-    upgradeButton: {fileID: 0}
-  - upgradeNameDisplay: {fileID: 0}
-    upgradeDescriptionDisplay: {fileID: 0}
-    upgradeIcon: {fileID: 0}
-    upgradeButton: {fileID: 0}
-  pactChoiceUIOptions:
-  - upgradeNameDisplay: {fileID: 0}
-    upgradeDescriptionDisplay: {fileID: 0}
-    upgradeIcon: {fileID: 0}
-    upgradeButton: {fileID: 0}
-  - upgradeNameDisplay: {fileID: 0}
-    upgradeDescriptionDisplay: {fileID: 0}
-    upgradeIcon: {fileID: 0}
-    upgradeButton: {fileID: 0}
 --- !u!114 &5678959672110681339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,10 +376,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHurt: {fileID: 8300000, guid: f998fb8132577db4e906dcdd7d9ed4be, type: 3}
   PlayerDeath: {fileID: 8300000, guid: cc5c9515fae73f048bb6a13c125f3c8a, type: 3}
-  EXPGain: {fileID: 8300000, guid: ba5f4cc39101f5148ad9374254d1cfaf, type: 3}
+  EXPGain: {fileID: 8300000, guid: 45fe06f05278fdb43903db106e72356d, type: 3}
   HealthGain: {fileID: 8300000, guid: c28cf09541eb8d14bb4be288667e61b1, type: 3}
   PlayerAudioSource: {fileID: 0}
-  pitchTimer: 0.5
+  MaxPitchMult: 12
+  pitchTimer: 0.3
 --- !u!212 &8743969402392185258
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -540,8 +422,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -668847993
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 1005093928898239069, guid: 28269278be278324c9d1ed3081bbc970, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -564,10 +446,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ba5f4cc39101f5148ad9374254d1cfaf, type: 3}
-  m_Resource: {fileID: 8300000, guid: ba5f4cc39101f5148ad9374254d1cfaf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 45fe06f05278fdb43903db106e72356d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 45fe06f05278fdb43903db106e72356d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
