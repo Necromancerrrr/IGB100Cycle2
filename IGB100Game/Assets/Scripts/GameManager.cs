@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     // Flag to check if the game is over
     public bool isGameOver = false;
 
+    // Flag to check if the display screen is up
+    public bool isDisplayed = false;
+    public float deathScreenDelay = 4f;
+
     // Flag to check if the player is levelling up
     public bool isChoosingLvlUp = false;
 
@@ -82,6 +86,7 @@ public class GameManager : MonoBehaviour
     public List<Image> chosenPassiveItemsUI = new List<Image>(6);
     public List<Image> chosenPactsUI = new List<Image>(2);
 
+
     void Awake()
     {
         // Singleton check
@@ -120,7 +125,15 @@ public class GameManager : MonoBehaviour
                     isGameOver = true;
                     Time.timeScale = 0f; // Stop the game
                     Debug.Log("GAME IS OVER");
-                    DisplayResults();
+                }
+                if (!isDisplayed)
+                {
+                    deathScreenDelay -= Time.unscaledDeltaTime;
+                    if (deathScreenDelay < 0f)
+                    {
+                        isDisplayed = true;
+                        DisplayResults();
+                    }  
                 }
                 break;
 

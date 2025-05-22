@@ -515,18 +515,7 @@ public class PlayerStats : MonoBehaviour
         if (!isInvincible)
         {
             CurrentHealth -= dmg;
-            
-
-            impulse.GenerateImpulse();
-            GameManager.GenerateFloatingText(dmg, transform, damagedTextColour, 50);
-            //Freeze(0.5f);
-
             OnPlayerDamaged?.Invoke();
-
-            if (damageEffect)
-            {
-                Instantiate(damageEffect, transform.position, Quaternion.identity);
-            }
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
@@ -540,6 +529,12 @@ public class PlayerStats : MonoBehaviour
             {
                 playerAnimator.PlayPlayerHurtAnim();
                 playerAudio.PlayPlayerHurtSound();
+                if (damageEffect)
+                {
+                    Instantiate(damageEffect, transform.position, Quaternion.identity);
+                    impulse.GenerateImpulse();
+                    GameManager.GenerateFloatingText(dmg, transform, damagedTextColour, 50);
+                }
             }
         }
     }

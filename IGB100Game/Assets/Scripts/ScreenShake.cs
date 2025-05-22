@@ -44,10 +44,6 @@ public class ScreenShake : MonoBehaviour
                 shakeDurationList.RemoveAt(i);
             }
         }
-        foreach (int i in removeList)
-        {
-            Debug.Log(i);
-        }
         removeList.Clear();
         float shakeAmount = 0;
         foreach(float i in shakeIntensityList)
