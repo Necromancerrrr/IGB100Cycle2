@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UIElements;
 
 public class CharacterCardTweening : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class CharacterCardTweening : MonoBehaviour
 
     public void TweenYDown()
     {
-        transform.DOMoveY(initialPosition - 2, duration, false).SetEase(Ease.OutQuint);
+        transform.DOMoveY(initialPosition - 2, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
+        //transform.DOLocalRotate(new Vector3(0, 0, 360), duration, RotateMode.FastBeyond360);
+        //transform.DOScale(0f, 0.5f);
     }
 
     public void TweenYUp()
     {
-        transform.DOMoveY(initialPosition, duration, false).SetEase(Ease.OutQuint);
+        transform.DOMoveY(initialPosition, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
     }
 }
