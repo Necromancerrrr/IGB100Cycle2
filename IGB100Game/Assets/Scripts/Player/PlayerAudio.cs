@@ -38,11 +38,14 @@ public class PlayerAudio : MonoBehaviour
 
     public void PlayPlayerHurtSound()
     {
-        AudioSource.PlayClipAtPoint(PlayerHurt, transform.position);
+        AudioManager.instance.PlaySFX(PlayerHurt, transform, 1f);
     }
     public void PlayPlayerDeathSound()
     {
-        AudioSource.PlayClipAtPoint(PlayerDeath, transform.position);
+        GameObject music = GameObject.FindGameObjectWithTag("MusicPlayer");
+        music.GetComponent<AudioSource>().clip = PlayerDeath;
+        music.GetComponent<AudioSource>().loop = false;
+        music.GetComponent<AudioSource>().Play();
     }
     public void PlayEXPGainSound()
     {
@@ -65,6 +68,6 @@ public class PlayerAudio : MonoBehaviour
     }
     public void PlayHealthGainSound()
     {
-        AudioSource.PlayClipAtPoint(HealthGain, transform.position);
+        AudioManager.instance.PlaySFX(HealthGain, transform, 1f);
     }
 }

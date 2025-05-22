@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputManagement();
+        if (player.CurrentHealth > 0) { InputManagement(); }
     }
 
     void FixedUpdate()
