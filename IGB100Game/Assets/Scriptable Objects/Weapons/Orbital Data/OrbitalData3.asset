@@ -17,7 +17,7 @@ MonoBehaviour:
   speed: 1
   cooldownDuration: 10
   pierce: 0
-  areaSize: 4
+  areaSize: 6
   projectileCount: 0
   duration: 3
   level: 3

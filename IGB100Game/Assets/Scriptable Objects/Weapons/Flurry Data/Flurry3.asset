@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Flurry3
   m_EditorClassIdentifier: 
   prefab: {fileID: 2839875110414678627, guid: d3fbb2f5a60885e45a6e3c74667aa312, type: 3}
-  damage: 10
+  damage: 5
   speed: 10
   cooldownDuration: 5
   pierce: 0

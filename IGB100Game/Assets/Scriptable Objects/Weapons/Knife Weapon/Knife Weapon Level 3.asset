@@ -16,12 +16,12 @@ MonoBehaviour:
   damage: 10
   speed: 12
   cooldownDuration: 1
-  pierce: 5
+  pierce: 2
   areaSize: 0
   projectileCount: 2
   duration: 3
   level: 3
   nextLevelPrefab: {fileID: 4142939955346733007, guid: add6a5f56ef02d3468ad5fdcf5803279, type: 3}
   name: Dagger Toss +2
-  description: +5 damage
+  description: Damage +5
   icon: {fileID: 21300000, guid: 4f64a549e1e94c748912055857c8fe1f, type: 3}

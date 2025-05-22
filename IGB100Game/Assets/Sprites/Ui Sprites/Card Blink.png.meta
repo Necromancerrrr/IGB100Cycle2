@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 07fb49048dc5e494fbda9a024e89581b
-=======
-guid: e8e9d1ae97d23b1479c8b5444a4988b4
->>>>>>> c625b56f2335f1c7c5b51b4961effe09ac0c7e60
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -190,22 +186,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> c625b56f2335f1c7c5b51b4961effe09ac0c7e60
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -904,42 +884,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< HEAD
     nameFileIdTable: {}
-=======
-    nameFileIdTable:
-      Card Blink_0: -856490616419344313
-      Card Blink_1: 291910704911259076
-      Card Blink_10: 7494617442993728500
-      Card Blink_11: -6378079885450679805
-      Card Blink_12: -6618300075430814943
-      Card Blink_13: 4059401315841042484
-      Card Blink_14: -3189835847799445032
-      Card Blink_15: 4949081731241786968
-      Card Blink_16: 1757092213653732305
-      Card Blink_17: 5129775943788310275
-      Card Blink_18: 590974053319201766
-      Card Blink_19: 3130669541912320547
-      Card Blink_2: 3508292203169466485
-      Card Blink_20: -7419193780866999080
-      Card Blink_21: -7266939329404108799
-      Card Blink_22: 8152050099840990963
-      Card Blink_23: -3395773234424981566
-      Card Blink_24: -6522490590536219426
-      Card Blink_25: -3310768472596555923
-      Card Blink_26: 8564093488521005990
-      Card Blink_27: -3086878712431263805
-      Card Blink_28: -4908611964383252649
-      Card Blink_29: -190605364330897856
-      Card Blink_3: 7985673742498438760
-      Card Blink_30: 6755003366885579650
-      Card Blink_4: 7157097433065559009
-      Card Blink_5: -5189041692971381903
-      Card Blink_6: 7572068001443292509
-      Card Blink_7: 655851741307205732
-      Card Blink_8: 6117999445644023241
-      Card Blink_9: 1121798167917628605
->>>>>>> c625b56f2335f1c7c5b51b4961effe09ac0c7e60
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
