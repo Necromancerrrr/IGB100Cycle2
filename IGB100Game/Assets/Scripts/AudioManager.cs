@@ -33,6 +33,11 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+        if (enemyHurtQueue > 10)
+        {
+            enemyHurtQueue = 10;
+        }
+
         timer += Time.deltaTime;
         if (enemyHurtQueue != 0 && timer >= 0.05)
         {
