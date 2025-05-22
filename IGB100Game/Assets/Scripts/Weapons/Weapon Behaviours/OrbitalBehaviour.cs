@@ -11,11 +11,10 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
     private CircleCollider2D colli;
     private Animator anim;
     private SpriteRenderer sprite;
-    [SerializeField] private ParticleSystem par;
 
     // Orbital logic
-    private float Timer = 10;
-    private bool Active = false;
+    private int phase = 0;
+    private float Timer = 4;
     private float TickRate = 0.2f;
     private float ListTimer;
     private List<GameObject> EnemyList;
@@ -34,7 +33,6 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
         weaponDamage = GetCurrentDamage();
         weaponSize = GetCurrentAreaSize();
         weaponDuration = GetCurrentDuration();
-        SetPosition();
         SetScale();
     }
     protected void Update()
@@ -45,18 +43,38 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
     private void OrbitalPhaseUpdate() // After 10 seconds, turns on the collider. After a duration later, destroy the object
     {
         Timer -= Time.deltaTime / currentSpeed;
-        if (Timer <= 0 && Active == false)
+        if (phase == 0) // Tracks player while winding up
+        { 
+            transform.position = player.transform.position;
+            if (transform.localScale != new Vector3(weaponSize, weaponSize, 1))
+            {
+                float t = timeTakenUp / 0.5f;
+                transform.localScale = new Vector3(Mathf.Lerp(0, weaponSize, t), Mathf.Lerp(0, weaponSize, t), 1);
+                timeTakenUp += Time.deltaTime;
+            }
+        } 
+        if (Timer <= 0 && phase == 0)
         {
-            anim.SetBool("Active", true);
-            Timer = weaponDuration;
-            colli.enabled = true;
-            Active = true;
-            var main = par.main;
-            GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 0.5f, weaponDuration + 0.2f);
+            phase = 1;
+            Timer = 1;
         }
-        else if (Timer <= 0 && Active == true)
+        else if (Timer <= 0 && phase == 1)
         {
-            Destroy(gameObject);
+            phase = 2;
+            Timer = weaponDuration;
+            anim.SetBool("Active", true);
+            colli.enabled = true;
+            GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 0.3f, weaponDuration + 0.2f);
+        }
+        else if (Timer <= 0.1 && phase == 2)
+        {
+            float t = timeTakenDown / 0.2f;
+            transform.localScale = new Vector3(Mathf.Lerp(weaponSize, 0, t), Mathf.Lerp(weaponSize, 0, t), 1);
+            timeTakenDown += Time.deltaTime;
+        }
+        else if (Timer <= 0 && phase == 2)
+        {
+            Destroy(gameObject, 0.2f);
         }
     }
     private void EnemyListClear() // Clears the list of enemies that have already been hit by the orbital
@@ -68,17 +86,9 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
             ListTimer = TickRate;
         }
     }
-    private void SetPosition() // Randomly places Orbital in an area somewhat close to the player
-    {
-        Vector2 angle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; // Generate random angle
-        transform.position = (Vector2)player.transform.position + angle * Random.Range(5f + weaponSize, 20f + weaponSize);
-    }
     private void SetScale() // Matches the scale of the collider and VFX to match area size
     {
-        colli.radius = weaponSize;
-        sprite.size = new Vector2(2.8f * weaponSize, 2.8f * weaponSize);
-        var main = par.main;
-        main.startSize = 2.8f * weaponSize / 0.3f;
+        transform.localScale = new Vector3(0, 0, 1);
     }
     protected void OnTriggerStay2D(Collider2D col)
     {

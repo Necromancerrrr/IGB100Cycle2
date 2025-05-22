@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: OrbitalData3
   m_EditorClassIdentifier: 
   prefab: {fileID: 4030397510927906665, guid: 0566e686067eb3b45a3eea2d56824675, type: 3}
-  damage: 15
+  damage: 5
   speed: 1
-  cooldownDuration: 15
+  cooldownDuration: 10
   pierce: 0
-  areaSize: 8
+  areaSize: 6
   projectileCount: 0
-  duration: 5
+  duration: 3
   level: 3
   nextLevelPrefab: {fileID: 5297606356293451816, guid: 8bc02dd225813a444a75bc541c4fa212, type: 3}
   name: Gor'azuth's Gaze +2
