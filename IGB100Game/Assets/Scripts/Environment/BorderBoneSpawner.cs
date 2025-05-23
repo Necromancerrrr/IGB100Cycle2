@@ -94,22 +94,22 @@ public class BorderBoneSpawner : MonoBehaviour
 
         switch (borderType)
         {
-            case BorderType.Top:
+            case BorderType.Bottom:
                 linePoint.y = b.max.y;
                 linePoint.x = Mathf.Clamp(player.position.x, b.min.x, b.max.x);
                 tangent = Vector2.right; normal = Vector2.down;
                 break;
-            case BorderType.Bottom:
+            case BorderType.Top:
                 linePoint.y = b.min.y;
                 linePoint.x = Mathf.Clamp(player.position.x, b.min.x, b.max.x);
                 tangent = Vector2.right; normal = Vector2.up;
                 break;
-            case BorderType.Left:
+            case BorderType.Right:
                 linePoint.x = b.min.x;
                 linePoint.y = Mathf.Clamp(player.position.y, b.min.y, b.max.y);
                 tangent = Vector2.up; normal = Vector2.right;
                 break;
-            case BorderType.Right:
+            case BorderType.Left:
                 linePoint.x = b.max.x;
                 linePoint.y = Mathf.Clamp(player.position.y, b.min.y, b.max.y);
                 tangent = Vector2.up; normal = Vector2.left;
