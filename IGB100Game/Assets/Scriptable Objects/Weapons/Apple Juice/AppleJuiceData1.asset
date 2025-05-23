@@ -25,3 +25,6 @@ MonoBehaviour:
   name: Apple Juice
   description: Creates a healing zone in a random area
   icon: {fileID: 8691383858929479862, guid: 2946e841ba1a314499e07589c7a8cd2d, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 0
+  durationEnabled: 1

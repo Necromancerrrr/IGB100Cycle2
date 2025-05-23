@@ -527,7 +527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bladestorm
+  m_text: Boomerang
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
   m_sharedMaterial: {fileID: 2178458096316189103, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
@@ -644,7 +644,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 221, y: -309}
-  m_SizeDelta: {x: 600, y: 800}
+  m_SizeDelta: {x: 600, y: 395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218769213
 MonoBehaviour:
@@ -1109,14 +1109,18 @@ PrefabInstance:
     - target: {fileID: 1810818445326265378, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4457850898058260020, guid: 65f3d74ebd960594d8bbc89f3de3b705, type: 3}
+      objectReference: {fileID: 21300000, guid: 65f3d74ebd960594d8bbc89f3de3b705, type: 3}
+    - target: {fileID: 3955551655425779105, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4939870400242178296, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6836639457681672101, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Name
-      value: CardHolder BladeStorm
+      value: CardHolder Boomerang
       objectReference: {fileID: 0}
     - target: {fileID: 6836639457681672101, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_IsActive
@@ -1137,7 +1141,7 @@ PrefabInstance:
     - target: {fileID: 7332667477314390282, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: eef787046c9396c4a962e400fc52c4a0, type: 2}
+      objectReference: {fileID: 11400000, guid: c54de1cd9d9369043a528de17435fce7, type: 2}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1305,7 +1309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Knife
+  m_text: Dagger Toss
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
   m_sharedMaterial: {fileID: 2178458096316189103, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
@@ -1552,7 +1556,7 @@ PrefabInstance:
     - target: {fileID: 1810818445326265378, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4457850898058260020, guid: 65f3d74ebd960594d8bbc89f3de3b705, type: 3}
+      objectReference: {fileID: 21300000, guid: 65f3d74ebd960594d8bbc89f3de3b705, type: 3}
     - target: {fileID: 6836639457681672101, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Name
       value: CardHolder Orb
@@ -1920,7 +1924,7 @@ GameObject:
   - component: {fileID: 1000865337}
   - component: {fileID: 1000865336}
   m_Layer: 5
-  m_Name: BladeStorm Image
+  m_Name: Boomerang Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1943,7 +1947,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 141}
-  m_SizeDelta: {x: 150, y: 90}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000865336
 MonoBehaviour:
@@ -1965,7 +1969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -253438507, guid: 135b164549f843f418ee0ccb40da510c, type: 3}
+  m_Sprite: {fileID: -403755840339538957, guid: 87b70cb2bbb68a647a3d39caabc140ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2394,7 +2398,7 @@ MonoBehaviour:
         m_MethodName: SelectCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: eef787046c9396c4a962e400fc52c4a0, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: c54de1cd9d9369043a528de17435fce7, type: 2}
           m_ObjectArgumentAssemblyTypeName: CharacterScriptableObject, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2814,7 +2818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Orb
+  m_text: Gravity Orb
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
   m_sharedMaterial: {fileID: 2178458096316189103, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
@@ -3015,7 +3019,7 @@ GameObject:
   - component: {fileID: 1889183423}
   - component: {fileID: 1889183422}
   m_Layer: 5
-  m_Name: Description BladeStorm
+  m_Name: Description Boomerang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3060,7 +3064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Manifests blades that spin around the player
+  m_text: Fire a projectile that does more damage on the way back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
   m_sharedMaterial: {fileID: 2178458096316189103, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
@@ -3711,7 +3715,7 @@ PrefabInstance:
     - target: {fileID: 1810818445326265378, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4457850898058260020, guid: 65f3d74ebd960594d8bbc89f3de3b705, type: 3}
+      objectReference: {fileID: 21300000, guid: 65f3d74ebd960594d8bbc89f3de3b705, type: 3}
     - target: {fileID: 6836639457681672101, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Name
       value: CardHolder Knife
@@ -3938,6 +3942,10 @@ PrefabInstance:
     - target: {fileID: 5161192432031282429, guid: fede11658241d0746a9caefbb5fa1f8b, type: 3}
       propertyPath: m_Name
       value: Cursor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161192432031282429, guid: fede11658241d0746a9caefbb5fa1f8b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8468427638388013824, guid: fede11658241d0746a9caefbb5fa1f8b, type: 3}
       propertyPath: mainCam

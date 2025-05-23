@@ -22,6 +22,9 @@ MonoBehaviour:
   duration: 8
   level: 2
   nextLevelPrefab: {fileID: 5006196794995548080, guid: 77381b1cc8f34a8439d4dd1cdf8eff47, type: 3}
-  name: Conjured Cannons +1
+  name: Conjured Cannons
   description: +4 duration
   icon: {fileID: -1438640473944929051, guid: 1abcd686ee41e054499b5a82df2e2d4f, type: 3}
+  areaSizeEnabled: 0
+  projectileCountEnabled: 1
+  durationEnabled: 1

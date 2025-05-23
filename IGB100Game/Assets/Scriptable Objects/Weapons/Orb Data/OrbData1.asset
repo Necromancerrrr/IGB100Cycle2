@@ -25,3 +25,6 @@ MonoBehaviour:
   name: Gravity Orb
   description: Pulls enemies in while drifting forward
   icon: {fileID: -8985924484199272655, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 1
+  durationEnabled: 1

@@ -22,6 +22,9 @@ MonoBehaviour:
   duration: 10
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Gravity Orb +MAX
+  name: Gravity Orb MAX
   description: +10 damage
   icon: {fileID: -8985924484199272655, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 1
+  durationEnabled: 1

@@ -25,3 +25,6 @@ MonoBehaviour:
   name: Boomerang
   description: Fire a projectile that does more damage on the way back
   icon: {fileID: -403755840339538957, guid: 87b70cb2bbb68a647a3d39caabc140ae, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 1
+  durationEnabled: 0

@@ -384,7 +384,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zoner finisher(1)_0: 5609403919121364050
+      zoner finisher(1)_1: -5405309629714583092
+      zoner finisher(1)_10: -2052131252870244815
+      zoner finisher(1)_2: 5234539477159076477
+      zoner finisher(1)_3: 8522105484297449558
+      zoner finisher(1)_4: -2747381125493525191
+      zoner finisher(1)_5: -272421544683350538
+      zoner finisher(1)_6: -7209909042335027476
+      zoner finisher(1)_7: 6255232685979983037
+      zoner finisher(1)_8: -5518389239541084622
+      zoner finisher(1)_9: -4693584864952830315
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: SeekerData5
   m_EditorClassIdentifier: 
   prefab: {fileID: 2767978684359668698, guid: bd22fe54d41cc7042a29de032fd156b9, type: 3}
-  damage: 10
+  damage: 20
   speed: 20
   cooldownDuration: 8
   pierce: 9999
   areaSize: 0
-  projectileCount: 12
+  projectileCount: 20
   duration: 10
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Spirit Seekers +MAX
-  description: +5 projectile count
+  name: Spirit Seekers MAX
+  description: +10 projectile count
   icon: {fileID: 3810473490841819008, guid: 04b5526d8747d084c9963a296f7927c2, type: 3}
+  areaSizeEnabled: 0
+  projectileCountEnabled: 1
+  durationEnabled: 1

@@ -22,6 +22,9 @@ MonoBehaviour:
   duration: 8
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Gor'azuth's Gaze +MAX
+  name: Gor'azuth's Gaze MAX
   description: +5 duration
   icon: {fileID: 21300000, guid: a4f4197c90c455741a27882ef68ae4a9, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 0
+  durationEnabled: 1

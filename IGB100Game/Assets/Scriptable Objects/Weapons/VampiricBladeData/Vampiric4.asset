@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Vampiric4
   m_EditorClassIdentifier: 
   prefab: {fileID: 6811492750702185406, guid: f44608cc8ee125d428ffe03323f055b9, type: 3}
-  damage: 40
+  damage: 30
   speed: 5
-  cooldownDuration: 20
+  cooldownDuration: 10
   pierce: 1
   areaSize: 5
   projectileCount: 20
@@ -25,3 +25,6 @@ MonoBehaviour:
   name: Goreleech +3
   description: +10 projectile count
   icon: {fileID: 7588280050347366653, guid: 8d0a595b08425d64ab7f22f48c4e1d6b, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 1
+  durationEnabled: 0

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class VampiricBladeBehaviour : MeleeWeaponBehaviour
 {
-    float Timer = 1.2f;
+    float Timer = 1.4f;
     bool clockwise;
     float projectileCount;
     [SerializeField] private GameObject col;
@@ -107,7 +107,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
             if (shakeBool == false) // Sets the screen shake
             {
                 shakeBool = true;
-                GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 10f, 0.4f);
+                GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 3f, 0.4f);
             }
         }
         if (Timer <= 0.5 && healed == false)

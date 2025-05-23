@@ -42,7 +42,7 @@ public class BladestormBehaviour : MeleeWeaponBehaviour
             timer = hitResetInterval;
         }
 
-        transform.RotateAround(transform.parent.position, Vector3.forward, 300 * Time.deltaTime);
+        transform.RotateAround(transform.parent.position, Vector3.forward, 250 * Time.deltaTime);
         
         // EASING STUFFS
         windDownTimer += Time.deltaTime;

@@ -38,6 +38,10 @@ public class InventoryManager : MonoBehaviour
         public TMP_Text upgradeDescriptionDisplay;
         public Image upgradeIcon;
         public Button upgradeButton;
+        public TMP_Text levelDisplay;
+        public Image AreaSizeIcon;
+        public Image ProjectileCountIcon;
+        public Image DurationIcon;
     }
 
     public List<WeaponUpgrade> weaponUpgradeOptions = new List<WeaponUpgrade>();                // List of upgrade options for weapons
@@ -199,7 +203,7 @@ public class InventoryManager : MonoBehaviour
                                 // Set the name and description of the weapon
                                 upgradeOption.upgradeDescriptionDisplay.text = chosenWeaponUpgrade.weaponData.NextLevelPrefab.GetComponent<WeaponController>().weaponData.Description;
                                 upgradeOption.upgradeNameDisplay.text = chosenWeaponUpgrade.weaponData.NextLevelPrefab.GetComponent<WeaponController>().weaponData.Name;
-
+                                upgradeOption.levelDisplay.text = "Lvl. " + chosenWeaponUpgrade.weaponData.NextLevelPrefab.GetComponent<WeaponController>().weaponData.Level;
                             }
                             break;
                         }
@@ -216,9 +220,13 @@ public class InventoryManager : MonoBehaviour
                         // Set the name and description of the weapon
                         upgradeOption.upgradeDescriptionDisplay.text = chosenWeaponUpgrade.weaponData.Description;
                         upgradeOption.upgradeNameDisplay.text = chosenWeaponUpgrade.weaponData.Name;
+                        upgradeOption.levelDisplay.text = "Lvl. " + chosenWeaponUpgrade.weaponData.Level;
                     }
 
                     upgradeOption.upgradeIcon.sprite = chosenWeaponUpgrade.weaponData.Icon;
+                    upgradeOption.AreaSizeIcon.enabled = chosenWeaponUpgrade.weaponData.AreaSizeEnabled;
+                    upgradeOption.ProjectileCountIcon.enabled = chosenWeaponUpgrade.weaponData.ProjectileCountEnabled;
+                    upgradeOption.DurationIcon.enabled = chosenWeaponUpgrade.weaponData.DurationEnabled;
                 }
             }
 

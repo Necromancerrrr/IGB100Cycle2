@@ -25,3 +25,6 @@ MonoBehaviour:
   name: Frank the Frog
   description: Blows bubbles at the closest enemy
   icon: {fileID: 7528584447651618575, guid: 6d028277c1220ae479654841efd96269, type: 3}
+  areaSizeEnabled: 0
+  projectileCountEnabled: 1
+  durationEnabled: 0

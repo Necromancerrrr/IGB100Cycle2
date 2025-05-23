@@ -25,3 +25,6 @@ MonoBehaviour:
   name: Bladestorm
   description: Manifests blades that spin around the player
   icon: {fileID: -4360754683449048810, guid: 8b102acf98bfef24b8140a23b036bb6d, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 0
+  durationEnabled: 1

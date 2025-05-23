@@ -28,7 +28,7 @@ public class MineDamageBehaviour : MonoBehaviour
         { 
             phase = 1;
             col.enabled = true;
-            GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 10f, 0.4f);
+            GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 5f, 0.4f);
         }
         else if (phase == 1 && timer <= 0.2) 
         {

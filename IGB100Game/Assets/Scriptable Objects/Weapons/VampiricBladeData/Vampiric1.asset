@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Vampiric1
   m_EditorClassIdentifier: 
   prefab: {fileID: 6811492750702185406, guid: 29fc79b3dcf41f04f8d64ec724a81b76, type: 3}
-  damage: 20
+  damage: 15
   speed: 5
-  cooldownDuration: 20
+  cooldownDuration: 15
   pierce: 1
   areaSize: 5
   projectileCount: 10
@@ -25,3 +25,6 @@ MonoBehaviour:
   name: Goreleech
   description: Harvest enemies with a deadly blade
   icon: {fileID: 7588280050347366653, guid: 8d0a595b08425d64ab7f22f48c4e1d6b, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 1
+  durationEnabled: 0

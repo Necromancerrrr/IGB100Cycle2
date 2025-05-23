@@ -58,4 +58,15 @@ public class WeaponScriptableObject : ScriptableObject
     Sprite icon;  // Not meant to be modified in game [only in Editor]
     public Sprite Icon { get => icon; private set => icon = value; }
 
+    [SerializeField]
+    bool areaSizeEnabled;  // Exclusively for the level up screen
+    public bool AreaSizeEnabled { get => areaSizeEnabled; private set => areaSizeEnabled = value; }
+
+    [SerializeField]
+    bool projectileCountEnabled;  // Exclusively for the level up screen
+    public bool ProjectileCountEnabled { get => projectileCountEnabled; private set => projectileCountEnabled = value; }
+
+    [SerializeField]
+    bool durationEnabled;  // Exclusively for the level up screen
+    public bool DurationEnabled { get => durationEnabled; private set => durationEnabled = value; }
 }

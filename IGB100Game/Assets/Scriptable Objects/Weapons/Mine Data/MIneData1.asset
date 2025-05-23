@@ -25,3 +25,6 @@ MonoBehaviour:
   name: Monster Mine
   description: Creates a zone of destruction when touched by an enemy
   icon: {fileID: 175630848476357612, guid: 245d3fc324a8d1a4b8c727954c089e8c, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 0
+  durationEnabled: 0

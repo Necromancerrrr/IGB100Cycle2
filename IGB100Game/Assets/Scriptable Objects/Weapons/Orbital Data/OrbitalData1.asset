@@ -25,3 +25,6 @@ MonoBehaviour:
   name: Gor'azuth's Gaze
   description: Deals damage in an area after a delay
   icon: {fileID: 21300000, guid: a4f4197c90c455741a27882ef68ae4a9, type: 3}
+  areaSizeEnabled: 1
+  projectileCountEnabled: 0
+  durationEnabled: 1

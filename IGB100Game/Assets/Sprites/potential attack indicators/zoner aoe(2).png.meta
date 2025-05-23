@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zoner aoe(2)_0: -2712067897180198428
+      zoner aoe(2)_1: 8067374407123416324
+      zoner aoe(2)_2: -7716350124669453367
+      zoner aoe(2)_3: -2105952383322231034
+      zoner aoe(2)_4: -4490729509390006003
+      zoner aoe(2)_5: 7456870473526593021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
