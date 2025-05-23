@@ -149,7 +149,7 @@ public class InventoryManager : MonoBehaviour
         List<WeaponUpgrade> availableWeaponUpgrades = new List<WeaponUpgrade>(weaponUpgradeOptions);
         List<PassiveItemUpgrade> availablePassiveItemUpgrades = new List<PassiveItemUpgrade>(passiveItemUpgradeOptions);
 
-        // Brian Code
+        // START OF BRIAN CODE
 
         int weaponListLength = 0;
         for (int i = 0; i < weaponSlots.Count; i++) // Checks to see if the current weaponSlots are full
@@ -249,7 +249,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        // End of Brian Code
+        // END OF BRIAN CODE
 
         foreach (var upgradeOption in upgradeUIOptions) // Repeat for each card
         {
@@ -370,7 +370,7 @@ public class InventoryManager : MonoBehaviour
 
                                 upgradeOption.upgradeDescriptionDisplay.text = chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab.GetComponent<PassiveItem>().passiveItemData.Description;
                                 upgradeOption.upgradeNameDisplay.text = chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab.GetComponent<PassiveItem>().passiveItemData.Name;
-                                upgradeOption.levelDisplay.text = "Lvl. " + chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab.GetComponent<WeaponController>().weaponData.Level;
+                                upgradeOption.levelDisplay.text = "Lvl. " + chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab.GetComponent<PassiveItem>().passiveItemData.Level;
                             }
                             break;
                         }
