@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
@@ -37,7 +38,7 @@ public class InventoryManager : MonoBehaviour
         public TMP_Text upgradeNameDisplay;
         public TMP_Text upgradeDescriptionDisplay;
         public Image upgradeIcon;
-        public Button upgradeButton;
+        public GameObject upgradeButton;
         public TMP_Text levelDisplay;
         public Image AreaSizeIcon;
         public Image ProjectileCountIcon;
@@ -198,7 +199,7 @@ public class InventoryManager : MonoBehaviour
                                     break;
                                 }
 
-                                upgradeOption.upgradeButton.onClick.AddListener(() => LevelUpWeapon(i, chosenWeaponUpgrade.weaponUpgradeIndex)); // Apply button functionality
+                                upgradeOption.upgradeButton.GetComponent<Button>().onClick.AddListener(() => LevelUpWeapon(i, chosenWeaponUpgrade.weaponUpgradeIndex)); // Apply button functionality
 
                                 // Set the name and description of the weapon
                                 upgradeOption.upgradeDescriptionDisplay.text = chosenWeaponUpgrade.weaponData.NextLevelPrefab.GetComponent<WeaponController>().weaponData.Description;
@@ -215,7 +216,7 @@ public class InventoryManager : MonoBehaviour
 
                     if (newWeapon) // Spawn a new weapon
                     {
-                        upgradeOption.upgradeButton.onClick.AddListener(() => player.SpawnWeapon(chosenWeaponUpgrade.initialWeapon)); // Apply button functionality
+                        upgradeOption.upgradeButton.GetComponent<Button>().onClick.AddListener(() => player.SpawnWeapon(chosenWeaponUpgrade.initialWeapon)); // Apply button functionality
 
                         // Set the name and description of the weapon
                         upgradeOption.upgradeDescriptionDisplay.text = chosenWeaponUpgrade.weaponData.Description;
@@ -227,6 +228,7 @@ public class InventoryManager : MonoBehaviour
                     upgradeOption.AreaSizeIcon.enabled = chosenWeaponUpgrade.weaponData.AreaSizeEnabled;
                     upgradeOption.ProjectileCountIcon.enabled = chosenWeaponUpgrade.weaponData.ProjectileCountEnabled;
                     upgradeOption.DurationIcon.enabled = chosenWeaponUpgrade.weaponData.DurationEnabled;
+                    upgradeOption.upgradeButton.GetComponent<CardBlink2>().Set();
                 }
             }
 
@@ -260,10 +262,11 @@ public class InventoryManager : MonoBehaviour
                                     break;
                                 }
 
-                                upgradeOption.upgradeButton.onClick.AddListener(() => LevelUpPassiveItem(i, chosenPassiveItemUpgrade.passiveItemUpgradeIndex)); // Apply button functionality
+                                upgradeOption.upgradeButton.GetComponent<Button>().onClick.AddListener(() => LevelUpPassiveItem(i, chosenPassiveItemUpgrade.passiveItemUpgradeIndex)); // Apply button functionality
 
                                 upgradeOption.upgradeDescriptionDisplay.text = chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab.GetComponent<PassiveItem>().passiveItemData.Description;
                                 upgradeOption.upgradeNameDisplay.text = chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab.GetComponent<PassiveItem>().passiveItemData.Name;
+                                upgradeOption.levelDisplay.text = "Lvl. " + chosenPassiveItemUpgrade.passiveItemData.NextLevelPrefab.GetComponent<WeaponController>().weaponData.Level;
                             }
                             break;
                         }
@@ -275,13 +278,18 @@ public class InventoryManager : MonoBehaviour
 
                     if (newPassiveItem) // Spawn a new passive item
                     {
-                        upgradeOption.upgradeButton.onClick.AddListener(() => player.SpawnPassiveItem(chosenPassiveItemUpgrade.initialPassiveItem)); // Apply button functionality
+                        upgradeOption.upgradeButton.GetComponent<Button>().onClick.AddListener(() => player.SpawnPassiveItem(chosenPassiveItemUpgrade.initialPassiveItem)); // Apply button functionality
 
                         upgradeOption.upgradeDescriptionDisplay.text = chosenPassiveItemUpgrade.passiveItemData.Description;
                         upgradeOption.upgradeNameDisplay.text = chosenPassiveItemUpgrade.passiveItemData.Name;
+                        upgradeOption.levelDisplay.text = "Lvl. " + chosenPassiveItemUpgrade.passiveItemData.Level;
                     }
 
                     upgradeOption.upgradeIcon.sprite = chosenPassiveItemUpgrade.passiveItemData.Icon;
+                    upgradeOption.AreaSizeIcon.enabled = false;
+                    upgradeOption.ProjectileCountIcon.enabled = false;
+                    upgradeOption.DurationIcon.enabled = false;
+                    upgradeOption.upgradeButton.GetComponent<CardBlink2>().Set();
                 }
             }
         }
@@ -291,7 +299,7 @@ public class InventoryManager : MonoBehaviour
     {
         foreach (var upgradeOption in upgradeUIOptions)
         {
-            upgradeOption.upgradeButton.onClick.RemoveAllListeners();
+            upgradeOption.upgradeButton.GetComponent<Button>().onClick.RemoveAllListeners();
             DisableUpgradeUI(upgradeOption);
         }
     }

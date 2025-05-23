@@ -190,7 +190,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Card Blink_0
+      name: Card2 Blink_0
       rect:
         serializedVersion: 2
         x: 28
@@ -203,16 +203,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 740aede72522d14f0800000000000000
-      internalID: -856490616419344313
+      spriteID: 434202b820bb1ca4395360702c125e93
+      internalID: 1317541019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_1
+      name: Card2 Blink_1
       rect:
         serializedVersion: 2
         x: 178
@@ -225,16 +225,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4c59e505d331d0400800000000000000
-      internalID: 291910704911259076
+      spriteID: 9fff4e4437bd10e44b52b6b1ba59b2f3
+      internalID: -2018130615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_2
+      name: Card2 Blink_2
       rect:
         serializedVersion: 2
         x: 328
@@ -247,16 +247,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 578403acb25ffa030800000000000000
-      internalID: 3508292203169466485
+      spriteID: bd2e951e5d182c643924d3b2bc213d6b
+      internalID: 1514867542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_3
+      name: Card2 Blink_3
       rect:
         serializedVersion: 2
         x: 478
@@ -269,16 +269,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 86e98c975ffc2de60800000000000000
-      internalID: 7985673742498438760
+      spriteID: 1d7ff90162ad4864bbb722fdafd741a5
+      internalID: 1786816270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_4
+      name: Card2 Blink_4
       rect:
         serializedVersion: 2
         x: 628
@@ -291,16 +291,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1e39bb8023e135360800000000000000
-      internalID: 7157097433065559009
+      spriteID: 64f7f7380357e994b81578546ca96151
+      internalID: 904171535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_5
+      name: Card2 Blink_5
       rect:
         serializedVersion: 2
         x: 778
@@ -313,16 +313,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 17bcfbda212dcf7b0800000000000000
-      internalID: -5189041692971381903
+      spriteID: 5bce12e0ff885364a9a63660931d4fd5
+      internalID: 1105103941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_6
+      name: Card2 Blink_6
       rect:
         serializedVersion: 2
         x: 928
@@ -335,16 +335,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d5521219ab3651960800000000000000
-      internalID: 7572068001443292509
+      spriteID: 0a095fe18d92157409dedc9bf5cdd8ab
+      internalID: 899665975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_7
+      name: Card2 Blink_7
       rect:
         serializedVersion: 2
         x: 1078
@@ -357,16 +357,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 468ffe11fad0a1900800000000000000
-      internalID: 655851741307205732
+      spriteID: 73800632995028f4e9a20cd5a316a74e
+      internalID: -1686472034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_8
+      name: Card2 Blink_8
       rect:
         serializedVersion: 2
         x: 1228
@@ -379,16 +379,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9c516adc41087e450800000000000000
-      internalID: 6117999445644023241
+      spriteID: c80c9aa9972774f4fbba7ba718365081
+      internalID: -1920520953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_9
+      name: Card2 Blink_9
       rect:
         serializedVersion: 2
         x: 1378
@@ -401,16 +401,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dbc0a6c7d7d619f00800000000000000
-      internalID: 1121798167917628605
+      spriteID: 7f26a1c4372227f4fbf2e84147e73934
+      internalID: -608567665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_10
+      name: Card2 Blink_10
       rect:
         serializedVersion: 2
         x: 1528
@@ -423,16 +423,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4fb66113bda320860800000000000000
-      internalID: 7494617442993728500
+      spriteID: 9f85428988ee1344eb13f8a5fabde117
+      internalID: -1951041628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_11
+      name: Card2 Blink_11
       rect:
         serializedVersion: 2
         x: 1678
@@ -445,16 +445,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 30ae5aef2228c77a0800000000000000
-      internalID: -6378079885450679805
+      spriteID: 365728fafd4c98f4d9d288d11b669ce6
+      internalID: -1142031216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_12
+      name: Card2 Blink_12
       rect:
         serializedVersion: 2
         x: 1828
@@ -467,16 +467,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 12b510b85231724a0800000000000000
-      internalID: -6618300075430814943
+      spriteID: 7016fcae6ab70414489eb2a6863dd782
+      internalID: -1630312623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_13
+      name: Card2 Blink_13
       rect:
         serializedVersion: 2
         x: 1978
@@ -489,16 +489,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 43865773df3e55830800000000000000
-      internalID: 4059401315841042484
+      spriteID: 1b130a2ea60f58d4aa42888ca5013ac5
+      internalID: 1141906391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_14
+      name: Card2 Blink_14
       rect:
         serializedVersion: 2
         x: 2128
@@ -511,16 +511,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8d96b18623d6bb3d0800000000000000
-      internalID: -3189835847799445032
+      spriteID: aab57495eab79a04fb8f3600fc3c812a
+      internalID: -2030825848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_15
+      name: Card2 Blink_15
       rect:
         serializedVersion: 2
         x: 2278
@@ -533,16 +533,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 85eba0bfc9baea440800000000000000
-      internalID: 4949081731241786968
+      spriteID: 6b1f2981e3bb80b45bdde1cada99ab73
+      internalID: 1133337628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_16
+      name: Card2 Blink_16
       rect:
         serializedVersion: 2
         x: 2428
@@ -555,16 +555,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1db7f601f02726810800000000000000
-      internalID: 1757092213653732305
+      spriteID: 002e67389fde9e942a6c63591f2039b5
+      internalID: -1713651030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_17
+      name: Card2 Blink_17
       rect:
         serializedVersion: 2
         x: 2578
@@ -577,16 +577,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 30fa8daca00a03740800000000000000
-      internalID: 5129775943788310275
+      spriteID: 0700e674252576441836730cd4fe4ba0
+      internalID: 852451442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_18
+      name: Card2 Blink_18
       rect:
         serializedVersion: 2
         x: 2728
@@ -599,16 +599,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6e3509735cf833800800000000000000
-      internalID: 590974053319201766
+      spriteID: 43422a5472a9cba49ad13fd434f080a4
+      internalID: -2009704587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_19
+      name: Card2 Blink_19
       rect:
         serializedVersion: 2
         x: 2878
@@ -621,16 +621,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 32a91d28c5f527b20800000000000000
-      internalID: 3130669541912320547
+      spriteID: e493d36114399ed4ab548511f808b077
+      internalID: -177245262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_20
+      name: Card2 Blink_20
       rect:
         serializedVersion: 2
         x: 3028
@@ -643,16 +643,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8dc92ab909ab90990800000000000000
-      internalID: -7419193780866999080
+      spriteID: 763b5c5182635174cb014d16a0ef4200
+      internalID: -431246011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_21
+      name: Card2 Blink_21
       rect:
         serializedVersion: 2
         x: 3178
@@ -665,16 +665,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1008d8a8e25a62b90800000000000000
-      internalID: -7266939329404108799
+      spriteID: 1b5376233f7dfac47841aa00a8ca79b1
+      internalID: 2056149751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_22
+      name: Card2 Blink_22
       rect:
         serializedVersion: 2
         x: 3328
@@ -687,16 +687,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3feb538df56e12170800000000000000
-      internalID: 8152050099840990963
+      spriteID: c585cb84ae6ec9e4c89d94133eb42849
+      internalID: 669507577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_23
+      name: Card2 Blink_23
       rect:
         serializedVersion: 2
         x: 3478
@@ -709,16 +709,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2c7d1502c3acfd0d0800000000000000
-      internalID: -3395773234424981566
+      spriteID: ab68704f55632a3469a283281569e10f
+      internalID: -2056952872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_24
+      name: Card2 Blink_24
       rect:
         serializedVersion: 2
         x: 3628
@@ -731,16 +731,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ed4c2449d557b75a0800000000000000
-      internalID: -6522490590536219426
+      spriteID: b12d88f2fb4f19c4db7adc00fac8afbd
+      internalID: -624716650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_25
+      name: Card2 Blink_25
       rect:
         serializedVersion: 2
         x: 3778
@@ -753,16 +753,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d67d1598d99cd02d0800000000000000
-      internalID: -3310768472596555923
+      spriteID: b385e250723afe8499d7e8e8e49d41da
+      internalID: -19299165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_26
+      name: Card2 Blink_26
       rect:
         serializedVersion: 2
         x: 3928
@@ -775,16 +775,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6abc78e37a5c9d670800000000000000
-      internalID: 8564093488521005990
+      spriteID: f4c3b89eea50b004685e783943cd307b
+      internalID: -807259209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_27
+      name: Card2 Blink_27
       rect:
         serializedVersion: 2
         x: 4078
@@ -797,16 +797,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3cfb1d08a243925d0800000000000000
-      internalID: -3086878712431263805
+      spriteID: 8b60e2bcbc68cf5498f1cf5f21ae2a6e
+      internalID: -1385041804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_28
+      name: Card2 Blink_28
       rect:
         serializedVersion: 2
         x: 4228
@@ -819,16 +819,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 75f24b2ec6b11ebb0800000000000000
-      internalID: -4908611964383252649
+      spriteID: 950c1b7615e31e64abc3117fb4bea5ca
+      internalID: 387903661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_29
+      name: Card2 Blink_29
       rect:
         serializedVersion: 2
         x: 4378
@@ -841,16 +841,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 04ed5c65e65da5df0800000000000000
-      internalID: -190605364330897856
+      spriteID: aaa9f723cb4d03240ba95a81fa817db1
+      internalID: 852108305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Card Blink_30
+      name: Card2 Blink_30
       rect:
         serializedVersion: 2
         x: 4528
@@ -863,10 +863,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 28b58cbc5c79ebd50800000000000000
-      internalID: 6755003366885579650
+      spriteID: 38f70a6e2c2808a4aad75b59dfc0cf8c
+      internalID: 1394789746
       vertices: []
       indices: 
       edges: []
@@ -885,37 +885,37 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Card Blink_0: -856490616419344313
-      Card Blink_1: 291910704911259076
-      Card Blink_10: 7494617442993728500
-      Card Blink_11: -6378079885450679805
-      Card Blink_12: -6618300075430814943
-      Card Blink_13: 4059401315841042484
-      Card Blink_14: -3189835847799445032
-      Card Blink_15: 4949081731241786968
-      Card Blink_16: 1757092213653732305
-      Card Blink_17: 5129775943788310275
-      Card Blink_18: 590974053319201766
-      Card Blink_19: 3130669541912320547
-      Card Blink_2: 3508292203169466485
-      Card Blink_20: -7419193780866999080
-      Card Blink_21: -7266939329404108799
-      Card Blink_22: 8152050099840990963
-      Card Blink_23: -3395773234424981566
-      Card Blink_24: -6522490590536219426
-      Card Blink_25: -3310768472596555923
-      Card Blink_26: 8564093488521005990
-      Card Blink_27: -3086878712431263805
-      Card Blink_28: -4908611964383252649
-      Card Blink_29: -190605364330897856
-      Card Blink_3: 7985673742498438760
-      Card Blink_30: 6755003366885579650
-      Card Blink_4: 7157097433065559009
-      Card Blink_5: -5189041692971381903
-      Card Blink_6: 7572068001443292509
-      Card Blink_7: 655851741307205732
-      Card Blink_8: 6117999445644023241
-      Card Blink_9: 1121798167917628605
+      Card2 Blink_0: 1317541019
+      Card2 Blink_1: -2018130615
+      Card2 Blink_10: -1951041628
+      Card2 Blink_11: -1142031216
+      Card2 Blink_12: -1630312623
+      Card2 Blink_13: 1141906391
+      Card2 Blink_14: -2030825848
+      Card2 Blink_15: 1133337628
+      Card2 Blink_16: -1713651030
+      Card2 Blink_17: 852451442
+      Card2 Blink_18: -2009704587
+      Card2 Blink_19: -177245262
+      Card2 Blink_2: 1514867542
+      Card2 Blink_20: -431246011
+      Card2 Blink_21: 2056149751
+      Card2 Blink_22: 669507577
+      Card2 Blink_23: -2056952872
+      Card2 Blink_24: -624716650
+      Card2 Blink_25: -19299165
+      Card2 Blink_26: -807259209
+      Card2 Blink_27: -1385041804
+      Card2 Blink_28: 387903661
+      Card2 Blink_29: 852108305
+      Card2 Blink_3: 1786816270
+      Card2 Blink_30: 1394789746
+      Card2 Blink_4: 904171535
+      Card2 Blink_5: 1105103941
+      Card2 Blink_6: 899665975
+      Card2 Blink_7: -1686472034
+      Card2 Blink_8: -1920520953
+      Card2 Blink_9: -608567665
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

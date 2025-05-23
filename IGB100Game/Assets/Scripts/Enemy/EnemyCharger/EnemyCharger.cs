@@ -63,7 +63,7 @@ public class EnemyChargerStats : EnemyStats
             target = new Vector2(player.transform.position.x, player.transform.position.y);
             GameObject indInstance = Instantiate(indicator);
             indInstance.transform.position = gameObject.transform.position;
-            indInstance.GetComponent<EnemyChargeIndicator>().Setup(chargeFreeze, target);
+            indInstance.GetComponent<EnemyChargeIndicator>().Setup(chargeFreeze, target, gameObject, transform.localScale);
             anim.SetBool("Charge", true);
         }
         else if (ChargeTimer < 0 && ChargingPhase == 1) // Calculates the angle at which to move and starts charge towards the targetted position

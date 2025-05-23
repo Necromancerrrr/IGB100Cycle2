@@ -122,6 +122,9 @@ MonoBehaviour:
   isBoss: 0
   enemyData: {fileID: 11400000, guid: 1eda6d2ab3cb86d43abb34018d01bdf9, type: 2}
   player: {fileID: 0}
+  isDebuffed: 0
+  debuffTimer: 0
+  baseMovespeed: 0
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
@@ -185,7 +188,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDamping: 1
   m_AngularDamping: 1
   m_GravityScale: 0
@@ -278,7 +281,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1385694241
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 7955552126746306167, guid: 64aac32ccaf5d3045b0e52c964fee89b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
