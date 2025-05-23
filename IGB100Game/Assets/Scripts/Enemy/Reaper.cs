@@ -8,6 +8,7 @@ public class Reaper : EnemyStats
     float Scale = 1;
     float scaleSpeed = 0;
     private Animator anim;
+    [SerializeField] AudioClip bell;
     new void Awake()
     {
         base.Awake();
@@ -48,6 +49,7 @@ public class Reaper : EnemyStats
         SpeedIncreaseTimer -= Time.deltaTime;
         if (SpeedIncreaseTimer < 0)
         {
+            AudioManager.instance.PlaySFX(bell, transform, 1f);
             currentMoveSpeed += 0.2f;
             anim.speed += 0.4f;
             scaleSpeed = 0;

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MineDamageBehaviour : MonoBehaviour
 {
+    [SerializeField] GameObject tempSolution;
     CircleCollider2D col;
     float weaponDamage;
     float weaponSize;
@@ -19,18 +20,19 @@ public class MineDamageBehaviour : MonoBehaviour
         transform.position = position;
         transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
         transform.localScale = new Vector3(weaponSize, weaponSize, 1);
+        tempSolution.transform.localScale = new Vector3(weaponSize, weaponSize, 1);
     }
     // Update is called once per frame
     void Update()
     {
         timer -= Time.deltaTime; Debug.Log(timer);
-        if (phase == 0 && timer <= 0.4)
+        if (phase == 0 && timer <= 0.9) // used to be 0.4
         { 
             phase = 1;
             col.enabled = true;
             GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 5f, 0.4f);
         }
-        else if (phase == 1 && timer <= 0.2) 
+        else if (phase == 1 && timer <= 0.7) // used to be 0.2
         {
             phase = 2;
             col.enabled = false;

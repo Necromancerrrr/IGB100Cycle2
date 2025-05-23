@@ -56,12 +56,12 @@ public class EnemyAOE : MonoBehaviour
     {
         if (targetReached == false)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, travelSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target, travelSpeed * Time.deltaTime); 
             crawlTimer -= Time.deltaTime;
             if (crawlTimer < 0)
             {
                 crawlTimer = Random.Range(0.1f, 0.3f);
-                Vector2 offset = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(0f, 0.4f);
+                Vector2 offset = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(0f, 2f);
                 Instantiate(crawl, transform.position + (Vector3)offset, Quaternion.Euler(0, 0, Random.Range(0f, 360f)));
             }
             if ((Vector2)transform.position == target)

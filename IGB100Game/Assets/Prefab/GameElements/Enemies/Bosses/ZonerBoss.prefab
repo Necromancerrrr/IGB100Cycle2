@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed2f2a8bfde5764f89e0a9ba6729850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBoss: 0
+  isBoss: 1
   enemyData: {fileID: 11400000, guid: f9306cdc9589b064989c3223ac370894, type: 2}
   player: {fileID: 0}
   isDebuffed: 0

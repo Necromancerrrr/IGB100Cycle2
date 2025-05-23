@@ -6,6 +6,7 @@ public class EnemyChargeIndicator : MonoBehaviour
     private float Timer;
     private Vector2 Target;
     private GameObject charger;
+    [SerializeField] private GameObject sprite;
     [SerializeField] private Animator anim;
     public void Setup(float Dur, Vector2 Tar, GameObject source, Vector3 scale)
     {

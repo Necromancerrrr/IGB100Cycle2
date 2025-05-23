@@ -94,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,7 +105,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -173,10 +173,10 @@ TextureImporter:
       name: Shaded cat_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 5
-        width: 40
-        height: 30
+        x: 0
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: Shaded cat_1
       rect:
         serializedVersion: 2
-        x: 55
-        y: 5
-        width: 40
-        height: 30
+        x: 50
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: Shaded cat_2
       rect:
         serializedVersion: 2
-        x: 105
-        y: 5
-        width: 40
-        height: 30
+        x: 100
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: Shaded cat_3
       rect:
         serializedVersion: 2
-        x: 155
-        y: 5
-        width: 39
-        height: 30
+        x: 150
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +261,10 @@ TextureImporter:
       name: Shaded cat_4
       rect:
         serializedVersion: 2
-        x: 205
-        y: 5
-        width: 41
-        height: 30
+        x: 200
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +283,10 @@ TextureImporter:
       name: Shaded cat_5
       rect:
         serializedVersion: 2
-        x: 255
-        y: 5
-        width: 41
-        height: 30
+        x: 250
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,10 +305,10 @@ TextureImporter:
       name: Shaded cat_6
       rect:
         serializedVersion: 2
-        x: 305
-        y: 5
-        width: 41
-        height: 29
+        x: 300
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,10 +327,10 @@ TextureImporter:
       name: Shaded cat_7
       rect:
         serializedVersion: 2
-        x: 355
-        y: 5
-        width: 41
-        height: 30
+        x: 350
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,10 +349,10 @@ TextureImporter:
       name: Shaded cat_8
       rect:
         serializedVersion: 2
-        x: 405
-        y: 5
-        width: 41
-        height: 30
+        x: 400
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,10 +371,10 @@ TextureImporter:
       name: Shaded cat_9
       rect:
         serializedVersion: 2
-        x: 455
-        y: 5
-        width: 40
-        height: 30
+        x: 450
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,10 +393,10 @@ TextureImporter:
       name: Shaded cat_10
       rect:
         serializedVersion: 2
-        x: 505
-        y: 5
-        width: 41
-        height: 30
+        x: 500
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,10 +415,10 @@ TextureImporter:
       name: Shaded cat_11
       rect:
         serializedVersion: 2
-        x: 555
-        y: 5
-        width: 42
-        height: 30
+        x: 550
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,10 +437,10 @@ TextureImporter:
       name: Shaded cat_12
       rect:
         serializedVersion: 2
-        x: 605
-        y: 5
-        width: 42
-        height: 30
+        x: 600
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -459,10 +459,10 @@ TextureImporter:
       name: Shaded cat_13
       rect:
         serializedVersion: 2
-        x: 655
-        y: 5
-        width: 42
-        height: 30
+        x: 650
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,10 +481,10 @@ TextureImporter:
       name: Shaded cat_14
       rect:
         serializedVersion: 2
-        x: 705
-        y: 5
-        width: 42
-        height: 30
+        x: 700
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,10 +503,10 @@ TextureImporter:
       name: Shaded cat_15
       rect:
         serializedVersion: 2
-        x: 755
-        y: 5
-        width: 42
-        height: 29
+        x: 750
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,10 +525,10 @@ TextureImporter:
       name: Shaded cat_16
       rect:
         serializedVersion: 2
-        x: 805
-        y: 5
-        width: 42
-        height: 30
+        x: 800
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -547,10 +547,10 @@ TextureImporter:
       name: Shaded cat_17
       rect:
         serializedVersion: 2
-        x: 855
-        y: 5
-        width: 40
-        height: 30
+        x: 850
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -569,10 +569,10 @@ TextureImporter:
       name: Shaded cat_18
       rect:
         serializedVersion: 2
-        x: 905
-        y: 5
-        width: 39
-        height: 30
+        x: 900
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -591,10 +591,10 @@ TextureImporter:
       name: Shaded cat_19
       rect:
         serializedVersion: 2
-        x: 955
-        y: 5
-        width: 39
-        height: 30
+        x: 950
+        y: 0
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -613,7 +613,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0d03377231e9f3b4b9d9acc53eea9230
     internalID: 0
     vertices: []
     indices: 

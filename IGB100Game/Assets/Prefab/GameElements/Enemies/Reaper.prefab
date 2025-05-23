@@ -65,6 +65,7 @@ MonoBehaviour:
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
   deathParticleSystem: {fileID: 0}
+  bell: {fileID: 8300000, guid: cc5c9515fae73f048bb6a13c125f3c8a, type: 3}
 --- !u!114 &-4001461327363300624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1385694241
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 5
   m_Sprite: {fileID: -6207193392188836992, guid: 42b18551df99f2644bba0ec386d81244, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

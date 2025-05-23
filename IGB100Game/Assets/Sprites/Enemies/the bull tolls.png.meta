@@ -137,10 +137,10 @@ TextureImporter:
       name: the bull tolls_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 9
-        width: 71
-        height: 43
+        x: 0
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +159,10 @@ TextureImporter:
       name: the bull tolls_1
       rect:
         serializedVersion: 2
-        x: 92
-        y: 9
-        width: 71
-        height: 43
+        x: 90
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: the bull tolls_2
       rect:
         serializedVersion: 2
-        x: 182
-        y: 9
-        width: 60
-        height: 41
+        x: 180
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: the bull tolls_3
       rect:
         serializedVersion: 2
-        x: 276
-        y: 7
-        width: 56
-        height: 40
+        x: 270
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: the bull tolls_4
       rect:
         serializedVersion: 2
-        x: 366
-        y: 1
-        width: 56
-        height: 40
+        x: 360
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: the bull tolls_5
       rect:
         serializedVersion: 2
-        x: 456
-        y: 1
-        width: 56
-        height: 40
+        x: 450
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +269,10 @@ TextureImporter:
       name: the bull tolls_6
       rect:
         serializedVersion: 2
-        x: 546
-        y: 1
-        width: 56
-        height: 40
+        x: 540
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +291,10 @@ TextureImporter:
       name: the bull tolls_7
       rect:
         serializedVersion: 2
-        x: 636
-        y: 1
-        width: 56
-        height: 40
+        x: 630
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 32d40c3af6a68e441a167c62fea7460c
     internalID: 0
     vertices: []
     indices: 

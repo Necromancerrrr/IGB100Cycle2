@@ -64,7 +64,7 @@ public class OrbitalBehaviour : MeleeWeaponBehaviour
             Timer = weaponDuration;
             anim.SetBool("Active", true);
             colli.enabled = true;
-            GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 0.3f, weaponDuration + 0.2f);
+            GameObject.FindWithTag("CineCamera").GetComponent<ScreenShake>().SetShake(weaponSize * 0.15f, weaponDuration + 0.2f);
         }
         else if (Timer <= 0.1 && phase == 2)
         {

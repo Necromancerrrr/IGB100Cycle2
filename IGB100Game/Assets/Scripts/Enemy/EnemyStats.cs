@@ -142,6 +142,7 @@ public abstract class EnemyStats : MonoBehaviour
         currentMoveSpeed = 0;
         player.CurrentKills++;
         StartCoroutine(KillFade());
+        GetComponent<Animator>().SetTrigger("Death");
     }
 
     public void ApplySlow(float duration, float percentSlow)
