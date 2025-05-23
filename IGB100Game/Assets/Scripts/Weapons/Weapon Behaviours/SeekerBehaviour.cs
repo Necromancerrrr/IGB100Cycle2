@@ -18,7 +18,7 @@ public class SeekerBehaviour : ProjectileWeaponBehaviour
         rb = GetComponent<Rigidbody2D>();
         SetEnemy();
 
-        AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 0.3f);
     }
 
     protected void Update()

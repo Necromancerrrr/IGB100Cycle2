@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +63,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,10 +118,10 @@ TextureImporter:
       name: zoner aoe(2)_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
-        width: 31
-        height: 31
+        x: 0
+        y: 0
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: zoner aoe(2)_1
       rect:
         serializedVersion: 2
-        x: 46
-        y: 3
-        width: 31
-        height: 31
+        x: 39
+        y: 0
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: zoner aoe(2)_2
       rect:
         serializedVersion: 2
-        x: 88
-        y: 3
-        width: 31
-        height: 31
+        x: 78
+        y: 0
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: zoner aoe(2)_3
       rect:
         serializedVersion: 2
-        x: 130
-        y: 3
-        width: 31
-        height: 31
+        x: 117
+        y: 0
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: zoner aoe(2)_4
       rect:
         serializedVersion: 2
-        x: 172
-        y: 3
-        width: 31
-        height: 31
+        x: 156
+        y: 0
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: zoner aoe(2)_5
       rect:
         serializedVersion: 2
-        x: 214
-        y: 3
-        width: 31
-        height: 31
+        x: 195
+        y: 0
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d5f45a3a2e7145d4ea3a37f221ef69da
     internalID: 0
     vertices: []
     indices: 

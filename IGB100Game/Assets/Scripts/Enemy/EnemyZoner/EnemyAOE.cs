@@ -9,7 +9,13 @@ public class EnemyAOE : MonoBehaviour
     float zoneSize;
     float zoneDelay;
 
+    // Crawl logic
+    [SerializeField] GameObject crawl;
+    float crawlTimer = 0;
+
     // Zone logic
+    float timeTakenUp = 0;
+    float timeTakenDown = 0;
     float zoneTimer = 5;
     bool active = false;
     bool targetReached = false;
@@ -17,16 +23,14 @@ public class EnemyAOE : MonoBehaviour
     // Components
     Transform player;
     CircleCollider2D colli;
-    ParticleSystem trail;
-    [SerializeField] ParticleSystem par;
-    [SerializeField] ParticleSystem sub;
+    Animator anim;
     [SerializeField] Vector2 target;
     void Awake() // Gets components and disables irrelevant ones for now
     {
         colli = GetComponent<CircleCollider2D>();
+        anim = GetComponent<Animator>();
         colli.enabled = false;
-        trail = GetComponent<ParticleSystem>();
-        par.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        anim.speed = 0;
         player = GameObject.FindWithTag("Player").transform;
         Destroy(gameObject, 15f); // Failsafe
     }
@@ -39,8 +43,6 @@ public class EnemyAOE : MonoBehaviour
         zoneTimer = zoneDelay;
         SetPosition();
         SetScale();
-        par.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-        sub.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
     void SetPosition() // Generates an angle, then multiply that by a random magnitude (capping out at area size). Place the object at that point.
     {
@@ -48,56 +50,48 @@ public class EnemyAOE : MonoBehaviour
     }
     void SetScale() // Increase the scale of the object to match the size. Alter the lifetime of the VFX to match the delay.
     {
-        gameObject.transform.localScale = new Vector2(zoneSize, zoneSize);
-    }
-    void SetSubemitter()
-    {
-        sub.Play();
-        var main = sub.main;
-        main.startLifetime = zoneDelay;
-        var emission = sub.emission;
-        emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0.01f, 15 * zoneSize) });
-        var shape = sub.shape;
-        shape.radius = zoneSize;
-    }
-    void SetAOE()
-    {
-        par.Play();
-        var main = par.main;
-        main.startLifetime = zoneDelay;
-        var emission = par.emission;
-        emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0.01f, 8 * zoneSize) });
-        var shape = par.shape;
-        shape.radius = zoneSize;
+        gameObject.transform.localScale = Vector2.zero;
     }
     void Update() // Enables the collider at once the delay ends, then disables the collider after 0.1f.
     {
         if (targetReached == false)
         {
             transform.position = Vector2.MoveTowards(transform.position, target, travelSpeed * Time.deltaTime);
-            
-            if ((Vector2)transform.position == target) // Turns off the trail
+            crawlTimer -= Time.deltaTime;
+            if (crawlTimer < 0)
+            {
+                crawlTimer = Random.Range(0.1f, 0.3f);
+                Vector2 offset = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(0f, 0.4f);
+                Instantiate(crawl, transform.position + (Vector3)offset, Quaternion.Euler(0, 0, Random.Range(0f, 360f)));
+            }
+            if ((Vector2)transform.position == target)
             {
                 targetReached = true;
-                SetAOE();
-                SetSubemitter();
-                var emission = trail.emission;
-                emission.rateOverTime = 0;
+                anim.speed = 1/zoneDelay;
             }
         }
         else
         {
-            zoneDelay -= Time.deltaTime;
-            if (zoneDelay <= 0 && active == false)
+            zoneTimer -= Time.deltaTime;
+            if (transform.localScale != new Vector3(zoneSize, zoneSize, 1))
+            {
+                float t = timeTakenUp / (zoneDelay - 0.5f);
+                transform.localScale = new Vector3(Mathf.Lerp(0, zoneSize, t), Mathf.Lerp(0, zoneSize, t), 1);
+                timeTakenUp += Time.deltaTime;
+            }
+            if (zoneTimer <= 0 && active == false)
             {
                 colli.enabled = true;
                 active = true;
             }
-            if (zoneDelay <= -0.1f)
+            if (zoneTimer <= -0.1f)
             {
                 colli.enabled = false;
+                float t = timeTakenDown / 0.8f;
+                transform.localScale = new Vector3(Mathf.Lerp(zoneSize, 0, t), Mathf.Lerp(zoneSize, 0, t), 1);
+                timeTakenDown += Time.deltaTime;
             }
-            if (zoneDelay <= -1)
+            if (zoneTimer <= -1)
             {
                 Destroy(gameObject);
             }

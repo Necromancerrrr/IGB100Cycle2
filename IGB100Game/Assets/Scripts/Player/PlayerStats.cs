@@ -54,7 +54,7 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentHealthDisplay.text = "Max Health: " + currentHealth.ToString();
+                    GameManager.instance.currentHealthDisplay.text = "Vitality: " + currentHealth.ToString();
                 }
 
             }
@@ -70,13 +70,6 @@ public class PlayerStats : MonoBehaviour
             {
                 //Update the real time value of the stat
                 currentHealth = value;
-
-                // Update player UI
-                if (GameManager.instance != null)
-                {
-                    GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth.ToString();
-                }
-
             }
         }
     }
@@ -94,7 +87,7 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery.ToString();
+                    GameManager.instance.currentRecoveryDisplay.text = "Regeneration: " + currentRecovery.ToString();
                 }
             }
         }
@@ -114,7 +107,7 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentAttackDisplay.text = "Attack: " + currentMight.ToString();
+                    GameManager.instance.currentAttackDisplay.text = "Might: " + currentMight.ToString();
                 }
             }
         }
@@ -133,7 +126,7 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentMoveSpeedDisplay.text = "Movespeed: " + currentMoveSpeed.ToString();
+                    GameManager.instance.currentMoveSpeedDisplay.text = "Swiftness: " + currentMoveSpeed.ToString();
                 }
             }
         }
@@ -149,12 +142,6 @@ public class PlayerStats : MonoBehaviour
             {
                 //Update the real time value of the stat
                 currentProjectileSpeed = value;
-
-                // Update player UI
-                if (GameManager.instance != null)
-                {
-                    GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed.ToString();
-                }
             }
         }
     }
@@ -192,7 +179,7 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentProjectileCountDisplay.text = "Projectile Count: " + currentProjectileCount.ToString();
+                    GameManager.instance.currentProjectileCountDisplay.text = "Abundance: " + currentProjectileCount.ToString();
                 }
 
             }
@@ -212,7 +199,7 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentAOEDisplay.text = "AOE: " + currentAOE.ToString();
+                    GameManager.instance.currentAOEDisplay.text = "Scale: " + currentAOE.ToString();
                 }
             }
         }
@@ -231,7 +218,7 @@ public class PlayerStats : MonoBehaviour
                 // Update player UI
                 if (GameManager.instance != null)
                 {
-                    //GameManager.instance.currentCDRDisplay.text = "Cooldown reduction: " + currentAOE.ToString();
+                    GameManager.instance.currentProjectileSpeedDisplay.text = "Frequency: " + currentCDR.ToString();
                 }
             }
         }
@@ -246,12 +233,6 @@ public class PlayerStats : MonoBehaviour
             {
                 //Update the real time value of the stat
                 currentMagnet = value;
-
-                // Update player UI
-                if (GameManager.instance != null)
-                {
-                    GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet.ToString();
-                }
             }
         }
     }
@@ -375,16 +356,16 @@ public class PlayerStats : MonoBehaviour
         experienceCap = levelRanges[0].experienceCapIncrease;
         
         // Initialise Stat Tracking on Pause Menu
-        GameManager.instance.currentHealthDisplay.text = "Health: \n" + currentHealth.ToString();
-        GameManager.instance.currentRecoveryDisplay.text = "Recovery: \n" + currentRecovery.ToString();
-        GameManager.instance.currentAttackDisplay.text = "Attack: \n" + currentMight.ToString();
-        GameManager.instance.currentMoveSpeedDisplay.text = "Movespeed: \n" + currentMoveSpeed.ToString();
-        GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: \n" + currentProjectileSpeed.ToString();
-        GameManager.instance.currentProjectileDurationDisplay.text = "Projectile Duration: \n" + currentProjectileDuration.ToString();
-        GameManager.instance.currentMagnetDisplay.text = "Magnet: \n" + currentMagnet.ToString();
+        GameManager.instance.currentHealthDisplay.text = "Vitality: " + currentHealth.ToString();
+        GameManager.instance.currentRecoveryDisplay.text = "Regeneration: " + currentRecovery.ToString();
+        GameManager.instance.currentAttackDisplay.text = "Might: " + currentMight.ToString();
+        GameManager.instance.currentMoveSpeedDisplay.text = "Swiftness: " + currentMoveSpeed.ToString();
+        GameManager.instance.currentProjectileSpeedDisplay.text = "Frequency: " + currentCDR.ToString();
+        GameManager.instance.currentProjectileDurationDisplay.text = "Duration: " + currentProjectileDuration.ToString();
+        GameManager.instance.currentAOEDisplay.text = "Scale: " + currentAOE.ToString();
+        GameManager.instance.currentProjectileCountDisplay.text = "Abundance: " + currentProjectileCount.ToString();
 
-
-        GameManager.instance.currentKillsDisplay.text = "Kills: \n" + currentKills.ToString();
+        GameManager.instance.currentKillsDisplay.text = "Kills: " + currentKills.ToString();
         GameManager.instance.AssignChosenCharacterUI(characterData);
         GameManager.instance.AssignLevelReachedUI(level);
 
