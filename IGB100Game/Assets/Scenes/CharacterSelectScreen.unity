@@ -289,8 +289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -85, y: 182.2}
-  m_SizeDelta: {x: 600, y: 260}
+  m_AnchoredPosition: {x: -0.000012398, y: 195}
+  m_SizeDelta: {x: 440, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &107427008
 MonoBehaviour:
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 195.93198, y: 0, z: 21.502625, w: 0}
+  m_margin: {x: -1.5068511, y: 0, z: 3.317627, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -504,7 +504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 19, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127828665
@@ -643,8 +643,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 221, y: -309}
-  m_SizeDelta: {x: 600, y: 395}
+  m_AnchoredPosition: {x: 220.00003, y: -309}
+  m_SizeDelta: {x: 440, y: 395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218769213
 MonoBehaviour:
@@ -797,6 +797,11 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1 &257468430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6836639457681672101, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
+  m_PrefabInstance: {fileID: 456840470}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &297043788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1101,7 @@ PrefabInstance:
       objectReference: {fileID: 456840472}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYDown
+      value: TweenYUp
       objectReference: {fileID: 0}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1104,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYUp
+      value: TweenYDown
       objectReference: {fileID: 0}
     - target: {fileID: 1810818445326265378, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Sprite
@@ -1168,11 +1173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 440
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 620
+      value: 580
       objectReference: {fileID: 0}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1234,7 +1239,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5447513011889484103, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1889183421}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6836639457681672101, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 456840477}
   m_SourcePrefab: {fileID: 100100000, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
 --- !u!224 &456840471 stripped
 RectTransform:
@@ -1252,6 +1260,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d8595bc183cdf4785eae2a3b94615c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &456840477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257468430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d8595bc183cdf4785eae2a3b94615c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
 --- !u!1 &461332406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,11 +1568,11 @@ PrefabInstance:
       objectReference: {fileID: 504719381}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYDown
+      value: TweenYUp
       objectReference: {fileID: 0}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYUp
+      value: TweenYDown
       objectReference: {fileID: 0}
     - target: {fileID: 1810818445326265378, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Sprite
@@ -1607,11 +1628,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 440
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 620
+      value: 580
       objectReference: {fileID: 0}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2346,8 +2367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204, y: -309}
-  m_SizeDelta: {x: 600, y: 395}
+  m_AnchoredPosition: {x: 220, y: -309}
+  m_SizeDelta: {x: 440, y: 395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1410458396
 MonoBehaviour:
@@ -2534,8 +2555,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -84, y: 182.2}
-  m_SizeDelta: {x: 600, y: 260}
+  m_AnchoredPosition: {x: 0.00001955, y: 175.6}
+  m_SizeDelta: {x: 440, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503415173
 MonoBehaviour:
@@ -2622,7 +2643,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 195.93198, y: 0, z: 21.502625, w: 0}
+  m_margin: {x: 42.375366, y: 0, z: 60.432495, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3041,8 +3062,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -90, y: 182.2}
-  m_SizeDelta: {x: 600, y: 260}
+  m_AnchoredPosition: {x: 0.0050049, y: 177}
+  m_SizeDelta: {x: 440, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889183422
 MonoBehaviour:
@@ -3129,7 +3150,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 195.93198, y: 0, z: 21.502625, w: 0}
+  m_margin: {x: 27.685104, y: 0, z: 38.6707, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3180,8 +3201,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 225, y: -309}
-  m_SizeDelta: {x: 600, y: 260}
+  m_AnchoredPosition: {x: 220.00003, y: -309}
+  m_SizeDelta: {x: 440, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907838975
 MonoBehaviour:
@@ -3706,11 +3727,11 @@ PrefabInstance:
       objectReference: {fileID: 2354215131889041980}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYDown
+      value: TweenYUp
       objectReference: {fileID: 0}
     - target: {fileID: 1770353084659043348, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TweenYUp
+      value: TweenYDown
       objectReference: {fileID: 0}
     - target: {fileID: 1810818445326265378, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_Sprite
@@ -3762,11 +3783,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 440
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 620
+      value: 580
       objectReference: {fileID: 0}
     - target: {fileID: 8269588811550467314, guid: b864c9e1df3438f4096b9b0639525a83, type: 3}
       propertyPath: m_LocalPosition.x

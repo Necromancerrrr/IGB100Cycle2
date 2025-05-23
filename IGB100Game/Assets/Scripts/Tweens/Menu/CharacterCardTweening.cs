@@ -17,13 +17,11 @@ public class CharacterCardTweening : MonoBehaviour
 
     public void TweenYDown()
     {
-        transform.DOMoveY(initialPosition - 2, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
-        //transform.DOLocalRotate(new Vector3(0, 0, 360), duration, RotateMode.FastBeyond360);
-        //transform.DOScale(0f, 0.5f);
+        transform.DOMoveY(initialPosition, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
     }
 
     public void TweenYUp()
     {
-        transform.DOMoveY(initialPosition, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
+        transform.DOMoveY(initialPosition + 0.5f, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
     }
 }
