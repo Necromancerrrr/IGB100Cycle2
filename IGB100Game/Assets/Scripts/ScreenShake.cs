@@ -8,6 +8,7 @@ public class ScreenShake : MonoBehaviour
     // Components
     private CinemachineCamera virtualCamera;
     private CinemachineBasicMultiChannelPerlin perlinNoise;
+    public bool perlinNoiseEnabled = true;
     
     // Logic
     [SerializeField] private List<float> shakeIntensityList;
@@ -28,28 +29,35 @@ public class ScreenShake : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < shakeDurationList.Count; i++) // Subtracts from all timers
+        if (perlinNoiseEnabled == true)
         {
-            shakeDurationList[i] -= Time.deltaTime;
-            if (shakeDurationList[i] <= 0)
+            for (int i = 0; i < shakeDurationList.Count; i++) // Subtracts from all timers
             {
-                removeList.Add(i); // Marks list values for removal
+                shakeDurationList[i] -= Time.deltaTime;
+                if (shakeDurationList[i] <= 0)
+                {
+                    removeList.Add(i); // Marks list values for removal
+                }
             }
-        }
-        for (int i = shakeDurationList.Count; i > -1; i--) // Cycles through the list backwards
-        {
-            if (removeList.Contains(i)) // Removes any values marked for removal
+            for (int i = shakeDurationList.Count; i > -1; i--) // Cycles through the list backwards
             {
-                shakeIntensityList.RemoveAt(i);
-                shakeDurationList.RemoveAt(i);
+                if (removeList.Contains(i)) // Removes any values marked for removal
+                {
+                    shakeIntensityList.RemoveAt(i);
+                    shakeDurationList.RemoveAt(i);
+                }
             }
+            removeList.Clear();
+            float shakeAmount = 0;
+            foreach (float i in shakeIntensityList)
+            {
+                if (i >= shakeAmount) { shakeAmount = i; }
+            }
+            perlinNoise.AmplitudeGain = shakeAmount;
         }
-        removeList.Clear();
-        float shakeAmount = 0;
-        foreach(float i in shakeIntensityList)
+        else
         {
-            if (i >= shakeAmount) { shakeAmount = i; }
+            perlinNoise.AmplitudeGain = 0;
         }
-        perlinNoise.AmplitudeGain = shakeAmount;
     }
 }
