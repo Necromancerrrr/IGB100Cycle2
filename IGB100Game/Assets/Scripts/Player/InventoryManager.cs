@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
@@ -147,6 +148,28 @@ public class InventoryManager : MonoBehaviour
         List<WeaponUpgrade> availableWeaponUpgrades = new List<WeaponUpgrade>(weaponUpgradeOptions);
         List<PassiveItemUpgrade> availablePassiveItemUpgrades = new List<PassiveItemUpgrade>(passiveItemUpgradeOptions);
 
+        // You get Brian code from here on out. I'm sorry for your loss.
+        //List<WeaponUpgrade> availableWeaponUpgrades = new List<WeaponUpgrade>();
+        //List<PassiveItemUpgrade> availablePassiveItemUpgrades = new List<PassiveItemUpgrade>();
+        
+        int filledWeapons = 0; // Counts the number of filled slots. Because list.Count wasn't working :^)
+        foreach(WeaponController equips in weaponSlots)
+        {
+            if (equips != null)
+            {
+                filledWeapons += 1;
+            }
+        }
+        int filledStats = 0; // Counts the number of filled slots. Because list.Count wasn't working :^)
+        foreach (PassiveItem equips in passiveItemSlots)
+        {
+            if (equips != null)
+            {
+                filledStats += 1;
+            }
+        }
+
+        // No more Brian code
         foreach (var upgradeOption in upgradeUIOptions)
         {
             if (availableWeaponUpgrades.Count == 0 && availablePassiveItemUpgrades.Count == 0)

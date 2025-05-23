@@ -61,7 +61,7 @@ public class EnemyChargerStats : EnemyStats
             ChargingPhase = 1;
             ChargeTimer = chargeFreeze;
             target = new Vector2(player.transform.position.x, player.transform.position.y);
-            GameObject indInstance = Instantiate(indicator);
+            GameObject indInstance = Instantiate(indicator, this.transform);
             indInstance.transform.position = gameObject.transform.position;
             indInstance.GetComponent<EnemyChargeIndicator>().Setup(chargeFreeze, target, gameObject, transform.localScale);
             anim.SetBool("Charge", true);
