@@ -16,13 +16,13 @@ MonoBehaviour:
   name: Dagger Toss Start
   startingWeapon: {fileID: 4142939955346733007, guid: 3c9b9b2b37172be4da430462a5eae82a, type: 3}
   maxHealth: 100
-  recovery: 35
+  recovery: 0
   moveSpeed: 4
   might: 1
   projectileSpeed: 1
   projectileCount: 1
   projectileDuration: 1
   areaSize: 1
-  magnet: 2
+  magnet: 10
   cooldown: 1
   playerSize: 0

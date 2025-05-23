@@ -4,6 +4,6 @@ public class RecoveryPassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        player.CurrentRecovery = player.characterData.Recovery - passiveItemData.Multiplier; // Flat time reduction
+        player.CurrentRecovery = passiveItemData.Multiplier; // Recovery time is set to the item
     }
 }

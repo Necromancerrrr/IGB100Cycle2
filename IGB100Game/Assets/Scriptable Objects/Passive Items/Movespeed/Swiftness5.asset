@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
   m_Name: Swiftness5
   m_EditorClassIdentifier: 
-  multiplier: 90
+  multiplier: 65
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Swiftness +MAX
-  description: +30% movement speed
+  name: Swiftness MAX
+  description: +25% movement speed
   icon: {fileID: 4368688791620862549, guid: c0e4ee9a822ec6746b1c98f278bd5d21, type: 3}

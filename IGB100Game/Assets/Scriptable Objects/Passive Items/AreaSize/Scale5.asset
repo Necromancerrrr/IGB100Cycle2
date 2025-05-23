@@ -15,6 +15,6 @@ MonoBehaviour:
   multiplier: 150
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Scale +MAX
+  name: Scale MAX
   description: +50% area size
   icon: {fileID: 5884407655333904010, guid: 3c2552e55696dea4ea91f65bd53ec294, type: 3}

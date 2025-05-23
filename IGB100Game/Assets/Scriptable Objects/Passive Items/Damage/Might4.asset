@@ -15,6 +15,6 @@ MonoBehaviour:
   multiplier: 80
   level: 4
   nextLevelPrefab: {fileID: 2215225900889134074, guid: 10050475f4a68604f96f1ebd3ebf4038, type: 3}
-  name: Might +3
+  name: Might
   description: +20% damage output
   icon: {fileID: -7854629474860912292, guid: 249c073911b19b34bb999cbaf51b992c, type: 3}

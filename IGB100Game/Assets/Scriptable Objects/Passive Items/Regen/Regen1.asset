@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
   m_Name: Regen1
   m_EditorClassIdentifier: 
-  multiplier: 5
+  multiplier: 30
   level: 1
   nextLevelPrefab: {fileID: 0}
   name: Regeneration

@@ -15,6 +15,6 @@ MonoBehaviour:
   multiplier: 150
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Abundance +MAX
+  name: Abundance MAX
   description: +50% projectile count
   icon: {fileID: 21300000, guid: d39f787ebfeea4e44b7ff669c0b58663, type: 3}
