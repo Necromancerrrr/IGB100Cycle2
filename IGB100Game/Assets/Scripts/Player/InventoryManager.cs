@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.XR;
@@ -148,36 +149,116 @@ public class InventoryManager : MonoBehaviour
         List<WeaponUpgrade> availableWeaponUpgrades = new List<WeaponUpgrade>(weaponUpgradeOptions);
         List<PassiveItemUpgrade> availablePassiveItemUpgrades = new List<PassiveItemUpgrade>(passiveItemUpgradeOptions);
 
-        // You get Brian code from here on out. I'm sorry for your loss.
-        //List<WeaponUpgrade> availableWeaponUpgrades = new List<WeaponUpgrade>();
-        //List<PassiveItemUpgrade> availablePassiveItemUpgrades = new List<PassiveItemUpgrade>();
-        
-        int filledWeapons = 0; // Counts the number of filled slots. Because list.Count wasn't working :^)
-        foreach(WeaponController equips in weaponSlots)
+        // Brian Code
+
+        int weaponListLength = 0;
+        for (int i = 0; i < weaponSlots.Count; i++) // Checks to see if the current weaponSlots are full
         {
-            if (equips != null)
+            if (weaponSlots[i] != null)
             {
-                filledWeapons += 1;
+                weaponListLength += 1; // list.Count wasn't working :^)    
             }
         }
-        int filledStats = 0; // Counts the number of filled slots. Because list.Count wasn't working :^)
-        foreach (PassiveItem equips in passiveItemSlots)
+        int indexNum = availableWeaponUpgrades.Count - 1; // It's important to go through the list backwards as it prevents any errors as we cull options
+        for (int i = availableWeaponUpgrades.Count - 1; i > -1; i--) // Repeat for every option in availableWeaponUpgrades
         {
-            if (equips != null)
+            bool removeFromList = true;
+            GameObject currentCheck = availableWeaponUpgrades[i].initialWeapon; // Initially sets the weapon controller object
+            while (removeFromList == true)
             {
-                filledStats += 1;
+                for (int j = 0; j < weaponListLength; j++)
+                {
+                    if (currentCheck.GetComponent<WeaponController>().weaponData == weaponSlots[j].weaponData && currentCheck.GetComponent<WeaponController>().weaponData.NextLevelPrefab != null)
+                    {   // If the weaponUpgradeOption matches the equipped option and a level up is available
+                        removeFromList = false; // Do not remove it from the potential upgrades list
+                    }
+                    if (currentCheck.GetComponent<WeaponController>() == weaponSlots[j] && currentCheck.GetComponent<WeaponController>().weaponData.NextLevelPrefab == null)
+                    {   // If the weaponUpgradeOption matches the equipped option and a level up is not available
+                        break; // Exit function
+                    }
+                }
+                if (currentCheck.GetComponent<WeaponController>().weaponData.NextLevelPrefab == null) // If there aren't any further levels
+                {
+                    if (weaponListLength == 6)
+                    {
+                        break; // Remove additional options when the weapon slots are full
+                    }
+                    else
+                    {
+                        removeFromList = false; // Keep any options that don't find a match when the weapon list isn't full 
+                    }
+                }
+                else
+                {
+                    currentCheck = currentCheck.GetComponent<WeaponController>().weaponData.NextLevelPrefab; // Increases the level that is checked
+                }
+            }
+            if (removeFromList == true)
+            {
+                availableWeaponUpgrades.Remove(weaponUpgradeOptions[i]);
             }
         }
 
-        // No more Brian code
-        foreach (var upgradeOption in upgradeUIOptions)
+        // Second verse, just as good as the first
+
+        int statListLength = 0;
+        for (int i = 0; i < passiveItemSlots.Count; i++) // Checks to see if the current passiveItemSlots are full
         {
-            if (availableWeaponUpgrades.Count == 0 && availablePassiveItemUpgrades.Count == 0)
+            if (passiveItemSlots[i] != null)
+            {
+                statListLength += 1; // list.Count wasn't working :^)    
+            }
+        }
+        indexNum = availablePassiveItemUpgrades.Count - 1; // It's important to go through the list backwards as it prevents any errors as we cull options
+        for (int i = availablePassiveItemUpgrades.Count - 1; i > -1; i--) // Repeat for every option in availablePassiveItemUpgrades
+        {
+            bool removeFromList = true;
+            GameObject currentCheck = availablePassiveItemUpgrades[i].initialPassiveItem; // Initially sets the passive controller object
+            while (removeFromList == true)
+            {
+                for (int j = 0; j < statListLength; j++)
+                {
+                    if (currentCheck.GetComponent<PassiveItem>().passiveItemData == passiveItemSlots[j].passiveItemData && currentCheck.GetComponent<PassiveItem>().passiveItemData.NextLevelPrefab != null)
+                    {   // If the passiveItemUpgradeOption matches the equipped option and a level up is available
+                        removeFromList = false; // Do not remove it from the potential upgrades list
+                    }
+                    if (currentCheck.GetComponent<PassiveItem>() == passiveItemSlots[j] && currentCheck.GetComponent<PassiveItem>().passiveItemData.NextLevelPrefab == null)
+                    {   // If the passiveItemUpgradeOption matches the equipped option and a level up is not available
+                        break; // Exit function
+                    }
+                }
+                if (currentCheck.GetComponent<PassiveItem>().passiveItemData.NextLevelPrefab == null) // If there aren't any further levels
+                {
+                    if (statListLength == 6)
+                    {
+                        break; // Remove additional options when the passive slots are full
+                    }
+                    else
+                    {
+                        removeFromList = false; // Keep any options that don't find a match when the passive list isn't full 
+                    }
+                }
+                else
+                {
+                    currentCheck = currentCheck.GetComponent<PassiveItem>().passiveItemData.NextLevelPrefab; // Increases the level that is checked
+                }
+            }
+            if (removeFromList == true)
+            {
+                availablePassiveItemUpgrades.Remove(passiveItemUpgradeOptions[i]);
+            }
+        }
+
+        // End of Brian Code
+
+        foreach (var upgradeOption in upgradeUIOptions) // Repeat for each card
+        {
+            if (availableWeaponUpgrades.Count == 0 && availablePassiveItemUpgrades.Count == 0) // If there are no available upgrades, exit
             {
                 return;
             }
 
-            int upgradeType;
+            int upgradeType; // Randomly generates a choice between weapon and passive upgrade
 
             if (availableWeaponUpgrades.Count == 0)
             {

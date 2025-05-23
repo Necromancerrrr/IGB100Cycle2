@@ -80,15 +80,14 @@ public class AppleJuiceBehaviour : ProjectileWeaponBehaviour
     {
         if (Timer <= weaponDuration)
         {
-            TickTimer -= Time.deltaTime; Debug.Log("ticking");
             if (TickTimer <= 0 && col.enabled == false)
             {
-                col.enabled = true; Debug.Log("col enabled");
+                col.enabled = true;
                 TickTimer = TickRate;
             }
             else if (TickRate - TickTimer >= 0.1 && col.enabled == true)
             {
-                col.enabled = false; Debug.Log("col disabled");
+                col.enabled = false;
             }
         }
     }

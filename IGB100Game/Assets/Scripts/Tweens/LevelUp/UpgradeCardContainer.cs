@@ -33,7 +33,6 @@ public class UpgradeCardContainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentCardNum);
         //gameObject.activeSelf
         
 
