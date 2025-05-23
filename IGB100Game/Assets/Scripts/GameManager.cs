@@ -396,6 +396,8 @@ public class GameManager : MonoBehaviour
     {
         ChangeGameState(GameState.LevelUp);
         playerObject.SendMessage("RemoveAndApplyUpgrades");
+        GameObject cine = GameObject.FindWithTag("CineCamera");
+        cine.GetComponent<ScreenShake>().perlinNoiseEnabled = false;
     }
 
     public void EndLevelUp()
@@ -405,6 +407,8 @@ public class GameManager : MonoBehaviour
         levelUpScreen.SetActive(false);
         ChangeGameState(GameState.Gameplay);
         levelUpCardContainer.CleanUp();
+        GameObject cine = GameObject.FindWithTag("CineCamera");
+        cine.GetComponent<ScreenShake>().perlinNoiseEnabled = true;
     }
 
     public void StartPactChoice()
