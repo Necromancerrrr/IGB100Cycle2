@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour
     public List<Image> chosenPactsUI = new List<Image>(2);
 
 
+    public UpgradeCardContainer levelUpCardContainer; 
+
     void Awake()
     {
         // Singleton check
@@ -393,8 +395,6 @@ public class GameManager : MonoBehaviour
     public void StartLevelUp()
     {
         ChangeGameState(GameState.LevelUp);
-        GameObject cine = GameObject.FindWithTag("CineCamera");
-        cine.GetComponent<ScreenShake>().perlinNoiseEnabled = false; // Pauses screen shakes
         playerObject.SendMessage("RemoveAndApplyUpgrades");
     }
 
@@ -404,8 +404,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f; // Resumes game
         levelUpScreen.SetActive(false);
         ChangeGameState(GameState.Gameplay);
-        GameObject cine = GameObject.FindWithTag("CineCamera");
-        cine.GetComponent<ScreenShake>().perlinNoiseEnabled = true; // Resumes screen shakes
+        levelUpCardContainer.CleanUp();
     }
 
     public void StartPactChoice()
