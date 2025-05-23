@@ -3,10 +3,18 @@ using DG.Tweening;
 
 public class UpgradeCard : MonoBehaviour
 {
+    private float initialPosition;
+
+    [SerializeField] private float duration;
+
+    private UpgradeCardContainer cardContainer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        initialPosition = transform.position.y;
+
+        cardContainer = FindFirstObjectByType<UpgradeCardContainer>();
     }
 
     // Update is called once per frame
@@ -15,13 +23,19 @@ public class UpgradeCard : MonoBehaviour
         
     }
 
-    public void ScaleUp()
+    public void TweenYDown()
     {
-        transform.DOScale(1.2f, 0.1f).SetUpdate(true);
+        if (cardContainer.clickable == true)
+        {
+            transform.DOMoveY(initialPosition, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
+        }
     }
 
-    public void ScaleDown()
+    public void TweenYUp()
     {
-        transform.DOScale(1f, 0.1f).SetUpdate(true);
+        if (cardContainer.clickable == true)
+        {
+            transform.DOMoveY(initialPosition + 1f, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
+        }
     }
 }

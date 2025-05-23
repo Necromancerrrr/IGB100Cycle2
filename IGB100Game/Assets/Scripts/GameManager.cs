@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour
     public List<Image> chosenPactsUI = new List<Image>(2);
 
 
+    public UpgradeCardContainer levelUpCardContainer; 
+
     void Awake()
     {
         // Singleton check
@@ -402,6 +404,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f; // Resumes game
         levelUpScreen.SetActive(false);
         ChangeGameState(GameState.Gameplay);
+        levelUpCardContainer.CleanUp();
     }
 
     public void StartPactChoice()
