@@ -5,7 +5,6 @@ using UnityEngine;
 public class BorderBoneSpawner : MonoBehaviour
 {
     public enum BorderType { Top, Bottom, Left, Right }
-    [Tooltip("Which border this is")]
     public BorderType borderType;
 
     [Tooltip("Bone prefab with pop animation setup")]
@@ -46,7 +45,7 @@ public class BorderBoneSpawner : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             playerInside = true;
-            spawnTimer = 0f;
+            spawnTimer = 0f; // immediate spawn
         }
     }
 
@@ -58,7 +57,7 @@ public class BorderBoneSpawner : MonoBehaviour
 
     private void Update()
     {
-        // 1) Cleanup distant bones
+        // Cleanup bones too far away
         for (int i = spawnedBones.Count - 1; i >= 0; i--)
         {
             var bone = spawnedBones[i];
@@ -74,7 +73,7 @@ public class BorderBoneSpawner : MonoBehaviour
             }
         }
 
-        // 2) While player’s inside, spawn waves
+        // Spawn waves while player is inside
         if (playerInside)
         {
             spawnTimer -= Time.deltaTime;
@@ -88,71 +87,83 @@ public class BorderBoneSpawner : MonoBehaviour
 
     private void SpawnBones()
     {
-        // Destroy old bones
-        foreach (var bone in spawnedBones)
-        {
-            if (bone != null)
-                Destroy(bone);
-        }
-        spawnedBones.Clear();
-
-        // Get world-space bounds of the border collider
+        // Determine the world-space line point on the border edge
         Bounds b = borderCol.bounds;
-        Vector2 spawnLinePoint;
+        Vector2 linePoint;
         Vector2 tangent, normal;
 
         switch (borderType)
         {
             case BorderType.Top:
-                spawnLinePoint.y = b.max.y;
-                spawnLinePoint.x = Mathf.Clamp(player.position.x, b.min.x, b.max.x);
-                tangent = Vector2.right;
-                normal = Vector2.down;
+                linePoint.y = b.max.y;
+                linePoint.x = Mathf.Clamp(player.position.x, b.min.x, b.max.x);
+                tangent = Vector2.right; normal = Vector2.down;
                 break;
-
             case BorderType.Bottom:
-                spawnLinePoint.y = b.min.y;
-                spawnLinePoint.x = Mathf.Clamp(player.position.x, b.min.x, b.max.x);
-                tangent = Vector2.right;
-                normal = Vector2.up;
+                linePoint.y = b.min.y;
+                linePoint.x = Mathf.Clamp(player.position.x, b.min.x, b.max.x);
+                tangent = Vector2.right; normal = Vector2.up;
                 break;
-
             case BorderType.Left:
-                spawnLinePoint.x = b.min.x;
-                spawnLinePoint.y = Mathf.Clamp(player.position.y, b.min.y, b.max.y);
-                tangent = Vector2.up;
-                normal = Vector2.right;
+                linePoint.x = b.min.x;
+                linePoint.y = Mathf.Clamp(player.position.y, b.min.y, b.max.y);
+                tangent = Vector2.up; normal = Vector2.right;
                 break;
-
             case BorderType.Right:
-                spawnLinePoint.x = b.max.x;
-                spawnLinePoint.y = Mathf.Clamp(player.position.y, b.min.y, b.max.y);
-                tangent = Vector2.up;
-                normal = Vector2.left;
+                linePoint.x = b.max.x;
+                linePoint.y = Mathf.Clamp(player.position.y, b.min.y, b.max.y);
+                tangent = Vector2.up; normal = Vector2.left;
                 break;
-
             default:
-                spawnLinePoint.y = b.max.y;
-                spawnLinePoint.x = Mathf.Clamp(player.position.x, b.min.x, b.max.x);
-                tangent = Vector2.right;
-                normal = Vector2.down;
+                linePoint.y = b.max.y;
+                linePoint.x = Mathf.Clamp(player.position.x, b.min.x, b.max.x);
+                tangent = Vector2.right; normal = Vector2.down;
                 break;
         }
 
         float totalOffset = outwardOffset + anticipationDistance;
         int half = boneCount / 2;
+        float minDist = spacing * 0.5f;
 
         for (int i = -half; i <= half; i++)
         {
-            Vector2 along = tangent * (i * spacing);
-            Vector2 spawnPos = spawnLinePoint + along + normal * totalOffset;
+            Vector2 spawnPos = linePoint + tangent * (i * spacing)
+                                     + normal * totalOffset;
 
+            // Check for a nearby existing bone
+            GameObject nearby = null;
+            foreach (var bObj in spawnedBones)
+            {
+                if (bObj != null &&
+                    Vector2.Distance(bObj.transform.position, spawnPos) < minDist)
+                {
+                    nearby = bObj;
+                    break;
+                }
+            }
+
+            if (nearby != null)
+            {
+                // Just update its draw order; don't replay the animation
+                var srExist = nearby.GetComponent<SpriteRenderer>();
+                if (srExist != null)
+                    srExist.sortingOrder = Mathf.RoundToInt(-nearby.transform.position.y * 100);
+                continue;
+            }
+
+            // No bone here yet → spawn a fresh one
             var bone = Instantiate(bonePrefab, spawnPos, Quaternion.identity);
             spawnedBones.Add(bone);
 
-            var anim = bone.GetComponent<Animator>();
-            if (anim != null)
-                anim.SetTrigger("PopTrigger");
+            // Play its pop animation once
+            var boneAnim = bone.GetComponent<Animator>();
+            if (boneAnim != null)
+                boneAnim.Play("Bone", 0, 0f);
+
+            // And set its draw order so lower bones render in front
+            var sr = bone.GetComponent<SpriteRenderer>();
+            if (sr != null)
+                sr.sortingOrder = Mathf.RoundToInt(-spawnPos.y * 100);
         }
     }
 }
