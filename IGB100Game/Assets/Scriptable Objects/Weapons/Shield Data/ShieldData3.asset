@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 7010695086612353368, guid: baa7706d74300ef43a452838cf70f4f7, type: 3}
   damage: 10
   speed: 10
-  cooldownDuration: 15
+  cooldownDuration: 10
   pierce: 0
   areaSize: 0
   projectileCount: 0
