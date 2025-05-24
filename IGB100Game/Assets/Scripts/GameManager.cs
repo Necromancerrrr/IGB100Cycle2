@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
     public List<Image> chosenPactsUI = new List<Image>(2);
 
 
-    public UpgradeCardContainer levelUpCardContainer; 
+    public UpgradeCardContainer levelUpCardContainer;
 
     void Awake()
     {
@@ -144,6 +144,7 @@ public class GameManager : MonoBehaviour
                     isChoosingLvlUp = true;
                     Time.timeScale = 0f; // Stops the game\
                     Debug.Log("Player is levelling up and choosing weapon");
+                    levelUpCardContainer.CleanUp();
                     levelUpScreen.SetActive(true);
                 }
                 break;
@@ -403,6 +404,7 @@ public class GameManager : MonoBehaviour
     {
         isChoosingLvlUp = false;
         Time.timeScale = 1.0f; // Resumes game
+        
         levelUpScreen.SetActive(false);
         ChangeGameState(GameState.Gameplay);
         levelUpCardContainer.CleanUp();

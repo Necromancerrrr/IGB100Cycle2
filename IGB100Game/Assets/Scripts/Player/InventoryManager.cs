@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -67,10 +68,7 @@ public class InventoryManager : MonoBehaviour
         weaponUISlots[slotIndex].enabled = true;
         weaponUISlots[slotIndex].sprite = weapon.weaponData.Icon;
 
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.EndLevelUp();
-        }
+        LevelUpEnd();
     }
 
     public void AddPassiveItem(int slotIndex, PassiveItem passiveItem) // Add a passive item to a specific slot
@@ -81,10 +79,7 @@ public class InventoryManager : MonoBehaviour
         passiveItemUISlots[slotIndex].sprite = passiveItem.passiveItemData.Icon;
 
 
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.EndLevelUp();
-        }
+        LevelUpEnd();
     }
 
 
@@ -107,10 +102,7 @@ public class InventoryManager : MonoBehaviour
 
             weaponUpgradeOptions[upgradeIndex].weaponData = upgradedWeapon.GetComponent<WeaponController>().weaponData;
 
-            if (GameManager.instance != null)
-            {
-                GameManager.instance.EndLevelUp();
-            }
+            LevelUpEnd();
         }
     }
 
@@ -133,12 +125,18 @@ public class InventoryManager : MonoBehaviour
 
             passiveItemUpgradeOptions[upgradeIndex].passiveItemData = upgradedPassiveItem.GetComponent<PassiveItem>().passiveItemData;
 
-            if (GameManager.instance != null)
-            {
-                GameManager.instance.EndLevelUp();
-            }
+            LevelUpEnd();
         }
     }
+
+    private void LevelUpEnd()
+    {
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.EndLevelUp();
+        }
+    }
+
 
     /// <summary>
     /// WEAPON AND PASSIVE ITEM UPGRADE SYSTEM

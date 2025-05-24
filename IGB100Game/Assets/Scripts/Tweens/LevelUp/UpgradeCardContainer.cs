@@ -1,18 +1,16 @@
 using UnityEngine;
 using DG.Tweening;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 
 public class UpgradeCardContainer : MonoBehaviour
 {
-    [SerializeField] private Transform[] cards;
+    [SerializeField] private GameObject[] cards;
 
     private float duration = 0.5f;
     private bool currentlyTweening = false;
     private int currentCardNum = 0;
 
     private GameManager gameManager;
-
-    private bool currentlyShrunk = true;
 
     public bool clickable = false;
     private float clickableTimer = 0;
@@ -26,7 +24,8 @@ public class UpgradeCardContainer : MonoBehaviour
 
         for (int i = 0; i < cards.Length; i++)
         {
-            cards[i].localScale = new Vector3(0, 0, 0);
+            cards[i].transform.localScale = new Vector3(0, 0, 0);
+            cards[i].transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
@@ -34,59 +33,56 @@ public class UpgradeCardContainer : MonoBehaviour
     void Update()
     {
         //gameObject.activeSelf
-        
 
         if (gameManager.currentState == GameManager.GameState.LevelUp && currentlyTweening == false && currentCardNum < 3)
         {
             InitialTween(currentCardNum);
         }
 
-        if (cards[currentCardNum].localScale.x > 0.5 && currentCardNum < 2)
+        if (cards[currentCardNum].transform.localScale.x > 0.2f && currentCardNum < 2)
         {
             currentCardNum++;
             currentlyTweening = false;
         }
 
-        if (clickableTimer > 0.5)
+        if (clickableTimer > 0.7f)
         {
             clickable = true;
         }
         else
         {
-            clickableTimer += Time.deltaTime;
+            clickableTimer += Time.unscaledDeltaTime;
         }
     }
 
-    
 
-    //TweenCallback
-    //.OnComplete(InitialTween(currentCard))
 
-    
     public void InitialTween(int currentCard)
     {
-        Transform currentCardTransform = cards[currentCard];
+        Transform currentCardTransform = cards[currentCard].transform;
 
         currentlyTweening = true;
 
-        currentCardTransform.DOScale(1f, duration).SetUpdate(true).SetEase(Ease.OutQuint);
-        currentCardTransform.DOLocalRotate(new Vector3(0, 0, -360), duration, RotateMode.FastBeyond360).SetUpdate(true).SetEase(Ease.OutQuint);
+        Sequence scaleSequence = DOTween.Sequence();
+
+        scaleSequence.Append(currentCardTransform.DOScale(1.5f, duration/2f).SetUpdate(true).SetEase(Ease.InCubic));
+        scaleSequence.Append(currentCardTransform.DOScale(1f, duration/2f).SetUpdate(true).SetEase(Ease.OutCubic));
+        scaleSequence.Play().SetUpdate(true);
+
+        currentCardTransform.DOLocalRotate(new Vector3(0, 0, -720), duration/1.5f, RotateMode.FastBeyond360).SetUpdate(true).SetEase(Ease.OutCubic);
     }
 
     public void CleanUp() // makes everything ready for the next level up, triggers in GameManager & is called in EndLevelUp()
     {
-        cards[0].localScale = new Vector3(0, 0, 0);
-        cards[1].localScale = new Vector3(0, 0, 0);
-        cards[2].localScale = new Vector3(0, 0, 0);
-        cards[0].rotation = Quaternion.Euler(0, 0, 0);
-        cards[1].rotation = Quaternion.Euler(0, 0, 0);
-        cards[2].rotation = Quaternion.Euler(0, 0, 0);
         for (int i = 0; i < cards.Length; i++)
-            {
-                cards[i].localScale = new Vector3(0, 0, 0);
-                cards[i].rotation = Quaternion.Euler(0, 0, 0);
-            }
-            currentCardNum = 0;
-            currentlyTweening = false;
+        {
+            cards[i].transform.DOScale(0, 0).SetUpdate(true);
+            cards[i].transform.DOLocalRotate(new Vector3(0, 0, 0), 0).SetUpdate(true);
+        }
+
+        currentCardNum = 0;
+        currentlyTweening = false;
+        clickableTimer = 0;
+        clickable = false;
     }
 }
