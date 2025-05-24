@@ -13,50 +13,58 @@ public class HelpOverlay : MonoBehaviour
     {
         SetScreen1();
     }
+    public void MovingForward()
+    {
+        switch (State)
+        {
+            case 1:
+                SetScreen2();
+                break;
+            case 2:
+                SetScreen3();
+                break;
+            case 3:
+                SetScreen4();
+                break;
+            case 4:
+                SetNoScreens();
+                break;
+            default:
+                SetNoScreens();
+                break;
+        }
+    }
+    public void MovingBack()
+    {
+        switch (State)
+        {
+            case 1:
+                SetNoScreens();
+                break;
+            case 2:
+                SetScreen1();
+                break;
+            case 3:
+                SetScreen2();
+                break;
+            case 4:
+                SetScreen3();
+                break;
+            default:
+                SetNoScreens();
+                break;
+        }
+    }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
         {
-            switch (State)
-            {
-                case 1:
-                    SetScreen2();
-                    break;
-                case 2:
-                    SetScreen3();
-                    break;
-                case 3:
-                    SetScreen4();
-                    break;
-                case 4:
-                    SetNoScreens();
-                    break;
-                default:
-                    SetNoScreens();
-                    break;
-            }
+            MovingForward();
         }
         else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W))
         {
-            switch (State)
-            {
-                case 1:
-                    SetNoScreens();
-                    break;
-                case 2:
-                    SetScreen1();
-                    break;
-                case 3:
-                    SetScreen2();
-                    break;
-                case 4:
-                    SetScreen3();
-                    break;
-                default:
-                    SetNoScreens();
-                    break;
-            }
+            MovingBack();
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
