@@ -39,7 +39,7 @@ public class UpgradeCard : MonoBehaviour
         if (cardContainer.clickable == true)
         {
             DOTween.Kill(m_RectTransform);
-            aTween = null;
+            //aTween = null;
             m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0), 0).SetUpdate(true);
             m_RectTransform.DOAnchorPos(initialPos, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
         }
@@ -50,12 +50,15 @@ public class UpgradeCard : MonoBehaviour
         if (cardContainer.clickable == true && clicked == false)
         {
             m_RectTransform.DOAnchorPos(new Vector2(initialPos.x, initialPos.y + 50f), duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
-
-            m_RectTransform.DOLocalRotate(new Vector3(0, 0, -0.5f), 0.3f).SetUpdate(true).OnComplete(() => 
+            
+            if (m_RectTransform.localRotation == Quaternion.Euler(0, 0, 0))
             {
-                //DOTween.Play(aTween);
-                aTween = m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0.5f), 0.3f).SetUpdate(true).SetLoops(-1, LoopType.Yoyo);
-            });
+                m_RectTransform.DOLocalRotate(new Vector3(0, 0, -0.5f), 0.2f).SetUpdate(true).OnComplete(() => 
+                {
+                    m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0.5f), 0.2f).SetUpdate(true).SetLoops(-1, LoopType.Yoyo);
+                });
+                Debug.Log("AAA");
+            }
         }
     }
 
@@ -65,6 +68,7 @@ public class UpgradeCard : MonoBehaviour
         m_RectTransform.DOAnchorPos(initialPos, duration, false).SetEase(Ease.OutQuint).SetUpdate(true).OnComplete(() =>
         {
             clicked = false;
+            DOTween.Kill(m_RectTransform);
         });
     }
 }
