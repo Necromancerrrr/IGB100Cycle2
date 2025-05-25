@@ -19,7 +19,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
     float burstParticles;
     float destroyTimer;
 
-    [SerializeField] private AudioClip spawnAudio;
+    
 
     override protected void Start()
     {
@@ -37,7 +37,7 @@ public class OrbBehaviour : ProjectileWeaponBehaviour
         SetScale();
         transform.localScale = new Vector3(0, 0, 1);
 
-        AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
+        
     }
 
     public void targetSet(bool tar)

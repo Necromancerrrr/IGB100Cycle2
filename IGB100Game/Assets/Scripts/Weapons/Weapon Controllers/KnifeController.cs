@@ -7,6 +7,8 @@ public class KnifeController : WeaponController
     float interval;
     Vector3 dir;
     Vector3 dir2;
+
+    [SerializeField] private AudioClip spawnAudio;
     protected override void Start()
     {
         base.Start();
@@ -33,6 +35,7 @@ public class KnifeController : WeaponController
     }
     private void Fire()
     {
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
         ammo -= 1;
         GameObject spawnKnife = Instantiate(weaponData.Prefab);
         spawnKnife.transform.position = transform.position; // Assign the position to be the same as this object, which is parented to the player

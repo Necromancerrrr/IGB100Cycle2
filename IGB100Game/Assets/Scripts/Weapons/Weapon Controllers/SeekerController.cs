@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SeekerController : WeaponController
 {
+    [SerializeField] private AudioClip spawnAudio;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     override protected void Start()
     {
@@ -10,6 +11,7 @@ public class SeekerController : WeaponController
     protected override void Attack()
     {
         base.Attack();
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 0.3f);
         for (int i = 0; i < weaponCount; i++)
         {
             GameObject seekerInstance = Instantiate(weaponData.Prefab);

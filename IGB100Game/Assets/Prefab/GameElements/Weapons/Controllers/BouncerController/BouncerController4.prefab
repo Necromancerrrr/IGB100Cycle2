@@ -47,3 +47,4 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 3ab3a5af901a0c047b145fc235637c1f, type: 2}
   weaponCooldown: 0
   weaponCount: 0
+  spawnAudio: {fileID: 8300000, guid: c23716d6e80130d4daa9052d91fccbf3, type: 3}

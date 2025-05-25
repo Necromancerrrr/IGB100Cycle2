@@ -45,5 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: c8470517aa0d91d4c9fe25ae97e0babb, type: 2}
-  currentCooldown: 10
-  currentProjectileCount: 0
+  weaponCooldown: 0
+  weaponCount: 0
+  spawnAudio: {fileID: 8300000, guid: a74f51d5b3814144a8dc0382722a2e75, type: 3}

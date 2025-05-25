@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class BouncerController : WeaponController
 {
+    [SerializeField] private AudioClip spawnAudio;
     protected override void Attack()
     {
         base.Attack();
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 0.2f);
         float angle = 360 / (weaponCount);
         for (int i = 0; i < weaponCount; i++)
         {

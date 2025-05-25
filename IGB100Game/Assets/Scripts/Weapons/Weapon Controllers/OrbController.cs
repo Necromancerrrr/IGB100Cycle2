@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class OrbController : WeaponController
 {
+    [SerializeField] private AudioClip spawnAudio;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     override protected void Start()
     {
@@ -12,6 +13,7 @@ public class OrbController : WeaponController
     protected override void Attack()
     {
         base.Attack();
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1f);
         for (int i = 0; i < weaponCount; i++)
         {
             GameObject orbInstance = Instantiate(weaponData.Prefab);

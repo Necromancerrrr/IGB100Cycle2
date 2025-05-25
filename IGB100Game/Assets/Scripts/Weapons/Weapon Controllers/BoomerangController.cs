@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BoomerangController : WeaponController
 {
+    [SerializeField] private AudioClip spawnAudio;
     protected override void Start()
     {
         base.Start();
@@ -10,6 +11,7 @@ public class BoomerangController : WeaponController
     protected override void Attack()
     {
         base.Attack();
+        AudioManager.instance.PlaySFX(spawnAudio, transform, 1);
         for (int i = 0; i < weaponCount; i++)
         {
             GameObject spawnBoomerang = Instantiate(weaponData.Prefab);

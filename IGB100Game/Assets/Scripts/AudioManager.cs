@@ -1,11 +1,13 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
 
     public static AudioManager instance;
+    public AudioMixerGroup mix;
     
     private void Awake()
     {
@@ -55,6 +57,8 @@ public class AudioManager : MonoBehaviour
         generatedAudioSource.clip = audioClip;
 
         generatedAudioSource.volume = volume;
+
+        generatedAudioSource.outputAudioMixerGroup = mix;
 
         generatedAudioSource.Play();
 

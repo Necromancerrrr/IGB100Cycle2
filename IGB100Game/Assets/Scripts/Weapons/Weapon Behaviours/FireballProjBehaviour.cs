@@ -8,7 +8,7 @@ public class FireballProjBehaviour : ProjectileWeaponBehaviour
     [SerializeField] private GameObject sprite;
     [SerializeField] private GameObject trail;
 
-    [SerializeField] private AudioClip spawnAudio;
+    
 
     override protected void Start()
     {
@@ -17,8 +17,6 @@ public class FireballProjBehaviour : ProjectileWeaponBehaviour
         rb = GetComponent<Rigidbody2D>();
         SetEnemy();
         Fire();
-
-        AudioManager.instance.PlaySFX(spawnAudio, transform, 1);
     }
 
     private void SetEnemy() // Selects the closest enemy as the target and grabs their angle. If there are no valid targets, self destruct

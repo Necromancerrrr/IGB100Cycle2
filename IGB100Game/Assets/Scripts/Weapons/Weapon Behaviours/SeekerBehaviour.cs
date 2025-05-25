@@ -9,16 +9,12 @@ public class SeekerBehaviour : ProjectileWeaponBehaviour
     private Rigidbody2D rb;
     [SerializeField] private GameObject par;
 
-    [SerializeField] private AudioClip spawnAudio;
-
     override protected void Start()
     {
         // Pulls stats and finds components
         base.Start();
         rb = GetComponent<Rigidbody2D>();
         SetEnemy();
-
-        AudioManager.instance.PlaySFX(spawnAudio, transform, 0.3f);
     }
 
     protected void Update()

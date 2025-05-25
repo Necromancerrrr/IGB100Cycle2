@@ -20,8 +20,6 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
     [SerializeField] private Color parColour;
     [SerializeField] private GameObject par;
 
-    [SerializeField] private AudioClip spawnAudio;
-
     new void Start()
     {
         base.Start();
@@ -30,7 +28,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
         rotation = Random.Range(0f, 360f);
         SetRotSpeed();
 
-        AudioManager.instance.PlaySFX(spawnAudio, transform, 0.2f);
+        
     }
 
     void SetRotSpeed()

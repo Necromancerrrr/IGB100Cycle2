@@ -22,8 +22,6 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
     [SerializeField] private GameObject trail1;
     [SerializeField] private GameObject trail2;
 
-    [SerializeField] private AudioClip spawnAudio;
-
     protected override void Start()
     {
         base.Start();
@@ -35,7 +33,7 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
         var emission2 = trail2.GetComponent<ParticleSystem>().emission;
         emission2.enabled = false;
 
-        AudioManager.instance.PlaySFX(spawnAudio, transform, 1);
+        
     }
 
     public void targetSet(bool rand) // Checks whether the targeting is for the closest enemy or random
