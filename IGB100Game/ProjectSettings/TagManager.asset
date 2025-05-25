@@ -11,6 +11,8 @@ TagManager:
   - CineCamera
   - AudioManager
   - MusicPlayer
+  - MusicSlider
+  - SoundFXSlider
   layers:
   - Default
   - TransparentFX

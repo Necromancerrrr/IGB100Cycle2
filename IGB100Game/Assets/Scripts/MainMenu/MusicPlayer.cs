@@ -27,13 +27,25 @@ public class MusicPlayer : MonoBehaviour
             }
         }
     }
+    private void OnLevelWasLoaded(int level)
+    {
+        SetSliderValues();
+    }
     void SetSliderValues()
     {
+        if (musicSlider == null && (GameObject.FindGameObjectsWithTag("MusicSlider").Length != 0))
+        {
+            musicSlider = GameObject.FindWithTag("MusicSlider").GetComponent<Slider>(); Debug.Log("grabbing slider");
+        }
         if (musicSlider != null)
         {
             audioMixer.GetFloat("musicVol", out float audioLevel);
             if (audioLevel == -80f) { musicSlider.value = 0; }
             else { musicSlider.value = Mathf.Pow(10, audioLevel / 20); }
+        }
+        if (musicSlider == null && (GameObject.FindGameObjectsWithTag("SoundFXSlider").Length != 0))
+        {
+            soundFXSlider = GameObject.FindWithTag("SoundFXSlider").GetComponent<Slider>();
         }
         if (soundFXSlider != null)
         {
