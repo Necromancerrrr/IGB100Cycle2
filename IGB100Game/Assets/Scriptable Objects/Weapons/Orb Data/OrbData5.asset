@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2896348483173793368, guid: 86e3125da69e5d34697b731000e92ed9, type: 3}
   damage: 15
-  speed: 2
+  speed: 1.5
   cooldownDuration: 4
   pierce: 9999
   areaSize: 4
@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Gravity Orb MAX
-  description: +10 damage
+  description: Orbs do even more damage. Orbs are slower.
   icon: {fileID: -8985924484199272655, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1

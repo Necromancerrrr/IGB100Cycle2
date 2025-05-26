@@ -572,7 +572,7 @@ MonoBehaviour:
   textComponent: {fileID: 53652024}
   x_scale: 0
   sin_peak: 2
-  speed: 5
+  speed: 8
 --- !u!1 &64316666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   textComponent: {fileID: 129305806}
   x_scale: 0
   sin_peak: 2
-  speed: 5
+  speed: 8
 --- !u!1 &130325475
 GameObject:
   m_ObjectHideFlags: 0
@@ -4362,7 +4362,7 @@ MonoBehaviour:
   textComponent: {fileID: 461332408}
   x_scale: 0
   sin_peak: 2
-  speed: 5
+  speed: 8
 --- !u!1 &464747967
 GameObject:
   m_ObjectHideFlags: 0
@@ -17021,7 +17021,7 @@ MonoBehaviour:
   textComponent: {fileID: 1753685955}
   x_scale: 0
   sin_peak: 2
-  speed: 5
+  speed: 8
 --- !u!1 &1758880060
 GameObject:
   m_ObjectHideFlags: 0

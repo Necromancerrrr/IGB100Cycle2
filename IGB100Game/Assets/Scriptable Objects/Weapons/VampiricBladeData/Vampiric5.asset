@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Goreleech +MAX
-  description: +4 area size
+  description: Goreleech is much bigger
   icon: {fileID: 7588280050347366653, guid: 8d0a595b08425d64ab7f22f48c4e1d6b, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1

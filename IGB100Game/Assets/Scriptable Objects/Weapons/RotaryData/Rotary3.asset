@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 3
   nextLevelPrefab: {fileID: 458585603324305255, guid: d83f777e66c836140a8573cb4642a3b7, type: 3}
   name: Conjured Cannons
-  description: +5 damage
+  description: Cannon's bullets do more damage
   icon: {fileID: -1438640473944929051, guid: 1abcd686ee41e054499b5a82df2e2d4f, type: 3}
   areaSizeEnabled: 0
   projectileCountEnabled: 1

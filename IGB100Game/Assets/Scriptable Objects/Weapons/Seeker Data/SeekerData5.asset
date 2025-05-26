@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Spirit Seekers MAX
-  description: +10 projectile count
+  description: Summon even MORE Spirits
   icon: {fileID: 3810473490841819008, guid: 04b5526d8747d084c9963a296f7927c2, type: 3}
   areaSizeEnabled: 0
   projectileCountEnabled: 1

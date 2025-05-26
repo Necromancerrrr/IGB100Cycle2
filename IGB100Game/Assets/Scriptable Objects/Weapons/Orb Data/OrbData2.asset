@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 2
   nextLevelPrefab: {fileID: 8391479871286726765, guid: 47b80068e1668af4788f6d6b2c023af1, type: 3}
   name: Gravity Orb
-  description: +1 projectile count
+  description: Conjure an additional Orb
   icon: {fileID: -8985924484199272655, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1
