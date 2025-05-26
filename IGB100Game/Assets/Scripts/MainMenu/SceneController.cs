@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private HelpOverlay helpMenu;
+    [SerializeField] private SettingsScreen settingsScreen;
 
     public Animator animator;
     private string sceneName;
@@ -71,6 +72,11 @@ public class SceneController : MonoBehaviour
     public void Help()
     {
         helpMenu.ButtonPress();
+    }
+
+    public void Settings()
+    {
+        settingsScreen.ShowSettings();
     }
 
     public void Quit()
