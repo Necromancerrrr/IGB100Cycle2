@@ -39,7 +39,6 @@ public class UpgradeCard : MonoBehaviour
         if (cardContainer.clickable == true)
         {
             DOTween.Kill(m_RectTransform);
-            //aTween = null;
             m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0), 0).SetUpdate(true);
             m_RectTransform.DOAnchorPos(initialPos, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
         }
@@ -57,7 +56,6 @@ public class UpgradeCard : MonoBehaviour
                 {
                     m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0.5f), 0.2f).SetUpdate(true).SetLoops(-1, LoopType.Yoyo);
                 });
-                Debug.Log("AAA");
             }
         }
     }
