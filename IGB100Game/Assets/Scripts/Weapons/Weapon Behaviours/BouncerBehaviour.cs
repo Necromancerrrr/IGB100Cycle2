@@ -100,6 +100,6 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
     }
     private void TransparencySet()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)currentPierce / (float)TruePierce() + 0.1f);
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)currentPierce / (float)TruePierce() * 0.8f + 0.2f);
     }
 }
