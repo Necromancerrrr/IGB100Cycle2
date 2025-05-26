@@ -44,6 +44,7 @@ public class EnemyProjectile : MonoBehaviour
         }
         if (col.gameObject.CompareTag("Shield"))
         {
+            col.GetComponent<ShieldBehaviour>().IncreaseScale(0.2f);
             Destroy(gameObject);
         }
     }

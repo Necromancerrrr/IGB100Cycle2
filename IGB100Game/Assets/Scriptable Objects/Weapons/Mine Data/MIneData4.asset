@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 4
   nextLevelPrefab: {fileID: 6925212643635929430, guid: 035136b7c152b9f45a2ae38dfa40aaf6, type: 3}
   name: Monster Mine
-  description: Mine's explosion is bigger
+  description: Mine's explosion is bigger.
   icon: {fileID: 175630848476357612, guid: 245d3fc324a8d1a4b8c727954c089e8c, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 0

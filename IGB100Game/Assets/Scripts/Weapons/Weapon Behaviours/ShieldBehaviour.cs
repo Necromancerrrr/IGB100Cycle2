@@ -6,6 +6,7 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
 {
     private GameObject player;
     private Rigidbody2D rb;
+    float scale = 1;
 
     [SerializeField] private AudioClip spawnAudio;
 
@@ -29,18 +30,22 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
         windDownTimer += Time.deltaTime;
 
         // Ease in on spawn
-        if (transform.localScale != new Vector3(1, 1, 1))
+        if (transform.localScale != new Vector3(scale, scale, 1))
         {
-            timeTakenUp = ScaleUpTransition(timeTakenUp, 1f, 0.5f);
+            timeTakenUp = ScaleUpTransition(timeTakenUp, scale, 0.5f);
         }
 
         // Ease out on death
         if (windDownTimer >= weaponDuration - 0.51)
         {
-            timeTakenDown = ScaleDownTransition(timeTakenDown, 1f, 0.5f);
+            timeTakenDown = ScaleDownTransition(timeTakenDown, scale, 0.5f);
         }
     }
-
+    public void IncreaseScale(float value)
+    {
+        if (weaponData.Level <= 3) { scale += value; }
+        if (weaponData.Level <= 4) { scale += value * 2; }
+    }
     private void Movement()
     {
         rb.linearVelocity = player.GetComponent<PlayerMovement>().lastMovedVector * currentSpeed * -1; // Move away from where the player last moved
@@ -53,6 +58,7 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(weaponDamage, transform.position, weaponDamage); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            IncreaseScale(0.02f);
         }
         else if (col.CompareTag("Prop"))
         {

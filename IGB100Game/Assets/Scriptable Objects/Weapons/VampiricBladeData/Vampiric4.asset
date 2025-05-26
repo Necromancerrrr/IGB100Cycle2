@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 4
   nextLevelPrefab: {fileID: 9057091771204904326, guid: d5701c92c57105f4386de092c72061fd, type: 3}
   name: Goreleech +3
-  description: Goreleech summons more darts
+  description: Goreleech summons more bats.
   icon: {fileID: 7588280050347366653, guid: 8d0a595b08425d64ab7f22f48c4e1d6b, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1

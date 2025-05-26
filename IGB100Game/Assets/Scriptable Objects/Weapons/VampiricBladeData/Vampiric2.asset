@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 2
   nextLevelPrefab: {fileID: 9057091771204904326, guid: c929039d23582684fb8045001f20acff, type: 3}
   name: Goreleech
-  description: Goreleech is summoned more often
+  description: Goreleech is summoned more often.
   icon: {fileID: 7588280050347366653, guid: 8d0a595b08425d64ab7f22f48c4e1d6b, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1

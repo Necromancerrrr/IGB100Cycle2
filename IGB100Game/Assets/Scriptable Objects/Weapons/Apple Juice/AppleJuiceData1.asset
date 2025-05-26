@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 5174747787104083617, guid: 96f153555f628e844aae22b0b935ebfd, type: 3}
   name: Apple Juice
-  description: Creates a healing zone in random area nearby
+  description: Creates a healing zone in random area nearby.
   icon: {fileID: 8691383858929479862, guid: 2946e841ba1a314499e07589c7a8cd2d, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 0

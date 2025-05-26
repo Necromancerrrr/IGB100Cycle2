@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShieldData1
   m_EditorClassIdentifier: 
   prefab: {fileID: 7010695086612353368, guid: c5b033212fca7fa49a3154981a55197c, type: 3}
-  damage: 20
+  damage: 15
   speed: 20
   cooldownDuration: 15
   pierce: 0
@@ -23,7 +23,8 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 8186614856194216389, guid: 8be92c129335b304a84c81eb2a72b1f8, type: 3}
   name: Sentient Shield
-  description: Equips a Shield behind you, protecting you and dealing damage to enemies
+  description: Equips a shield behind you, protecting you and dealing damage to enemies.
+    Collisions cause it to grow.
   icon: {fileID: 2389193319765324094, guid: 6149c721e07d62a4aafdd731f8a29054, type: 3}
   areaSizeEnabled: 0
   projectileCountEnabled: 0

@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 3
   nextLevelPrefab: {fileID: 2341149984418418119, guid: d5a3dcfb7de36214589032302037348c, type: 3}
   name: Frank the Frog
-  description: Frank appears more often
+  description: Frank appears more often.
   icon: {fileID: 7528584447651618575, guid: 6d028277c1220ae479654841efd96269, type: 3}
   areaSizeEnabled: 0
   projectileCountEnabled: 1

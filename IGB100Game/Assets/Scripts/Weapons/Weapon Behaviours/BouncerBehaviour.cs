@@ -23,14 +23,15 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
     new void Start()
     {
         base.Start();
-        currentPierce = (int)Mathf.Round(currentPierce * FindFirstObjectByType<PlayerStats>().CurrentProjectileDuration);
+        currentPierce = TruePierce();
         rb = GetComponent<Rigidbody2D>();
         rotation = Random.Range(0f, 360f);
         SetRotSpeed();
-
-        
     }
-
+    private int TruePierce()
+    {
+        return (int)Mathf.Round(currentPierce * FindFirstObjectByType<PlayerStats>().CurrentProjectileDuration);
+    }
     void SetRotSpeed()
     {
         rotRate = Random.Range(0f, 50f);
@@ -56,6 +57,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
             FindTarget();
             ReducePierce();
             SetRotSpeed();
+            TransparencySet();
         }
         else if (col.CompareTag("Prop"))
         {
@@ -69,6 +71,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
             FindTarget();
             ReducePierce();
             SetRotSpeed();
+            TransparencySet();
         }
     }
     void FindTarget()
@@ -94,5 +97,9 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
             rb.linearVelocity = (target - (Vector2)transform.position).normalized * currentSpeed;
         }
         else { Destroy(gameObject); }
+    }
+    private void TransparencySet()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)currentPierce / (float)TruePierce());
     }
 }

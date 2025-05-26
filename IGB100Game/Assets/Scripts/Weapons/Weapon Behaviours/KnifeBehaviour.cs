@@ -29,6 +29,7 @@ public class KnifeBehaviour : ProjectileWeaponBehaviour
             GameObject parInstance = Instantiate(par);
             parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
             ReducePierce();
+            TransparencySet();
         }
         else if (col.CompareTag("Prop"))
         {
@@ -39,6 +40,11 @@ public class KnifeBehaviour : ProjectileWeaponBehaviour
             GameObject parInstance = Instantiate(par);
             parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
             ReducePierce();
+            TransparencySet();
         }
+    }
+    private void TransparencySet()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)currentPierce / (float)weaponData.Pierce);
     }
 }

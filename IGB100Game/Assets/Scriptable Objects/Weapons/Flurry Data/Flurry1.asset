@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 2341149984418418119, guid: 4fe498556816f4445bf6227c81a9b8c0, type: 3}
   name: Frank the Frog
-  description: Blows damaging bubbles at the closest enemy
+  description: Blows damaging bubbles at the closest enemy.
   icon: {fileID: 7528584447651618575, guid: 6d028277c1220ae479654841efd96269, type: 3}
   areaSizeEnabled: 0
   projectileCountEnabled: 1

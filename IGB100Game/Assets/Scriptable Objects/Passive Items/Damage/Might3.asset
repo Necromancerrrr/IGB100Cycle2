@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
   m_Name: Might3
   m_EditorClassIdentifier: 
-  multiplier: 60
+  multiplier: 75
   level: 3
   nextLevelPrefab: {fileID: 2215225900889134074, guid: 816e5c98103bf9640931a527f5705cda, type: 3}
   name: Might
-  description: +20% damage output
+  description: +25% damage output
   icon: {fileID: -7854629474860912292, guid: 249c073911b19b34bb999cbaf51b992c, type: 3}

@@ -23,8 +23,8 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 8391479871286726765, guid: 4b2daa051edd05b47999603dc3ea8d5a, type: 3}
   name: Gravity Orb
-  description: Conjures an Orb that occasionally deals damage and pulls enemies into
-    it
+  description: Conjures an orb that occasionally deals damage and pulls enemies into
+    it.
   icon: {fileID: -8985924484199272655, guid: 799f7ce93d15862458680e1745a35eb0, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1

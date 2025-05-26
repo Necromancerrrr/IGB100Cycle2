@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ShieldData4
   m_EditorClassIdentifier: 
   prefab: {fileID: 7010695086612353368, guid: a9a60b3a64e23f94ab2206adc78034f3, type: 3}
-  damage: 20
-  speed: 40
+  damage: 15
+  speed: 20
   cooldownDuration: 10
   pierce: 0
   areaSize: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 4
   nextLevelPrefab: {fileID: 8186614856194216389, guid: bc9d4b59983e44c45b972a246d0147f7, type: 3}
   name: Sentient Shield
-  description: Shield travels faster
+  description: Growth amount doubles.
   icon: {fileID: 2389193319765324094, guid: 6149c721e07d62a4aafdd731f8a29054, type: 3}
   areaSizeEnabled: 0
   projectileCountEnabled: 0

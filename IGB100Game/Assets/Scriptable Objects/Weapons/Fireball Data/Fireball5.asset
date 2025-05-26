@@ -15,15 +15,15 @@ MonoBehaviour:
   prefab: {fileID: 5267748959714968319, guid: d12581eac954fae428f84cb4068519d9, type: 3}
   damage: 25
   speed: 8
-  cooldownDuration: 5
+  cooldownDuration: 8
   pierce: 0
-  areaSize: 2
-  projectileCount: 6
+  areaSize: 4
+  projectileCount: 5
   duration: 1
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Fan of Fireballs MAX
-  description: Fire more Fireballs
+  description: Even bigger explosions.
   icon: {fileID: 5353841184698615464, guid: 4b0223db9300136449aa04d7df511be4, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1

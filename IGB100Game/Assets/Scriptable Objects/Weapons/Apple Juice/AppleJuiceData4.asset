@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 4
   nextLevelPrefab: {fileID: 5174747787104083617, guid: c636127ae7ff3e94a812b72067088855, type: 3}
   name: Apple Juice
-  description: Healing Area lasts even longer
+  description: Healing zone lasts even longer.
   icon: {fileID: 8691383858929479862, guid: 2946e841ba1a314499e07589c7a8cd2d, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 0
