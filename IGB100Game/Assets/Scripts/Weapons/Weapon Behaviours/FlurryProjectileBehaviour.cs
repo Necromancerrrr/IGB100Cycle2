@@ -64,7 +64,7 @@ public class FlurryProjectileBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(weaponDamage, transform.position, 1); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(weaponDamage, transform.position, 2f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
             DestroySequence();
         }
         else if (col.CompareTag("Prop"))

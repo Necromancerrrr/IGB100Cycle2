@@ -49,7 +49,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(weaponDamage, transform.position, 0);
+            enemy.TakeDamage(weaponDamage, transform.position, 2f);
             hitList.Add(col.gameObject);
             GameObject parInstance = Instantiate(par);
             parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);

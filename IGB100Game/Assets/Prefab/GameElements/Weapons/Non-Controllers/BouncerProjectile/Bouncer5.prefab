@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7255382645782499017}
   - component: {fileID: 8395422335562354474}
+  - component: {fileID: 2234252243370854714}
   - component: {fileID: 4946377081599033828}
   - component: {fileID: 5330941883221537583}
   - component: {fileID: 2278753321019848484}
@@ -57,7 +58,20 @@ MonoBehaviour:
   target: {x: 0, y: 0}
   parColour: {r: 0.84705883, g: 0.4745098, b: 0.83137256, a: 1}
   par: {fileID: 5483784591801265088, guid: 1296e3cfcace0a042980aac532db2f63, type: 3}
-  spawnAudio: {fileID: 8300000, guid: c23716d6e80130d4daa9052d91fccbf3, type: 3}
+--- !u!114 &2234252243370854714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8510583410625965766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7215ad038b03f864091fa32b354b8fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostDelay: 0.05
+  ghost: {fileID: 7420746188375140472, guid: 4611605ae5297d74bbf882966bd3c8c1, type: 3}
 --- !u!50 &4946377081599033828
 Rigidbody2D:
   serializedVersion: 5
