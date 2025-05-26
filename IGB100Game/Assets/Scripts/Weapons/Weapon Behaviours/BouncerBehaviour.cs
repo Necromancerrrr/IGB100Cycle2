@@ -30,7 +30,7 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
     }
     private int TruePierce()
     {
-        return (int)Mathf.Round(currentPierce * FindFirstObjectByType<PlayerStats>().CurrentProjectileDuration);
+        return (int)Mathf.Round(weaponData.Pierce * FindFirstObjectByType<PlayerStats>().CurrentProjectileDuration);
     }
     void SetRotSpeed()
     {
@@ -100,6 +100,6 @@ public class BouncerBehaviour : ProjectileWeaponBehaviour
     }
     private void TransparencySet()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)currentPierce / (float)TruePierce());
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)currentPierce / (float)TruePierce() + 0.1f);
     }
 }

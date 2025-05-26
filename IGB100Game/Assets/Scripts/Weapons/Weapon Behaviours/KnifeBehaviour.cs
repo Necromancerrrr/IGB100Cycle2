@@ -45,6 +45,6 @@ public class KnifeBehaviour : ProjectileWeaponBehaviour
     }
     private void TransparencySet()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)currentPierce / (float)weaponData.Pierce);
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)currentPierce / (float)weaponData.Pierce + 0.1f);
     }
 }
