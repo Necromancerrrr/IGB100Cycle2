@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 4
   nextLevelPrefab: {fileID: 2341149984418418119, guid: d421aaae108db974fb000820e691b048, type: 3}
   name: Frank the Frog
-  description: +5 damage
+  description: Frank does more damage
   icon: {fileID: 7528584447651618575, guid: 6d028277c1220ae479654841efd96269, type: 3}
   areaSizeEnabled: 0
   projectileCountEnabled: 1

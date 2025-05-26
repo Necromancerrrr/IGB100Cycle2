@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2057112569438578086, guid: 50f074c40daeef74eaedf79dd9ddd58c, type: 3}
   damage: 20
-  speed: 15
+  speed: 20
   cooldownDuration: 2.5
   pierce: 999
   areaSize: 4
@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Boomerang MAX
-  description: +2 area size
+  description: Boomerangs become bigger and faster
   icon: {fileID: -403755840339538957, guid: 87b70cb2bbb68a647a3d39caabc140ae, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1

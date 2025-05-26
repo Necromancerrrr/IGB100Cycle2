@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 3
   nextLevelPrefab: {fileID: 8171205830150268015, guid: 75e0960fa27c5fa4aa60b34d448b1eb9, type: 3}
   name: Fan of Fireballs
-  description: +10 damage
+  description: Fireballs do more damage
   icon: {fileID: 5353841184698615464, guid: 4b0223db9300136449aa04d7df511be4, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1

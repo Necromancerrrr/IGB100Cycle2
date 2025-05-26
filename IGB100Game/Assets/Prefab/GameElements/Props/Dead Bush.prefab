@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8516678144527974912}
   - component: {fileID: 260780394755923349}
   - component: {fileID: 7610342014878013870}
+  - component: {fileID: 5356911096870452739}
   m_Layer: 0
   m_Name: Dead Bush
   m_TagString: Untagged
@@ -101,3 +102,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+--- !u!114 &5356911096870452739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5029678954277774102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e78d730256af77449389115bbc322dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Health Pickup
+    itemPrefab: {fileID: 4045533827784866153, guid: 28f96ae8335a9b8448ef6380b534768d, type: 3}
+    dropRate: 20
+    dropValue: 20

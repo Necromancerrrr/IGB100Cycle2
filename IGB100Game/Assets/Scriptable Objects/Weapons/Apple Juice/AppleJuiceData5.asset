@@ -19,11 +19,11 @@ MonoBehaviour:
   pierce: 999
   areaSize: 5
   projectileCount: 0
-  duration: 7
+  duration: 10
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Apple Juice MAX
-  description: +3 healing
+  description: Healing Area heals double
   icon: {fileID: 8691383858929479862, guid: 2946e841ba1a314499e07589c7a8cd2d, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 0

@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 4
   nextLevelPrefab: {fileID: 53529854424434218, guid: 6cafd0ce53049ce4790e07be47b28f6d, type: 3}
   name: Boomerang
-  description: +10 damage
+  description: Boomerangs do more damage
   icon: {fileID: -403755840339538957, guid: 87b70cb2bbb68a647a3d39caabc140ae, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 1

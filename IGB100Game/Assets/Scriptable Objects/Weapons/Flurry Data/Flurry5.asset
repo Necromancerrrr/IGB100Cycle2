@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Frank the Frog MAX
-  description: +15 projectile count
+  description: Frank shoots ALL THE BUBBLES!!
   icon: {fileID: 7528584447651618575, guid: 6d028277c1220ae479654841efd96269, type: 3}
   areaSizeEnabled: 0
   projectileCountEnabled: 1

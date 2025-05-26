@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 53652023}
   - component: {fileID: 53652025}
   - component: {fileID: 53652024}
+  - component: {fileID: 53652026}
   m_Layer: 5
   m_Name: BackText
   m_TagString: Untagged
@@ -255,6 +256,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53652022}
   m_CullTransparentMesh: 1
+--- !u!114 &53652026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53652022}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b0b417be69b114fa637fb61ef9427a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 53652024}
+  x_scale: 0
+  sin_peak: 2
+  speed: 5
 --- !u!1 &107427006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,6 +2333,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 53652026}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 53652026}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1135116850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3195,8 +3240,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 190}
-  m_SizeDelta: {x: 400, y: 250}
+  m_AnchoredPosition: {x: 0, y: 194}
+  m_SizeDelta: {x: 400, y: 276.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889183422
 MonoBehaviour:
@@ -3218,7 +3263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fire a projectile that does more damage on the way back
+  m_text: Throw a boomerang that comes back to you. Deals more damage while returning
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
   m_sharedMaterial: {fileID: 2178458096316189103, guid: d04b4498aa368b44b897e7d903fd4495, type: 2}
@@ -3245,7 +3290,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.25
+  m_fontSize: 33.85
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
