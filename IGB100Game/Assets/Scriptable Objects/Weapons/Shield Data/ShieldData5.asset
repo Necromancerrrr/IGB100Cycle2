@@ -24,7 +24,7 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Sentient Shield MAX
   description: Shield does even more damage.
-  icon: {fileID: 2389193319765324094, guid: 6149c721e07d62a4aafdd731f8a29054, type: 3}
+  icon: {fileID: 1714882764576550896, guid: c5e2bb384a97232418db25fd2207df7c, type: 3}
   areaSizeEnabled: 0
   projectileCountEnabled: 0
   durationEnabled: 1
