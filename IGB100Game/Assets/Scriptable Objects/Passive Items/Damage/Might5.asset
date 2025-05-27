@@ -17,4 +17,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Might MAX
   description: +50% damage output
-  icon: {fileID: -7854629474860912292, guid: 249c073911b19b34bb999cbaf51b992c, type: 3}
+  icon: {fileID: 2791351819209010336, guid: 7eb225ba52d1341469e9c737028fb18d, type: 3}
