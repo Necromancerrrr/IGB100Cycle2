@@ -9,15 +9,17 @@ public class BladestormController : WeaponController
     protected override void Start()
     {
         base.Start();
-        weaponSize = weaponData.AreaSize * FindFirstObjectByType<PlayerStats>().CurrentAOE;
-        numberOfBlades = Mathf.RoundToInt(weaponData.ProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
-        radius = weaponSize;
-        Attack();
+        
     }
 
     protected override void Attack()
     {
+
         base.Attack();
+
+        weaponSize = weaponData.AreaSize * FindFirstObjectByType<PlayerStats>().CurrentAOE;
+        numberOfBlades = Mathf.RoundToInt(weaponData.ProjectileCount * FindFirstObjectByType<PlayerStats>().CurrentProjectileCount);
+        radius = weaponSize;
 
         float angleStep = 360f / numberOfBlades;
 
