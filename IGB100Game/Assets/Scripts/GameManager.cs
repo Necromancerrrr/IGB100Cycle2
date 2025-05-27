@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject resultsScreen;
     public GameObject levelUpScreen;
-    public GameObject pactSelectScreen;
 
 
     // Current stat displays
@@ -155,7 +154,6 @@ public class GameManager : MonoBehaviour
                     IsChoosingPact = true;
                     Time.timeScale = 0f;
                     Debug.Log("Player is CHOOSING PACT");
-                    pactSelectScreen.SetActive(true);
                 }
                 break;
 
@@ -323,7 +321,6 @@ public class GameManager : MonoBehaviour
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
         levelUpScreen.SetActive(false);
-        pactSelectScreen.SetActive(false);
         devButtons.SetActive(false);
     }
 
@@ -422,7 +419,6 @@ public class GameManager : MonoBehaviour
     {
         IsChoosingPact = false;
         Time.timeScale = 1.0f; // Resumes game
-        pactSelectScreen.SetActive(false);
         ChangeGameState(GameState.Gameplay);
     }
 }
