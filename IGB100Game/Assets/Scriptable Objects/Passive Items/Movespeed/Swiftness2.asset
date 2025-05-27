@@ -16,5 +16,5 @@ MonoBehaviour:
   level: 2
   nextLevelPrefab: {fileID: 5069994856143371818, guid: b43948f441274e84e9ab43e0c1ffad5f, type: 3}
   name: Swiftness
-  description: +10% movement speed
+  description: Further increases player movement speed.
   icon: {fileID: 4368688791620862549, guid: c0e4ee9a822ec6746b1c98f278bd5d21, type: 3}

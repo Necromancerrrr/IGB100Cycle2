@@ -16,5 +16,5 @@ MonoBehaviour:
   level: 2
   nextLevelPrefab: {fileID: 8250571217130720332, guid: f06529335bc72d54e9b135277d2f778b, type: 3}
   name: Abundance
-  description: +25% projectile count
+  description: Further increases the number of projectiles that equipment fire.
   icon: {fileID: 21300000, guid: d39f787ebfeea4e44b7ff669c0b58663, type: 3}

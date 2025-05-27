@@ -16,5 +16,5 @@ MonoBehaviour:
   level: 2
   nextLevelPrefab: {fileID: 0}
   name: Regeneration
-  description: -5 seconds between heals
+  description: Restore 10 health every 25 seconds.
   icon: {fileID: -4751123163905818129, guid: 808f1215313b0594fa2fe5d165af62a7, type: 3}

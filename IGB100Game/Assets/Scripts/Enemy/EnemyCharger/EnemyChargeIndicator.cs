@@ -15,7 +15,7 @@ public class EnemyChargeIndicator : MonoBehaviour
         Timer = Duration;
         anim.speed = 1 / Duration;
         charger = source;
-        transform.localScale = scale;
+        //transform.localScale = scale;
     }
     
     // Update is called once per frame

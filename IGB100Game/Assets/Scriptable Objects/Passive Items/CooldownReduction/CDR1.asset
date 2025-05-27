@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf964d290893b41b5b28136d9aa27b, type: 3}
   m_Name: CDR1
   m_EditorClassIdentifier: 
-  multiplier: 20
+  multiplier: 15
   level: 1
   nextLevelPrefab: {fileID: 4212134037999648944, guid: dcce581256241a442b99dac89ffa551d, type: 3}
   name: Frequency
-  description: +20% cooldown reduction
+  description: Reduces cooldown between equipment activating.
   icon: {fileID: 6530904453971224878, guid: f62b024fa54f9b44c997e00e43c0ae6e, type: 3}

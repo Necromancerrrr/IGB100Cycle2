@@ -16,5 +16,5 @@ MonoBehaviour:
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Might MAX
-  description: +50% damage output
+  description: Greatly increases damage output of equipment.
   icon: {fileID: 2791351819209010336, guid: 7eb225ba52d1341469e9c737028fb18d, type: 3}

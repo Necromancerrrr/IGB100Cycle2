@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 4030397510927906665, guid: 0566e686067eb3b45a3eea2d56824675, type: 3}
   damage: 5
   speed: 1
-  cooldownDuration: 20
+  cooldownDuration: 10
   pierce: 0
   areaSize: 6
   projectileCount: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   level: 3
   nextLevelPrefab: {fileID: 5297606356293451816, guid: 8bc02dd225813a444a75bc541c4fa212, type: 3}
   name: Gor'azuth's Gaze
-  description: Damaging Zone is summoned more often
+  description: Damaging zone is summoned more often.
   icon: {fileID: 21300000, guid: a4f4197c90c455741a27882ef68ae4a9, type: 3}
   areaSizeEnabled: 1
   projectileCountEnabled: 0

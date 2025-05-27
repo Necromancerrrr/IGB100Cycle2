@@ -16,5 +16,5 @@ MonoBehaviour:
   level: 5
   nextLevelPrefab: {fileID: 0}
   name: Scale MAX
-  description: +50% area size
+  description: Greatly increases area size of all applicable equipment.
   icon: {fileID: 5884407655333904010, guid: 3c2552e55696dea4ea91f65bd53ec294, type: 3}

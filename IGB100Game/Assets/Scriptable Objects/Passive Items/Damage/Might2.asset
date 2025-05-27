@@ -16,5 +16,5 @@ MonoBehaviour:
   level: 2
   nextLevelPrefab: {fileID: 2215225900889134074, guid: ca9d4e0413743a34db37c2e3fa5951df, type: 3}
   name: Might
-  description: +25% damage output
+  description: Further increases damage output of equipment.
   icon: {fileID: 2791351819209010336, guid: 7eb225ba52d1341469e9c737028fb18d, type: 3}
