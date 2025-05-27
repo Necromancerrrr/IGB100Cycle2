@@ -49,7 +49,7 @@ public class SeekerBehaviour : ProjectileWeaponBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(weaponDamage, transform.position, 0); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(weaponDamage, transform.position, 0.2f); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
             PlayVFX();
         }
         else if (col.CompareTag("Prop"))

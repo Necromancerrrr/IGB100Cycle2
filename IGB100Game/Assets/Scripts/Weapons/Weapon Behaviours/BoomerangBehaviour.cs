@@ -140,8 +140,8 @@ public class BoomerangBehaviour : ProjectileWeaponBehaviour
         if (col.CompareTag("Enemy") && hitList.Contains(col.gameObject) == false)
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            if (dir == false && rangSpeed >= 0) { enemy.TakeDamage(weaponDamage * 2, transform.position, 0); } // enhanced damage for the way back in
-            else { enemy.TakeDamage(weaponDamage, transform.position, 2f); } // normal damage
+            if (dir == false && rangSpeed >= 0) { enemy.TakeDamage(weaponDamage * 2, transform.position, -1f); } // enhanced damage for the way back in
+            else { enemy.TakeDamage(weaponDamage, transform.position, 1f); } // normal damage
             hitList.Add(col.gameObject);
             GameObject parInstance = Instantiate(par);
             parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);

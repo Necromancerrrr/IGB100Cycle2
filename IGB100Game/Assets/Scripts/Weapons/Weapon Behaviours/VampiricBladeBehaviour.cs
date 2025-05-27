@@ -168,7 +168,7 @@ public class VampiricBladeBehaviour : MeleeWeaponBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(weaponDamage, transform.position, weaponSize/3 + 3); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
+            enemy.TakeDamage(weaponDamage, transform.position, weaponSize/3 + 2); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
             heal += 1;
             GameObject parInstance = Instantiate(par);
             parInstance.GetComponent<HitParticle>().SetValues(transform.position, col.transform.position, parColour, 0.5f);
