@@ -40,7 +40,7 @@ public class UpgradeCard : MonoBehaviour
         {
             DOTween.Kill(m_RectTransform);
             m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0), 0).SetUpdate(true);
-            m_RectTransform.DOAnchorPos(initialPos, duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
+            m_RectTransform.DOAnchorPos(initialPos, duration, false).SetEase(Ease.OutCubic).SetUpdate(true);
         }
     }
 
@@ -48,15 +48,18 @@ public class UpgradeCard : MonoBehaviour
     {
         if (cardContainer.clickable == true && clicked == false)
         {
-            m_RectTransform.DOAnchorPos(new Vector2(initialPos.x, initialPos.y + 50f), duration, false).SetEase(Ease.OutQuint).SetUpdate(true);
-            
+            m_RectTransform.DOAnchorPos(new Vector2(initialPos.x, initialPos.y + 50f), duration, false).SetEase(Ease.OutCubic).SetUpdate(true);
+
+            m_RectTransform.DOLocalRotate(new Vector3(0, 0, -0.5f), 0.3f).SetUpdate(true).OnComplete(() =>
+            {
+                m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0.5f), 0.3f).SetUpdate(true).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+            });
+            /*
             if (m_RectTransform.localRotation == Quaternion.Euler(0, 0, 0))
             {
-                m_RectTransform.DOLocalRotate(new Vector3(0, 0, -0.5f), 0.2f).SetUpdate(true).OnComplete(() => 
-                {
-                    m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0.5f), 0.2f).SetUpdate(true).SetLoops(-1, LoopType.Yoyo);
-                });
+                
             }
+            */
         }
     }
 
