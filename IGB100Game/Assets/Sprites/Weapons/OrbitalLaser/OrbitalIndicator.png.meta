@@ -149,287 +149,331 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Oribital Lazer_0
+      name: OrbitalIndicator_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 693683edb09d08520800000000000000
-      internalID: 2702398421418402710
+      spriteID: 7f7bfa2ea8e548a49925e8e7e7c2d5fa
+      internalID: 15976442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_1
+      name: OrbitalIndicator_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 64
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eb2c7ed8117888020800000000000000
-      internalID: 2344272115511313086
+      spriteID: eec57e037bb4c404f910683326e1a0b5
+      internalID: 390772200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_2
+      name: OrbitalIndicator_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 128
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5f14e796adeaaf9b0800000000000000
-      internalID: -5045528179419233803
+      spriteID: aaf7b7cdb13330448b0c05a718ee1367
+      internalID: -944445000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_3
+      name: OrbitalIndicator_3
       rect:
         serializedVersion: 2
-        x: 60
+        x: 192
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: deb883f91368a9640800000000000000
-      internalID: 5087526276751199213
+      spriteID: 8c27571b998ea0b4c8b1512f0515d5ba
+      internalID: -1582722067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_4
+      name: OrbitalIndicator_4
       rect:
         serializedVersion: 2
-        x: 80
+        x: 256
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bc12b7732e75dca80800000000000000
-      internalID: -8444997097144770101
+      spriteID: b0b68342d91f7d94c9a5d30f66771626
+      internalID: -1173255912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_5
+      name: OrbitalIndicator_5
       rect:
         serializedVersion: 2
-        x: 100
+        x: 320
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9b14e43183553b550800000000000000
-      internalID: 6175373213385507257
+      spriteID: 64d7eea00e8cf074fa03b51833060063
+      internalID: 848478038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_6
+      name: OrbitalIndicator_6
       rect:
         serializedVersion: 2
-        x: 120
+        x: 384
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 396b20c63e58a94b0800000000000000
-      internalID: -5432882788652894573
+      spriteID: 010b7708357994347a671ebf69ba952c
+      internalID: 369779990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_7
+      name: OrbitalIndicator_7
       rect:
         serializedVersion: 2
-        x: 140
+        x: 448
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5ca9d12bdccf6c6c0800000000000000
-      internalID: -4123330448424330555
+      spriteID: 1b0feddd1e577214da694ba219318f0c
+      internalID: 1702761820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_8
+      name: OrbitalIndicator_8
       rect:
         serializedVersion: 2
-        x: 160
+        x: 512
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c9a8a54839b886520800000000000000
-      internalID: 2695557842678221468
+      spriteID: 3ce1c99fc1547924d8e7be54d54bf73b
+      internalID: 1657977559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_9
+      name: OrbitalIndicator_9
       rect:
         serializedVersion: 2
-        x: 180
+        x: 576
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 78c0aa47da6eafa30800000000000000
-      internalID: 4249962831038516359
+      spriteID: 9c2361ea0a470e7489c38c8d37bc1e54
+      internalID: -1663410810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_10
+      name: OrbitalIndicator_10
       rect:
         serializedVersion: 2
-        x: 200
+        x: 640
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cb15bc75bca302300800000000000000
-      internalID: 225244626394239420
+      spriteID: 3a8969ceafbd5c84487a99880cafcd4d
+      internalID: 581296185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_11
+      name: OrbitalIndicator_11
       rect:
         serializedVersion: 2
-        x: 220
+        x: 704
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 16486705cefbb87e0800000000000000
-      internalID: -1762103807502285727
+      spriteID: a11fab2403f7aad48825ee68a748542e
+      internalID: -387994704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oribital Lazer_12
+      name: OrbitalIndicator_12
       rect:
         serializedVersion: 2
-        x: 240
+        x: 768
         y: 0
-        width: 20
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6b299a8796fe43af0800000000000000
-      internalID: -417445629163629898
+      spriteID: a3322146c620f454788df886994e79a9
+      internalID: 1146632084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrbitalIndicator_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d559d26df843594b8b5e61fcda3d78d
+      internalID: -312820450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrbitalIndicator_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21889bc2fb85e3c44b06e7c40bad4d07
+      internalID: -178607087
       vertices: []
       indices: 
       edges: []
@@ -448,19 +492,21 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Oribital Lazer_0: 2702398421418402710
-      Oribital Lazer_1: 2344272115511313086
-      Oribital Lazer_10: 225244626394239420
-      Oribital Lazer_11: -1762103807502285727
-      Oribital Lazer_12: -417445629163629898
-      Oribital Lazer_2: -5045528179419233803
-      Oribital Lazer_3: 5087526276751199213
-      Oribital Lazer_4: -8444997097144770101
-      Oribital Lazer_5: 6175373213385507257
-      Oribital Lazer_6: -5432882788652894573
-      Oribital Lazer_7: -4123330448424330555
-      Oribital Lazer_8: 2695557842678221468
-      Oribital Lazer_9: 4249962831038516359
+      OrbitalIndicator_0: 15976442
+      OrbitalIndicator_1: 390772200
+      OrbitalIndicator_10: 581296185
+      OrbitalIndicator_11: -387994704
+      OrbitalIndicator_12: 1146632084
+      OrbitalIndicator_13: -312820450
+      OrbitalIndicator_14: -178607087
+      OrbitalIndicator_2: -944445000
+      OrbitalIndicator_3: -1582722067
+      OrbitalIndicator_4: -1173255912
+      OrbitalIndicator_5: 848478038
+      OrbitalIndicator_6: 369779990
+      OrbitalIndicator_7: 1702761820
+      OrbitalIndicator_8: 1657977559
+      OrbitalIndicator_9: -1663410810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
