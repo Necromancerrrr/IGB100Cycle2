@@ -43,8 +43,8 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
     }
     public void IncreaseScale(float value)
     {
-        if (weaponData.Level <= 3) { scale += value; }
-        if (weaponData.Level <= 4) { scale += value * 2; }
+        if (weaponData.Level <= 3) { Mathf.Clamp(scale += value, 1f, 2f); }
+        if (weaponData.Level <= 4) { Mathf.Clamp(scale += value * 2, 1f, 4f); }
     }
     private void Movement()
     {
