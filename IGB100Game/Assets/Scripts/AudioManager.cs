@@ -25,6 +25,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip EnemyHurt;
     [HideInInspector] public int enemyHurtQueue = 0; // int representing number of times enemyHurt needs to be played
 
+    [SerializeField] public AudioClip LevelUpEnd; // these should be in UpgradeCard.cs but i put them here cus i forgor and i'm too lazy to fix it
+    [SerializeField] public AudioClip LevelUpCardHover; // this one too
+
     private AudioSource audioSource;
     private float timer;
     

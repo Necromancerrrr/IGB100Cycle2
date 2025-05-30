@@ -16,6 +16,8 @@ public class UpgradeCard : MonoBehaviour
 
     private Tween aTween;
 
+    private AudioManager audioManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,7 +27,7 @@ public class UpgradeCard : MonoBehaviour
         //DOAnchorPos
         cardContainer = FindFirstObjectByType<UpgradeCardContainer>();
 
-        
+        audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
 
     }
 
@@ -48,6 +50,8 @@ public class UpgradeCard : MonoBehaviour
     {
         if (cardContainer.clickable == true && clicked == false)
         {
+            audioManager.PlaySFX(audioManager.LevelUpCardHover, m_RectTransform, 1f);
+
             m_RectTransform.DOAnchorPos(new Vector2(initialPos.x, initialPos.y + 50f), duration, false).SetEase(Ease.OutCubic).SetUpdate(true);
 
             m_RectTransform.DOLocalRotate(new Vector3(0, 0, -0.5f), 0.3f).SetUpdate(true).OnComplete(() =>
@@ -65,11 +69,15 @@ public class UpgradeCard : MonoBehaviour
 
     public void CardClicked()
     {
+        audioManager.PlaySFX(audioManager.LevelUpEnd, m_RectTransform, 1f);
+
         clicked = true;
         m_RectTransform.DOAnchorPos(initialPos, duration, false).SetEase(Ease.OutQuint).SetUpdate(true).OnComplete(() =>
         {
             clicked = false;
             DOTween.Kill(m_RectTransform);
         });
+
+
     }
 }
