@@ -117,6 +117,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -124,10 +137,10 @@ TextureImporter:
       name: the bull tolls shaded_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 9
-        width: 71
-        height: 43
+        x: 0
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,10 +159,10 @@ TextureImporter:
       name: the bull tolls shaded_1
       rect:
         serializedVersion: 2
-        x: 92
-        y: 9
-        width: 71
-        height: 43
+        x: 90
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +181,10 @@ TextureImporter:
       name: the bull tolls shaded_2
       rect:
         serializedVersion: 2
-        x: 182
-        y: 8
-        width: 60
-        height: 42
+        x: 180
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +203,10 @@ TextureImporter:
       name: the bull tolls shaded_3
       rect:
         serializedVersion: 2
-        x: 276
-        y: 7
-        width: 56
-        height: 40
+        x: 270
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +225,10 @@ TextureImporter:
       name: the bull tolls shaded_4
       rect:
         serializedVersion: 2
-        x: 366
-        y: 1
-        width: 56
-        height: 40
+        x: 360
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +247,10 @@ TextureImporter:
       name: the bull tolls shaded_5
       rect:
         serializedVersion: 2
-        x: 456
-        y: 1
-        width: 56
-        height: 40
+        x: 450
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +269,10 @@ TextureImporter:
       name: the bull tolls shaded_6
       rect:
         serializedVersion: 2
-        x: 546
-        y: 1
-        width: 56
-        height: 40
+        x: 540
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +291,10 @@ TextureImporter:
       name: the bull tolls shaded_7
       rect:
         serializedVersion: 2
-        x: 636
-        y: 1
-        width: 56
-        height: 40
+        x: 630
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7aa734d0071f83b4db3745eeaa869e20
     internalID: 0
     vertices: []
     indices: 

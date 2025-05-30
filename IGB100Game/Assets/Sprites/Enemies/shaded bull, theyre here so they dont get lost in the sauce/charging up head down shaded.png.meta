@@ -117,6 +117,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -124,20 +137,20 @@ TextureImporter:
       name: charging up head down shaded_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 10
-        width: 70
-        height: 42
+        x: 0
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e446cdd4060402d00800000000000000
-      internalID: 945826704115131470
+      spriteID: ff1f76551451ade44b060e6014706b01
+      internalID: -133494425
       vertices: []
       indices: 
       edges: []
@@ -146,20 +159,20 @@ TextureImporter:
       name: charging up head down shaded_1
       rect:
         serializedVersion: 2
-        x: 104
-        y: 10
-        width: 70
-        height: 42
+        x: 90
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 527610fe056f0def0800000000000000
-      internalID: -85297565452376283
+      spriteID: 944bd73a88dcb034fa76a09b9086a270
+      internalID: -1821072329
       vertices: []
       indices: 
       edges: []
@@ -168,20 +181,20 @@ TextureImporter:
       name: charging up head down shaded_2
       rect:
         serializedVersion: 2
-        x: 197
-        y: 10
-        width: 70
-        height: 42
+        x: 180
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eeaf53da828b55ef0800000000000000
-      internalID: -119987330211251474
+      spriteID: 1c51c5cb87785cc489e00efd11c5a6d1
+      internalID: -171211516
       vertices: []
       indices: 
       edges: []
@@ -190,20 +203,20 @@ TextureImporter:
       name: charging up head down shaded_3
       rect:
         serializedVersion: 2
-        x: 290
-        y: 10
-        width: 70
-        height: 42
+        x: 270
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9b053ace90aa9b430800000000000000
-      internalID: 3799254720265277625
+      spriteID: 9bae5887de0009d429af6c2a51078339
+      internalID: 1575645607
       vertices: []
       indices: 
       edges: []
@@ -212,20 +225,20 @@ TextureImporter:
       name: charging up head down shaded_4
       rect:
         serializedVersion: 2
-        x: 383
-        y: 10
-        width: 70
-        height: 42
+        x: 360
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 08083cff0807e51d0800000000000000
-      internalID: -3360124572622684032
+      spriteID: bb3991cd7acaf424f816aba68e095c0a
+      internalID: 1495070947
       vertices: []
       indices: 
       edges: []
@@ -234,20 +247,20 @@ TextureImporter:
       name: charging up head down shaded_5
       rect:
         serializedVersion: 2
-        x: 476
-        y: 10
-        width: 70
-        height: 42
+        x: 450
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a801818e267310460800000000000000
-      internalID: 7206101776709718154
+      spriteID: 294270d56b7c75040a99bfe44165f519
+      internalID: 2025569800
       vertices: []
       indices: 
       edges: []
@@ -256,20 +269,20 @@ TextureImporter:
       name: charging up head down shaded_6
       rect:
         serializedVersion: 2
-        x: 569
-        y: 10
-        width: 70
-        height: 42
+        x: 540
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d300dcee5d2d72e00800000000000000
-      internalID: 1020015656898986045
+      spriteID: 9befbe98c09d2b947b2aadd0960aed6c
+      internalID: 1560772115
       vertices: []
       indices: 
       edges: []
@@ -278,20 +291,20 @@ TextureImporter:
       name: charging up head down shaded_7
       rect:
         serializedVersion: 2
-        x: 662
-        y: 10
-        width: 70
-        height: 42
+        x: 630
+        y: 0
+        width: 90
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 066bf155f41de9430800000000000000
-      internalID: 3791698074953299552
+      spriteID: 70d88e144fcb61940b8ad614b9ebd608
+      internalID: -1074169556
       vertices: []
       indices: 
       edges: []
@@ -300,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 08f174a512eb4424d9773f554789d5da
     internalID: 0
     vertices: []
     indices: 
@@ -310,14 +323,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      charging up head down shaded_0: 945826704115131470
-      charging up head down shaded_1: -85297565452376283
-      charging up head down shaded_2: -119987330211251474
-      charging up head down shaded_3: 3799254720265277625
-      charging up head down shaded_4: -3360124572622684032
-      charging up head down shaded_5: 7206101776709718154
-      charging up head down shaded_6: 1020015656898986045
-      charging up head down shaded_7: 3791698074953299552
+      charging up head down shaded_0: -133494425
+      charging up head down shaded_1: -1821072329
+      charging up head down shaded_2: -171211516
+      charging up head down shaded_3: 1575645607
+      charging up head down shaded_4: 1495070947
+      charging up head down shaded_5: 2025569800
+      charging up head down shaded_6: 1560772115
+      charging up head down shaded_7: -1074169556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
