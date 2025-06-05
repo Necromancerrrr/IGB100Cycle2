@@ -54,6 +54,9 @@ MonoBehaviour:
   isBoss: 0
   enemyData: {fileID: 11400000, guid: 1ecda3c40bb0e2041addca2b5d0fe5c0, type: 2}
   player: {fileID: 0}
+  isDebuffed: 0
+  debuffTimer: 0
+  baseMovespeed: 0
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
@@ -89,6 +92,10 @@ MonoBehaviour:
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
+    dropValue: 10
+  - name: Health
+    itemPrefab: {fileID: 4045533827784866153, guid: 28f96ae8335a9b8448ef6380b534768d, type: 3}
+    dropRate: 1
     dropValue: 10
 --- !u!114 &5075334086043431927
 MonoBehaviour:
@@ -212,7 +219,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1385694241
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 4417052175245509276, guid: 309fbe33becf67b42acce62a169fe0cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

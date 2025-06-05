@@ -1,11 +1,15 @@
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Unity.VisualScripting;
 
 public class ShieldBehaviour : MeleeWeaponBehaviour
 {
     private GameObject player;
     private Rigidbody2D rb;
+    private List<GameObject> hitList = new List<GameObject>();
+    private float hitTimer = 0.1f;
     float scale = 1;
 
     [SerializeField] private AudioClip spawnAudio;
@@ -40,6 +44,13 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
         {
             timeTakenDown = ScaleDownTransition(timeTakenDown, scale, 0.5f);
         }
+
+        hitTimer -= Time.deltaTime;
+        if (hitTimer <= 0)
+        {
+            hitTimer = 0.1f;
+            hitList.Clear();
+        }
     }
     public void IncreaseScale(float value)
     {
@@ -52,13 +63,18 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
         rb.position = Vector2.ClampMagnitude(rb.position - (Vector2)player.transform.position, 2f) + (Vector2)player.transform.position; // Clamp to within 1.5f of the player
     }
 
-    override protected void OnTriggerEnter2D(Collider2D col) // Instead of dealing damage, the shield deals knockback scaling with damage
+    override protected void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Enemy"))
+        // Intentionally kept empty
+    }
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.CompareTag("Enemy") && hitList.Contains(col.gameObject) == false)
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(weaponDamage, transform.position, weaponDamage); // Make sure to use currentDamage instead of weaponData.damage in case of any damage multipliers in the future
             IncreaseScale(0.02f);
+            hitList.Add(col.gameObject);
         }
         else if (col.CompareTag("Prop"))
         {

@@ -95,6 +95,10 @@ MonoBehaviour:
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
     dropValue: 13
+  - name: Health
+    itemPrefab: {fileID: 4045533827784866153, guid: 28f96ae8335a9b8448ef6380b534768d, type: 3}
+    dropRate: 1
+    dropValue: 10
 --- !u!114 &9037717470753783854
 MonoBehaviour:
   m_ObjectHideFlags: 0
