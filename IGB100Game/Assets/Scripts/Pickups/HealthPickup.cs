@@ -4,7 +4,12 @@ public class HealthPickup : Pickup, ICollectable
 {
     public int healAmount;
     PlayerStats player;
-    bool collecting = false;
+    public bool collecting = false;
+    Rigidbody2D rb;
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     public void Collect()
     {
         player = FindFirstObjectByType<PlayerStats>();
@@ -19,8 +24,13 @@ public class HealthPickup : Pickup, ICollectable
     {
         if (collecting)
         {
-            var step = 10 * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+            //var step = 10 * Time.deltaTime;
+            //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+
+            // Above this is the old code, below is the new one
+
+            Vector2 angle = rb.transform.position - player.transform.position;
+            rb.linearVelocity -= angle.normalized * 20 * Time.deltaTime;
         }
     }
 
