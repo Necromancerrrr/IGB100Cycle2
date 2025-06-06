@@ -9,10 +9,10 @@ public class HealthPickup : Pickup, ICollectable
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = FindFirstObjectByType<PlayerStats>();
     }
     public void Collect()
     {
-        player = FindFirstObjectByType<PlayerStats>();
         collecting = true;
     }
     public void SetValue(int value)
