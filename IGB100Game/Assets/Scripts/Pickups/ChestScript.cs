@@ -39,7 +39,7 @@ public class ChestScript : MonoBehaviour
                 if (drops.Count > 0)
                 {
                     Vector2 randPos = new Vector2(Random.Range(-1f, 1f), 0);
-                    Vector2 randAngle = new Vector2(Random.Range(-0.8f, 0.8f), Random.Range(0f, 1f)).normalized;
+                    Vector2 randAngle = new Vector2(Random.Range(-1f, 1f), 1).normalized;
                     GameObject instance = Instantiate(drops[0].itemPrefab, transform.position + (Vector3)randPos, Quaternion.identity);
                     instance.GetComponent<Rigidbody2D>().linearVelocity = randAngle * Random.Range(20f, 30f);
                     if (instance.GetComponent<ExperiencePickup>() != null)

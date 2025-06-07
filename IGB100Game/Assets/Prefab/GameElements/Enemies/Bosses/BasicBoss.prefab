@@ -121,6 +121,46 @@ MonoBehaviour:
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
     dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 10
   BossChest: 1
   Chest: {fileID: 7294069948524985358, guid: 8f8906d9fd94ea64091d8c0f8579d56a, type: 3}
 --- !u!114 &-6338131469886950964

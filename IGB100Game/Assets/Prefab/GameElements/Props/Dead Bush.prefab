@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1460776107
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7876228706311870711, guid: 8b574346fcd810d42a4d292687a33cc8, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -119,3 +119,5 @@ MonoBehaviour:
     itemPrefab: {fileID: 4045533827784866153, guid: 28f96ae8335a9b8448ef6380b534768d, type: 3}
     dropRate: 20
     dropValue: 20
+  BossChest: 0
+  Chest: {fileID: 0}

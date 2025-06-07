@@ -90,43 +90,203 @@ MonoBehaviour:
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
   - name: Experience
     itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
     dropRate: 100
-    dropValue: 80
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
+  - name: Experience
+    itemPrefab: {fileID: 1653985381621634708, guid: 6b107695b3b274842b403f2e4e524ef5, type: 3}
+    dropRate: 100
+    dropValue: 16
   - name: Health
     itemPrefab: {fileID: 4045533827784866153, guid: 28f96ae8335a9b8448ef6380b534768d, type: 3}
     dropRate: 100
