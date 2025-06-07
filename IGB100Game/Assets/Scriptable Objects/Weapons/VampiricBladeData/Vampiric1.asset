@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Vampiric1
   m_EditorClassIdentifier: 
   prefab: {fileID: 6811492750702185406, guid: 29fc79b3dcf41f04f8d64ec724a81b76, type: 3}
-  damage: 15
+  damage: 30
   speed: 5
   cooldownDuration: 15
   pierce: 1
