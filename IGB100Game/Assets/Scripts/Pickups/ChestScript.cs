@@ -9,6 +9,7 @@ public class ChestScript : MonoBehaviour
     float SpawnInterval = 0.1f;
     float Timer = 1f;
     bool active = false;
+    [SerializeField] AudioClip ChestSpawn;
 
     // scaling up and down transition vars
     public float timeTakenUp = 0f;
@@ -21,6 +22,7 @@ public class ChestScript : MonoBehaviour
     {
         drops = dropList;
         active = true;
+        AudioSource.PlayClipAtPoint(ChestSpawn, transform.position);
     }
 
     // Update is called once per frame

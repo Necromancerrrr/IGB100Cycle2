@@ -266,5 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7298dfd772134fe418e0972b09d08f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChestSpawn: {fileID: 8300000, guid: 18bc61ba63be5c3449f0dcec99e16824, type: 3}
   timeTakenUp: 0
   timeTakenDown: 0
