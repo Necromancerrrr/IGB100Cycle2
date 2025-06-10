@@ -22,7 +22,7 @@ MonoBehaviour:
   duration: 3
   level: 3
   nextLevelPrefab: {fileID: 4142939955346733007, guid: add6a5f56ef02d3468ad5fdcf5803279, type: 3}
-  name: Dagger Toss +2
+  name: Dagger Toss
   description: Daggers do more damage.
   icon: {fileID: 21300000, guid: 4f64a549e1e94c748912055857c8fe1f, type: 3}
   areaSizeEnabled: 0
